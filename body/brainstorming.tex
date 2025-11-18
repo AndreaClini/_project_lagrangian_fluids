@@ -34,8 +34,8 @@ The energy momentum tensor is obtained by varying the action wrt the cohordinate
 \begin{aligned}
     T^{\mu}{}_{\nu}
     &= \frac{\delta \mathcal{L}}{\delta (\partial_\mu \phi^A)}\,\partial_\nu \phi^A - \mathcal{L}\,\delta^{\mu}{}_{\nu} \\
-    &= \bigl(Y \partial_YF - 2B \partial_BF\bigr) u^{\mu} u_{\nu}
-       + \bigl(F - 2B \partial_BF\bigr)\,\delta^{\mu}{}_{\nu},
+    &= {\color{red}\bigl(Y \partial_YF - 2B \partial_BF\bigr) u^{\mu} u_{\nu}
+       + \bigl(F - 2B \partial_BF\bigr)\,\delta^{\mu}{}_{\nu}},
 \end{aligned}
 \end{align}
 %
@@ -73,16 +73,42 @@ Putting everything together we find
     - (\partial_YF) Y\, (B^{-1})^{Ij} \partial^\mu \phi_j \partial_\nu \phi^I
     - F\,\delta^{\mu}{}_{\nu}.
 \end{align}
+Or raising both indices
+\begin{align}
+    T^{\mu \nu}
+    &= (\partial_YF) u^\mu \partial^\nu \phi^0
+    +(\partial_BF)2 B (B^{-1})^{Ij}\,\, \partial^\mu \phi_j \partial^\nu \phi^I
+    \\
+    &\quad
+    + \frac{(\partial_YF)}{2\sqrt{B}}
+    \epsilon^{\lambda\mu\beta\gamma}\,\epsilon_{Ijk}\,
+    \partial_\beta\phi^j\,\partial_\gamma\phi^k\,\partial_\lambda\phi^0\,\partial^\nu \phi^I
+    - (\partial_YF) Y\, (B^{-1})^{Ij} \partial^\mu \phi_j \partial^\nu \phi^I
+    - F\,\eta^{\mu\nu}.
+\end{align}
 Using the identity (just plug in to check)
 \begin{align}
     (B^{-1})^{ij}\,\partial^\mu\phi_j\,\partial_\nu\phi^i &= \delta^{\mu}{}_{\nu} + u^\mu u_\nu
 \end{align}
-% and decomposing \(\partial_\nu\phi^0 = -Y u_\nu + (\text{part orthogonal to }u_\nu)\), the orthogonal part drops out. The stress tensor reduces to
-% \begin{align}
-%     T^{\mu}{}_{\nu}
-%     &= \bigl(Y\,\partial_Y F - 2B\,\partial_B F\bigr) u^{\mu} u_{\nu}
-%        + \bigl(F - 2B\,\partial_B F\bigr)\,\delta^{\mu}{}_{\nu}.
-% \end{align}
+the stress tensor becomes
+\begin{align}
+    T^{\mu\nu}
+    &= (\partial_YF) Y u^\mu \partial^\nu \phi^0
+    + (\partial_YF)\partial_\lambda\phi^0\frac{1}{2\sqrt{B}}
+    \epsilon^{\lambda\mu\beta\gamma}\,\epsilon_{Ijk}\,
+    \partial_\beta\phi^j\,\partial_\gamma\phi^k\,\partial^\nu \phi^I
+    \\
+    &+\Big(2B (\partial_BF)- Y(\partial_YF)\Big) (\eta^{\mu\nu} + u^\mu u^\nu)
+    - F \eta^{\mu\nu}.
+\end{align}
+
+Decomposing \(\partial_\nu\phi^0 = -Y u_\nu + (\text{part orthogonal to }u_\nu)\), the orthogonal part drops out. 
+The stress tensor reduces to
+\begin{align}
+    T^{\mu}{}_{\nu}
+    &= \bigl(Y\,\partial_Y F - 2B\,\partial_B F\bigr) u^{\mu} u_{\nu}
+       + \bigl(F - 2B\,\partial_B F\bigr)\,\delta^{\mu}{}_{\nu}.
+\end{align}
 We finally get
 \begin{align}
     T^{\mu}{}_{\nu}
