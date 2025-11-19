@@ -218,7 +218,7 @@ We have
 Using the relation $(B^{-1})^{ij} \partial_\mu\phi^i\,\partial_\nu\phi^j=g_{\mu\nu}+u_\mu u_\nu$ (just projection...) we find
 \begin{align}
     \delta B
-    &= B (B^{-1})^{ij} \delta B_{ij} = B (B^{-1})^{ij} \partial_\mu\phi^i\,\partial_\nu\phi^j \delta g^{\mu\nu} = \left\{g_{\mu\nu}+u_\mu u_\nu\right\}\,\delta g^{\mu\nu}
+    &= B (B^{-1})^{ij} \delta B_{ij} = B (B^{-1})^{ij} \partial_\mu\phi^i\,\partial_\nu\phi^j \delta g^{\mu\nu} = B\,\left\{g_{\mu\nu}+u_\mu u_\nu\right\}\,\delta g^{\mu\nu}
 \end{align}
 Next, \todotag{This below is most likely wrong}
 \begin{align}
@@ -226,26 +226,6 @@ Next, \todotag{This below is most likely wrong}
     &= \delta\left(u^\mu \partial_\mu \phi^0\right)
     = (\delta u^\mu) \partial_\mu \phi^0
     \\
-    &= \frac{1}{6\sqrt{B}} \epsilon^{\mu\alpha\beta\gamma} \epsilon_{ijk} \left(
-    \delta(\partial_\alpha \phi^i) \partial_\beta \phi^j \partial_\gamma \phi^k
-    + \partial_\alpha \phi^i \delta(\partial_\beta \phi^j) \partial_\gamma \phi^k
-    + \partial_\alpha \phi^i \partial_\beta \phi^j \delta(\partial_\gamma \phi^k)
-    \right) \partial_\mu \phi^0
-    \\
-    &= -\frac{1}{6\sqrt{B}} \epsilon^{\mu\alpha\beta\gamma} \epsilon_{ijk}
-    \left(
-    \partial_\lambda \phi^i \partial_\beta \phi^j \partial_\gamma \phi^k
-    + \partial_\alpha \phi^i \partial_\lambda \phi^j \partial_\gamma \phi^k
-    + \partial_\alpha \phi^i \partial_\beta \phi^j \partial_\lambda \phi^k
-    \right) g^{\lambda\sigma} g^{\alpha\rho} \delta g_{\rho\sigma} \partial_\mu \phi^0
-    \\
-    &= -\frac{1}{2\sqrt{B}} \epsilon^{\mu\alpha\beta\gamma} \epsilon_{ijk}
-    \partial_\lambda \phi^i \partial_\beta \phi^j \partial_\gamma \phi^k
-    g^{\lambda\sigma} g^{\alpha\rho} \delta g_{\rho\sigma} \partial_\mu \phi^0
-    \\
-    &= -\frac{1}{2\sqrt{B}} \epsilon^{\mu\alpha\beta\gamma} \epsilon_{ijk}
-    \partial_\lambda \phi^i \partial_\beta \phi^j \partial_\gamma \phi^k
-    g^{\lambda}_{\,\,\rho} g^{\alpha}_{\,\,\sigma} \delta g^{\rho\sigma} \partial_\mu \phi^0.
 \end{align}
 Putting everything together we find
 \begin{align}
