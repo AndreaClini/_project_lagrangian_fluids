@@ -191,8 +191,90 @@ The norm is then
 Raising the index of $\tilde{u}$ and normalizing gives the claimed expression.
 \end{proof}
 
-The action is now
+The action is $S=S_{\mathrm{EH}}+S_{\mathrm{fluid}}$ with
 \begin{equation}
-    S=\int d^4x\, \sqrt{-g}\, F(B,Y).
+    S_{\mathrm{fluid}}=\int d^4x\, \sqrt{-g}\, F(B,Y),\quad
+    S_{\mathrm{EH}}=\frac{1}{16\pi G}\int d^4x\, \sqrt{-g}\, (R-2\Lambda),
 \end{equation}
-The energy-momentum tensor is obtained by varying wrt the metric \notetag{And we avoid issues with symmetrizing}
+where$F$ is an arbitrary function, and we included a possible cosmological constant.
+The energy-momentum tensor is obtained by varying wrt the metric \answertag{And we avoid issues with symmetrizing}
+\begin{align}
+    T_{\mu\nu}=-\frac{2}{\sqrt{-g}}\frac{\delta S_{\mathrm{fluid}}}{\delta g^{\mu\nu}}={\color{red} \bigl(Y\,F_Y - 2B\,F_B\bigr)\,u_\mu u_\nu
+           + \bigl(F - 2B\,F_B\bigr)\,g_{\mu\nu}}\,.
+\end{align}
+\todotag{Just a guess it is this, finish il conto below}
+%
+\begin{proof}
+We temporarily report the explicit computation, eventually we will cut it out.
+Varying the action we have
+\begin{align}
+    \delta S_{\mathrm{fluid}}
+    &= \int d^4x \left(\delta \sqrt{-g}\, F + \sqrt{-g}\, \partial_BF\, \delta B + \sqrt{-g}\, \partial_YF\, \delta Y\right).
+\end{align}
+We have
+\begin{equation}
+    \delta \sqrt{-g} = -\frac{1}{2}\sqrt{-g}\, g_{\mu\nu} \delta g^{\mu\nu},
+\end{equation}
+Using the relation $(B^{-1})^{ij} \partial_\mu\phi^i\,\partial_\nu\phi^j=g_{\mu\nu}+u_\mu u_\nu$ (just projection...) we find
+\begin{align}
+    \delta B
+    &= B (B^{-1})^{ij} \delta B_{ij} = B (B^{-1})^{ij} \partial_\mu\phi^i\,\partial_\nu\phi^j \delta g^{\mu\nu} = \left\{g_{\mu\nu}+u_\mu u_\nu\right\}\,\delta g^{\mu\nu}
+\end{align}
+Next, \todotag{This below is most likely wrong}
+\begin{align}
+    \delta Y
+    &= \delta\left(u^\mu \partial_\mu \phi^0\right)
+    = (\delta u^\mu) \partial_\mu \phi^0
+    \\
+    &= \frac{1}{6\sqrt{B}} \epsilon^{\mu\alpha\beta\gamma} \epsilon_{ijk} \left(
+    \delta(\partial_\alpha \phi^i) \partial_\beta \phi^j \partial_\gamma \phi^k
+    + \partial_\alpha \phi^i \delta(\partial_\beta \phi^j) \partial_\gamma \phi^k
+    + \partial_\alpha \phi^i \partial_\beta \phi^j \delta(\partial_\gamma \phi^k)
+    \right) \partial_\mu \phi^0
+    \\
+    &= -\frac{1}{6\sqrt{B}} \epsilon^{\mu\alpha\beta\gamma} \epsilon_{ijk}
+    \left(
+    \partial_\lambda \phi^i \partial_\beta \phi^j \partial_\gamma \phi^k
+    + \partial_\alpha \phi^i \partial_\lambda \phi^j \partial_\gamma \phi^k
+    + \partial_\alpha \phi^i \partial_\beta \phi^j \partial_\lambda \phi^k
+    \right) g^{\lambda\sigma} g^{\alpha\rho} \delta g_{\rho\sigma} \partial_\mu \phi^0
+    \\
+    &= -\frac{1}{2\sqrt{B}} \epsilon^{\mu\alpha\beta\gamma} \epsilon_{ijk}
+    \partial_\lambda \phi^i \partial_\beta \phi^j \partial_\gamma \phi^k
+    g^{\lambda\sigma} g^{\alpha\rho} \delta g_{\rho\sigma} \partial_\mu \phi^0
+    \\
+    &= -\frac{1}{2\sqrt{B}} \epsilon^{\mu\alpha\beta\gamma} \epsilon_{ijk}
+    \partial_\lambda \phi^i \partial_\beta \phi^j \partial_\gamma \phi^k
+    g^{\lambda}_{\,\,\rho} g^{\alpha}_{\,\,\sigma} \delta g^{\rho\sigma} \partial_\mu \phi^0.
+\end{align}
+Putting everything together we find
+\begin{align}
+    \delta S_{\mathrm{fluid}}
+    &= \int d^4x \sqrt{-g} \left\{
+    -\frac{1}{2} g_{\mu\nu} F
+    - \partial_BF\, B (B^{-1})^{ij} \left(\partial_\mu \phi_i \partial_\nu \phi_j + \partial_\mu \phi_j \partial_\nu \phi_i\right)
+    \right.
+    \\
+    &\quad\left.
+    - \frac{\partial_YF}{2\sqrt{B}} \epsilon^{\lambda\alpha\beta\gamma} \epsilon_{ijk}
+    \partial_\mu \phi^0 \partial_\lambda \phi^i \partial_\beta \phi^j \partial_\gamma \phi^k
+    g^{\mu}_{\,\,\nu} g^{\alpha}_{\,\,\sigma}
+    \right\} \delta g^{\mu\nu}.
+\end{align}
+From which we read off
+\begin{align}
+    T_{\mu\nu}
+    &= -2 \frac{1}{\sqrt{-g}} \frac{\delta S_{\mathrm{fluid}}}{\delta g^{\mu\nu}}
+    \\
+    &= g_{\mu\nu} F
+    + 2 \partial_BF\, B (B^{-1})^{ij} \left(\partial_\mu \phi_i \partial_\nu \phi_j + \partial_\mu \phi_j \partial_\nu \phi_i\right)
+    \\
+    &\quad
+    + \frac{\partial_YF}{\sqrt{B}} \epsilon^{\lambda\alpha\beta\gamma} \epsilon_{ijk}
+    \partial_\mu \phi^0 \partial_\lambda \phi^i \partial_\beta \phi^j \partial_\gamma \phi^k
+    g^{\mu}_{\,\,\nu} g^{\alpha}_{\,\,\sigma}.
+\end{align}
+
+\end{proof}
+
+
