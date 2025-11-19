@@ -152,7 +152,7 @@ The invariants are still
 \end{equation}
 The 4-velocity is again explicitly given by
 \begin{equation}
-    u^\mu=\frac{1}{3!\,\,\sqrt{B}}\epsilon^{\mu\alpha\beta\gamma}\,\,\epsilon_{ijk}\,\,\partial_\alpha \phi^i \partial_\beta \phi^j \partial_\gamma \phi^k,
+    u^\mu=\frac{1}{3!\,\,\sqrt{B}}\epsilon_{\mu\alpha\beta\gamma}\,\,\epsilon_{ijk}\,\,\partial^\alpha \phi^i \partial^\beta \phi^j \partial^\gamma \phi^k,
 \end{equation}
 where \(\epsilon^{\alpha\beta\gamma\delta}=g^{\lambda\alpha}g^{\mu\beta}g^{\nu\gamma}g^{\rho\delta}{\epsilon}_{\lambda\mu\nu\rho}\) with ${\epsilon}_{\lambda\mu\nu\rho}$ totally antisymmetric Levi--Civita.
 %
@@ -213,48 +213,63 @@ Varying the action we have
 \end{align}
 We have
 \begin{equation}
-    \delta \sqrt{-g} = -\frac{1}{2}\sqrt{-g}\, g_{\mu\nu} \delta g^{\mu\nu},
+    \delta \sqrt{-g} = -\frac{1}{2}\, g_{\mu\nu}\,\sqrt{-g}\,\, \delta g^{\mu\nu},
 \end{equation}
 Using the relation $(B^{-1})^{ij} \partial_\mu\phi^i\,\partial_\nu\phi^j=g_{\mu\nu}+u_\mu u_\nu$ (just projection...) we find
 \begin{align}
     \delta B
-    &= B (B^{-1})^{ij} \delta B_{ij} = B (B^{-1})^{ij} \partial_\mu\phi^i\,\partial_\nu\phi^j \delta g^{\mu\nu} = B\,\left\{g_{\mu\nu}+u_\mu u_\nu\right\}\,\delta g^{\mu\nu}
+    &= B (B^{-1})^{ij} \delta B_{ij} = B (B^{-1})^{ij} \partial_\mu\phi^i\,\partial_\nu\phi^j \delta g^{\mu\nu} = B\,\left\{g_{\mu\nu}+u_\mu u_\nu\right\}\,\delta g^{\mu\nu}.
 \end{align}
-Next, \todotag{This below is most likely wrong}
+For the variation of \(Y\) we have
+{\small
 \begin{align}
     \delta Y
-    &= \delta\left(u^\mu \partial_\mu \phi^0\right)
-    = (\delta u^\mu) \partial_\mu \phi^0
+    &= \delta\left(u^\alpha \partial_\alpha \phi^0\right)
+    = (\delta u^\alpha) \partial_\alpha \phi^0
     \\
+     &= -\left(u^\theta \partial_\theta \phi^0\right)\frac{1}{2}B^{-1}\, \delta B
+     +\partial_\alpha\phi^0\,\,\frac{1}{3!\,\,\sqrt{B}}\epsilon_{\lambda\mu\nu\rho}\,\,\epsilon_{ijk}\,\,\partial_\beta \phi^i \partial_\gamma \phi^j \partial_\delta \phi^k 
+     \,\,\delta\left(g^{\alpha\lambda}g^{\beta\mu}g^{\gamma\nu}g^{\delta\rho}\right)
+     \\
+     &=-\frac{Y}{2} \left\{g_{\mu\nu}+u_\mu u_\nu\right\}\,\delta g^{\mu\nu} + \left\{\partial_\alpha\phi^0\,\, u_\lambda \right\} \delta g^{\alpha\lambda}
+     + 
+     \partial_\alpha\phi^0\,\,\frac{1}{3!\,\,\sqrt{B}}\epsilon_{\lambda\mu\nu\rho}\,\,\epsilon_{ijk}\,\,\partial_\beta \phi^i \partial_\gamma \phi^j \partial_\delta \phi^k 
+     \,\,g^{\alpha\lambda}\,\,\,\delta\left(g^{\beta\mu}g^{\gamma\nu}g^{\delta\rho}\right).
+\end{align}
+}
+Splitting $\partial_\alpha\phi^0= -Y u_\alpha + \left[\partial_\alpha\phi^0 + Y u_\alpha\right]$ into parts parallel and orthogonal to $u_\alpha$, we get \todotag{Check 2nd term indeeed cancels}
+\begin{align}
+    \delta Y
+     &=-\frac{Y}{2} \left\{g_{\mu\nu}+ 3 u_\mu u_\nu\right\}\,\delta g^{\mu\nu}
+     \\
+     &\quad + \underbrace{\left\{\left[\partial_\alpha\phi^0 + Y u_\alpha\right]\,\, u_\lambda \right\} \delta g^{\alpha\lambda}
+     + 
+     \partial_\alpha\phi^0\,\,\frac{1}{3!\,\,\sqrt{B}}\epsilon_{\lambda\mu\nu\rho}\,\,\epsilon_{ijk}\,\,\partial_\beta \phi^i \partial_\gamma \phi^j \partial_\delta \phi^k 
+     \,\,g^{\alpha\lambda}\,\,\,\delta\left(g^{\beta\mu}g^{\gamma\nu}g^{\delta\rho}\right)}_{\text{likely to be total derivative or vanish by orthogonality}}.
 \end{align}
 Putting everything together we find
 \begin{align}
     \delta S_{\mathrm{fluid}}
-    &= \int d^4x \sqrt{-g} \left\{
+    &= \int d^4x \sqrt{-g} \bigg\{
     -\frac{1}{2} g_{\mu\nu} F
-    - \partial_BF\, B (B^{-1})^{ij} \left(\partial_\mu \phi_i \partial_\nu \phi_j + \partial_\mu \phi_j \partial_\nu \phi_i\right)
-    \right.
+    + (\partial_BF)\, B \left(g_{\mu\nu}+u_\mu u_\nu\right) - (\partial_YF)\, \frac{Y}{2} \left(g_{\mu\nu}+ 3 \,\,u_\mu u_\nu\right)
     \\
-    &\quad\left.
-    - \frac{\partial_YF}{2\sqrt{B}} \epsilon^{\lambda\alpha\beta\gamma} \epsilon_{ijk}
-    \partial_\mu \phi^0 \partial_\lambda \phi^i \partial_\beta \phi^j \partial_\gamma \phi^k
-    g^{\mu}_{\,\,\nu} g^{\alpha}_{\,\,\sigma}
-    \right\} \delta g^{\mu\nu}.
+    &\qquad
+    +\partial_YF\,\Big(\text{total derivative? hopefully yes}\Big)\bigg\} \delta g^{\mu\nu}.
 \end{align}
 From which we read off
 \begin{align}
     T_{\mu\nu}
-    &= -2 \frac{1}{\sqrt{-g}} \frac{\delta S_{\mathrm{fluid}}}{\delta g^{\mu\nu}}
-    \\
-    &= g_{\mu\nu} F
-    + 2 \partial_BF\, B (B^{-1})^{ij} \left(\partial_\mu \phi_i \partial_\nu \phi_j + \partial_\mu \phi_j \partial_\nu \phi_i\right)
-    \\
-    &\quad
-    + \frac{\partial_YF}{\sqrt{B}} \epsilon^{\lambda\alpha\beta\gamma} \epsilon_{ijk}
-    \partial_\mu \phi^0 \partial_\lambda \phi^i \partial_\beta \phi^j \partial_\gamma \phi^k
-    g^{\mu}_{\,\,\nu} g^{\alpha}_{\,\,\sigma}.
+    = -2 \frac{1}{\sqrt{-g}} \frac{\delta S_{\mathrm{fluid}}}{\delta g^{\mu\nu}}
+    %
+    =g_{\mu\nu} F
+    -2 (\partial_BF)\, B \left(g_{\mu\nu}+u_\mu u_\nu\right) + (\partial_YF)\, Y \left(g_{\mu\nu}+ 3 \,\,u_\mu u_\nu\right).
 \end{align}
-
+Matching to the perfect fluid expression $T_{\mu\nu}=(\rho+p)u_\mu u_\nu + p g_{\mu\nu}$ we find
+\begin{equation}
+    \rho = Y \partial_YF - F, \qquad
+    p = F - 2 B \partial_BF.
+\end{equation}
 \end{proof}
 
 
