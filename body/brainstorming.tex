@@ -370,7 +370,20 @@ We have\todotag{finish}
     \\
     &\qquad \epsilon^{\mu\alpha\beta\gamma} \epsilon_{ijk} (\delta_\alpha^i + \partial_\alpha \pi^i) (\delta_\beta^j + \partial_\beta \pi^j) (\delta_\gamma^k + \partial_\gamma \pi^k)
     \\
-    &= \underbrace{\frac{1}{6}\epsilon^{\mu\alpha\beta\gamma} \epsilon_{\alpha\beta\gamma}}_{=\delta_0^\mu}+...
+    &= \underbrace{\frac{1}{6}\epsilon^{\mu\alpha\beta\gamma} \epsilon_{\alpha\beta\gamma}}_{=\delta_0^\mu}\bigg[1 - \partial_i \pi^i - \tfrac12 \partial_\mu \pi^i \partial^\mu \pi^i +\tfrac12 (\partial_i \pi^i)^2 + \tfrac12 \partial_i \pi^j \partial_j \pi^i + \tfrac12 \partial_i \pi^j \partial_i \pi^j \bigg]
+    \\
+    &\qquad -\frac{1}{6}\big(\partial_\ell\pi^\ell\big) 
+    \underbrace{\epsilon_{ijk} \,\left(\epsilon^{\mu\alpha j k}\partial_\alpha\pi^i+\epsilon^{\mu i \beta k}\partial_\beta\pi^j+\epsilon^{\mu i j \gamma}\partial_\gamma\pi^k\right)}_{=3\, \epsilon_{i j k}\,\epsilon^{\mu \alpha j k}\,\partial_\alpha\pi^i \text{ by symmetry}}
+    \\
+    &\qquad
+    +\frac{1}{6}\underbrace{\epsilon_{ijk} \,\left(\epsilon^{\mu i \beta\gamma}\partial_\beta\pi^j\,\partial_\gamma\pi^k + \epsilon^{\mu \alpha j \gamma}\,\partial_\alpha\pi^i\,\partial_\gamma\pi^k + \epsilon^{\mu \alpha \beta k}\,\partial_\alpha\pi^i\,\partial_\beta\pi^j\right)}_{=3\, \epsilon_{ijk}\, \epsilon^{\mu i \beta\gamma}\partial_\beta\pi^j\,\partial_\gamma\pi^k \text{ by symmetry}}
+    + O(\pi^3)
+    \\
+    &= \delta_0^\mu \bigg[1 - \partial_i \pi^i - \tfrac12 \partial_\mu \pi^i \partial^\mu \pi^i +\tfrac12 (\partial_i \pi^i)^2 + \tfrac12 \partial_i \pi^j \partial_j \pi^i + \tfrac12 \partial_i \pi^j \partial_i \pi^j \bigg]
+    \\
+    &\qquad - \tfrac12 \epsilon^{\mu \alpha j k} \epsilon_{i j k} \partial_\alpha \pi^i \big(\partial_\ell \pi^\ell\big)
+    + \tfrac12 \epsilon^{\mu i \beta \gamma} \epsilon_{i j k} \partial_\beta \pi^j \partial_\gamma \pi^k
+    + O(\pi^3).
 \end{align}
 Finally the invariant \(Y\) is expanded as \todotag{finish expansion}
 \begin{align}
