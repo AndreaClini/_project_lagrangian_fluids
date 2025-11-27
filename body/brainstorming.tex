@@ -426,10 +426,53 @@ The action is then expanded up to quadratic order in the fluctuations as
     &\qquad + \tfrac12 \partial_B^2F(\bar{B},\bar{Y}) (\delta B)^2 + \partial_B\partial_YF(\bar{B},\bar{Y}) \delta B \delta Y + \tfrac12 \partial_Y^2F(\bar{B},\bar{Y}) (\delta Y)^2
     \bigg].
 \end{align}
-
+%
 The quadratic part of the expanded lagrangian then reads
 \begin{align}
     \mathcal{L}^{(2)}& = (\partial_B\bar{F}) \delta B^{(2)} + (\partial_B\bar{F}) \delta Y^{(2)} + \tfrac12 (\partial_B^2\bar{F}) (\delta B^{(1)})^2 + (\partial_{B Y}^2\bar{F}) \delta B^{(1)} \delta Y^{(1)} + \tfrac12 (\partial_Y\bar{F}) (\delta Y^{(1)})^2
+    \\
+    & =
+    \alpha^6 (\partial_B\bar{F}) \Big(\partial_\mu \pi^i \partial^\mu \pi^i
+    + 2 (\partial_i \pi^i)^2 - \partial_i \pi^j \partial_j \pi^i - \partial_i \pi^j \partial_i \pi^j\Big)
+    \\
+    &\quad +
+    (\partial_Y\bar{F}) \tfrac12 \bigg( (\partial_i \pi^i)^2 -\partial_\mu \pi^i \partial^\mu \pi^i + \partial_i \pi^j \partial_j \pi^i +\partial_i \pi^j \partial_i \pi^j
+    - 2 \partial_0 \pi^0 \partial_\ell\pi^\ell + \epsilon_{i j k}\epsilon^{\mu \alpha j k}  \partial_\alpha \pi^i \partial_\mu \pi^0 \bigg)
+    \\
+    &\quad +
+    \alpha^{12} (\partial_B^2\bar{F}) \,2 \,\big(\partial_i \pi^i\big)^2
+    + \tfrac{1}{2}(\partial_{Y}^2\bar{F}) \big(\partial_0 \pi^0 - \partial_i \pi^i\big)^2
+    +\alpha^6 (\partial_{B Y}^2\bar{F}) 2\, \partial_i \pi^i \,\,\big(\partial_0 \pi^0 - \partial_i \pi^i\big)
+    \\
+    &=
+    \bar{B} (\partial_B\bar{F}) \Big(\partial_\mu \pi^i \partial^\mu \pi^i
+    + 2 (\partial_i \pi^i)^2 - \partial_i \pi^j \partial_j \pi^i - \partial_i \pi^j \partial_i \pi^j\Big)
+    \\
+    &\quad +
+    \bar{Y}(\partial_Y\bar{F}) \tfrac12 \bigg( (\partial_i \pi^i)^2 -\partial_\mu \pi^i \partial^\mu \pi^i + \partial_i \pi^j \partial_j \pi^i +\partial_i \pi^j \partial_i \pi^j
+    - 2 \partial_0 \pi^0 \partial_\ell\pi^\ell + \epsilon_{i j k}\epsilon^{\mu \alpha j k}  \partial_\alpha \pi^i \partial_\mu \pi^0 \bigg)
+    \\
+    &\quad +
+    \bar{B}^2 (\partial_B^2\bar{F}) \,2 \,\big(\partial_i \pi^i\big)^2
+    + \tfrac{1}{2}\bar{Y}^2(\partial_{Y}^2\bar{F}) \big(\partial_0 \pi^0 - \partial_i \pi^i\big)^2
+    + \bar{B}\bar{Y} (\partial_{B Y}^2\bar{F}) 2\, \partial_i \pi^i \,\,\big(\partial_0 \pi^0 - \partial_i \pi^i\big) + O(\pi^3),
+\end{align}
+where we used the background values \(\bar{B} = \alpha^6\) and \(\bar{Y} = 1\).
+
+Inside the action we can integrate by parts the term with antisymmetric epsilon tensors, obtaining
+\begin{align}
+    \int d^4x\, \mathcal{L}^{(2)} 
+    &= \int d^4x \bigg\{\bar{B} (\partial_B\bar{F}) \Big(\partial_\mu \pi^i \partial^\mu \pi^i
+    + 2 (\partial_i \pi^i)^2 - \partial_i \pi^j \partial_j \pi^i - \partial_i \pi^j \partial_i \pi^j\Big)
+    \\[4pt]
+    &\qquad +
+    \bar{Y}(\partial_Y\bar{F}) \tfrac12 \Big((\partial_i \pi^i)^2 -\partial_\mu \pi^i \partial^\mu \pi^i + \partial_i \pi^j \partial_j \pi^i +\partial_i \pi^j \partial_i \pi^j
+    - 2 \partial_0 \pi^0 \partial_\ell\pi^\ell + \epsilon_{i j k}\epsilon^{\mu \alpha j k}  \partial_\alpha \pi^i \partial_\mu \pi^0\Big)
+    \\
+    &\qquad +
+    \bar{B}^2 (\partial_B^2\bar{F}) \,2 \,\big(\partial_i \pi^i\big)^2
+    + \tfrac{1}{2}\bar{Y}^2(\partial_{Y}^2\bar{F}) \big(\partial_0 \pi^0 - \partial_i \pi^i\big)^2
+    + \bar{B}\bar{Y} (\partial_{B Y}^2\bar{F}) 2\, \partial_i \pi^i \,\,\big(\partial_0 \pi^0 - \partial_i \pi^i\big)\bigg\}
 \end{align}
 
 % {\color{gray}
