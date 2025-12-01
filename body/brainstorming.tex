@@ -550,8 +550,9 @@ In particular, we want to highlight to the ratio $w:=p/\rho$ and the adiabatic s
 \end{equation} 
 
 %----------------------------------------------------------------
-\subsubsection{Thermodynamics (temp)}
+\subsubsection{Thermodynamics (temp)} \todotag{Conti a caso, ignore}
 %----------------------------------------------------------------
+
 
 The Euler formula gives
 \begin{equation}
@@ -568,7 +569,13 @@ Assuming a fixed number of particles $N$, we have
     = \rho + \frac12  \frac{d \rho}{d \log B}_{|\sigma,N}.
 \end{align}
 {\color{red}
-We should identify $Y$ with the entropy per particle $\sigma=S/N$? 
+We should identify $Y$ with the temperature $T$, as in \cite{BallesterosComelliPilo_ThermodynamicsPerfectFluidsScalarFieldTheory_2016}.
+Then we can write
+\begin{align}
+    d \rho &= \left(\frac{\partial \rho}{\partial B}\right)_{|Y} d B + \left(\frac{\partial \rho}{\partial Y}\right)_{|B} d Y,
+    \\
+    d p &= \left(\frac{\partial p}{\partial B}\right)_{|Y} d B + \left(\frac{\partial p}{\partial Y}\right)_{|B} d Y.
+\end{align}
 
 In turn we should compute
 \begin{align}
