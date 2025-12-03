@@ -572,31 +572,37 @@ and
 
 The Euler formula gives
 \begin{equation}
-    \rho\,V = U = T S - p V + \mu N,
+    \rho\,V = U = T S - p V +\graycancel{ \mu N}\,,
 \end{equation}
 or equivalently dividing by the volume $V$,
 \begin{equation}
     \rho = -p + T \sigma n + \mu n.
 \end{equation}
-Recall we can identify $\sqrt{B}=n$ as the number density.
+Recall we can identify $b:=\sqrt{B}=n$ as the number density.
 Assuming a fixed number of particles $N$, we have
 \begin{align}
-    -p=\frac{d U }{d V}_{|\sigma,N}= \frac{d (\rho V)}{d V}_{|\sigma,N} = \rho + V \frac{d \rho}{d V}_{|\sigma,N} = \rho + \frac{d \rho}{d \log n}_{|\sigma,N}
-    = \rho + \frac12  \frac{d \rho}{d \log B}_{|\sigma,N}.
+    -p=\frac{d U }{d V}_{|\sigma,N}= \frac{d (\rho V)}{d V}_{|\sigma,N} = \rho + V \frac{d \rho}{d V}_{|\sigma,N} = \rho - \frac{d \rho}{d \log n}_{|\sigma,N}.
 \end{align}
-{\color{red}
 We should identify $Y$ with the temperature $T$, as in \cite{BallesterosComelliPilo_ThermodynamicsPerfectFluidsScalarFieldTheory_2016}.
 Then we can write
 \begin{align}
-    d \rho &= \left(\frac{\partial \rho}{\partial B}\right)_{|Y} d B + \left(\frac{\partial \rho}{\partial Y}\right)_{|B} d Y,
+    d \rho &= \left(\frac{\partial \rho}{\partial b}\right)_{|Y} d b + \left(\frac{\partial \rho}{\partial Y}\right)_{|b} d Y,
     \\
-    d p &= \left(\frac{\partial p}{\partial B}\right)_{|Y} d B + \left(\frac{\partial p}{\partial Y}\right)_{|B} d Y.
+    d p &= \left(\frac{\partial p}{\partial b}\right)_{|Y} d b + \left(\frac{\partial p}{\partial Y}\right)_{|b} d Y.
 \end{align}
 
 In turn we should compute
 \begin{align}
     c_a^2 &= \left(\frac{\partial p}{\partial \rho}\right)_\sigma
-    = \frac{\partial p/\partial B_{|\sigma}}{\partial \rho/\partial B_{|\sigma}} \sim \frac{\partial p/\partial B_{|Y}}{\partial \rho/\partial B_{|Y}},
+    = \frac{\partial p/\partial b_{|\sigma}}{\partial \rho/\partial b_{|\sigma}} \sim \frac{\partial p/\partial b_{|Y}}{\partial \rho/\partial b_{|Y}},
 \end{align}
 and subtract it off the expression for $c_s^2$ to see the non-barotropic offset.
-}
+
+The entropy $S$ and temperature $Y\equiv T$ are given by
+\begin{equation}
+    Y:=T=\frac{\partial U}{\partial S}_{\mid V,N} = \frac{\partial(\rho V)}{\partial S}_{\mid V,N} = V \frac{\partial \rho}{\partial S}_{\mid V,N} = \frac{\partial \rho}{\partial s}_{\mid V,N} = \frac{1}{n} \frac{\partial \rho}{\partial \sigma}_{\mid V,N},
+\end{equation}
+The comoving entropy per particle is
+\begin{align}
+    \sigma &= \frac{S}{N} = \frac{s V}{n V} = \frac{s}{n},
+\end{align}
