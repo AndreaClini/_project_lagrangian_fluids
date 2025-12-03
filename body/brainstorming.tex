@@ -725,5 +725,28 @@ Plugging this into the expression for $c_a^2$ we get
         \left(bY \partial^2_{bY} F - b\partial_b F\right) \left(  b \partial_b F  + Y^2 \partial_Y^2 F - bY \partial^2_{bY} F\right) 
     + \left(Y^2 \partial_Y^2 F\right) \left(Y \partial_Y F -bY \partial^2_{bY} F  + b^2 \partial_b^2 F\right)
     }
+    \\
+    &=
+    \frac{
+        \big[Y\partial_Y F- bY\partial_{bY}^2F\big]^2+ b^2 \partial_b^2 F \big[Y \partial_YF- b \partial_b F + Y^2 \partial_Y^2 F\big]
+    }
+    {
+        -\big[b\partial_b F- bY\partial_{bY}^2F\big]^2+ Y^2 \partial_Y^2 F \big[Y \partial_YF- b \partial_b F + b^2 \partial_b^2 F\big]
+    }.
 \end{align}
-
+{\color{red}
+Subtracting from the expression for $c_s^2$ we finally get
+\begin{align}
+    c_s^2 - c_a^2
+    &=
+    - \frac{\big[Y\partial_Y F- bY\partial_{bY}^2F\big]^2}{Y^2 \partial_Y^2 F \big[Y \partial_YF- b \partial_b F + b^2 \partial_b^2 F\big]}
+    \\
+    &=
+    - \frac{\left(bY\partial_{bY}^2F - Y\partial_Y F\right)^2}{Y^2 \partial_Y^2 F \left(b \partial_b F - Y \partial_Y F + b^2 \partial_b^2 F\right)}.
+\end{align}
+This shows that the non-barotropic contribution to the sound speed is always negative (or zero),
+\begin{equation}
+    c_s^2 \leq c_a^2,
+\end{equation}
+with equality holding in the barotropic case $F=F(b)$ where there is no dependence on $Y$ and thus $\partial_Y F=0$ and $\partial_{bY}^2 F=0$.
+}
