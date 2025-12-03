@@ -1,10 +1,20 @@
-%------------------------------------------------------------------------
+%-----------------------------------------------------
+%=====================================================
 \section{Brainstorming (temporary)}
-%------------------------------------------------------------------------------------------
+%=====================================================
+%-------------------------------------------------------
 
-%----------------------------------------------------------------------------
-\subsection{Flat background: setting \& energy-momentum tensor}
-%-------------------------------------------------------------------------
+
+
+%============================================================================
+\subsection{Setting \& energy-momentum tensor}
+%==========================================================================
+
+
+
+%-------------------------------------------------------------------
+\subsubsection{Setting \& energy-momentum tensor: flat background}
+%-------------------------------------------------------------------
 
 Let the internal space of the fluid be $\mathcal{M}^{(3)}\simeq \R^3$, including also it proper time we have $\mathcal{M}^{(4)}\simeq \R^{1,3}$ isomorphic to Minkowski spacetime.
 For the moment, we take flat spacetime with metric $\eta_{\mu\nu}=\text{diag}(-1,1,1,1)$, we will later generalize to nonflat metrics.
@@ -133,9 +143,9 @@ We finally get the expresion
 \end{proof}
 
 
-%----------------------------------------------------------------------------
-\subsection{Curved background: setting \& energy-momentum tensor}
-%-------------------------------------------------------------------------
+%-------------------------------------------------------------------
+\subsubsection{Setting \& energy-momentum tensor: curved background}
+%-------------------------------------------------------------------
 %
 Next we include a nontrivial spacetime metric \(g_{\mu\nu}(x)\).
 The conditions of the $\phi^A(x^\mu)$ being comoving coordinates for the fluid remain the same, so that the 4-velocity is still identifed by demanding
@@ -300,9 +310,9 @@ Matching to the perfect fluid expression $T_{\mu\nu}=(\rho+p)u_\mu u_\nu + p g_{
 \end{proof}
 
 
-%----------------------------------------------------------------------------
-\subsection{Fluctuations: flat case}
-%-------------------------------------------------------------------------
+%-------------------------------------------------------------------
+\subsection{Fluctuations: flat background}
+%-------------------------------------------------------------------
 Following the notation of \cite{DubovskyGregoireNicolisRattazzi_NullEnergyConditionSuperluminalPropagation_2005}, we consider fluctuations around the background solution
 \begin{equation}
     \bar\phi^0 = t, \quad \bar\phi^i = \alpha x^i,
@@ -543,66 +553,166 @@ for the sound speed \todotag{simplify}
 \end{align}
 Note that for $F(B,Y)\equiv F(B)$ we recover the barotropic sound speed from \cite{DubovskyGregoireNicolisRattazzi_NullEnergyConditionSuperluminalPropagation_2005}.
 
-We want to relate this to the equation of state $p=p(\rho,s)$, where $\sigma$ is the entropy per particle $\sigma=S/N$.
-In particular, we want to highlight to the ratio $w:=p/\rho$ and the adiabatic speed of sound
-\begin{equation}
-    c_a^2 := \left(\frac{\partial p}{\partial \rho}\right)_\sigma.
-\end{equation} 
 
-It is more convvenient to rewrite derivatives in terms of the density $b=\sqrt{B}$, so that 
+
+It is more convvenient to rewrite derivatives in terms of the density $b:=\sqrt{B}=n$, so that 
 \begin{equation}
     B\partial_B = \tfrac12 b \partial_b, \quad B^2\partial_B^2 = \tfrac14 \big(-b \partial_b + b^2 \partial_b^2\big). 
 \end{equation}
 Then we have
-\begin{align}
+\begin{align}\label{eq:nonbarotropic_formulas}
     \rho &= Y (\partial_Y F) - F, \quad
     \partial_Y\rho= Y \partial_Y^2 F, \quad \partial_b \rho = Y \partial^2_{bY} F - \partial_b F, 
     \\
     p &= F - b (\partial_b F),\quad \partial_Y p =\partial_YF- b \,\partial^2_{bY} F, \quad \partial_b p = - b \partial_b^2 F,
-\end{align}
-and
-\begin{align}
+    \\
     c_s^2 &= \frac{b^2\partial_b^2 F -\frac{\left(bY\partial_{bY}^2F-Y\partial_YF\right)^2}{Y^2\partial_Y^2F}}{b\partial_b F - Y \partial_Y F}, \qquad w:=\frac{p}{\rho}=\frac{F - b (\partial_b F)}{Y (\partial_Y F) - F}.
 \end{align}
 
+
+
+%======================================================
+\subsection{Sound speed and equation of state}
+%======================================================
+
+Next we want to relate the sound speed $c_s^2$ to the equation of state $p=p(\rho,s)$, where $\sigma$ is the entropy per particle $\sigma:=S/N$.
+In particular, we want to highlight to the ratio $w:=p/\rho$ and the \emph{adiabatic} speed of sound
+\begin{equation}
+    c_a^2 := \left(\frac{\partial p}{\partial \rho}\right)_\sigma.
+\end{equation} 
+
+%---------------------------------------------------------------
+\subsubsection{Barotropic case}
+%---------------------------------------------------------------
+
+In the barotropic case $p= w(\rho) \rho$, there is no dependence on $Y$ and the formulas reduce to
+\begin{align}
+\begin{aligned}\label{eq:barotropic_formulas}
+    \rho &= - F,  \quad \partial_b \rho = - \partial_b F, 
+    \\
+    p &= F - b (\partial_b F),\quad  \partial_b p = - b \partial_b^2 F,
+    \\
+    c_s^2 &= \frac{b\partial_b^2 F}{\partial_b F}, \qquad w:=\frac{p}{\rho}=-1 + \frac{b}{F} \,\partial_b F.
+\end{aligned}
+\end{align}
+Moreover in the barotropic case $p= w(\rho) \rho$ we can equivalently compute
+\begin{align}\label{eq:barotropic_sound_speed_vs_w}
+    c_s^2 &= \frac{\partial p}{\partial \rho} = w + \rho \frac{d w}{d \rho}
+    =w + \frac{\frac{dw}{db}}{\frac{1}{\rho}\frac{d\rho}{db}} 
+    = w + \frac{\frac{dw}{dt}}{\frac{1}{\rho}\frac{d\rho}{dt}} \frac{\graycancel{\frac{dt}{db}}}{\graycancel{{\frac{dt}{db}}}}.
+\end{align}
+From the expression \eqref{eq:barotropic_formulas} for $w=w(b)$ we have
+\begin{align}
+    \frac{dw}{db} &= \frac{d}{db}\left(-1 + \frac{b}{F} \,\partial_b F\right)
+    = \frac{\partial_b F + b \,\,\partial_b^2 F}{F} - \frac{b \big(\partial_b F\big)^2}{F^2}.
+\end{align}
+Using these two and the expressions \eqref{eq:barotropic_formulas} for $\rho=\rho(b)$ and $\partial_b \rho$ we can verify that indeed the two expressions in \eqref{eq:barotropic_formulas} and \eqref{eq:barotropic_sound_speed_vs_w} for $c_s^2$ coincide.
+Indeed
+\begin{align}
+    c_s^2 &= w + \frac{\frac{dw}{db}}{\frac{1}{\rho}\frac{d\rho}{db}} 
+    = \redcancel{-1} + \bluecancel{\frac{b}{F} \,\partial_b F} + \frac{\frac{\redcancel{\partial_b F}+ b \,\,\partial_b^2 F}{F} - \bluecancel{\frac{b \big(\partial_b F\big)^2}{F^2}}}{\frac{1}{-F}(-\partial_b F)}
+    = \frac{b\,\partial_b^2 F}{\partial_b F}.
+\end{align}
+
+
+
 %----------------------------------------------------------------
-\subsubsection{Thermodynamics (temp)} \todotag{Conti a caso, ignore}
+\subsubsection{Non-barotropic case \& thermodynamics refresher (temp)} \todotag{Conti a caso, ignore}
 %----------------------------------------------------------------
 
 
-The Euler formula gives
+The Euler formula gives\footnote{We consider fixed number of particles.}
 \begin{equation}
     \rho\,V = U = T S - p V +\graycancel{ \mu N}\,,
 \end{equation}
 or equivalently dividing by the volume $V$,
 \begin{equation}
-    \rho = -p + T \sigma n + \mu n.
+    \rho = -p + T \sigma n + \graycancel{\mu n}.
 \end{equation}
-Recall we can identify $b:=\sqrt{B}=n$ as the number density.
 Assuming a fixed number of particles $N$, we have
 \begin{align}
     -p=\frac{d U }{d V}_{|\sigma,N}= \frac{d (\rho V)}{d V}_{|\sigma,N} = \rho + V \frac{d \rho}{d V}_{|\sigma,N} = \rho - \frac{d \rho}{d \log n}_{|\sigma,N}.
 \end{align}
-We should identify $Y$ with the temperature $T$, as in \cite{BallesterosComelliPilo_ThermodynamicsPerfectFluidsScalarFieldTheory_2016}.
-Then we can write
+The comoving entropy per particle $\sigma$ is given by
+\begin{align}
+    \sigma &:= \frac{S}{N} = \frac{s V}{n V} = \frac{s}{n}.
+\end{align}
+The entropy $S$ and temperature $T$ are related by
+\begin{equation}
+    T=\frac{\partial U}{\partial S}_{\mid V,N} = \frac{\partial(\rho V)}{\partial S}_{\mid V,N} = V \frac{\partial \rho}{\partial S}_{\mid V,N} = \frac{\partial \rho}{\partial s}_{\mid V,N} = \frac{1}{n}\,\, \frac{\partial \rho}{\partial \sigma}_{\mid V,N}\, .
+\end{equation}
+Finally, recall that following \cite{BallesterosComelliPilo_ThermodynamicsPerfectFluidsScalarFieldTheory_2016}, we identify our variables as
+\begin{align}
+    b:=\sqrt{B}=n, \qquad Y=T.
+\end{align}
+
+
+We want to compute
+\begin{align}
+    c_a^2 &= \left(\frac{\partial p}{\partial \rho}\right)_\sigma
+    = \frac{\partial p/\partial b_{|\sigma}}{\partial \rho/\partial b_{|\sigma}} 
+    %\sim \frac{\partial p/\partial b_{|Y}}{\partial \rho/\partial b_{|Y}},
+\end{align}
+and subtract it off the expression for $c_s^2$ to see the non-barotropic offset.
+We write
 \begin{align}
     d \rho &= \left(\frac{\partial \rho}{\partial b}\right)_{|Y} d b + \left(\frac{\partial \rho}{\partial Y}\right)_{|b} d Y,
     \\
     d p &= \left(\frac{\partial p}{\partial b}\right)_{|Y} d b + \left(\frac{\partial p}{\partial Y}\right)_{|b} d Y.
 \end{align}
-
-In turn we should compute
+We would rather express $\rho=\rho(b,Y)=\rho(b,Y(b,\sigma))$ and $p=p(b,Y)=p(b,Y(b,\sigma))$, so that
+\begin{align}
+    d \rho &= \left(\left(\frac{\partial \rho}{\partial b}\right)_{|Y}+ \left(\frac{\partial \rho}{\partial Y}\right)_{|b} \left(\frac{\partial Y}{\partial b}\right)_{|\sigma} \right)d b + \left(\frac{\partial \rho}{\partial \sigma}\right)_{|b} d \sigma,
+    \\
+    d p &= \left(\left(\frac{\partial p}{\partial b}\right)_{|Y}+ \left(\frac{\partial p}{\partial Y}\right)_{|b} \left(\frac{\partial Y}{\partial b}\right)_{|\sigma} \right)d b + \left(\frac{\partial p}{\partial \sigma}\right)_{|b} d \sigma.
+\end{align}
+In turn we have
 \begin{align}
     c_a^2 &= \left(\frac{\partial p}{\partial \rho}\right)_\sigma
-    = \frac{\partial p/\partial b_{|\sigma}}{\partial \rho/\partial b_{|\sigma}} \sim \frac{\partial p/\partial b_{|Y}}{\partial \rho/\partial b_{|Y}},
+    = \frac{\left(\frac{\partial p}{\partial b}\right)_{|Y}+ \left(\frac{\partial p}{\partial Y}\right)_{|b} \left(\frac{\partial Y}{\partial b}\right)_{|\sigma}}{\left(\frac{\partial \rho}{\partial b}\right)_{|Y}+ \left(\frac{\partial \rho}{\partial Y}\right)_{|b} \left(\frac{\partial Y}{\partial b}\right)_{|\sigma}}.
 \end{align}
-and subtract it off the expression for $c_s^2$ to see the non-barotropic offset.
+We need to compute $\left(\frac{\partial Y}{\partial b}\right)_{|\sigma}$ at fixed entropy per particle $\sigma$.
 
-The entropy $S$ and temperature $Y\equiv T$ are given by
-\begin{equation}
-    Y:=T=\frac{\partial U}{\partial S}_{\mid V,N} = \frac{\partial(\rho V)}{\partial S}_{\mid V,N} = V \frac{\partial \rho}{\partial S}_{\mid V,N} = \frac{\partial \rho}{\partial s}_{\mid V,N} = \frac{1}{n} \frac{\partial \rho}{\partial \sigma}_{\mid V,N},
-\end{equation}
-The comoving entropy per particle is
+From the Euler formula
 \begin{align}
-    \sigma &= \frac{S}{N} = \frac{s V}{n V} = \frac{s}{n},
+    S &= \frac{1}{T}\, \left( U + p V\right)\,  \Rightarrow \, \sigma = \frac{1}{T\, n} \, \left(\rho + p\right).
 \end{align}
+That is, using \eqref{eq:nonbarotropic_formulas},
+\begin{align}
+    \sigma &= \frac{1}{Y\, b} \, \left(\rho + p\right) = \frac{1}{Y\, b} \, \left(Y \partial_Y F - b \partial_b F\right).
+\end{align}
+Taking the differential at fixed $\sigma$ we have
+\begin{align}
+    0 &= d \sigma
+    \\
+    &= \frac{\partial}{\partial b}\left(\frac{1}{Y\, b} \, \left(Y \partial_Y F - b \partial_b F\right)\right)_{|\sigma} d b
+    + \frac{\partial}{\partial Y}\left(\frac{1}{Y\, b} \, \left(Y \partial_Y F - b \partial_b F\right)\right)_{|b} d Y
+    \\
+    &= \bigg[-\frac{1}{Y b^2} \left(Y \partial_Y F - b \partial_b F\right)
+    + \frac{1}{Y b} \left(Y \partial^2_{bY} F - \partial_b F - b \partial_b^2 F\right)\bigg] d b
+    \\
+    &\quad + \bigg[-\frac{1}{Y^2 b} \left(Y \partial_Y F - b \partial_b F\right)
+    + \frac{1}{Y b} \left(\partial_Y F + Y \partial_Y^2 F - b \partial^2_{bY} F\right)\bigg] d Y.
+\end{align}
+Rearranging we get
+\begin{align}
+    \left(\frac{\partial Y}{\partial b}\right)_{|\sigma}
+    &= - \frac{-\frac{1}{Y b^2} \left(Y \partial_Y F - b \partial_b F\right)
+    + \frac{1}{Y b} \left(Y \partial^2_{bY} F - \partial_b F - b \partial_b^2 F\right)}{-\frac{1}{Y^2 b} \left(Y \partial_Y F - b \partial_b F\right)
+    + \frac{1}{Y b} \left(\partial_Y F + Y \partial_Y^2 F - b \partial^2_{bY} F\right)}
+    \\
+    &= \frac{\left(Y \partial_Y F - b \partial_b F\right)
+    - b \left(Y \partial^2_{bY} F - \partial_b F - b \partial_b^2 F\right)}{\frac{Y}{b} \left(Y \partial_Y F - b \partial_b F\right)
+    - b \left(\partial_Y F + Y \partial_Y^2 F - b \partial^2_{bY} F\right)}.
+\end{align}
+Plugging this into the expression for $c_a^2$ we get
+\begin{align}
+    c_a^2 &= \frac{\left(\frac{\partial p}{\partial b}\right)_{|Y}+ \left(\frac{\partial p}{\partial Y}\right)_{|b} \left(\frac{\partial Y}{\partial b}\right)_{|\sigma}}{\left(\frac{\partial \rho}{\partial b}\right)_{|Y}+ \left(\frac{\partial \rho}{\partial Y}\right)_{|b} \left(\frac{\partial Y}{\partial b}\right)_{|\sigma}}
+    \\
+    &= \frac{- b \partial_b^2 F + \left(\partial_Y F - b \partial^2_{bY} F\right) \frac{\left(Y \partial_Y F - b \partial_b F\right)
+    - b \left(Y \partial^2_{bY} F - \partial_b F - b \partial_b^2 F\right)}{\frac{Y}{b} \left(Y \partial_Y F - b \partial_b F\right)
+    - b \left(\partial_Y F + Y \partial_Y^2 F - b \partial^2_{bY} F\right)}}{Y \partial^2_{bY} F - \partial_b F + Y \partial_Y^2 F \frac{\left(Y \partial_Y F - b \partial_b F\right)
+    - b \left(Y \partial^2_{bY} F - \partial_b F - b \partial_b^2 F\right)}{\frac{Y}{b} \left(Y \partial_Y F - b \partial_b F\right)
+    - b \left(\partial_Y F + Y \partial_Y^2 F - b \partial^2_{bY} F\right)}}.
+\end{align}
+
