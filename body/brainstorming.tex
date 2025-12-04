@@ -743,7 +743,9 @@ For the moment we report the relevant formulas
     \\
     p &= F - b (\partial_b F),\quad \partial_Y p =\partial_YF- b \,\partial^2_{bY} F, \quad \partial_b p = - b \partial_b^2 F,
     \\
-    w&:=\frac{p}{\rho}=\frac{F - b (\partial_b F)}{Y (\partial_Y F) - F}
+    w&:=\frac{p}{\rho}=\frac{F - b (\partial_b F)}{Y (\partial_Y F) - F} = -1 + \frac{Y\,b\,\sigma}{\rho}=:w(\rho,\sigma),
+    \\
+    \sigma &= \frac{1}{Y\,b} \, \left(\rho + p\right) = \frac{1}{Y\, b} \, \left(Y \partial_Y F - b \partial_b F\right),
     \\
     c_s^2 &= \frac{\big[Y\partial_YF-bY\partial_{bY}^2F\big]^2 -\big(Y^2\partial_Y^2F\big)\big(b^2\partial_b^2 F\big)}{\big(Y^2\partial_Y^2F\big)\big(Y \partial_YF - b \partial_b F\big)}
     \\
@@ -764,32 +766,27 @@ For the moment we report the relevant formulas
     }.
 \end{align}
 }
-Subtracting from the expression for $c_s^2$ in \eqref{eq:nonbarotropic_formulas}, namely
-\begin{align}
-    c_s^2 &= \frac{\big(Y^2\partial_Y^2F\big)\big(b^2\partial_b^2 F\big) -\big[bY\partial_{bY}^2F-Y\partial_YF\big]^2}{\big(Y^2\partial_Y^2F\big)\big[b\partial_b F - Y \partial_Y F\big]},
-\end{align}
+Subtracting $c_a^2$ from the expression for $c_s^2$ in \eqref{eq:nonbarotropic_formulas},
 {\color{red}
-we finally get \todotag{check conto below}
+we finally get
 \begin{align}
     c_s^2 - c_a^2
-    &= \frac{\big(Y^2\partial_Y^2F\big)\big(b^2\partial_b^2 F\big) -\big[bY\partial_{bY}^2F-Y\partial_YF\big]^2}{\big(Y^2\partial_Y^2F\big)\big[b\partial_b F - Y \partial_Y F\big]}
-    +
-    \frac{
-        \big[Y\partial_Y F- bY\partial_{bY}^2F\big]^2+ b^2 \partial_b^2 F \big[Y \partial_YF - Y^2 \partial_Y^2 F - b \partial_b F\big]
-    }
-    {
-        \big[b\partial_b F- bY\partial_{bY}^2F\big]^2+ Y^2 \partial_Y^2 F \big[ b \partial_b F - b^2 \partial_b^2 F-Y \partial_YF\big]
-    }
-    \\
-    &=
-    - \frac{\big[Y\partial_Y F- bY\partial_{bY}^2F\big]^2}{Y^2 \partial_Y^2 F \big[Y \partial_YF- b \partial_b F + b^2 \partial_b^2 F\big]}
-    \\
-    &=
-    - \frac{\left(bY\partial_{bY}^2F - Y\partial_Y F\right)^2}{Y^2 \partial_Y^2 F \left(b \partial_b F - Y \partial_Y F + b^2 \partial_b^2 F\right)}.
+    &= \dots
 \end{align}
-This shows that\footnote{assuming convexity in $Y=T$ for god's sake} the non-barotropic contribution to the sound speed is always negative (or zero),
+This shows that the non-barotropic contribution to the sound speed is always positive hopefully...
+}
+
+{\color{forestgreen}
+With the formula for $w=w(\rho,\sigma)$ above, we can equivalently compute $c_a^2$ as
+\begin{align}
+    c_a^2 &= \left(\frac{\partial p}{\partial \rho}\right)_\sigma
+    = w + \rho \left(\frac{\partial w}{\partial \rho}\right)_\sigma
+    \\
+    &= w + \rho \sigma \left(\frac{\partial (Yb/\rho)}{\partial \rho}\right)_\sigma =\dots
+\end{align}
+This can be computed using 
 \begin{equation}
-    c_s^2 \leq c_a^2,
+    (\partial Y/\partial \rho )_{\sigma}= (\partial \rho/\partial_Y )_{\sigma}^{-1}= \text{same sa above....}
 \end{equation}
-with equality holding in the barotropic case $F=F(b)$ where there is no dependence on $Y$ and thus $\partial_Y F=0$ and $\partial_{bY}^2 F=0$.
+
 }
