@@ -787,11 +787,34 @@ With the formula for $w=w(\rho,\sigma)$ above, we can equivalently compute $c_a^
     \\
     & = -1 + \sigma \left(\frac{\partial (Yb)}{\partial \rho}\right)_\sigma
     \\
-    & = 
+    & = -1 + \sigma Y \big(\partial_Y\rho)_\sigma^{-1} + \sigma b \big(\partial_b\rho)_\sigma^{-1}
 \end{align}
 This can be computed using 
 \begin{equation}
-    (\partial Y/\partial \rho )_{\sigma}= (\partial \rho/\partial_Y )_{\sigma}^{-1}= \text{same sa above....}
+    \left(\frac{\partial \rho}{\partial b}\right)_{|\sigma}= \left(\frac{\partial \rho}{\partial b}\right)_{|Y}+ \left(\frac{\partial \rho}{\partial Y}\right)_{|b} \left(\frac{\partial Y}{\partial b}\right)_{|\sigma} ,
 \end{equation}
-
+and 
+\begin{equation}
+    \left(\frac{\partial \rho}{\partial Y}\right)_{|\sigma}= \left(\frac{\partial \rho}{\partial Y}\right)_{|b}+ \left(\frac{\partial \rho}{\partial b}\right)_{|Y} \left(\frac{\partial b}{\partial Y}\right)_{|\sigma} ,
+\end{equation}
+and finally from above
+\begin{align}
+    \left(\frac{\partial Y}{\partial b}\right)_{|\sigma}
+    &= \frac{Y\left(Y \partial_Y F -bY \partial^2_{bY} F  + b^2 \partial_b^2 F\right)}
+    {b \left( b \partial_b F + Y^2 \partial_Y^2 F - bY \partial^2_{bY} F\right)}
+\end{align}
 }
+
+\begin{align}
+     \left(\frac{\partial w}{\partial \rho}\right)_\sigma
+    &= \frac{ \left(\frac{\partial w}{\partial b}\right)_\sigma}
+    {\left(\frac{\partial \rho}{\partial b}\right)_\sigma}
+    \\
+    & =
+    \frac{
+        \sigma\left(\frac{Y}{\rho}+ \frac{b}{\rho} \left(\frac{\partial Y}{\partial b}\right)_{|\sigma} - \frac{bY}{\rho^2}\left(\frac{\partial \rho}{\partial b}\right)_\sigma\right)
+    }
+    {
+        \left(\frac{\partial \rho}{\partial b}\right)_{|Y}+ \left(\frac{\partial \rho}{\partial Y}\right)_{|b} \left(\frac{\partial Y}{\partial b}\right)_{|\sigma}
+    }
+\end{align}
