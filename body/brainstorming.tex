@@ -812,32 +812,32 @@ We would like to express the offset in terms of $w$ and its derivatives and poss
 \smallskip
 
 \noindent
-To show positivity of $c_s^2 - c_a^2$ it might be useful to express everything in terms of thermodynamic potentials like $F=F(T,n)$ or $G=G(T,p)$.
+To show positivity of $c_s^2 - c_a^2$ it might be useful to express everything in terms of thermodynamic potentials like the Helmoltz $A=A(T,n)$ or Gibbs $G=G(T,p)$ free energies.
 We have the relations, at fixed number of particles $N=nV$,
 \begin{align}
     T \frac{\partial \rho}{\partial T}_{|n} &= T \frac{\partial \rho}{\partial T}_{|V}
     = T \frac{\partial \rho}{\partial S}_{|V} \frac{\partial S}{\partial T}_{|V}
-    = T \frac{\partial (U/V)}{\partial S}_{|V} \frac{-\partial \,(\partial_T F)_{|V}}{\partial T}_{|V}
-    = -\frac{T^2}{V} \, \partial_T^2 F_{|V},
+    = T \frac{\partial (U/V)}{\partial S}_{|V} \frac{-\partial \,(\partial_T A)_{|V}}{\partial T}_{|V}
+    = -\frac{T^2}{V} \, \partial_T^2 A_{|V},
     \\
     n \frac{\partial \rho}{\partial n}_{|T} &= - V \frac{\partial \rho}{\partial V}_{|T}
     = - V \frac{\partial (U/V)}{\partial V}_{|T}
     = \rho - \frac{\partial U}{\partial V}_{|T}
-    =  \rho - \frac{\partial (F+TS)}{\partial V}_{|T}
-    =  \rho + p +T \frac{\partial^2 F}{\partial T \partial V},
+    =  \rho - \frac{\partial (A+TS)}{\partial V}_{|T}
+    =  \rho + p +T \frac{\partial^2 A}{\partial T \partial V},
     \\
-    T \frac{\partial P}{\partial T}_{|n} &= T \frac{\partial P}{\partial T}_{|V} = T \frac{\partial }{\partial T}_{|V}\left(- \frac{\partial F}{\partial V}_{|T}\right) = - T \frac{\partial^2 F}{\partial T \partial V},
+    T \frac{\partial P}{\partial T}_{|n} &= T \frac{\partial P}{\partial T}_{|V} = T \frac{\partial }{\partial T}_{|V}\left(- \frac{\partial A}{\partial V}_{|T}\right) = - T \frac{\partial^2 A}{\partial T \partial V},
     \\
-    n \frac{\partial P}{\partial n}_{|T} &= -V\frac{\partial P}{\partial V}_{|T} = V \frac{\partial^2 F}{\partial^2 V}_{|T}.
+    n \frac{\partial P}{\partial n}_{|T} &= -V\frac{\partial P}{\partial V}_{|T} = V \frac{\partial^2 A}{\partial^2 V}_{|T}.
 \end{align}
-Using convexity of $F$  and rewriting $c_s^2 - c_a^2$ in terms of its derivatives we might be able to show positivity...
+Using convexity of $A$  and rewriting $c_s^2 - c_a^2$ in terms of its derivatives we might be able to show positivity...
 
 \begin{align}
     c_s^2 &= \frac{(T\partial_Tp)^2 +  (T\partial_T\rho)(n\partial_n p)}
     {(T\partial_T\rho)\,\,(\rho+p)}
     \\
-    &= V \cdot \frac{(\partial_V^2F_{|T})(\partial_T^2F_{|V})- \big(\partial_{VT}^2F\big)^2}{(\rho+P)(\partial_T^2F_{|V})}
-    = V\cdot \frac{\det(\partial^2_{V,T} F)}{(\rho+P)(\partial_T^2F_{|V})}
+    &= V \cdot \frac{(\partial_V^2A_{|T})(\partial_T^2A_{|V})- \big(\partial_{VT}^2A\big)^2}{(\rho+P)(\partial_T^2A_{|V})}
+    = V\cdot \frac{\det(\partial^2_{V,T} A)}{(\rho+P)(\partial_T^2A_{|V})}
     \\
     c_a^2 &= -\frac{(T\partial_Tp)^2 -(n\partial_n p)\big[(\rho+p) - (T\partial_T\rho)\big]}
     {
@@ -845,14 +845,68 @@ Using convexity of $F$  and rewriting $c_s^2 - c_a^2$ in terms of its derivative
     }
     \\
     &= -\frac{
-        \big( T \partial_{VT}^2F\big)^2 - \big(V \partial_V^2F\big) \big[(\rho+p) + \tfrac{T^2}{V} \partial_T^2F\big]
+        \big( T \partial_{VT}^2A\big)^2 - \big(V \partial_V^2A\big) \big[(\rho+p) + \tfrac{T^2}{V} \partial_T^2A\big]
     }
     {
-        \big[(\rho+P)+ T \partial_{VT}^2F\big]^2 +\big(\tfrac{T^2}{V}\partial_T^2F\big) \big[(\rho+p)  - V \partial_V^2F\big]
+        \big[(\rho+P)+ T \partial_{VT}^2A\big]^2 +\big(\tfrac{T^2}{V}\partial_T^2A\big) \big[(\rho+p)  - V \partial_V^2A\big]
     }
-    = check last expr
+    \\
+    &= 
+    \frac{T^2\det\big(\partial^2_{V,T}A\big)+(\rho+P)V\partial_V^2A}
+    {
+        (\rho+P)\big[(\rho+P)+2T\partial_{VT}^2A+\tfrac{T^2}{V}\partial_T^2A\big] - T^2\det\big(\partial^2_{V,T}A\big)
+    }
 \end{align}
-
+Taking the difference we have 
+\begin{align}
+    c_s^2 - c_a^2 
+    &= V\cdot \frac{\det(\partial^2_{V,T} A)}{(\rho+P)(\partial_T^2A_{|V})} 
+    -  
+    \frac{T^2\det\big(\partial^2_{V,T}A\big)+(\rho+P)V\partial_V^2A}
+    {
+        (\rho+P)\big[(\rho+P)+2T\partial_{VT}^2A+\tfrac{T^2}{V}\partial_T^2A\big] - T^2\det\big(\partial^2_{V,T}A\big)
+    }
+    \\
+    &=
+    \frac{
+        V\cdot \Big[(\rho+P)\big(\partial_{TV}^2A\big)-T\big(\det\partial^2A\big)\Big]^2
+    }{
+        (\rho+P)\big(\partial_T^2A\big)\cdot \Big[T^2\big(\det\partial^2A\big)-(\rho+P)^2-2(\rho+P)T\partial_{TV}^2A-(\rho+P)\tfrac{T^2}{V}\partial_T^2A\Big]
+    }
+    \\
+    &=
+    \frac{
+         \Big[T\big(\partial_{TV}^2A\big)-\tfrac{T^2}{(\rho+P)}\big(\det\partial^2A\big)\Big]^2
+    }{
+        \tfrac{T^2}{V\cdot (\rho+P)}\big(\partial_T^2A\big)\cdot
+        \Big[T^2\big(\partial_T^2A\big)\big(\partial_V^2A\big)-\big[(\rho+P)+T\partial_{TV}^2A\big]^2-(\rho+P)\tfrac{T^2}{V}\partial_T^2A\Big]
+    }
+\end{align}
+The condition for posivity then reads
+\begin{align}
+    c_s^2-c_a^2 \geq 0 \quad \Leftrightarrow \quad \Big[T^2\big(\partial_T^2A\big)\big(\partial_V^2A\big)-\big[(\rho+P)+T\partial_{TV}^2A\big]^2-(\rho+P)\tfrac{T^2}{V}\partial_T^2A\Big] \geq 0.
+\end{align}
+This can equivalently be expressed in terms of the specific free-energy $\mathfrak{a}=A/V$ as
+\begin{align}
+    c_s^2-c_a^2 \geq 0 \quad \Leftrightarrow \quad \cdots
+\end{align}
+%
+Finally, we translate this into a condition on $F(b,Y)$ using the relations above.
+Namely, using $b=n$, $Y=T$ and 
+\begin{align}
+    \rho&= Y\partial_YF-F,\quad P=F-b\partial_bF,\quad \sigma=\tfrac{\rho+p}{Tn} = \tfrac{Y \partial_Y F - b \partial_b F}{Y b},
+    \\
+    A&= U-TS = V(\rho-T n \sigma) = -VP = V\big(b \partial_b F-F\big),\quad \mathfrak{a}=-P= -F + b \partial_b F.
+\end{align}
+The condition on the function $F(b,Y)$ for positivity of $c_s^2 - c_a^2$ then reads
+\begin{align}
+    c_s^2-c_a^2 \geq 0 \quad \Leftrightarrow \quad \cdots
+\end{align}
+In fact, it is more convenient to use the variables $Y=T$ and $b=n$, rather than $V$ and $T$, and use the explicit formula for $\mathfrak{a}$.
+We get
+\begin{align}
+    c_s^2-c_a^2 \geq 0 \quad \Leftrightarrow \quad \cdots
+\end{align}
 }
 \bigskip
 
