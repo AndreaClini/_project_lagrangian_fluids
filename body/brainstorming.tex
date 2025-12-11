@@ -1002,10 +1002,51 @@ we immeditaley find that $c_s^2 - c_a^2 \leq 0$ in the phantom regime.
 \smallskip
 
 
+{\color{red}
+Finally we translate everything into a condition on $F(b,Y)$. 
+Using the relations $b=n$, $Y=T$, and $\mathfrak{a}=-P= -F + b \partial_b F$ and
+\begin{align}
+    n&\partial_n \mathfrak{a}_{|T}= b^2 \partial_b^2 F,\quad
+    T\partial_T \mathfrak{a}_{|n} = bY \partial_b\partial_Y F -Y \partial_Y F,\\
+    T &n \partial^2_{Tn} \mathfrak{a} = b^2Y\partial_b^2\partial_Y F,\quad
+    T^2 \partial_T^2 \mathfrak{a}_{|n} = bY^2 \partial_b\partial_Y^2 F - Y^2 \partial_Y^2 F,\quad
+    n^2 \partial_n^2 \mathfrak{a} = b^2 \partial_b^2 F + b^3 \partial_b^3 F,
+\end{align}
+we read the condition $c_s^2 - c_a^2 \geq 0$ in full generality in terms of the function $F(b,Y)$ as
+{\small
+\begin{align}
+    0&\leq\frac{(-T^2\partial_T^2\mathfrak{a})}{(\rho+P)}\bigg\{(T^2n^2)\underbrace{\Big[\big(\partial_{Tn}^2\mathfrak{a}\big)^2-\big(\partial_T^2\mathfrak{a}\big)\big(\partial_n^2\mathfrak{a}\big)\Big]}_{=-\det\big(\partial^2_{T,n}\mathfrak{a}\big)\geq0}-\underbrace{\big(-T^2\partial_T^2\mathfrak{a}\big)}_{=T^2n\,\partial_T\sigma_{\mid n}\geq0}\,(\rho+P)\bigg\}
+    \\
+    =&\frac{Y^2\partial_Y^2F\!-\!bY^2\partial_b\partial_Y^2F}{Y\partial_YF-b\partial_bF}\bigg\{\big(b^2Y\partial_b^2\partial_Y F\big)^2\!\!+\!\big(Y^2 \partial_Y^2 F - bY^2 \partial_b\partial_Y^2 F\big)\big(b^2 \partial_b^2 F + b^3 \partial_b^3 F\big)-\big(Y^2 \partial_Y^2 F - bY^2 \partial_b\partial_Y^2 F\big)\,\big(Y\partial_YF-b\partial_bF\big)\bigg\} 
+    \\
+    &=\dots
+\end{align}
+}
+}
+
+
+{\color{forestgreen}
+Incidentally, note that thermodynamic relations place a genuine constraint on the form of the function $F(b,Y)$.
+Indeed we have 
+\begin{align}
+    \mathfrak{a}=-P,\quad T\partial_T\mathfrak{a}_{\mid n} &= T\partial_T\left(\tfrac{A}{V}\right)_{\mid V} = -T\frac{S}{V}= -Tn\sigma = -(\rho+P),
+\end{align}
+and in terms of $F(b,Y)$ we then have
+\begin{align}
+    \mathfrak{a}= -F + b \partial_b F,\quad T\partial_T\mathfrak{a}_{\mid n} = \graycancel{-Y \partial_Y F }+ Yb \partial_Y\partial_b F  \overset{!}{=} -(\rho+P)=\graycancel{-Y\partial_YF} + b\partial_bF.
+\end{align}
+Therefore we conclude that the function $F(b,Y)$ must satisfy
+\begin{equation}
+    bY \partial_b\partial_Y F = b \partial_b F \quad \Longrightarrow \quad F(b,Y)= Y f(b) + g(Y).
+\end{equation}
+In turn, we could simplify all the previous expressions replacing $ bY \partial_b\partial_Y F \mapsto b \partial_b F$. 
+}\todotag{Do it.}
+
 
 %----------------------------------------------------------------------
 {\color{gray}
 --------------------------------------- IGNORE --------------------------------------------------------
+
 Finally we translate everything into a condition on $F(b,Y)$. \todotag{Computations likely wrong, redo in terms of specific $\mathfrak{a}$}
 Recall the relations $b=n$, $Y=T$ and 
 \begin{align}
