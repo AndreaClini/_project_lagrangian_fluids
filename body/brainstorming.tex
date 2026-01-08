@@ -635,15 +635,15 @@ Indeed
 %==================================================================
 
 
-The Euler formula gives\footnote{We consider fixed number of particles.}
+The Euler formula gives
 \begin{equation}
-    \rho\,V = U = T S - p V +\graycancel{ \mu N}\,,
+    \rho\,V = U = T S - p V + \mu N\,,
 \end{equation}
 or equivalently dividing by the volume $V$,
 \begin{equation}
-    \rho = -p + T \sigma n + \graycancel{\mu n}.
+    \rho = -p + T \sigma n + \mu n.
 \end{equation}
-Assuming a fixed number of particles $N$, we have
+By definition of pressure we have
 \begin{align}
     -p=\frac{d U }{d V}_{|\sigma,N}= \frac{d (\rho V)}{d V}_{|\sigma,N} = \rho + V \frac{d \rho}{d V}_{|\sigma,N} = \rho - \frac{d \rho}{d \log n}_{|\sigma,N}.
 \end{align}
@@ -653,8 +653,12 @@ The comoving entropy per particle $\sigma$ is given by
 \end{align}
 The entropy $S$ and temperature $T$ are related by
 \begin{equation}
-    T=\frac{\partial U}{\partial S}_{\mid V,N} = \frac{\partial(\rho V)}{\partial S}_{\mid V,N} = V \frac{\partial \rho}{\partial S}_{\mid V,N} = \frac{\partial \rho}{\partial s}_{\mid V,N} = \frac{1}{n}\,\, \frac{\partial \rho}{\partial \sigma}_{\mid V,N}\, .
+    T=\frac{\partial U}{\partial S}_{\mid V,N} = \frac{\partial(\rho V)}{\partial S}_{\mid V,N} = \frac{\partial \rho }{\partial s}_{\mid s} = \frac{1}{n} \frac{\partial \rho}{\partial \sigma}_{\mid n}.
 \end{equation}
+The chemical potential $\mu$ is obtained as 
+\begin{align}
+    \mu &= \frac{\partial U}{\partial N}_{\mid S,V} = \frac{\partial(\rho V)}{\partial (nV)}_{\mid S,V} = \frac{\partial \rho }{\partial n}_{\mid s}.
+\end{align}
 Finally, recall that following \cite{BallesterosComelliPilo_ThermodynamicsPerfectFluidsScalarFieldTheory_2016}, we identify our variables as
 \begin{align}
     b:=\sqrt{B}=n, \qquad Y=T.
@@ -686,9 +690,11 @@ In turn we have
 \end{align}
 We need to compute $\left(\frac{\partial Y}{\partial b}\right)_{|\sigma}$ at fixed entropy per particle $\sigma$.
 
+
 From the Euler formula
 \begin{align}
-    S &= \frac{1}{T}\, \left( U + p V\right)\,  \Rightarrow \, \sigma = \frac{1}{T\, n} \, \left(\rho + p\right).
+    S &= \frac{1}{T}\, \left( U + p V-\mu N\right)\,  \Rightarrow \, \sigma = \frac{1}{T\, n} \, \left(\rho + p\right)-\frac{\mu}{T}
+    = \frac{1}{T\, n} \, \left(\rho + p \right) - \frac{1}{T} \left(\frac{\partial \rho}{\partial n}\right)_{|s}.
 \end{align}
 That is, using \eqref{eq:nonbarotropic_formulas},
 \begin{align}

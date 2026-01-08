@@ -1,0 +1,452 @@
+%==================================================================
+\subsection{Non-barotropic case} 
+%==================================================================
+
+
+The Euler formula gives\footnote{We consider fixed number of particles.}
+\begin{equation}
+    \rho\,V = U = T S - p V +\graycancel{ \mu N}\,,
+\end{equation}
+or equivalently dividing by the volume $V$,
+\begin{equation}
+    \rho = -p + T \sigma n + \graycancel{\mu n}.
+\end{equation}
+Assuming a fixed number of particles $N$, we have
+\begin{align}
+    -p=\frac{d U }{d V}_{|\sigma,N}= \frac{d (\rho V)}{d V}_{|\sigma,N} = \rho + V \frac{d \rho}{d V}_{|\sigma,N} = \rho - \frac{d \rho}{d \log n}_{|\sigma,N}.
+\end{align}
+The comoving entropy per particle $\sigma$ is given by
+\begin{align}
+    \sigma &:= \frac{S}{N} = \frac{s V}{n V} = \frac{s}{n}.
+\end{align}
+The entropy $S$ and temperature $T$ are related by
+\begin{equation}
+    T=\frac{\partial U}{\partial S}_{\mid V,N} = \frac{\partial(\rho V)}{\partial S}_{\mid V,N} = V \frac{\partial \rho}{\partial S}_{\mid V,N} = \frac{\partial \rho}{\partial s}_{\mid V,N} = \frac{1}{n}\,\, \frac{\partial \rho}{\partial \sigma}_{\mid V,N}\, .
+\end{equation}
+Finally, recall that following \cite{BallesterosComelliPilo_ThermodynamicsPerfectFluidsScalarFieldTheory_2016}, we identify our variables as
+\begin{align}
+    b:=\sqrt{B}=n, \qquad Y=T.
+\end{align}
+
+
+We want to compute
+\begin{align}
+    c_a^2 &= \left(\frac{\partial p}{\partial \rho}\right)_{\mid_\sigma}
+    %\sim \frac{\partial p/\partial b_{|Y}}{\partial \rho/\partial b_{|Y}},
+\end{align}
+and subtract it off the expression for $c_s^2$ to see the non-barotropic offset.
+We write
+\begin{align}
+    d \rho &= \left(\frac{\partial \rho}{\partial b}\right)_{|Y} d b + \left(\frac{\partial \rho}{\partial Y}\right)_{|b} d Y,
+    \\
+    d p &= \left(\frac{\partial p}{\partial b}\right)_{|Y} d b + \left(\frac{\partial p}{\partial Y}\right)_{|b} d Y.
+\end{align}
+We would rather express $\rho=\rho(b,Y)=\rho(b,Y(b,\sigma))$ and $p=p(b,Y)=p(b,Y(b,\sigma))$, so that
+\begin{align}
+    d \rho &= \left(\left(\frac{\partial \rho}{\partial b}\right)_{|Y}+ \left(\frac{\partial \rho}{\partial Y}\right)_{|b} \left(\frac{\partial Y}{\partial b}\right)_{|\sigma} \right)d b + \left(\frac{\partial \rho}{\partial \sigma}\right)_{|b} d \sigma,
+    \\
+    d p &= \left(\left(\frac{\partial p}{\partial b}\right)_{|Y}+ \left(\frac{\partial p}{\partial Y}\right)_{|b} \left(\frac{\partial Y}{\partial b}\right)_{|\sigma} \right)d b + \left(\frac{\partial p}{\partial \sigma}\right)_{|b} d \sigma.
+\end{align}
+In turn we have
+\begin{align}
+    c_a^2 &= \left(\frac{\partial p}{\partial \rho}\right)_\sigma
+    = \frac{\left(\frac{\partial p}{\partial b}\right)_{|Y}+ \left(\frac{\partial p}{\partial Y}\right)_{|b} \left(\frac{\partial Y}{\partial b}\right)_{|\sigma}}{\left(\frac{\partial \rho}{\partial b}\right)_{|Y}+ \left(\frac{\partial \rho}{\partial Y}\right)_{|b} \left(\frac{\partial Y}{\partial b}\right)_{|\sigma}}.
+\end{align}
+We need to compute $\left(\frac{\partial Y}{\partial b}\right)_{|\sigma}$ at fixed entropy per particle $\sigma$.
+
+From the Euler formula
+\begin{align}
+    S &= \frac{1}{T}\, \left( U + p V\right)\,  \Rightarrow \, \sigma = \frac{1}{T\, n} \, \left(\rho + p\right).
+\end{align}
+That is, using \eqref{eq:nonbarotropic_formulas},
+\begin{align}
+    \sigma &= \frac{1}{Y\, b} \, \left(\rho + p\right) = \frac{1}{Y\, b} \, \left(Y \partial_Y F - b \partial_b F\right).
+\end{align}
+Taking the differential at fixed $\sigma$ we have
+\begin{align}
+    0 &= d \sigma
+    \\
+    &= \frac{\partial}{\partial b}\left(\frac{1}{Y\, b} \, \left(Y \partial_Y F - b \partial_b F\right)\right)_{|\sigma} d b
+    + \frac{\partial}{\partial Y}\left(\frac{1}{Y\, b} \, \left(Y \partial_Y F - b \partial_b F\right)\right)_{|b} d Y
+    \\
+    &= \bigg[-\frac{1}{Y b^2} \left(Y \partial_Y F - b \partial_b F\right)
+    + \frac{1}{Y b} \left(Y \partial^2_{bY} F - \partial_b F - b \partial_b^2 F\right)\bigg] d b
+    \\
+    &\quad + \bigg[-\frac{1}{Y^2 b} \left(Y \partial_Y F - b \partial_b F\right)
+    + \frac{1}{Y b} \left(\partial_Y F + Y \partial_Y^2 F - b \partial^2_{bY} F\right)\bigg] d Y.
+\end{align}
+Rearranging we get
+\begin{align}
+    \left(\frac{\partial Y}{\partial b}\right)_{|\sigma}
+    &= - \frac{-\frac{1}{Y b^2} \left(Y \partial_Y F - b \partial_b F\right)
+    + \frac{1}{Y b} \left(Y \partial^2_{bY} F - \partial_b F - b \partial_b^2 F\right)}{-\frac{1}{Y^2 b} \left(Y \partial_Y F - b \partial_b F\right)
+    + \frac{1}{Y b} \left(\partial_Y F + Y \partial_Y^2 F - b \partial^2_{bY} F\right)}
+    \\
+    &= -\frac{\frac{1}{b}\left(Y \partial_Y F - \redcancel{b \partial_b F}\right)-  \left(Y \partial^2_{bY} F - \redcancel{\partial_b F} - b \partial_b^2 F\right)}
+    {\frac{1}{Y} \left(\bluecancel{Y \partial_Y F} - b \partial_b F\right)-  \left(\bluecancel{\partial_Y F} + Y \partial_Y^2 F - b \partial^2_{bY} F\right)}
+    \\
+    &= \frac{Y\left(Y \partial_Y F -bY \partial^2_{bY} F  + b^2 \partial_b^2 F\right)}
+    {b \left( b \partial_b F + Y^2 \partial_Y^2 F - bY \partial^2_{bY} F\right)}
+\end{align}
+Plugging this into the expression for $c_a^2$ we get
+\begin{align}
+    c_a^2 &= \frac{\left(\frac{\partial p}{\partial b}\right)_{|Y}+ \left(\frac{\partial p}{\partial Y}\right)_{|b} \left(\frac{\partial Y}{\partial b}\right)_{|\sigma}}{\left(\frac{\partial \rho}{\partial b}\right)_{|Y}+ \left(\frac{\partial \rho}{\partial Y}\right)_{|b} \left(\frac{\partial Y}{\partial b}\right)_{|\sigma}}
+    \\
+    &= \frac{- b \partial_b^2 F + \left(\partial_Y F - b \partial^2_{bY} F\right) \frac{Y\left(Y \partial_Y F -bY \partial^2_{bY} F  + b^2 \partial_b^2 F\right)}{b \left(  b \partial_b F + Y^2 \partial_Y^2 F - bY \partial^2_{bY} F\right)}}
+    {\left(Y \partial^2_{bY} F - \partial_b F\right) + \left(Y \partial_Y^2 F\right) \frac{Y\left(Y \partial_Y F -bY \partial^2_{bY} F  + b^2 \partial_b^2 F\right)}
+    {b \left(  b \partial_b F + Y^2 \partial_Y^2 F - bY \partial^2_{bY} F\right)}}
+    \\
+    &=
+    \frac{
+        -b^2 \partial_b^2 F \left( b \partial_b F + Y^2 \partial_Y^2 F - bY \partial^2_{bY} F\right)
+        +
+        \left(Y\partial_Y F - bY \partial^2_{bY} F\right)\left(Y \partial_Y F -bY \partial^2_{bY} F  + b^2 \partial_b^2 F\right)
+    }
+    {
+        \left(bY \partial^2_{bY} F - b\partial_b F\right) \left(  b \partial_b F  + Y^2 \partial_Y^2 F - bY \partial^2_{bY} F\right) 
+    + \left(Y^2 \partial_Y^2 F\right) \left(Y \partial_Y F -bY \partial^2_{bY} F  + b^2 \partial_b^2 F\right)
+    }
+    \\
+    &=
+    -\frac{
+        \big[Y\partial_Y F- bY\partial_{bY}^2F\big]^2+ b^2 \partial_b^2 F \big[Y \partial_YF - Y^2 \partial_Y^2 F - b \partial_b F\big]
+    }
+    {
+        \big[b\partial_b F- bY\partial_{bY}^2F\big]^2+ Y^2 \partial_Y^2 F \big[ b \partial_b F - b^2 \partial_b^2 F-Y \partial_YF\big]
+    }. 
+\end{align}
+%
+{\color{blue}
+In conclusion we have the following formulas
+\begin{align}
+    \rho &= Y (\partial_Y F) - F, \quad
+    \partial_Y\rho= Y \partial_Y^2 F, \quad \partial_b \rho = Y \partial^2_{bY} F - \partial_b F, 
+    \\
+    p &= F - b (\partial_b F),\quad \partial_Y p =\partial_YF- b \,\partial^2_{bY} F, \quad \partial_b p = - b \partial_b^2 F,
+    \\
+    w&:=\frac{p}{\rho}=\frac{F - b (\partial_b F)}{Y (\partial_Y F) - F} =-1 + \frac{Y\partial_Y F - b\partial_b F}{Y\partial_Y F -F} = -1 +\frac{\rho+p}{\rho} = -1 + \frac{Y\,b\,\sigma}{\rho}=:w(\rho,\sigma),
+    \\
+    \sigma &= \frac{1}{Y\,b} \, \left(\rho + p\right) = \frac{1}{Y\, b} \, \left(Y \partial_Y F - b \partial_b F\right),
+    \\
+    c_s^2 &= \frac{\big[Y\partial_YF-bY\partial_{bY}^2F\big]^2 -\big(Y^2\partial_Y^2F\big)\big(b^2\partial_b^2 F\big)}{\big(Y^2\partial_Y^2F\big)\big(Y \partial_YF - b \partial_b F\big)}
+    \\
+    &= \frac{(Y\partial_Yp)^2 +  (Y\partial_Y\rho)(b\partial_b p)}
+    {(Y\partial_Y\rho)\,\,(\rho+p)}
+    \\
+    c_a^2 &= 
+    -\frac{
+        \big[Y\partial_Y F- bY\partial_{bY}^2F\big]^2 + b^2 \partial_b^2 F \,\big[ \big(Y \partial_YF - b \partial_b F\big) -Y^2 \partial_Y^2 F  \big]
+    }
+    {
+        \big[ bY\partial_{bY}^2F - b\partial_b F\big]^2 - Y^2 \partial_Y^2 F \big[ \big(Y \partial_YF - b \partial_b F\big) + b^2 \partial_b^2 F \big]
+    }
+    \\
+    &= -\frac{(Y\partial_Yp)^2 -(b\partial_b p)\big[(\rho+p) - (Y\partial_Y\rho)\big]}
+    {
+        (b\partial_b \rho)^2 - (Y\partial_Y\rho)\big[(\rho+p) - (b\partial_b p)\big]
+    }.
+\end{align}
+}
+We now compute the difference $c_s^2 - c_a^2$ to see how it depends on the thermodynamic variables and investigate its positivity.
+We can express the difference in terms of $F$ and its derivatives, or in terms of $\rho$, $p$ and their derivatives wrt $b$ and $Y$ using the formulas above.
+
+
+
+
+%--------------------------------------------------------------------------------------
+\subsubsection{Making contact with barotropic case: expression $c_a^2$ in terms of $w$}
+%--------------------------------------------------------------------------------------------
+
+Before computing the difference $c_s^2 - c_a^2$, it is useful to express $c_a^2$ in terms of $w=w(\rho,\sigma)$ as we did in the barotropic case.
+After finding an expression for $\sigma=\sigma(Y,b)$ and in turn for $w=w(\rho,\sigma)=-1+(\sigma Yb)/\rho$ as above, we can equivalently compute $c_a^2$ as
+\begin{align}
+    c_a^2 &= \left(\frac{\partial p}{\partial \rho}\right)_\sigma = \left(\frac{\partial\big[ w(\rho,\sigma)\,\rho\big]}{\partial \rho}\right)_\sigma
+    = w + \rho \left(\frac{\partial w}{\partial \rho}\right)_\sigma
+    \\
+    &= w + \rho \sigma \left(\frac{\partial (Yb/\rho)}{\partial \rho}\right)_\sigma 
+    = \underbrace{w - \frac{\sigma Y b}{\rho}}_{=-1} + \sigma \left(\frac{\partial (Yb)}{\partial \rho}\right)_\sigma
+    = -1 + \sigma Y \big(\partial_Y\rho)_\sigma^{-1} + \sigma b \big(\partial_b\rho)_\sigma^{-1}
+\end{align}
+This can be computed using the known expressions in terms of $b$ and $Y$ for
+\begin{align}
+    &\left(\frac{\partial \rho}{\partial b}\right)_{|\sigma}= \left(\frac{\partial \rho}{\partial b}\right)_{|Y}+ \left(\frac{\partial \rho}{\partial Y}\right)_{|b} \left(\frac{\partial Y}{\partial b}\right)_{|\sigma} ,\quad
+    \left(\frac{\partial \rho}{\partial Y}\right)_{|\sigma}= \left(\frac{\partial \rho}{\partial Y}\right)_{|b}+ \left(\frac{\partial \rho}{\partial b}\right)_{|Y} \left(\frac{\partial b}{\partial Y}\right)_{|\sigma} ,
+\end{align}
+and
+\begin{align}
+    &\left(\frac{\partial Y}{\partial b}\right)_{|\sigma}
+    = \frac{Y\left(Y \partial_Y F -bY \partial^2_{bY} F  + b^2 \partial_b^2 F\right)}
+    {b \left( b \partial_b F + Y^2 \partial_Y^2 F - bY \partial^2_{bY} F\right)}.
+\end{align}
+Equivalently we obtain the same result writing wrt $b$ or $Y$ (we use $b$, but you get of course the same expression using $Y$)
+\begin{align}
+    c_a^2 &= \left(\frac{\partial p}{\partial \rho}\right)_\sigma = w + \rho \left(\frac{\partial w}{\partial \rho}\right)_\sigma = w + \rho\, \frac{ \left(\frac{\partial w}{\partial b}\right)_\sigma}
+    {\left(\frac{\partial \rho}{\partial b}\right)_\sigma}.
+\end{align}
+We recover the same expression as above since
+\begin{align}
+     \rho\, \frac{ \left(\frac{\partial w}{\partial b}\right)_\sigma}
+    {\left(\frac{\partial \rho}{\partial b}\right)_\sigma}
+    &= \rho\,
+    \frac{
+        \sigma\left(\frac{Y}{\rho}+ \frac{b}{\rho} \left(\frac{\partial Y}{\partial b}\right)_{|\sigma} - \frac{bY}{\rho^2}\left(\frac{\partial \rho}{\partial b}\right)_\sigma\right)
+    }
+    {
+        %\left(\frac{\partial \rho}{\partial b}\right)_{|Y}+ \left(\frac{\partial \rho}{\partial Y}\right)_{|b} \left(\frac{\partial Y}{\partial b}\right)_{|\sigma}
+        \left(\frac{\partial \rho}{\partial b}\right)_\sigma
+    }
+    =
+    \sigma
+    \frac{ Y+ b \left(\frac{\partial Y}{\partial b}\right)_{|\sigma} }
+    {\left(\frac{\partial \rho}{\partial b}\right)_{|Y}+ \left(\frac{\partial \rho}{\partial Y}\right)_{|b} \left(\frac{\partial Y}{\partial b}\right)_{|\sigma}}
+    - \frac{\sigma bY}{\rho}
+    \\
+    &=
+     \sigma Y \left(\frac{\partial \rho}{\partial b}\right)_\sigma^{-1} + \sigma b \left(\frac{\partial \rho}{\partial Y}\right)_\sigma^{-1} -(1+w).
+\end{align}
+This method yields the same expression for $c_a^2$ as the one in \eqref{eq:nonbarotropic_formulas} obtained above. \notetag{Plug in the values and check it}
+We might now explicitate the part of $c_s^2$ involving $w$ in a similar way to compare it more easily with $c_a^2$ and highlight the nonbarotropic effect. \questiontag{This is not doable cf. below.}
+
+
+{\color{gray}
+%------------------------------------------------------------
+\subsubsection{Failed strategies: $c_s^2 - c_a^2$ via directional derivatives of $w$ \& changing thermodynamic variables $(b,Y)\leftrightarrow (w,\rho)$.}
+%------------------------------------------------------------
+
+
+\noindent
+\textbf{Failed strategy 1: expressing $c_s^2-c_a^2$ via the EoS and directional derivatives of $w$}
+\smallskip
+
+\noindent
+From the very definition of the equation of state
+\begin{equation}
+    p= w(\rho,\sigma)\rho, \quad \text{and}\quad c_a^2 := \left(\frac{\partial p}{\partial \rho}\right)_\sigma = w + \rho \left(\frac{\partial w}{\partial \rho}\right)_\sigma,
+\end{equation}
+the nonadiabatic contribution to the sound speed is
+\begin{equation}
+    c_s^2 - c_a^2 = c_s^2 - w - \rho \left(\frac{\partial w}{\partial \rho}\right)_\sigma = \dots
+\end{equation}
+This seems bound to fail, we have fixed a direction $\sigma$ but the other direction is completely unspecified....
+It is like subtracting the directional derivative in one direction from the total differential and demanding what is left.
+Indeed, in the nonbarotropic case $c_s^2$ might only be definable trhough the fluctuations EoM if we want to avoid specifying any direction.
+\bigskip
+
+
+\noindent
+\textbf{Failed strategy 2 (practially impossible in full generality): use $w$ and $\rho$ as your variables.}
+Express everything in terms of these and their derivatives and check something sensible comes out.
+This requires inverting the relations above, which might be cumbersome and nearly impossible in full generality.
+}
+
+
+
+
+
+{\color{violet}
+%------------------------------------------------------
+\subsubsection{Working strategy: expressing $c_s^2-c_a^2$ via thermodynamic potentials.}
+%------------------------------------------------------
+
+To show positivity of $c_s^2 - c_a^2$ it is useful to express everything in terms of thermodynamic potentials like the Helmoltz $A=A(T,n)$ or Gibbs $G=G(T,p)$ free energies.
+We have the relations, at fixed number of particles $N=nV$,
+\begin{align}
+    T \frac{\partial \rho}{\partial T}_{|n} &= T \frac{\partial \rho}{\partial T}_{|V}
+    = T \frac{\partial \rho}{\partial S}_{|V} \frac{\partial S}{\partial T}_{|V}
+    = T \frac{\partial (U/V)}{\partial S}_{|V} \frac{-\partial \,(\partial_T A)_{|V}}{\partial T}_{|V}
+    = -\frac{T^2}{V} \, \partial_T^2 A_{|V},
+    \\
+    n \frac{\partial \rho}{\partial n}_{|T} &= - V \frac{\partial \rho}{\partial V}_{|T}
+    = - V \frac{\partial (U/V)}{\partial V}_{|T}
+    = \rho - \frac{\partial U}{\partial V}_{|T}
+    =  \rho - \frac{\partial (A+TS)}{\partial V}_{|T}
+    =  \rho + p +T \frac{\partial^2 A}{\partial T \partial V},
+    \\
+    T \frac{\partial P}{\partial T}_{|n} &= T \frac{\partial P}{\partial T}_{|V} = T \frac{\partial }{\partial T}_{|V}\left(- \frac{\partial A}{\partial V}_{|T}\right) = - T \frac{\partial^2 A}{\partial T \partial V},
+    \\
+    n \frac{\partial P}{\partial n}_{|T} &= -V\frac{\partial P}{\partial V}_{|T} = V \frac{\partial^2 A}{\partial^2 V}_{|T}.
+\end{align}
+Using convexity of $A$  and rewriting $c_s^2 - c_a^2$ in terms of its derivatives we might be able to show positivity...
+
+\begin{align}
+    c_s^2 &= \frac{(T\partial_Tp)^2 +  (T\partial_T\rho)(n\partial_n p)}
+    {(T\partial_T\rho)\,\,(\rho+p)}
+    \\
+    &= V \cdot \frac{(\partial_V^2A_{|T})(\partial_T^2A_{|V})- \big(\partial_{VT}^2A\big)^2}{(\rho+P)(\partial_T^2A_{|V})}
+    = V\cdot \frac{\det(\partial^2_{V,T} A)}{(\rho+P)(\partial_T^2A_{|V})}
+    \\
+    c_a^2 &= -\frac{(T\partial_Tp)^2 -(n\partial_n p)\big[(\rho+p) - (T\partial_T\rho)\big]}
+    {
+        (n\partial_n \rho)^2 - (T\partial_T\rho)\big[(\rho+p) - (n\partial_n p)\big]
+    }
+    \\
+    &= -\frac{
+        \big( T \partial_{VT}^2A\big)^2 - \big(V \partial_V^2A\big) \big[(\rho+p) + \tfrac{T^2}{V} \partial_T^2A\big]
+    }
+    {
+        \big[(\rho+P)+ T \partial_{VT}^2A\big]^2 +\big(\tfrac{T^2}{V}\partial_T^2A\big) \big[(\rho+p)  - V \partial_V^2A\big]
+    }
+    \\
+    &= 
+    \frac{T^2\det\big(\partial^2_{V,T}A\big)+(\rho+P)V\partial_V^2A}
+    {
+        (\rho+P)\big[(\rho+P)+2T\partial_{VT}^2A+\tfrac{T^2}{V}\partial_T^2A\big] - T^2\det\big(\partial^2_{V,T}A\big)
+    }
+\end{align}
+Taking the difference we have 
+\begin{align}
+    c_s^2 - c_a^2 
+    &= V\cdot \frac{\det(\partial^2_{V,T} A)}{(\rho+P)(\partial_T^2A_{|V})} 
+    -  
+    \frac{T^2\det\big(\partial^2_{V,T}A\big)+(\rho+P)V\partial_V^2A}
+    {
+        (\rho+P)\big[(\rho+P)+2T\partial_{VT}^2A+\tfrac{T^2}{V}\partial_T^2A\big] - T^2\det\big(\partial^2_{V,T}A\big)
+    }
+    \\
+    &=
+    \frac{
+        V\cdot \Big[(\rho+P)\big(\partial_{TV}^2A\big)-T\big(\det\partial^2A\big)\Big]^2
+    }{
+        (\rho+P)\big(\partial_T^2A\big)\cdot \Big[T^2\big(\det\partial^2A\big)-(\rho+P)^2-2(\rho+P)T\partial_{TV}^2A-(\rho+P)\tfrac{T^2}{V}\partial_T^2A\Big]
+    }
+    \\
+    &=
+    \frac{
+         \Big[T\big(\partial_{TV}^2A\big)-\tfrac{T^2}{(\rho+P)}\big(\det\partial^2A\big)\Big]^2
+    }{
+        \tfrac{T^2}{V\cdot (\rho+P)}\big(\partial_T^2A\big)\cdot
+        \Big[T^2\big(\partial_T^2A\big)\big(\partial_V^2A\big)-\big[(\rho+P)+T\partial_{TV}^2A\big]^2-(\rho+P)\tfrac{T^2}{V}\partial_T^2A\Big]
+    }
+\end{align}
+The second principle of  thermodynamics implies that $\partial_T^2A=-\partial_TS\leq 0$.
+Therefore the condition for posivity reads
+\begin{align}
+    c_s^2-c_a^2 \geq 0 \quad \Leftrightarrow \quad \frac{(-T^2\partial_T^2A)}{V(\rho+P)}\bigg\{\underbrace{\big(\!-\!T^2\partial_T^2A\big)}_{\geq0}\Big[\big(\partial_V^2A\big)-\tfrac{(\rho+P)}{V}\Big]+\underbrace{\Big[(\rho+P)+T\partial_{TV}^2A\Big]^2}_{\geq 0} \bigg\}\geq 0.
+\end{align}
+%
+In non-phantom regime $\rho+P\geq 0$, and assuming the second principle, the condition simplifies to
+\begin{align}
+    c_s^2-c_a^2 \geq 0 \quad \Leftrightarrow \quad \underbrace{-T^2\big(\partial_T^2A\big)}_{\geq0}\Big[\underbrace{\big(\partial_V^2A\big)}_{\geq0}-\tfrac{(\rho+P)}{V}\Big]+\underbrace{\Big[(\rho+P)+T\partial_{TV}^2A\Big]^2}_{\geq 0}\geq 0.
+\end{align}
+Also note that imposing further thermodynamic, namely \emph{positive compressibility}, gives
+\begin{equation}
+    -\frac{\partial P}{\partial V}_{|T} = \frac{\partial^2 A}{\partial V^2}_{|T} \geq 0.
+\end{equation}
+
+The above condition is better expressed in terms of the specific free-energy $\mathfrak{a}=A/V$.
+Using the relations
+\begin{align}
+    T^2\partial_T^2 A_{|V} = V T^2 \partial_T^2 \mathfrak{a}_{|n},\quad
+    \partial_V^2 A_{|T} = \frac{1}{V}  n^2 \partial_n^2 \mathfrak{a},\quad
+    T\partial_{TV}^2 A = T \partial_T \mathfrak{a} - nT \partial_{nT}^2 \mathfrak{a},
+\end{align}
+and the thermodynamic relation and Euler formula
+\begin{align}
+    T\partial_T\mathfrak{a}_{\mid n} &= T\partial_T\left(\tfrac{A}{V}\right)_{\mid V} = -T\frac{S}{V}= -Tn\sigma = -(\rho+P),
+\end{align}
+we read the condition $c_s^2 - c_a^2 \geq 0$ in full generality
+{\small
+\begin{align}
+    &\frac{(-T^2\partial_T^2A)}{V(\rho+P)}\bigg\{\Big[(\rho+P)+T\partial_{TV}^2A\Big]^2 -T^2\big(\partial_T^2A\big)\Big[\big(\partial_V^2A\big)-\tfrac{(\rho+P)}{V}\Big] \bigg\}
+    \\
+    &=
+    \frac{(-T^2\partial_T^2\mathfrak{a})}{(\rho+P)}\bigg\{\Big[\underbrace{(\rho+P)+T\partial_{T}\mathfrak{a}}_{=0}-Tn\partial^2_{Tn}\mathfrak{a}\Big]^2 -T^2\big(\partial_T^2\mathfrak{a}\big)\Big[n^2\partial_n^2\mathfrak{a}-(\rho+P)\Big] \bigg\}
+    \\
+    &=
+    \frac{(-T^2\partial_T^2\mathfrak{a})}{(\rho+P)}\bigg\{(T^2n^2)\underbrace{\Big[\big(\partial_{Tn}^2\mathfrak{a}\big)^2-\big(\partial_T^2\mathfrak{a}\big)\big(\partial_n^2\mathfrak{a}\big)\Big]}_{=-\det\big(\partial^2_{T,n}\mathfrak{a}\big)\geq0}-\underbrace{\big(-T^2\partial_T^2\mathfrak{a}\big)}_{=T^2n\,\partial_T\sigma_{\mid n}\geq0}\,(\rho+P)\bigg\} \geq 0
+\end{align}
+}
+The expression can be written in terms of $\mathfrak{a}$ only using $\rho+P=Tn\sigma= -T\partial_T\mathfrak{a}_{\mid n}$ so that
+\begin{align}
+    \frac{(-T^2\partial_T^2\mathfrak{a})}{(-T\partial_T\mathfrak{a}_{\mid n})}\bigg\{(T^2n^2)\underbrace{\Big[\big(\partial_{Tn}^2\mathfrak{a}\big)^2-\big(\partial_T^2\mathfrak{a}\big)\big(\partial_n^2\mathfrak{a}\big)\Big]}_{=-\det\big(\partial^2_{T,n}\mathfrak{a}\big)\geq0}-\underbrace{\big(-T^2\partial_T^2\mathfrak{a}\big)}_{=T^2n\,\partial_T\sigma_{\mid n}\geq0}\,\underbrace{\big(-T\partial_T\mathfrak{a}_{\mid n}\big)}_{=Tn\sigma}\bigg\} \geq 0.
+\end{align}
+In particular, this might completely resolve the question about the `beyond-phantom regime' $\rho+P<0$.
+In this case, \emph{assuming the second principle} and thermodynamic stability\footnote{The latter might be unjustified if we postulate $\rho+P<0$. Vacuum energy respects it since $P=-\rho=\texttt{const}$.}
+\begin{align}
+     -\partial_T^2\mathfrak{a}=\frac{\partial_TS_{\mid V}}{V}\geq 0, \qquad
+     \det\big(\partial^2_{T,n}\mathfrak{a}\big) = \big(\partial_T^2\mathfrak{a}\big)\big(\partial_n^2\mathfrak{a}\big) - \big(\partial_{Tn}^2\mathfrak{a}\big)^2 \leq 0,
+\end{align} 
+we immeditaley find that $c_s^2 - c_a^2 \leq 0$ in the phantom regime.
+\smallskip
+
+
+{\color{red}
+Finally we translate everything into a condition on $F(b,Y)$. 
+Using the relations $b=n$, $Y=T$, and $\mathfrak{a}=-P= -F + b \partial_b F$ and
+\begin{align}
+    n&\partial_n \mathfrak{a}_{|T}= b^2 \partial_b^2 F,\quad
+    T\partial_T \mathfrak{a}_{|n} = bY \partial_b\partial_Y F -Y \partial_Y F,\\
+    T &n \partial^2_{Tn} \mathfrak{a} = b^2Y\partial_b^2\partial_Y F,\quad
+    T^2 \partial_T^2 \mathfrak{a}_{|n} = bY^2 \partial_b\partial_Y^2 F - Y^2 \partial_Y^2 F,\quad
+    n^2 \partial_n^2 \mathfrak{a} = b^2 \partial_b^2 F + b^3 \partial_b^3 F,
+\end{align}
+we read the condition $c_s^2 - c_a^2 \geq 0$ in full generality in terms of the function $F(b,Y)$ as
+{\small
+\begin{align}
+    0&\leq\frac{(-T^2\partial_T^2\mathfrak{a})}{(\rho+P)}\bigg\{(T^2n^2)\underbrace{\Big[\big(\partial_{Tn}^2\mathfrak{a}\big)^2-\big(\partial_T^2\mathfrak{a}\big)\big(\partial_n^2\mathfrak{a}\big)\Big]}_{=-\det\big(\partial^2_{T,n}\mathfrak{a}\big)\geq0}-\underbrace{\big(-T^2\partial_T^2\mathfrak{a}\big)}_{=T^2n\,\partial_T\sigma_{\mid n}\geq0}\,(\rho+P)\bigg\}
+    \\
+    =&\frac{Y^2\partial_Y^2F\!-\!bY^2\partial_b\partial_Y^2F}{Y\partial_YF-b\partial_bF}\bigg\{\big(b^2Y\partial_b^2\partial_Y F\big)^2\!\!+\!\big(Y^2 \partial_Y^2 F - bY^2 \partial_b\partial_Y^2 F\big)\big(b^2 \partial_b^2 F + b^3 \partial_b^3 F\big)-\big(Y^2 \partial_Y^2 F - bY^2 \partial_b\partial_Y^2 F\big)\,\big(Y\partial_YF-b\partial_bF\big)\bigg\} 
+    \\
+    &=\dots
+\end{align}
+}
+}
+
+
+{\color{forestgreen}
+Incidentally, note that thermodynamic relations place a genuine constraint on the form of the function $F(b,Y)$.
+Indeed we have 
+\begin{align}
+    \mathfrak{a}=-P,\quad T\partial_T\mathfrak{a}_{\mid n} &= T\partial_T\left(\tfrac{A}{V}\right)_{\mid V} = -T\frac{S}{V}= -Tn\sigma = -(\rho+P),
+\end{align}
+and in terms of $F(b,Y)$ we then have
+\begin{align}
+    \mathfrak{a}= -F + b \partial_b F,\quad T\partial_T\mathfrak{a}_{\mid n} = \graycancel{-Y \partial_Y F }+ Yb \partial_Y\partial_b F  \overset{!}{=} -(\rho+P)=\graycancel{-Y\partial_YF} + b\partial_bF.
+\end{align}
+Therefore we conclude that the function $F(b,Y)$ must satisfy
+\begin{equation}
+    bY \partial_b\partial_Y F = b \partial_b F \quad \Longrightarrow \quad F(b,Y)= Y f(b) + g(Y).
+\end{equation}
+In turn, we could simplify all the previous expressions replacing $ bY \partial_b\partial_Y F \mapsto b \partial_b F$. 
+}\todotag{Do it.}
+
+
+%----------------------------------------------------------------------
+{\color{gray}
+--------------------------------------- IGNORE --------------------------------------------------------
+
+Finally we translate everything into a condition on $F(b,Y)$. \todotag{Computations likely wrong, redo in terms of specific $\mathfrak{a}$}
+Recall the relations $b=n$, $Y=T$ and 
+\begin{align}
+    \rho&= Y\partial_YF-F,\quad P=F-b\partial_bF,\quad \sigma=\tfrac{\rho+p}{Tn} = \tfrac{Y \partial_Y F - b \partial_b F}{Y b},
+    \\
+    A&= U-TS = V(\rho-T n \sigma) = -VP = V\big(b \partial_b F-F\big),\quad \mathfrak{a}=-P= -F + b \partial_b F.
+\end{align}
+Using $\partial_V= -\frac{b}{V}\partial_b$ and $\partial_T=\partial_Y$ we also have
+\begin{align}
+    T^2\partial_T^2 A_{|V} &=  V \big(bY^2\partial_b\partial_Y^2F - Y^2 \partial_Y^2 F\big),
+    \\
+    \partial_V^2 A_{|T} &= \frac{1}{V}\big(b^2\partial_b^2F+b^3\partial_b^3F\big),
+    \\
+    T\partial_{TV}^2 A &= bY\partial_b\partial_Y F -Y\partial_Y F - Yb^2 \partial_b^2\partial_YF.
+\end{align}
+Finally, the condition on the function $F(b,Y)$ for positivity of $c_s^2 - c_a^2\geq 0$ reads
+\begin{align}
+    &\frac{1}{\rho+P}\bigg\{\Big[(\rho+P)+T\partial_{TV}^2A\Big]^2\underbrace{-T^2\big(\partial_T^2A\big)}_{\geq 0}\Big[\underbrace{\partial_V^2A}_{\geq 0}-\tfrac{\rho+P}{V}\Big]\bigg\}
+    \\
+    &= \frac{
+    \Big[b\partial_bF - bY\partial_b\partial_YF+b^2Y\partial_b^2\partial_YF\Big]^2
+    -\big(bY^2\partial_b\partial_Y^2F - Y^2\partial_Y^2F\big)
+    \cdot
+    \big(b\partial_bF + b^2\partial_b^2F+b^3\partial_b^3F-Y\partial_YF\big)
+    }
+    {Y\partial_YF-b\partial_bF} \geq 0.
+\end{align}
+The last expression cannot be simplified any further in terms of the fucntion $F$ and its derivatives: expanding products leads to no cancellation nor hidden structure.
+}
+}
+
+
+
+
+
