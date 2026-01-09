@@ -129,7 +129,7 @@
 
 \definecolor{verdino}{rgb}{0.66, 0.89, 0.63}
 
-%\bibliographystyle{JHEP}
+\bibliographystyle{JHEP}
 
 \newcommand{\DR}[1]{{\color{blue}[DR: #1]}}
 \newcommand{\CA}[1]{{\color{nicered}[CA: #1]}}
@@ -169,11 +169,83 @@ Which fluid allows for accelerated expansion? Assuming a single fluid dominates 
 \begin{equation}
 \frac{\ddot{a}}{a}=-\frac{4\pi G_N\rho}{3}(1+3w)    
 \end{equation}
-where $w=p/\rho$ is the equation of stare. This equation tells us the well known thing that having accelerated expansion implies $w<-1/3$. We also need to check that the accelerating background is stable which amounts to exclude the presence of 
+where $w=p/\rho$ is the equation of stare. This equation tells us the well known thing that having accelerated expansion implies $w<-1/3$. We also need to check that the accelerating background is stable which amounts to exclude the presence of instabilities. 
+\section{Fluid EFTs}
+Here I summarize some key results about fluid in the literature.
+\subsection{Barotropic perfect fluid}
+A relativistic barotropic perfect fluid is described by three scalar fields $\phi^I(x)$ with $I=1,2,3$ which label the fluid elements~\cite{Dubovsky:2005xd}. The lagrangian should be invariant under volume-preserving diffeos
+\begin{equation}
+\Phi^I\to f^I(\Phi)\quad ,\quad \det\frac{\partial f}{\partial \Phi^I}=1   
+\end{equation}
+We can define 
+\begin{equation}
+ B^{IJ}\equiv g^{\mu\nu}\partial_\mu\Phi^I\partial_\nu\Phi^J\quad,\quad b=\sqrt{\det B_{IJ}}\, ,   
+\end{equation}
+where $b$ is essentially the comoving number density and is invariant under volume-preserving diffeos. This can also be written in terms of the conserved comoving volume current $b=\sqrt{-J^\mu J_\mu}$ where 
+\begin{equation}
+J^\mu=\frac{1}{6\sqrt{-g}}\epsilon^{\mu\nu\rho\sigma}\epsilon_{IJK}\partial_\nu\phi^I\partial_\rho\phi^I\partial_\sigma\phi^K    
+\end{equation}
+which also allow to define the flow velocity orthogonal to the constant $\Phi^I$ surfaces
+\begin{equation}
+u^\mu=J^\mu/b\quad \rm{s.t}\quad u^\mu u_\mu=-1
+\end{equation}
+The action is then specified by a single function
+\begin{equation}
+S=\int d^4x\sqrt{-g} F(b)    
+\end{equation}
+the function $F(b)$ is in one to one correspondence with the equation of state which also fixes the behavior of fluctuations.
+
+Explicitly we can write (to complete)
 
 
+It is easy to see that a barotropic fluid does not support the expansion of the Universe. 
 
+\subsection{Non-barotropic perfect fluid}
+To describe a fluid with entropy we can follow \cite{Dubovsky:2011sj,Ballesteros:2016kdx} and just add an extra scalar $\Phi^0$ to the construction above which enjoys a shift symmetry. 
+\begin{equation}
+\Phi^0\to\Phi^0+c
+\end{equation}
+which allow us to define a new invariant 
+\begin{equation}
+y=u^\mu\partial_\mu\Phi^0
+\end{equation}
+which plays the role of the temperature or the chemical potential.
 
+The action is again described by a single function of two scalar
+\begin{equation}
+S=\int d^4 x\sqrt{-g} F(b,y)\ .
+\end{equation}
+Many result for fluids described by this action are in the references above and others have been derived by Clini (see what's new or different). In particular in general we have 
+\begin{equation}
+p=F\quad,\quad \rho=y\partial_yF-F
+\end{equation}
+and the sound speed can be written as 
+\begin{equation}
+c_s^2=    
+\end{equation}
+\section{Scalar fluids}
+Here I will match the scalar fluids to the fluid EFTs developed so far. This will allow us to show in which sense the fluid EFT remains more general 
+\subsection{Quintessence}
+The quintessence is typically defined as a scalar with a canonical kinetic term $X=g^{\mu\nu}\partial_\mu\phi\partial_\nu\phi$ and an arbitrary potential $V(\phi)$
+\begin{equation}
+S=\int d^4x\sqrt{-g}\left[X-V(\phi)\right]
+\end{equation}
+I can map this scalar theory into the non-barotropic fluid EFT identifying $\Phi^0=\phi$ $\phi^I=x^I$ which is the unitary gauge for the fluid element. Then $b=\sqrt{\det g^{ij}}=a^{-3}$ while $y=u^\mu\partial_\mu\phi=\sqrt{2X}$. Taking 
+\begin{equation}
+F(b,y)=y^2/2-V(\Phi^0) 
+\end{equation}
+we get exactly the quintessence lagrangian. Using the general result on the speed of sound we get ...
+\subsection{k-essence}
 
+\subsection{generalized k-essence}
+
+\section{scalar fluids vs general barotropic fluids}
+From what is have seen so far the propagating degree of freedom in the scalar case is the longitudinal phonon exactly as for non-barotropic perfect fluids. That being said considering a general non-barotropic fluid would allow more freedom in the space $(w,c_s^2)$. In particular for a scalar fluid we saw that  $w<-1$ implies ghost while this can be avoided for a general barotropic fluid. The idea is that the instability is cured by the entropy mode. (show this explicitly) 
+
+If we can explore a parameter space with these generalized fluids which is not covered by scalar fluids a natural question is to ask if we can distinguish these theories of dark energy and how.
+
+A second important difference is the presence of vortices which are absent in a scalar fluid. Do these vortices have any consequences in the dynamics?
+
+\bibliography{bib.bib}
 
 \end{document}
