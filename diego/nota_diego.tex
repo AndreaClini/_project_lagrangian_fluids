@@ -134,6 +134,43 @@
 \newcommand{\DR}[1]{{\color{blue}[DR: #1]}}
 \newcommand{\CA}[1]{{\color{nicered}[CA: #1]}}
 
+
+
+%============= PREAMBLE BY ANDREA ==================
+%====================================================
+
+%\usepackage{comment} % for \begin{comment} environment %already loaded above
+%\usepackage{xspace} %already loaded above
+\usepackage{todonotes} % for TODO tags, switch tags off with [disable] flag
+
+\definecolor{AnswerColor}{RGB}{100,255,100} % green
+\definecolor{NoteColor}{RGB}{255,255,170} % pale yellow
+\definecolor{QuestionColor}{RGB}{255,220,150} % light orange
+\definecolor{TodoColor}{RGB}{255,170,170}   % pale red
+
+%-------------------- tags: answer, note, question, todo ----------------------
+\newcommand{\notetag}[1]{
+  {\setlength{\fboxsep}{1pt}   \todo[backgroundcolor=NoteColor, bordercolor=black, linecolor=black, size=\scriptsize]{#1}}}
+\newcommand{\questiontag}[1]{
+  {\setlength{\fboxsep}{1pt}   \todo[backgroundcolor=QuestionColor, bordercolor=black, linecolor=black, size=\scriptsize]{#1}}}
+\newcommand{\todotag}[1]{
+  {\setlength{\fboxsep}{1pt}  \todo[backgroundcolor=TodoColor, bordercolor=black, linecolor=black, size=\scriptsize]{#1}}}
+\newcommand{\answertag}[1]{
+  {\setlength{\fboxsep}{1pt}  \todo[backgroundcolor=AnswerColor, bordercolor=black, linecolor=black, size=\scriptsize]{#1}}}
+
+\newcommand{\noteAC}[1]{
+  {\setlength{\fboxsep}{1pt}\todo[backgroundcolor=NoteColor, bordercolor=black, linecolor=black, size=\scriptsize]{AC: #1}}}
+\newcommand{\questionAC}[1]{
+  {\setlength{\fboxsep}{1pt}\todo[backgroundcolor=QuestionColor, bordercolor=black, linecolor=black, size=\scriptsize]{AC: #1}}}
+\newcommand{\todoAC}[1]{
+  {\setlength{\fboxsep}{1pt}\todo[backgroundcolor=TodoColor, bordercolor=black, linecolor=black, size=\scriptsize]{AC: #1}}}
+\newcommand{\answerAC}[1]{
+  {\setlength{\fboxsep}{1pt}\todo[backgroundcolor=AnswerColor, bordercolor=black, linecolor=black, size=\scriptsize]{AC: #1}}}
+%=================================================
+
+
+
+
 \begin{document} 
 
 \begin{acronym}
@@ -167,62 +204,71 @@ Via Celoria 16, 20133 Milan, Italy}
 \section{Introduction}
 Which fluid allows for accelerated expansion? Assuming a single fluid dominates the energy density of the Universe we can relate the acceleration to its equation of state 
 \begin{equation}
-\frac{\ddot{a}}{a}=-\frac{4\pi G_N\rho}{3}(1+3w)    
+    \frac{\ddot{a}}{a}=-\frac{4\pi G_N\rho}{3}(1+3w)\,,
 \end{equation}
 where $w=p/\rho$ is the equation of stare. This equation tells us the well known thing that having accelerated expansion implies $w<-1/3$. We also need to check that the accelerating background is stable which amounts to exclude the presence of instabilities. 
+
+
+%==============================================
 \section{Fluid EFTs}
+%=============================================
 Here we summarize some key results about fluid in the literature.
+
+
+%---------------------------------------------------------
 \subsection{Barotropic perfect fluid}
+%-------------------------------------------------------
 A relativistic barotropic perfect fluid is described by three scalar fields $\phi^I(x)$ with $I=1,2,3$ which label the fluid elements~\cite{Dubovsky:2005xd}. The lagrangian should be invariant under volume-preserving diffeos
 \begin{equation}
-\Phi^I\to f^I(\Phi)\quad ,\quad \det\frac{\partial f}{\partial \Phi^I}=1\ .   
+\phi^I\to f^I(\phi)\quad ,\quad \det\frac{\partial f}{\partial \phi^I}=1\ .   
 \end{equation}
-We can define 
+We define
 \begin{equation}
- B^{IJ}\equiv g^{\mu\nu}\partial_\mu\Phi^I\partial_\nu\Phi^J\quad,\quad b=\sqrt{\det B_{IJ}}\, ,   \label{eq:b}
+    B^{IJ}\equiv g^{\mu\nu}\partial_\mu\phi^I\partial_\nu\phi^J\quad,\quad b=\sqrt{\det B_{IJ}}\, ,   \label{eq:b}
 \end{equation}
-which is invariant under volume-preserving diffeos. The physical interpretaion of $b$ can be understood in terms of the conservation of the comoving volume current $b=\sqrt{-J^\mu J_\mu}$ where 
+which is invariant under volume-preserving diffeos. The physical interpretaion of $b$ can be understood in terms of the conservation of the comoving volume current $b=\sqrt{-J^\mu J_\mu}$, where 
 \begin{equation}
-J^\mu_n=\frac{1}{6\sqrt{-g}}\epsilon^{\mu\nu\rho\sigma}\epsilon_{IJK}\partial_\nu\phi^I\partial_\rho\phi^I\partial_\sigma\phi^K\quad \rm{s.t.}\quad  \nabla_\mu J^\mu=0    
+    J^\mu_n=\frac{1}{6\sqrt{-g}}\epsilon^{\mu\nu\rho\sigma}\epsilon_{IJK}\partial_\nu\phi^I\partial_\rho\phi^I\partial_\sigma\phi^K\quad \rm{s.t.}\quad  \nabla_\mu J^\mu=0  \,.  
 \end{equation}
-which allow us to define the flow velocity orthogonal to the constant $\Phi^I$ surfaces
+This allows to define the flow velocity orthogonal to the constant $\Phi^I$ surfaces
 \begin{equation}
 J^\mu_n=b u^\mu\quad \rm{s.t}\quad u^\mu u_\mu=-1\ ,
 \end{equation}
-where the definition of the current makes it manifest that $b$ is the comoving number density which in the barotropic case coincides with the entropy density and it is conserved in the absence of dissipation. The entropy per particle $\sigma=s/n$ is exactly constant in this case and the entropy is directly proportional to the number density $s\propto n$.
+where the definition of the current makes it manifest that $b$ is the comoving number density.
+In the barotropic case $b$ also coincides with the entropy density, and it is conserved in the absence of dissipation. The entropy per particle $\sigma=s/n$ is exactly constant in this case, and the entropy is directly proportional to the number density $s\propto n$.
 
 The action is then specified by a single function
 \begin{equation}
 S=\int d^4x\sqrt{-g} F(b)\ .    
 \end{equation}
-The function $F(b)$ is in one to one correspondence with the equation of state which also fixes the behavior of fluctuations. Explicitly we can derive the background thermodynamic by writing the stress energy tensor and match it to the one of a perfect fluid 
+The function $F(b)$ is in one to one correspondence with the equation of state, which also fixes the behavior of fluctuations. Explicitly we can derive the background thermodynamic by writing the stress energy tensor and matching it to the one of a perfect fluid 
 \begin{equation}
-T_{\mu\nu}=(p+\rho)u_\mu u_\nu+p g_{\mu\nu}=F_{IJ} \partial_\mu\phi^I \partial_\nu\phi^I-g_{\mu\nu} F\ ,
+    T_{\mu\nu}=(p+\rho)u_\mu u_\nu+p g_{\mu\nu}=F_{IJ} \partial_\mu\phi^I \partial_\nu\phi^I-g_{\mu\nu} F\ ,
 \end{equation}
-resulting in
+This results in
 \begin{equation}
-\rho=-F\quad,\quad p=F-2bF_b\ ,    
+    \rho=-F\,,\quad p=F-bF_b\,, \quad \rho+p=-bF_b\,,
 \end{equation}
 and the equation of state 
 \begin{equation}
-w\equiv\frac{p}{\rho}=1-\frac{2b F_b}{F}\ .
+    w\equiv\frac{p}{\rho}=-1+\frac{b F_b}{F}\ .
 \end{equation}
 Notice that at the level of the background the barotropic perfect fluid is fully specified by a single function which specifies its equation of state.  
 
 Explicitly we can write the lagrangian at quadratic order in the fluctuation around a fluid background configuration $\phi^I=x^i+\pi^I$
 \begin{equation}
-S_2^{\rm{baro}}=\int d^4x\sqrt{-g}\left(\frac{p+\rho}{2}\right)\left[\dot\pi^2-c_s^2(\nabla\pi)^2\right]\ ,
+S_2^{\rm{baro}}=\int d^4x\sqrt{-g}\,\,\left(\frac{p+\rho}{2}\right)\left[\dot\pi^2-c_s^2(\nabla\pi)^2\right]\ ,
 \end{equation}
 where\footnote{Coupling a barotropic fluid to FRW the conservation of the entropy current implies $\nabla_\mu J^{\mu}=\dot{b}+3Hb=0$.} 
 \begin{equation}
- c_s^2=\frac{d p}{d\rho}=1+\frac{2b F_{bb}}{ F_b}=\frac{\dot{p}}{\dot{\rho}}=w-\frac{\dot{w}}{3H(1+w)}   
+ c_s^2=\frac{b F_{bb}}{ F_b}=\frac{d p}{d\rho}=\frac{\dot{p}}{\dot{\rho}}=w-\frac{\dot{w}}{3H(1+w)}\,,  
 \end{equation}
 and it is fully determined by the equation of state as expected for a barotropic fluid. 
-Notice that the absence of ghost and grandient instabilities and superluminal modes implies 
+Notice that the absence of ghosts, and gradient instabilities and superluminal modes imply respectively 
 \begin{equation}
-w>-1\qquad ,\qquad 0<c_s^2\leq1\ .
+w>-1\,\qquad 0<c_s^2\leq1\ .
 \end{equation}
-Moreover the special functional dependence of $c_s^2$ on $w$ implies that  
+Moreover the special functional dependence of $c_s^2$ on $w$ implies that  \questionAC{Why? By theremodyn?}
 \begin{equation}
 w-\frac{\dot{w}}{3H(1+w)}>0\ , \label{eq:nogradbaro}
 \end{equation}
@@ -230,23 +276,24 @@ which parametrizing $\dot w= \beta_w H w$ becomes
 \begin{equation}
  w\left(1-\frac{\beta_w}{3(1+w)}\right)>0\ .   
 \end{equation}
-Notice in order to make $-1<w<-1/3$ and hence have accelerated expansion then stability requires $\beta_w>3(1+w)\sim\mathcal{O}(1)$ which shows that $w$ must evolve rapidly making a long accelerating phase impossible. Indeed going back to Eq.~\eqref{eq:nogradbaro} and assuming constant equation of state we get $w>0$ which is incompatible with accelerated expansion. 
+Notice that, in order to have $-1<w<-1/3$ and hence accelerated expansion, stability requires $\beta_w>3(1+w)\sim\mathcal{O}(1)$ which then implies that $w$ must evolve rapidly, making a long accelerating phase impossible. Indeed going back to Eq.~\eqref{eq:nogradbaro} and assuming constant equation of state we get $w>0$ which is incompatible with accelerated expansion. 
 
 
-As usual from the conservation of the stress tensor in a perturbed FRW background 
+As usual from the conservation of the stress tensor in a perturbed FRW background\noteAC{Changed $\Phi^I\mapsto \phi^I$ above, since $\Phi$ used for Newt gauge}
 \begin{equation}
-ds^2=-(1+2\Phi)dt^2+a^2(1-2\Psi)dx^2    
+ds^2=-(1+2\Phi)dt^2+a^2(1-2\Psi)dx^2 
 \end{equation}
 we can derive the equation controlling the behavior of the fluctuations of energy density and pressure: energy conservation gives the continuity equation and momentum conservation the Euler equation. Crucially for a barotropic fluid 
 \begin{equation}
-\delta p=c_S^2\delta\rho    
+\delta p=c_s^2\delta\rho\,,
 \end{equation}
-so that the equations above heavily simplify
+so that the above conservation equations heavily simplify
 \begin{align}
-&\dot{\delta\rho}+3H(1+c_S^2)\delta\rho-(1+w)\rho(3\dot{\Phi}+\frac{k^2}{a^2}v)=0\\
+&\dot{\delta\rho}+3H(1+c_s^2)\delta\rho-(1+w)\rho(3\dot{\Phi}+\frac{k^2}{a^2}v)=0\\
 &(\dot v+\Phi)+\frac{c_s^2}{1+w}\frac{\delta\rho}{\rho}=0
 \end{align}
-where $\delta u_i=\partial_i v$. Then I can differentiate continuity w.r.t. time and eliminate the velocity derivative using Euler to get an equation for the density contrast $\delta=\delta\rho/\rho$:
+where the velocity potential is $\delta u_i=\partial_i v$. 
+Differentiate continuity w.r.t. time and eliminate the velocity derivative using Euler to get an equation for the density contrast $\delta=\delta\rho/\rho$:
 \begin{equation}
 \ddot{\delta\rho}+3H(1+c_s^2))\dot{\delta\rho}+\left[\frac{c_s^2k^2}{a^2}-4\pi G(1+w)\rho\right]\delta\rho=(1+w)\left[\ddot{\Phi}+6H\dot{\Phi}\right]\ .
 \end{equation}
@@ -273,19 +320,21 @@ S=\int d^4 x\sqrt{-g} F(b,y)\ .
 \end{equation}
 From this we can derive the stress energy tensor
 \begin{equation}
-T_{\mu\nu}=(-2 b F_b+y F_y )\,u_\mu u_\nu
-           + (F - 2 b F_b)\,g_{\mu\nu}\ ,
+T_{\mu\nu}=(-b F_b+y F_y )\,u_\mu u_\nu
+           + (F - b F_b)\,g_{\mu\nu}\ ,
 \end{equation}
 which matching to the perfect fluid expression gives
 \begin{equation}
-\rho = - F+yF_y , \qquad
-    p = F- 2 b F_b + y F_y\ .
+\rho = - F+yF_y , \qquad p = F- b F_b \ .
 \end{equation}
 Notice that in this case the presence of $y$ makes the entropy per particle not fixed by the equation of state but still conserved along the flow lines as expected in the absence of dissipation. In the EFT language the entropy per particle current is nothing else than the Noether current associated to the shift symmetry in Eq.~\eqref{eq:shifttime}
 \begin{equation}
-J_s^{\mu}=-F_y u_\mu\quad \rm{s.t.}\quad \nabla_\mu J^\mu_s=0
+J_s^{\mu}=-F_y u_\mu\quad \rm{s.t.}\quad \nabla_\mu J^\mu_s=0\ .
 \end{equation}
-The entropy per particle is not constant in this case and it can be identified as $\sigma=s/n=-F_y/b$. 
+The entropy per particle is not constant in this case, and it can be identified as
+\begin{align}
+    \sigma=\frac{s}{n}=\frac{-F_y}{b}\ .
+\end{align}
 
 Explicitly we can write the lagrangian at quadratic order in the fluctuation around a fluid background configuration $\phi^0=t+\pi^0$ and $\phi^I=x^i+\pi^I$
 \begin{equation}
@@ -303,7 +352,7 @@ and the inertia of the entropy mode is
 \begin{equation}
 A=     
 \end{equation}
-Crucially in this lagrangian only $p+\rho>0$ is necessary to avoid ghost instabilities and $A>0$ is also necessary for thermodynamic stability, however at this level the speed of sound $c_s^2$ can be negative.
+Crucially in this lagrangian only $p+\rho>0$ is necessary to avoid ghost instabilities, and $A>0$ is also necessary for thermodynamic stability, however at this level the speed of sound $c_s^2$ can be negative.
 
 The entropy mode is non propagating and can be integrated out as a constraint to get 
 \begin{equation}
@@ -311,7 +360,7 @@ S_2=\int d^4xd^4x\sqrt{-g}\left(\frac{p+\rho}{2}\right)\left[\dot\pi^2-c_s^2\ver
 \end{equation}
 where 
 \begin{equation}
-c_s^2\vert_{\rm{eff}}=c_s^2+\frac{B^2}{A}    
+    c_s^2\vert_{\rm{eff}}=c_s^2+\frac{B^2}{A}\,, 
 \end{equation}
 which shows that the contribution from the entropy mode is strictly positive.
 \subsection{Scalar fluids}
@@ -329,6 +378,14 @@ we get exactly the quintessence lagrangian. Using the general result on the spee
 \paragraph{k-essence}
 
 \paragraph{generalized k-essence}
+
+
+
+\appendix
+%=========================================
+\section{Computations}
+%=========================================
+In this section we collect some useful or additional computations.
 
 \bibliography{bib.bib}
 
