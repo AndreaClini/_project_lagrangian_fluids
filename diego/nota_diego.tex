@@ -149,14 +149,14 @@
 \author[a]{Andrea Clini,}
 \author[b]{Diego Redigolo,}
 
-\affiliation[a]{Dipartimento di Fisica “Aldo Pontremoli”, Universit`a degli Studi di Milano,
+\affiliation[a]{Dipartimento di Fisica “Aldo Pontremoli”, Universit\`a degli Studi di Milano,
 Via Celoria 16, 20133 Milan, Italy}
 \affiliation[b]{INFN Sezione di Firenze, Via G. Sansone 1, I-50019 Sesto Fiorentino, Italy}
         
 \date{\today} 
 
 
-\abstract{We study non barotropic fluids which allow for accelerated expansion from the effective field theory perspective.}
+\abstract{We study non-barotropic fluids which allow for accelerated expansion from the effective field theory perspective. We show that non-barotropic perfect fluids are more general than generalized quintessence because they allow for genuinely independent entropy fluctuations. We show that the presence of the latter realizes the most general pressure perturbation of a perfect fluid. However exactly like for generalized quintessence fluid stability requires: $w>-1$ and $0<c_s^2<1$. The latter seems intimately connected with the absence of dissipation at least at leading order in the derivative expansion.}
 
 \maketitle
 
@@ -171,62 +171,153 @@ Which fluid allows for accelerated expansion? Assuming a single fluid dominates 
 \end{equation}
 where $w=p/\rho$ is the equation of stare. This equation tells us the well known thing that having accelerated expansion implies $w<-1/3$. We also need to check that the accelerating background is stable which amounts to exclude the presence of instabilities. 
 \section{Fluid EFTs}
-Here I summarize some key results about fluid in the literature.
+Here we summarize some key results about fluid in the literature.
 \subsection{Barotropic perfect fluid}
 A relativistic barotropic perfect fluid is described by three scalar fields $\phi^I(x)$ with $I=1,2,3$ which label the fluid elements~\cite{Dubovsky:2005xd}. The lagrangian should be invariant under volume-preserving diffeos
 \begin{equation}
-\Phi^I\to f^I(\Phi)\quad ,\quad \det\frac{\partial f}{\partial \Phi^I}=1   
+\Phi^I\to f^I(\Phi)\quad ,\quad \det\frac{\partial f}{\partial \Phi^I}=1\ .   
 \end{equation}
 We can define 
 \begin{equation}
- B^{IJ}\equiv g^{\mu\nu}\partial_\mu\Phi^I\partial_\nu\Phi^J\quad,\quad b=\sqrt{\det B_{IJ}}\, ,   
+ B^{IJ}\equiv g^{\mu\nu}\partial_\mu\Phi^I\partial_\nu\Phi^J\quad,\quad b=\sqrt{\det B_{IJ}}\, ,   \label{eq:b}
 \end{equation}
-where $b$ is essentially the comoving number density and is invariant under volume-preserving diffeos. This can also be written in terms of the conserved comoving volume current $b=\sqrt{-J^\mu J_\mu}$ where 
+which is invariant under volume-preserving diffeos. The physical interpretaion of $b$ can be understood in terms of the conservation of the comoving volume current $b=\sqrt{-J^\mu J_\mu}$ where 
 \begin{equation}
-J^\mu=\frac{1}{6\sqrt{-g}}\epsilon^{\mu\nu\rho\sigma}\epsilon_{IJK}\partial_\nu\phi^I\partial_\rho\phi^I\partial_\sigma\phi^K    
+J^\mu_n=\frac{1}{6\sqrt{-g}}\epsilon^{\mu\nu\rho\sigma}\epsilon_{IJK}\partial_\nu\phi^I\partial_\rho\phi^I\partial_\sigma\phi^K\quad \rm{s.t.}\quad  \nabla_\mu J^\mu=0    
 \end{equation}
-which also allow to define the flow velocity orthogonal to the constant $\Phi^I$ surfaces
+which allow us to define the flow velocity orthogonal to the constant $\Phi^I$ surfaces
 \begin{equation}
-u^\mu=J^\mu/b\quad \rm{s.t}\quad u^\mu u_\mu=-1
+J^\mu_n=b u^\mu\quad \rm{s.t}\quad u^\mu u_\mu=-1\ ,
 \end{equation}
+where the definition of the current makes it manifest that $b$ is the comoving number density which in the barotropic case coincides with the entropy density and it is conserved in the absence of dissipation. The entropy per particle $\sigma=s/n$ is exactly constant in this case and the entropy is directly proportional to the number density $s\propto n$.
+
 The action is then specified by a single function
 \begin{equation}
-S=\int d^4x\sqrt{-g} F(b)    
+S=\int d^4x\sqrt{-g} F(b)\ .    
 \end{equation}
-the function $F(b)$ is in one to one correspondence with the equation of state which also fixes the behavior of fluctuations.
+The function $F(b)$ is in one to one correspondence with the equation of state which also fixes the behavior of fluctuations. Explicitly we can derive the background thermodynamic by writing the stress energy tensor and match it to the one of a perfect fluid 
+\begin{equation}
+T_{\mu\nu}=(p+\rho)u_\mu u_\nu+p g_{\mu\nu}=F_{IJ} \partial_\mu\phi^I \partial_\nu\phi^I-g_{\mu\nu} F\ ,
+\end{equation}
+resulting in
+\begin{equation}
+\rho=-F\quad,\quad p=F-2bF_b\ ,    
+\end{equation}
+and the equation of state 
+\begin{equation}
+w\equiv\frac{p}{\rho}=1-\frac{2b F_b}{F}\ .
+\end{equation}
+Notice that at the level of the background the barotropic perfect fluid is fully specified by a single function which specifies its equation of state.  
 
-Explicitly we can write (to complete)
+Explicitly we can write the lagrangian at quadratic order in the fluctuation around a fluid background configuration $\phi^I=x^i+\pi^I$
+\begin{equation}
+S_2^{\rm{baro}}=\int d^4x\sqrt{-g}\left(\frac{p+\rho}{2}\right)\left[\dot\pi^2-c_s^2(\nabla\pi)^2\right]\ ,
+\end{equation}
+where\footnote{Coupling a barotropic fluid to FRW the conservation of the entropy current implies $\nabla_\mu J^{\mu}=\dot{b}+3Hb=0$.} 
+\begin{equation}
+ c_s^2=\frac{d p}{d\rho}=1+\frac{2b F_{bb}}{ F_b}=\frac{\dot{p}}{\dot{\rho}}=w-\frac{\dot{w}}{3H(1+w)}   
+\end{equation}
+and it is fully determined by the equation of state as expected for a barotropic fluid. 
+Notice that the absence of ghost and grandient instabilities and superluminal modes implies 
+\begin{equation}
+w>-1\qquad ,\qquad 0<c_s^2\leq1\ .
+\end{equation}
+Moreover the special functional dependence of $c_s^2$ on $w$ implies that  
+\begin{equation}
+w-\frac{\dot{w}}{3H(1+w)}>0\ , \label{eq:nogradbaro}
+\end{equation}
+which parametrizing $\dot w= \beta_w H w$ becomes 
+\begin{equation}
+ w\left(1-\frac{\beta_w}{3(1+w)}\right)>0\ .   
+\end{equation}
+Notice in order to make $-1<w<-1/3$ and hence have accelerated expansion then stability requires $\beta_w>3(1+w)\sim\mathcal{O}(1)$ which shows that $w$ must evolve rapidly making a long accelerating phase impossible. Indeed going back to Eq.~\eqref{eq:nogradbaro} and assuming constant equation of state we get $w>0$ which is incompatible with accelerated expansion. 
 
 
-It is easy to see that a barotropic fluid does not support the expansion of the Universe. 
+As usual from the conservation of the stress tensor in a perturbed FRW background 
+\begin{equation}
+ds^2=-(1+2\Phi)dt^2+a^2(1-2\Psi)dx^2    
+\end{equation}
+we can derive the equation controlling the behavior of the fluctuations of energy density and pressure: energy conservation gives the continuity equation and momentum conservation the Euler equation. Crucially for a barotropic fluid 
+\begin{equation}
+\delta p=c_S^2\delta\rho    
+\end{equation}
+so that the equations above heavily simplify
+\begin{align}
+&\dot{\delta\rho}+3H(1+c_S^2)\delta\rho-(1+w)\rho(3\dot{\Phi}+\frac{k^2}{a^2}v)=0\\
+&(\dot v+\Phi)+\frac{c_s^2}{1+w}\frac{\delta\rho}{\rho}=0
+\end{align}
+where $\delta u_i=\partial_i v$. Then I can differentiate continuity w.r.t. time and eliminate the velocity derivative using Euler to get an equation for the density contrast $\delta=\delta\rho/\rho$:
+\begin{equation}
+\ddot{\delta\rho}+3H(1+c_s^2))\dot{\delta\rho}+\left[\frac{c_s^2k^2}{a^2}-4\pi G(1+w)\rho\right]\delta\rho=(1+w)\left[\ddot{\Phi}+6H\dot{\Phi}\right]\ .
+\end{equation}
+Now for $k^2/a^2\gg H^2$ and $\dot{\Phi}\approx 0$ the equation reduces to 
+\begin{equation}
+\ddot{\delta\rho}+3H(1+c_s^2)\dot{\delta\rho}+\left[\frac{c_s^2k^2}{a^2}-4\pi G(1+w)(1+3c_s^2)\rho+3H\dot c_s^2\right]\delta\rho=0\ ,
+\end{equation}
+and we recognize the usual competition between pressure support (for $c_s^2>0$) and gravitational instability. The barotropicity of the fluid implies that the adiabatic sound speed completely fixes the pressure support. 
 
 \subsection{Non-barotropic perfect fluid}
 To describe a fluid with entropy we can follow \cite{Dubovsky:2011sj,Ballesteros:2016kdx} and just add an extra scalar $\Phi^0$ to the construction above which enjoys a shift symmetry. 
 \begin{equation}
-\Phi^0\to\Phi^0+c
+\Phi^0\to\Phi^0+c\label{eq:shifttime}
 \end{equation}
 which allow us to define a new invariant 
 \begin{equation}
 y=u^\mu\partial_\mu\Phi^0
 \end{equation}
-which plays the role of the temperature or the chemical potential.
+which plays the role of the temperature or the chemical potential. This quantity will control the entropy per particle independently on the particle number density which is always controlled by $b$ defined in Eq.~\eqref{eq:b}.
 
-The action is again described by a single function of two scalar
+The action is now described by a single function of two scalar quantities
 \begin{equation}
 S=\int d^4 x\sqrt{-g} F(b,y)\ .
 \end{equation}
-Many result for fluids described by this action are in the references above and others have been derived by Clini (see what's new or different). In particular in general we have 
+From this we can derive the stress energy tensor
 \begin{equation}
-p=F\quad,\quad \rho=y\partial_yF-F
+T_{\mu\nu}=(-2 b F_b+y F_y )\,u_\mu u_\nu
+           + (F - 2 b F_b)\,g_{\mu\nu}\ ,
 \end{equation}
-and the sound speed can be written as 
+which matching to the perfect fluid expression gives
+\begin{equation}
+\rho = - F+yF_y , \qquad
+    p = F- 2 b F_b + y F_y\ .
+\end{equation}
+Notice that in this case the presence of $y$ makes the entropy per particle not fixed by the equation of state but still conserved along the flow lines as expected in the absence of dissipation. In the EFT language the entropy per particle current is nothing else than the Noether current associated to the shift symmetry in Eq.~\eqref{eq:shifttime}
+\begin{equation}
+J_s^{\mu}=-F_y u_\mu\quad \rm{s.t.}\quad \nabla_\mu J^\mu_s=0
+\end{equation}
+The entropy per particle is not constant in this case and it can be identified as $\sigma=s/n=-F_y/b$. 
+
+Explicitly we can write the lagrangian at quadratic order in the fluctuation around a fluid background configuration $\phi^0=t+\pi^0$ and $\phi^I=x^i+\pi^I$
+\begin{equation}
+S_2=\int d^4xd^4x\sqrt{-g}\left(\frac{p+\rho}{2}\right)\left[\dot\pi^2-c_s^2(\nabla\pi)^2+B\dot{\pi}_0 \nabla\pi+A \dot{\pi}_0^2\right]\ , 
+\end{equation}
+the sound speed is now 
 \begin{equation}
 c_s^2=    
 \end{equation}
-\section{Scalar fluids}
+The mixing of the entropy mode with the phonons is given by 
+\begin{equation}
+B=    
+\end{equation}
+and the inertia of the entropy mode is
+\begin{equation}
+A=     
+\end{equation}
+Crucially in this lagrangian only $p+\rho>0$ is necessary to avoid ghost instabilities and $A>0$ is also necessary for thermodynamic stability, however at this level the speed of sound $c_s^2$ can be negative.
+
+The entropy mode is non propagating and can be integrated out as a constraint to get 
+\begin{equation}
+S_2=\int d^4xd^4x\sqrt{-g}\left(\frac{p+\rho}{2}\right)\left[\dot\pi^2-c_s^2\vert_{\rm{eff}}(\nabla\pi)^2\right]\ , 
+\end{equation}
+where 
+\begin{equation}
+c_s^2\vert_{\rm{eff}}=c_s^2+\frac{B^2}{A}    
+\end{equation}
+which shows that the contribution from the entropy mode is strictly positive.
+\subsection{Scalar fluids}
 Here I will match the scalar fluids to the fluid EFTs developed so far. This will allow us to show in which sense the fluid EFT remains more general 
-\subsection{Quintessence}
-The quintessence is typically defined as a scalar with a canonical kinetic term $X=g^{\mu\nu}\partial_\mu\phi\partial_\nu\phi$ and an arbitrary potential $V(\phi)$
+
+\paragraph{Quintessence} is typically defined as a scalar with a canonical kinetic term $X=g^{\mu\nu}\partial_\mu\phi\partial_\nu\phi$ and an arbitrary potential $V(\phi)$
 \begin{equation}
 S=\int d^4x\sqrt{-g}\left[X-V(\phi)\right]
 \end{equation}
@@ -235,16 +326,9 @@ I can map this scalar theory into the non-barotropic fluid EFT identifying $\Phi
 F(b,y)=y^2/2-V(\Phi^0) 
 \end{equation}
 we get exactly the quintessence lagrangian. Using the general result on the speed of sound we get ...
-\subsection{k-essence}
+\paragraph{k-essence}
 
-\subsection{generalized k-essence}
-
-\section{scalar fluids vs general barotropic fluids}
-From what is have seen so far the propagating degree of freedom in the scalar case is the longitudinal phonon exactly as for non-barotropic perfect fluids. That being said considering a general non-barotropic fluid would allow more freedom in the space $(w,c_s^2)$. In particular for a scalar fluid we saw that  $w<-1$ implies ghost while this can be avoided for a general barotropic fluid. The idea is that the instability is cured by the entropy mode. (show this explicitly) 
-
-If we can explore a parameter space with these generalized fluids which is not covered by scalar fluids a natural question is to ask if we can distinguish these theories of dark energy and how.
-
-A second important difference is the presence of vortices which are absent in a scalar fluid. Do these vortices have any consequences in the dynamics?
+\paragraph{generalized k-essence}
 
 \bibliography{bib.bib}
 
