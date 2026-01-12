@@ -342,17 +342,18 @@ S_2=\int d^4xd^4x\sqrt{-g}\left(\frac{p+\rho}{2}\right)\left[\dot\pi^2-c_s^2(\na
 \end{equation}
 the sound speed is now 
 \begin{equation}
-c_s^2= \frac{-b^2F_{bb}-2yF_y-F_{yy}+2byF_{by}}{yF_y-b F_b}\,.
+c_s^2= \frac{-b^2F_{bb}-2yF_y-y^2F_{yy}+2byF_{by}}{yF_y-b F_b}\,.
 \end{equation}
-The mixing of the entropy mode with the phonons is given by \noteAC{I would change letter B, possibly $B=2C$}
+The mixing of the entropy mode with the phonons is given by \noteAC{I would change letter B, maybe $C$}
 \begin{equation}
-B=   2 \,\frac{by F_{by}-y F_y -y^2 F_{yy}}{y F_y-b F_b}\,,
+B=   \frac{by F_{by}-y F_y -y^2 F_{yy}}{y F_y-b F_b}\,,
 \end{equation}
 and the inertia of the entropy mode is
 \begin{equation}
 A= \frac{y^2 F_{yy}}{y F_y-b F_b}\,.
 \end{equation}
-Crucially in this lagrangian only $p+\rho>0$ is necessary to avoid ghost instabilities, and $A>0$ is also necessary for thermodynamic stability, however at this level the speed of sound $c_s^2$ can be negative.
+Crucially in this lagrangian only $p+\rho>0$ is necessary to avoid ghost instabilities.
+In case $\rho+p>0$, thermodynamic stability also demands $A>0$, however at this level the speed of sound $c_s^2$ can be negative.
 
 The entropy mode is non propagating and can be integrated out as a constraint to get 
 \begin{equation}
@@ -367,7 +368,7 @@ which shows that the contribution from the entropy mode is strictly positive. No
 \pi\sim e^{\Gamma t}\quad \rm{with}\quad \Gamma=\vert c_s\vert k/a     
 \end{equation}
 then requiring $\Gamma\ll H$ requires $c_s\ll H/\Lambda_{
-\rm{UV}}$, where $\Lambda_{\rm{UV}}\approx((1+w)\rho)^{1/4}$ is the scale 
+\rm{UV}}$, where $\Lambda_{\rm{UV}}\approx((1+w)\rho)^{1/4}$ is the scale phonons becomes strongly coupled. Therefore, in a non-barotropic fluid we can use the entropy mode contribution to the sound speed to tune $c_s^2\vert_{\rm{eff}}\approx0$ and delay the gradient instabilities. 
 
 \subsection{Scalar fluids}
 Here I will match the scalar fluids to the fluid EFTs developed so far. This will allow us to show in which sense the fluid EFT remains more general 
