@@ -1085,6 +1085,82 @@ The last expression cannot be simplified any further in terms of the fucntion $F
 }
 
 
+%======================================================================================
+\section{Starting over}
+%======================================================================================
+We collect the relevant formulas 
+\begin{align}
+    \rho=y F_y - F, \quad \rho_y= y F_{yy},\quad  \rho_b = y F_{by} - F_b,
+    \\
+    p= F - b F_b,\quad  p_y = F_y - b F_{by},\quad p_b = - b F_{bb},
+\end{align}
+The variables are $y=T$ and $b=n$.
+The function $F$ is then identified with minus the Helpholtz free energy density
+\begin{equation}
+    F = -\frac{U-TS}{V}= -(\rho-Ts) = - \mathfrak{a}.
+\end{equation}
+The entropy density and comoving entropy are
+\begin{align}
+    s &= F_y = \frac{S}{V},\quad \sigma = \frac{s}{n} = \frac{F_y}{b}.
+\end{align}
+Imposing $\sigma$ is preserved gives\footnote{Subscripts mean $X_b=\partial_b X_{\mid y}$ and $X_y=\partial_y X_{\mid b}$ i.e. main variables $(b,y)$, unless otherwise stated.}
+\begin{align}
+    0=d\sigma = \frac{F_{yy}}{b}dy+\Big(\frac{bF_{by}-F_y}{b^2}\Big)db\quad \Rightarrow\quad \frac{dy}{db}_{\mid\sigma}= \frac{F_y-b F_{yb}}{bF_{yy}}=\frac{y}{b}\frac{p_y}{\rho_y}
+\end{align}
+The adiabatic sound speed is then by definition
+\begin{align}
+    c_b^2:=\frac{dp}{d\rho}_{\mid\sigma}&=\frac{p_b + p_y\, \tfrac{dy}{db}_{\mid\sigma}}{\rho_b + \rho_y\, \tfrac{dy}{db}_{\mid\sigma}} = \frac{b p_b\, y\rho_y+(yp_y)^2}{b\rho_b\,y\rho_y+y\rho_y\,yp_y}\,
+    \\[5pt]
+    &=\frac{-b^2F_{bb} F_{yy}+(F_y-bF_{yb})^2}{F_{yy}\,(yF_y-bF_b)} = \frac{b\,p_b \,y\rho_y + (y\,p_y)^2}{y \rho_y (\rho+p)}\
+    \\
+    &= \frac{n^2\,\partial_n^2\mathfrak{a}\,\partial_Ts + (s-n\partial_ns)^2}{\partial_Ts\,\,(\rho+p)}
+\end{align}
+The latter expression makes it manifest $c_b^2$ is positive provided $\rho+P>0$, the second principle of thermodynamics $\partial_Ts\geq 0$ and thermodynamic stability $\partial_n^2\mathfrak{a}\geq 0$ hold.
 
-
-
+We also have the expressions
+\begin{equation}
+    c_s^2=\mathcal{C}^2+\frac{\mathcal{M}^2}{\mathcal{A}}\,, 
+\end{equation}
+for the unphysical coefficient before mixing $\mathcal{C}$, the mixing $\mathcal{M}$of the entropy mode with the phonons and the and the inertia of the entropy mode $\mathcal{A}$, with 
+\begin{equation}
+\mathcal{C}^2= \frac{-b^2F_{bb}-2yF_y-y^2F_{yy}+2byF_{by}}{yF_y-b F_b}\,,
+\quad
+\mathcal{M}=   \frac{by F_{by}-y F_y -y^2 F_{yy}}{y F_y-b F_b}\,,
+\quad
+\mathcal{A}= \frac{y^2 F_{yy}}{y F_y-b F_b}\,.
+\end{equation}
+The case of quintessence shows that in general $C^2$ can be negative.
+We would like to investigate if the offest $c_s^2 - c_b^2$ is positive definite.
+First of all we have
+\begin{align}
+    c_s^2&= \frac{-b^2F_{bb}-2yF_y-y^2F_{yy}+2byF_{by}
+    + \frac{(by F_{by}-y F_y -y^2 F_{yy})^2}{y^2 F_{yy}}}
+    {yF_y-b F_b}
+    \\
+    &=\frac{(-b^2F_{bb}-2yF_y-y^2F_{yy}+2byF_{by})y^2 F_{yy}
+    + {(by F_{by}-y F_y -y^2 F_{yy})^2}}
+    {y^2F_{yy}(yF_y-b F_b)}
+    \\
+    &=\frac{-b^2F_{bb}y^2 F_{yy} -2y^3F_y F_{yy} -y^4 F_{yy}^2 +2by^3F_{by} F_{yy}
+    + (by F_{by}-y F_y -y^2 F_{yy})^2
+    }
+    {y^2F_{yy}(yF_y-b F_b)}
+\end{align}
+Then we have
+{\small
+\begin{align}
+    c_s^2-c_b^2 &= \frac{-b^2F_{bb}y^2 F_{yy} -2y^3F_y F_{yy} -y^4 F_{yy}^2 +2by^3F_{by} F_{yy}
+    + (by F_{by}-y F_y -y^2 F_{yy})^2
+    }
+    {y^2F_{yy}(yF_y-b F_b)} - \frac{-b^2F_{bb} y^2F_{yy}+(yF_y-ybF_{yb})^2}{y^2F_{yy}\,(yF_y-bF_b)}
+    \\
+    &= \frac{ -2y^3F_y F_{yy} -y^4 F_{yy}^2 +2by^3F_{by} F_{yy}
+    + (y F_y-byF_{by} +y^2 F_{yy})^2
+    -(yF_y-ybF_{yb})^2
+    }{y^2F_{yy}(yF_y-b F_b)}
+    \\
+    &=\frac{ \redcancel{-2yF_y y^2F_{yy}} \greencancel{-y^4 F_{yy}^2} +\bluecancel{2byF_{by} y^2F_{yy}}
+    + \greencancel{y^4 F_{yy}^2} + 2(\redcancel{F_y}-\bluecancel{byF_{by}})y^2 F_{yy}
+    }{y^2F_{yy}(yF_y-b F_b)} \equiv 0\,.
+\end{align}
+}
