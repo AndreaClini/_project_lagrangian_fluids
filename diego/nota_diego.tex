@@ -442,13 +442,30 @@ The adiabatic sound speed is then by definition
     \\[5pt]
     &=\frac{-b^2F_{bb} F_{yy}+(F_y-bF_{yb})^2}{F_{yy}\,(yF_y-bF_b)} = \frac{b\,p_b \,y\rho_y + (y\,p_y)^2}{y \rho_y (\rho+p)}\,.
 \end{align}
-Using $F=-\mathfrak{a}$ and $s=F_y=-\partial_T\mathfrak{a}$ we rewrite it as
+Using $F=-\mathfrak{a}$ and $s=F_y=-\partial_T\mathfrak{a}$, we rewrite the adiabatic sound speed as
 \begin{align}
     c_b^2:=
     &=\frac{-b^2F_{bb} F_{yy}+(F_y-bF_{yb})^2}{F_{yy}\,(yF_y-bF_b)} = \frac{n^2\,\partial_n^2\mathfrak{a}\,\partial_Ts + (s-n\partial_ns)^2}{\partial_Ts\,\,(\rho+p)}\,,
 \end{align}
 which makes it manifest that $c_b^2\geq0$ provided no ghosts $\rho+P>0$, the second principle of thermodynamics $\partial_Ts\geq 0$ and thermodynamic stability $\partial_n^2\mathfrak{a}\geq 0$ hold.
 
+We also show $c_b^2\equiv c_s^2$ always, which show that absence of ghosts, thermodynamic stability and gradient instabilities are closely related.
+Indeed, using the above expressions 
+\begin{align}
+\begin{aligned}
+    c_s^2&=\mathcal{C}^2+\frac{\mathcal{M}^2}{\mathcal{A}}\\
+        &= \frac{-b^2F_{bb}-2yF_y-y^2F_{yy}+2byF_{by}
+    + \frac{(by F_{by}-y F_y -y^2 F_{yy})^2}{y^2 F_{yy}}}
+    {yF_y-b F_b}
+    \\[6pt]
+    &=\frac{-b^2F_{bb}y^2 F_{yy} -2y^3F_y F_{yy} -y^4 F_{yy}^2 +2by^3F_{by} F_{yy}
+    + (by F_{by}-y F_y -y^2 F_{yy})^2
+    }
+    {y^2F_{yy}(yF_y-b F_b)}
+    \\[6pt]
+    &=\frac{-b^2F_{bb} F_{yy}+(F_y-bF_{yb})^2}{F_{yy}\,(yF_y-bF_b)}\equiv c_b^2.
+\end{aligned}
+\end{align}
 
 
 \bibliography{bib.bib}
