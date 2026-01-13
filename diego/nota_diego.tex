@@ -324,16 +324,12 @@ T_{\mu\nu}=(-b F_b+y F_y )\,u_\mu u_\nu
            + (F - b F_b)\,g_{\mu\nu}\ ,
 \end{equation}
 which matching to the perfect fluid expression gives
-\begin{equation}
+\begin{equation}\label{eq:rho_pressure_exp_nonbaro}
 \rho = - F+yF_y , \qquad p = F- b F_b \ .
 \end{equation}
 so that 
 \begin{equation}
-w=\frac{ F- b F_b}{- F+yF_y}    
-\end{equation}
-and the adiabatic sound speed 
-\begin{equation}
-c_a^2= \frac{\dot{p}}{\dot{\rho}}=
+w=\frac{ F- b F_b}{- F+yF_y}\,. 
 \end{equation}
 
 Notice that in this case the presence of $y$ makes the entropy per particle not fixed by the equation of state but still conserved along the flow lines as expected in the absence of dissipation. In the EFT language the entropy per particle current is nothing else than the Noether current associated to the shift symmetry in Eq.~\eqref{eq:shifttime}
@@ -344,6 +340,14 @@ The entropy per particle is not constant in this case, and it can be identified 
 \begin{align}
     \sigma=\frac{s}{n}=\frac{F_y}{b}\ .
 \end{align}
+The adiabatic sound speed is then by definition
+\begin{equation}
+c_b^2:=\frac{dp}{d\rho}_{\mid\sigma}=w+\rho\frac{dw}{d\rho}_{\mid\sigma}=\frac{-b^2F_{bb} F_{yy}+(F_y-bF_{yb})^2}{F_{yy}\,(yF_y-bF_b)} = \frac{b\,p_b \,y\rho_y + (y\,p_y)^2}{y \rho_y (\rho+p)}\,.
+\end{equation}
+Finally, identifying the system temperature with $y=T$, then \eqref{eq:rho_pressure_exp_nonbaro} implies the function $F$ is minus the Helmholtz free energy density 
+\begin{equation}
+    F=-(\rho-Ts)\equiv-\mathfrak{a}\,.
+\end{equation}
 
 Explicitly we can write the lagrangian at quadratic order in the fluctuation around a fluid background configuration $\phi^0=t+\pi^0$ and $\phi^I=x^i+\pi^I$
 \begin{equation}
@@ -378,9 +382,9 @@ w>-1\quad 0<c_s^2\leq1\ .
 \end{equation}
 In order to understand non barotropic fluids it is important to write the pressure fluctuations. These can be written in two ways 
 \begin{align}
-\delta p &=c_b^2\delta\rho+\Gamma\delta y\ ,
+\delta p &=c_b^2\delta\rho+\Gamma\delta \sigma\ ,
 \end{align}
-where we defined $c_b^2=\partial p/\partial \rho\vert_s$ and $\Gamma=\partial p/\partial s\vert_\rho$. Notice that since $\dot{s}=0$ in a perfect fluid $c_b^2=c_a^2$. 
+where we defined $c_b^2=\partial p/\partial \rho\vert_\sigma$ and $\Gamma=\partial p/\partial \sigma\vert_\rho$. Notice that since $\dot{s}=0$ in a perfect fluid $c_b^2=c_a^2$. 
 Now we can write the continuity and equations 
 \begin{align}
 ...    
@@ -395,15 +399,27 @@ Since the entropy is conserved along the flow $\dot{\delta y}=0$ we can write th
 \subsection{Scalar fluids}
 Here I will match the scalar fluids to the fluid EFTs developed so far. This will allow us to show in which sense the fluid EFT remains more general 
 
-\paragraph{Quintessence} is typically defined as a scalar with a canonical kinetic term $X=g^{\mu\nu}\partial_\mu\phi\partial_\nu\phi$ and an arbitrary potential $V(\phi)$
+\paragraph{Quintessence} is typically defined as a scalar with a canonical kinetic term $X=-g^{\mu\nu}\partial_\mu\phi\partial_\nu\phi$, so that $\partial_\mu\phi=\sqrt{X}u_\mu$ with $u_\mu u^\mu=-1$, and an arbitrary potential $V(\phi)$
 \begin{equation}
-S=\int d^4x\sqrt{-g}\left[X-V(\phi)\right]
+S=\int d^4x\sqrt{-g}\left[\tfrac{1}{2}X-V(\phi)\right]
 \end{equation}
-I can map this scalar theory into the non-barotropic fluid EFT identifying $\Phi^0=\phi$ $\phi^I=x^I$ which is the unitary gauge for the fluid element. Then $b=\sqrt{\det g^{ij}}=a^{-3}$ while $y=u^\mu\partial_\mu\phi=\sqrt{2X}$. Taking 
+I can map this scalar theory into the non-barotropic fluid EFT identifying $\Phi^0=\phi$ $\phi^I=x^I$ which is the unitary gauge for the fluid element. Then $b=\sqrt{\det g^{ij}}=a^{-3}$ while $y=u^\mu\partial_\mu\phi=-\sqrt{X}$. Taking 
 \begin{equation}
 F(b,y)=y^2/2-V(\Phi^0) 
 \end{equation}
 we get exactly the quintessence lagrangian. Using the general result on the speed of sound we get ...
+
+
+Plugging this $F$ in the above formulas gives
+\begin{align}
+    &c_b^2=1\,,\quad \mathcal{C}^2_s=-3\,,\quad\mathcal{M}=-2,\quad \mathcal{A}=1\quad\Rightarrow\quad c_s^2=\mathcal{C}_s^2+\frac{\mathcal{M}^2}{\mathcal{A}}=1\equiv c_b^2\,.
+    \\
+    &w=\frac{y^2/2-V}{y^2/2+V}\,,\quad c_a^2=\frac{\dot{p}}{\dot{\rho}}=w-\frac{\dot{w}}{3H(1+w)}=1+\frac{2}{3}\frac{V_\phi}{H\dot{\phi}}
+\end{align}
+
+
+
+
 \paragraph{k-essence}
 
 \paragraph{generalized k-essence}
@@ -415,6 +431,21 @@ we get exactly the quintessence lagrangian. Using the general result on the spee
 \section{Computations}
 %=========================================
 In this section we collect some useful or additional computations.
+
+The entropy per particle is $\sigma=F_y/b$, imposing it be preserved gives\footnote{Subscripts mean $X_b=\partial_b X_{\mid y}$ and $X_y=\partial_y X_{\mid b}$ i.e. main variables $(b,y)$, unless otherwise stated.}
+\begin{align}
+    0=d\sigma = \frac{F_{yy}}{b}dy+\Big(\frac{bF_{by}-F_y}{b^2}\Big)db\quad \Rightarrow\quad \frac{dy}{db}_{\mid\sigma}= \frac{F_y-b F_{yb}}{bF_{yy}}=\frac{y}{b}\frac{p_y}{\rho_y}
+\end{align}
+The adiabatic sound speed is then by definition
+\begin{align}
+    c_b^2:=\frac{dp}{d\rho}_{\mid\sigma}&=\frac{p_b + p_y\, \tfrac{dy}{db}_{\mid\sigma}}{\rho_b + \rho_y\, \tfrac{dy}{db}_{\mid\sigma}} = \frac{b p_b\, y\rho_y+(yp_y)^2}{b\rho_b\,y\rho_y+y\rho_y\,yp_y}\,
+    \\[5pt]
+    &=\frac{-b^2F_{bb} F_{yy}+(F_y-bF_{yb})^2}{F_{yy}\,(yF_y-bF_b)} = \frac{b\,p_b \,y\rho_y + (y\,p_y)^2}{y \rho_y (\rho+p)}\,.
+\end{align}
+
+
+
+
 
 \bibliography{bib.bib}
 
