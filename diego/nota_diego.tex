@@ -268,7 +268,7 @@ Notice that the absence of ghosts, and gradient instabilities and superluminal m
 \begin{equation}
 w>-1\,\qquad 0<c_s^2\leq1\ .
 \end{equation}
-Moreover, using $c_s^2(w)$ derived from \eqref{eq:adiabatic} we can rewrite the absence of gradient instabilities as a further constraint on the equation of state \questionAC{Why? By theremodyn?} 
+Moreover, using $c_s^2(w)$ derived from \eqref{eq:adiabatic} we can rewrite the absence of gradient instabilities as a further constraint on the equation of state 
 \begin{equation}
 w-\frac{\dot{w}}{3H(1+w)}>0\ , \label{eq:nogradbaro}
 \end{equation}
@@ -279,7 +279,7 @@ which parametrizing $\dot w= \beta_w H w$ becomes
 Notice that, in order to have $-1<w<-1/3$ and hence accelerated expansion, stability requires $\beta_w>3(1+w)\sim\mathcal{O}(1)$ which then implies that $w$ must evolve rapidly, making a long accelerating phase impossible. Indeed going back to Eq.~\eqref{eq:nogradbaro} and assuming constant equation of state we get $w>0$ which is incompatible with accelerated expansion. 
 
 
-As usual from the conservation of the stress tensor in a perturbed FRW background\noteAC{Changed $\Phi^I\mapsto \phi^I$ above, since $\Phi$ used for Newt gauge}
+As usual from the conservation of the stress tensor in a perturbed FRW background
 \begin{equation}
 ds^2=-(1+2\Phi)dt^2+a^2(1-2\Psi)dx^2 
 \end{equation}
@@ -329,31 +329,31 @@ which matching to the perfect fluid expression gives
 \end{equation}
 so that 
 \begin{equation}
-w=\frac{}    
+w=\frac{ F- b F_b}{- F+yF_y}    
 \end{equation}
-The adiabatic sound speed 
+and the adiabatic sound speed 
 \begin{equation}
-c_a^2=
+c_a^2= \frac{\dot{p}}{\dot{\rho}}=
 \end{equation}
 
 Notice that in this case the presence of $y$ makes the entropy per particle not fixed by the equation of state but still conserved along the flow lines as expected in the absence of dissipation. In the EFT language the entropy per particle current is nothing else than the Noether current associated to the shift symmetry in Eq.~\eqref{eq:shifttime}
 \begin{equation}
-J_s^{\mu}=-F_y u_\mu\quad \rm{s.t.}\quad \nabla_\mu J^\mu_s=0\ .
+J_s^{\mu}=F_y u_\mu\quad \rm{s.t.}\quad \nabla_\mu J^\mu_s=0\ .
 \end{equation}
 The entropy per particle is not constant in this case, and it can be identified as
 \begin{align}
-    \sigma=\frac{s}{n}=\frac{-F_y}{b}\ .
+    \sigma=\frac{s}{n}=\frac{F_y}{b}\ .
 \end{align}
 
 Explicitly we can write the lagrangian at quadratic order in the fluctuation around a fluid background configuration $\phi^0=t+\pi^0$ and $\phi^I=x^i+\pi^I$
 \begin{equation}
-S_2=\int d^4xd^4x\sqrt{-g}\left(\frac{p+\rho}{2}\right)\left[\dot\pi^2-\mathcal{C}_s(\nabla\pi)^2+2\mathcal{M}\dot{\pi}_0 \nabla\pi+\mathcal{A} \dot{\pi}_0^2\right]\ , 
+S_2=\int d^4xd^4x\sqrt{-g}\left(\frac{p+\rho}{2}\right)\left[\dot\pi^2-\mathcal{C}_s^2(\nabla\pi)^2+2\mathcal{M}\dot{\pi}_0 (\nabla\!\!\cdot\!\pi)+\mathcal{A} \dot{\pi}_0^2\right]\ , 
 \end{equation}
 the sound speed is now 
 \begin{equation}
 \mathcal{C}_s^2= \frac{-b^2F_{bb}-2yF_y-y^2F_{yy}+2byF_{by}}{yF_y-b F_b}\,.
 \end{equation}
-The mixing of the entropy mode with the phonons is given by \noteAC{I would change letter B, maybe $C$}
+The mixing of the entropy mode with the phonons is given by 
 \begin{equation}
 \mathcal{M}=   \frac{by F_{by}-y F_y -y^2 F_{yy}}{y F_y-b F_b}\,,
 \end{equation}
@@ -368,16 +368,29 @@ The entropy mode is non propagating and can be integrated out as a constraint to
 \begin{equation}
 S_2=\int d^4xd^4x\sqrt{-g}\left(\frac{p+\rho}{2}\right)\left[\dot\pi^2-c_s^2(\nabla\pi)^2\right]\ , 
 \end{equation}
-where 
+where CHECK SIGN!!\answerAC{Sign ok, Diego delete when read}
 \begin{equation}
-    c_s^2\vert_{\rm{eff}}=c_s^2+\frac{B^2}{A}\,, 
+    c_s^2=\mathcal{C}_s^2+\frac{\mathcal{M}^2}{\mathcal{A}}\,, 
 \end{equation}
-which shows that the contribution from the entropy mode is strictly positive. Now the effective speed of sound controls the actual growth rate of the gradient instability 
+which shows that the contribution from the entropy mode is strictly positive. Now $c_s^2$ is actually an independent function of $c_a^2$. So that requiring the absence of gradient instabilities does not forbid accelerated expansion which is only constrained by absence of ghosts. As a consequnce the non-barotropic fluid EFT can span the whole space of 
 \begin{equation}
-\pi\sim e^{\Gamma t}\quad \rm{with}\quad \Gamma=\vert c_s\vert k/a     
+w>-1\quad 0<c_s^2\leq1\ .    
 \end{equation}
-then requiring $\Gamma\ll H$ requires $c_s\ll H/\Lambda_{
-\rm{UV}}$, where $\Lambda_{\rm{UV}}\approx((1+w)\rho)^{1/4}$ is the scale phonons becomes strongly coupled. Therefore, in a non-barotropic fluid we can use the entropy mode contribution to the sound speed to tune $c_s^2\vert_{\rm{eff}}\approx0$ and delay the gradient instabilities. 
+In order to understand non barotropic fluids it is important to write the pressure fluctuations. These can be written in two ways 
+\begin{align}
+\delta p &=c_b^2\delta\rho+\Gamma\delta y\ ,
+\end{align}
+where we defined $c_b^2=\partial p/\partial \rho\vert_s$ and $\Gamma=\partial p/\partial s\vert_\rho$. Notice that since $\dot{s}=0$ in a perfect fluid $c_b^2=c_a^2$. 
+Now we can write the continuity and equations 
+\begin{align}
+...    
+\end{align}
+and which we can combine in the second order differential equation for the energy density fluctuations
+\begin{equation}
+ ...   
+\end{equation}
+Since the entropy is conserved along the flow $\dot{\delta y}=0$ we can write the equation in comoving gauge $(\delta p=0)$ and eliminate the non-propagating entropy fluctuation to get an expression for the sound speed similar to the one in 2.34. 
+
 
 \subsection{Scalar fluids}
 Here I will match the scalar fluids to the fluid EFTs developed so far. This will allow us to show in which sense the fluid EFT remains more general 
