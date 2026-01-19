@@ -1164,3 +1164,85 @@ Then we have
     }{y^2F_{yy}(yF_y-b F_b)} \equiv 0\,.
 \end{align}
 }
+
+
+
+%----------------------------------------------------------------
+\subsection{Matching the scalar field}
+%----------------------------------------------------------------
+
+
+Consider the metric in Newtonian gauge
+\begin{equation}
+    g_{\mu\nu}=a^2\begin{pmatrix}
+        -(1+2\Phi) & 0 \\
+        0 & (1-2\Psi)\delta_{ij}
+    \end{pmatrix}\, \quad \Rightarrow \quad \sqrt{-g}=a^4(1+\Phi-3\Psi)\,.
+\end{equation}
+The action for the scalar field $\varphi$ with potential $V(\varphi)$ is
+\begin{equation}
+    S_\varphi = \int d^4x \sqrt{-g} \left[-\frac{1}{2} g^{\mu\nu}\partial_\mu\varphi \partial_\nu\varphi - V(\varphi)\right]\,, \quad X:= -g^{\mu\nu}\partial_\mu\varphi \partial_\nu\varphi\,.
+\end{equation}
+The energy-momentum tensor is
+\begin{align}
+    T_{\mu\nu}&=-\frac{2}{\sqrt{-g}}\frac{\partial \left(\sqrt{-g}\mathcal{L}\right)}{\partial g^{\mu\nu}}
+    = -\frac{2}{\sqrt{-g}}\left(\sqrt{-g}\frac{\partial \mathcal{L}}{\partial g^{\mu\nu}}-\frac{1}{2}\sqrt{-g}g_{\mu\nu}\mathcal{L}\right)
+    \\
+     &= \partial_\mu\varphi \partial_\nu\varphi + g_{\mu\nu}\left[-\frac{1}{2}g^{\alpha\beta}\partial_\alpha\varphi \partial_\beta\varphi - V(\varphi)\right]\\
+    &= \frac{\partial_\mu\varphi}{\sqrt{-g^{\alpha\beta}\partial_\alpha\varphi \partial_\beta\varphi}} \frac{\partial_\nu\varphi}{\sqrt{-g^{\alpha\beta}\partial_\alpha\varphi \partial_\beta\varphi}} \left(-g^{\alpha\beta}\partial_\alpha\varphi \partial_\beta\varphi\right) + g_{\mu\nu}\left[\frac{1}{2}\left(-g^{\alpha\beta}\partial_\alpha\varphi \partial_\beta\varphi\right) - V(\varphi)\right]\,.
+\end{align}
+We expand around a homogeneous background $\bar{\varphi}(\tau)$ as $\varphi(\tau,\vec{x})=\bar{\varphi}(\tau)+\delta\varphi(\tau,\vec{x})$.
+Dropping mixed and second order in the metric perturbations we have 
+\begin{align}
+    X= -g^{\mu\nu}\partial_\mu\varphi \partial_\nu\varphi
+    &= \frac{1}{a^2}(1-2\Phi)(\bar{\varphi}'+\delta\varphi')^2 - \frac{1}{a^2}(1+2\Psi)(\nabla\delta\varphi)^2\\
+    &\simeq \frac{1}{a^2}(\bar{\varphi}')^2+ \frac{2}{a^2}(\bar{\varphi}'\delta\varphi'-\Phi (\bar{\varphi}')^2) + \frac{1}{a^2}\left[(\delta\varphi')^2-(\nabla\delta\varphi)^2\right]\\
+    &\simeq \frac{1}{a^2}(\bar{\varphi}')^2\left[1+ 2\left(\frac{\delta\varphi'}{\bar{\varphi}'}-\Phi\right) + \left(\frac{\delta\varphi'}{\bar{\varphi}'}\right)^2 - \frac{(\nabla\delta\varphi)^2}{(\bar{\varphi}')^2}\right]+\mathcal{O}(3,\mathrm{mix})\,.
+\end{align}
+Then, again dropping mixed and secnd order in the metric perturbations, we have
+\begin{align}
+   X^{-1/2}&\simeq \frac{a}{\bar{\varphi}'}\left[1 - \left(\frac{\delta\varphi'}{\bar{\varphi}'}-\Phi\right) +\left(\frac{\delta\varphi'}{\bar{\varphi}'}\right)^2 + \frac{1}{2}\frac{(\nabla\delta\varphi)^2}{(\bar{\varphi}')^2} \right] +\mathcal{O}(3,\mathrm{mix})\,.
+\end{align}
+%
+Matching to a perfect fluid $T_{\mu\nu}=(\rho+p)u_\mu u_\nu + p g_{\mu\nu}$ we identify the velocity field as
+\begin{align}
+    u_\mu &= \frac{\partial_\mu\varphi}{\sqrt{-g^{\alpha\beta}\partial_\alpha\varphi \partial_\beta\varphi}} =  X^{-1/2}\left(\bar{\varphi}^\prime+\delta\varphi',\, \nabla\delta\varphi\right)\\
+    &\simeq \frac{a}{\bar{\varphi}'}\left[1 - \left(\frac{\delta\varphi'}{\bar{\varphi}'}-\Phi\right) +\left(\frac{\delta\varphi'}{\bar{\varphi}'}\right)^2 + \frac{1}{2}\frac{(\nabla\delta\varphi)^2}{(\bar{\varphi}')^2} \right]\left(\bar{\varphi}^\prime+\delta\varphi',\, \nabla\delta\varphi\right)
+    \simeq a\left(1+ \Phi,\, \frac{\nabla\delta\varphi}{\bar{\varphi}'}\right) + \mathcal{O}(2)\,.
+\end{align}
+Expanding $V(\varphi)=V(\bar{\varphi}) + V_{\varphi}(\bar{\varphi})\delta\varphi + \frac{1}{2}V_{\varphi\varphi}(\bar{\varphi})(\delta\varphi)^2$ we identify the energy density 
+\begin{align}
+    \rho &= \frac{1}{2}X + V(\varphi) = \frac{1}{2a^2}(1-2\Phi)(\varphi')^2 + \frac{1}{2a^2}(1+2\Psi)(\nabla\varphi)^2 + V(\varphi)\\
+    &\simeq \frac{1}{2}\frac{a}{\bar{\varphi}'}\left[1 - \left(\frac{\delta\varphi'}{\bar{\varphi}'}-\Phi\right) +\left(\frac{\delta\varphi'}{\bar{\varphi}'}\right)^2 + \frac{1}{2}\frac{(\nabla\delta\varphi)^2}{(\bar{\varphi}')^2} \right]
+    + V(\bar{\varphi}) + V_{\varphi}(\bar{\varphi})\delta\varphi + \frac{1}{2}V_{\varphi\varphi}(\bar{\varphi})(\delta\varphi)^2 +\mathcal{O}(3,\mathrm{mix})\,.
+\end{align}
+and the pressure 
+\begin{align}
+    p &= \frac{1}{2}X - V(\varphi) = \frac{1}{2a^2}(1-2\Phi)(\varphi')^2 + \frac{1}{2a^2}(1+2\Psi)(\nabla\varphi)^2 - V(\varphi)\\
+    &\simeq \frac{1}{2}\frac{a}{\bar{\varphi}'}\left[1 - \left(\frac{\delta\varphi'}{\bar{\varphi}'}-\Phi\right) +\left(\frac{\delta\varphi'}{\bar{\varphi}'}\right)^2 + \frac{1}{2}\frac{(\nabla\delta\varphi)^2}{(\bar{\varphi}')^2} \right]
+    - V(\bar{\varphi}) - V_{\varphi}(\bar{\varphi})\delta\varphi - \frac{1}{2}V_{\varphi\varphi}(\bar{\varphi})(\delta\varphi)^2 +\mathcal{O}(3,\mathrm{mix})\,.
+\end{align}
+Finally we have 
+\begin{align}
+    p=\rho-2V(\varphi) \quad \Rightarrow \quad \delta p = \delta\rho - 2 V_{\varphi}(\bar{\varphi})\delta\varphi\,.
+\end{align}
+Since we showed that $c_b^2:=\frac{\delta p}{\delta \rho}_{\mid \sigma}=1$ we identify the non-adiabatic pressure perturbations of the field
+\begin{align}
+    \delta p_{\text{nad}} =\frac{\delta p}{\delta \sigma}_{\mid \rho}\delta\sigma= \delta p - c_b^2 \delta \rho = - 2 V_{\varphi}(\bar{\varphi})\delta\varphi\,\quad \Rightarrow\quad \Gamma:= \frac{\delta p}{\delta \sigma}_{\mid \rho}\delta\sigma = - 2 V_{\varphi}(\bar{\varphi})\delta\varphi\,.
+\end{align}
+and we confim $\Gamma$ is a function of the potential only and that indeed $\delta\sigma\propto \delta\varphi$.
+
+
+
+% Expanding up to second order in the fluctuations $\delta\varphi$ around a homogeneous background $\bar{\varphi}(t)$ we have
+% \begin{align}
+%     S_\varphi^{(2)} &= \int d^4x a^4 \Bigg\{
+%     \frac{1}{2a^2}\left[(1-2\Phi)(\delta\varphi')^2 - (1+2\Psi)(\nabla\delta\varphi)^2\right]
+%     - \frac{1}{2} V''(\bar{\varphi}) (\delta\varphi)^2
+%     \nnb
+%     \\
+%     &\quad + \frac{1}{a^2}\left[-\bar{\varphi}'\delta\varphi' \Phi + \bar{\varphi}'\delta\varphi \Psi' \right]
+%     - V'(\bar{\varphi}) \delta\varphi (\Phi - 3\Psi)
+%     \Bigg\}\,.
+% \end{align}
+
