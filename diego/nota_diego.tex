@@ -385,16 +385,24 @@ In order to understand non barotropic fluids it is important to write the pressu
 \begin{align}
 \delta p &=c_s^2\delta\rho+\Gamma\delta \sigma\ ,
 \end{align}
-where we defined $c_s^2=\partial p/\partial \rho\vert_\sigma$ is exactly the as the speed of sound appearing in the phono Lagrangian defined in Eq.~\eqref{eq:csnonbaro}. In addition to the speed of sound the pressure fluctuation receive contribution from the fluctuation of the entropy mode $\Gamma=\partial p/\partial \sigma\vert_\rho$. 
-Now we can write the continuity and equations 
+where we defined $c_s^2=\partial p/\partial \rho\vert_\sigma$ is exactly the as the speed of sound appearing in the phonon Lagrangian defined in Eq.~\eqref{eq:csnonbaro}. In addition to the speed of sound the pressure fluctuation receive contribution from the fluctuation of the entropy mode $\Gamma=\partial p/\partial \sigma\vert_\rho$. 
+Now we can write the continuity and Euler equation.
+Decomposing the energy-momentum tensor as $T^{\mu\nu}=(\rho+P)u^\mu u^\nu+Pg^{\mu\nu}+a^{-2}\Pi^{\mu\nu}$ with $\Pi^{00}=\Pi^{i0}=0$ and $\Pi^{ij}=(\partial_i\partial_j-\tfrac{1}{3}\delta_{ij}\partial^2)\Pi$, we have
 \begin{align}
-...    
+    \delta\rho^\prime= -3\mathcal{H}(\delta\rho+\delta P) + (\bar{\rho}+\bar{P})\big(3\psi^\prime-\partial_j \,(\delta u^j)\big)\,\\
+    (\delta u^j)^\prime+ \mathcal{H}(\delta u^j)-3\mathcal{H}\frac{\bar{P}^\prime}{\bar{\rho}^\prime}(\delta u^j)+\frac{\partial_j\delta P}{(\bar{\rho}+\bar{P})}+\partial_j\Phi{\color{red}+\partial_\ell \Pi^{\ell j}}=0\,.
+\end{align}
+where we write $u^\mu=\frac{1}{a}(1-\Phi, \delta u^j)$. \todotag{Check convention with Diego}
+Introducing the velocity potential $\delta u^j=\partial_j v$ and passing to Fourier space the latter reads
+\begin{align}
+    \delta\rho^\prime= -3\mathcal{H}(\delta\rho+\delta P) + (\bar{\rho}+\bar{P})\big(3\psi^\prime + k^2 v\big)\,\\
+    v^\prime+ \mathcal{H}v-3\mathcal{H}\frac{\bar{P}^\prime}{\bar{\rho}^\prime}v+\frac{\delta P}{(\bar{\rho}+\bar{P})}+\Phi{\color{red}+\tfrac{2}{3}\Pi}=0\,.
 \end{align}
 and which we can combine in the second order differential equation for the energy density fluctuations
 \begin{equation}
  ...   
 \end{equation}
-Since the entropy is conserved along the flow $\dot{\delta y}=0$ we can write the equation in comoving gauge $(\delta p=0)$ and eliminate the non-propagating entropy fluctuation to get an expression for the sound speed similar to the one in 2.34. 
+Since the entropy is conserved along the flow $\dot{\delta y}=0$\questionAC{Mean $\dot{\delta \sigma}=0$? } we can write the equation in comoving gauge $(\delta p=0)$ and eliminate the non-propagating entropy fluctuation to get an expression for the sound speed similar to the one in 2.34. 
 
 
 \subsection{Scalar fluids}
