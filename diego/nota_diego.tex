@@ -193,7 +193,7 @@ Via Celoria 16, 20133 Milan, Italy}
 \date{\today} 
 
 
-\abstract{We study non-barotropic fluids which allow for accelerated expansion from the effective field theory perspective. We show that non-barotropic perfect fluids are more general than generalized quintessence because they allow for genuinely independent entropy fluctuations. We show that the presence of the latter realizes the most general pressure perturbation of a perfect fluid. However exactly like for generalized quintessence fluid stability requires: $w>-1$ and $0<c_s^2<1$. The latter seems intimately connected with the absence of dissipation at least at leading order in the derivative expansion.}
+\abstract{Long-lasting accelerated expansion cannot be support by perfect barotropic fluid where pressure fluctuations are fully determined by the energy density ones. The manifestation of this obstruction is that the adiabatic sound speed is fully determined by the equation of state so that requiring a negative equation of state to enforce acceleration unavoidably lead to gradient instabilities. We show that non-barotropic perfect fluids allow for accelerated expansion by decoupling the speed of sound from the equation of state similarly to what happens in generalize quintessence models. We show that non-barotropic perfect fluids are more general than generalized quintessence because they allow for genuinely independent entropy fluctuations. We show that the presence of the latter realizes the most general pressure perturbation of a perfect fluid. However exactly like for generalized quintessence fluid stability requires: $w>-1$ and $0<c_s^2<1$. The latter seems intimately connected with the absence of dissipation at least at leading order in the derivative expansion.}
 
 \maketitle
 
@@ -372,19 +372,20 @@ The entropy mode is non propagating and can be integrated out as a constraint to
 \begin{equation}
 S_2=\int d^4xd^4x\sqrt{-g}\left(\frac{p+\rho}{2}\right)\left[\dot\pi^2-c_s^2(\nabla\pi)^2\right]\ , 
 \end{equation}
-where CHECK SIGN!!\answerAC{Sign ok, Diego delete when read}
+where
 \begin{equation}
-    c_s^2=\mathcal{C}_s^2+\frac{\mathcal{M}^2}{\mathcal{A}}\,, 
+    c_s^2=\mathcal{C}_s^2+\frac{\mathcal{M}^2}{\mathcal{A}}\,,\;\label{eq:csnonbaro} 
 \end{equation}
-which shows that the contribution from the entropy mode is strictly positive. Now $c_s^2$ is actually an independent function of $c_a^2$. So that requiring the absence of gradient instabilities does not forbid accelerated expansion which is only constrained by absence of ghosts. As a consequnce the non-barotropic fluid EFT can span the whole space of 
+which shows that the contribution from the entropy mode is strictly positive. Now $c_s^2$ is actually an independent function of $c_a^2$. So that requiring the absence of gradient instabilities does not forbid accelerated expansion which is only constrained by the absence of ghosts. As a consequnce the non-barotropic fluid EFT can span the whole space of 
 \begin{equation}
 w>-1\quad 0<c_s^2\leq1\ .    
 \end{equation}
+
 In order to understand non barotropic fluids it is important to write the pressure fluctuations. These can be written in two ways 
 \begin{align}
-\delta p &=c_b^2\delta\rho+\Gamma\delta \sigma\ ,
+\delta p &=c_s^2\delta\rho+\Gamma\delta \sigma\ ,
 \end{align}
-where we defined $c_b^2=\partial p/\partial \rho\vert_\sigma$ and $\Gamma=\partial p/\partial \sigma\vert_\rho$. Notice that since $\dot{s}=0$ in a perfect fluid $c_b^2=c_a^2$. 
+where we defined $c_s^2=\partial p/\partial \rho\vert_\sigma$ is exactly the as the speed of sound appearing in the phono Lagrangian defined in Eq.~\eqref{eq:csnonbaro}. In addition to the speed of sound the pressure fluctuation receive contribution from the fluctuation of the entropy mode $\Gamma=\partial p/\partial \sigma\vert_\rho$. 
 Now we can write the continuity and equations 
 \begin{align}
 ...    
@@ -416,13 +417,55 @@ Plugging this $F$ in the above formulas gives
     \\
     &w=\frac{y^2/2-V}{y^2/2+V}\,,\quad c_a^2=\frac{\dot{p}}{\dot{\rho}}=w-\frac{\dot{w}}{3H(1+w)}=1+\frac{2}{3}\frac{V_\phi}{H\dot{\phi}}
 \end{align}
-
+Moreover 
+\begin{equation}
+ \Gamma\delta\sigma=-2 V_\phi \delta\phi   
+\end{equation}
+Mi aggiungi il matching per bene qui? pressione e la sua variazione fino alle equazione per $\delta\rho$ poi generalizza a k-essence e k essence che e' essenzialmente k essence + quintessence. A me sembra che $\Gamma$ sia funzione del potenziale ma l'equazione di stato e' non e' solo funzione del potenziale...
 
 
 
 \paragraph{k-essence}
 
 \paragraph{generalized k-essence}
+
+\section{Adding dark matter and LSS phenomenology}
+
+\section{Introducing bulk viscosity}
+The simple example one could think of to construct a dissipative system is to start with two scalar fluids in the UV
+\begin{equation}
+S=\int d^4x\left[\frac{1}{2}(\partial\phi)^2+\frac{1}{2}(\partial\chi)^2+\frac{m_\chi^2}{2}\chi^2+ y \chi \psi^2+ M_\psi\psi^2+ \epsilon\partial\phi \partial\chi\right]    
+\end{equation}
+Where we wrote an interaction between the two scalars that respect the shift symmetry and we assume the mass hierarchy $m_\chi>2 M_\psi$. As we will see the presence of fermions is required to give to the heavy scalar $\chi$ a finite width.  
+\begin{equation}
+\Gamma_\chi\approx\frac{y^2}{8\pi}m_\chi\ ,
+\end{equation}
+Since we want the evolution of the scalar fluids we need to go to the SK formalism~\cite{Crossley:2015evo,Liu:2018kfw} putting the theory above on a SK time contour. In SK every field is doubled because $\phi_{\pm}, \chi_{\pm},\psi_{\pm}$ encode the time on the forward/backward branch. This is unavoidable to distinguish retarded and advanced response. The SK actions is
+\begin{equation}
+S_{\rm{SK}}=S[\phi_+,\chi_+]-S[\phi_-,\chi_-]    
+\end{equation}
+Now I can rotate to the SK variables
+\begin{align}
+&\phi_{p,m}=\frac{\phi_+\pm \phi_-}{2}
+&\chi_{p,m}=\frac{\chi_+\pm \chi_-}{2}
+\end{align}
+The SK action for the heavy sector is
+\begin{equation}
+\begin{split}
+S^{\rm{heavy}}_{\rm SK}
+=
+&\int d^4x\left\{\chi_a (\Box - M^2) \chi_r
++
+\bar{\psi}_a (i\slashed{\partial}-m_\psi)\psi_r
++
+\bar{\psi}_r (i\slashed{\partial}-m_\psi)\psi_a
+]\right.
+\\
+&\left.+y[
+\chi_a \bar{\psi}_r \psi_r
++\chi_r(\bar{\psi}_a \psi_r + \bar{\psi}_r \psi_a)\right\}
+\end{split}
+\end{equation}
 
 
 
