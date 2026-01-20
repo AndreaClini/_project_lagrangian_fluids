@@ -4,3 +4,4 @@
 - [ ] see effect of gauge change
 - [ ] combine continuity and Euler into eq for $\delta\rho^{''}$
 - [ ] matching to k-essence akin to 5-essence
+- [ ] read new papers (also video lectures/seminars available online for some of them)
