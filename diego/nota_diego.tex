@@ -402,7 +402,18 @@ Introducing the velocity potential $\delta u^j=\partial_j v$ so that $\partial_j
 These are combined into a 2nd order equation for overdensities
 \begin{align}
 \begin{aligned}
-    fjhrh
+    \delta\rho^{\prime\prime}=&-3\big(\dot{\mathcal{H}}+4\mathcal{H}^2\big)\left(1+\frac{\delta P}{\delta\rho}\right)\delta\rho
+    -\mathcal{H}(7\delta\rho^\prime+3\delta P^\prime)-k^2\delta P -k^2(\bar{rho}+\bar{P})\Phi\\
+    &+3(\bar{\rho}+\bar{P})\left[\left(\mathcal{H}+\frac{\bar{P}^\prime}{\bar{\rho}+\bar{P}}\right)\Psi^\prime+\Psi^{\prime\prime}\right] {\color{red}+ \frac{2}{3}k^4\Pi}\,.
+\end{aligned}
+\end{align}
+Equivalently, in terms of the overdensity $\delta$ we have
+\begin{align}
+\begin{aligned}
+    \delta^{\prime\prime}=&-\delta^\prime\mathcal{H}\left(1-6\frac{\bar{P}}{\bar{\rho}}\right)
+    +\delta\left[3(\mathcal{H}^\prime+4\mathcal{H}^2)\left(\frac{\bar{P}}{\bar{\rho}}-\frac{\delta P}{\delta\rho}\right)+3\mathcal{H}\frac{\bar{P}^\prime}{\bar{\rho}}\right]
+    -k^2\frac{\delta P}{\bar{\rho}} -k^2\left(1+\frac{\bar{P}}{\bar{\rho}}\right)\Phi\\
+    &+3\left(1+\frac{\bar{P}}{\bar{\rho}}\right)\left[\left(\mathcal{H}+\frac{\bar{P}^\prime}{\bar{\rho}+\bar{P}}\right)\Psi^\prime+\Psi^{\prime\prime}\right] {\color{red}+ \frac{2}{3}k^4\frac{\Pi}{\bar{\rho}}}\,.
 \end{aligned}
 \end{align}
 Since the entropy is conserved along the flow $\dot{\delta y}=0$\questionAC{Mean $\dot{\delta \sigma}=0$? } we can write the equation in comoving gauge $(\delta p=0)$ and eliminate the non-propagating entropy fluctuation to get an expression for the sound speed similar to the one in 2.34. 
@@ -533,7 +544,7 @@ Indeed, using the above expressions
 
 
 %----------------------------------------------------------------
-\subsection{Matching to scalar field}
+\subsection{Matching to quintessence scalar field}
 %----------------------------------------------------------------
 
 Consider the metric in Newtonian gauge
@@ -561,7 +572,7 @@ The energy-momentum tensor is
 }
 We expand around a homogeneous background $\bar{\varphi}(\tau)$ as $\varphi(\tau,\vec{x})=\bar{\varphi}(\tau)+\delta\varphi(\tau,\vec{x})$.
 Dropping mixed and second order in the metric perturbations we have 
-\begin{align}
+\begin{align}\label{eq:expansion_X}
 \begin{aligned}
     X&= -g^{\mu\nu}\partial_\mu\varphi \partial_\nu\varphi
     = \frac{1}{a^2}(1-2\Phi)(\bar{\varphi}'+\delta\varphi')^2 - \frac{1}{a^2}(1+2\Psi)(\nabla\delta\varphi)^2\\
@@ -575,7 +586,7 @@ Then, again dropping mixed and secnd order in the metric perturbations, we have
 \end{align}
 %
 Matching to a perfect fluid $T_{\mu\nu}=(\rho+p)u_\mu u_\nu + p g_{\mu\nu}$ we identify the velocity field as
-\begin{align}
+\begin{align}\label{eq:velocity_field_expansion}
 \begin{aligned}
     u_\mu &= \frac{\partial_\mu\varphi}{\sqrt{-g^{\alpha\beta}\partial_\alpha\varphi \partial_\beta\varphi}} =  X^{-1/2}\left(\bar{\varphi}^\prime+\delta\varphi',\, \nabla\delta\varphi\right)\\
     &\simeq \frac{a}{\bar{\varphi}'}\left[1 - \left(\frac{\delta\varphi'}{\bar{\varphi}'}-\Phi\right) +\left(\frac{\delta\varphi'}{\bar{\varphi}'}\right)^2 + \frac{1}{2}\frac{(\nabla\delta\varphi)^2}{(\bar{\varphi}')^2} \right]\left(\bar{\varphi}^\prime+\delta\varphi',\, \nabla\delta\varphi\right)\\
@@ -585,16 +596,16 @@ Matching to a perfect fluid $T_{\mu\nu}=(\rho+p)u_\mu u_\nu + p g_{\mu\nu}$ we i
 Expanding $V(\varphi)=V(\bar{\varphi}) + V_{\varphi}(\bar{\varphi})\delta\varphi + \frac{1}{2}V_{\varphi\varphi}(\bar{\varphi})(\delta\varphi)^2$ we identify the \textbf{energy density}
 \begin{align}
 \begin{aligned}
-    \rho &= \frac{1}{2}X + V(\varphi) = \frac{1}{2a^2}(1-2\Phi)(\varphi')^2 + \frac{1}{2a^2}(1+2\Psi)(\nabla\varphi)^2 + V(\varphi)\\
-    &\simeq \frac{1}{2}\frac{a}{\bar{\varphi}'}\left[1 - \left(\frac{\delta\varphi'}{\bar{\varphi}'}-\Phi\right) +\left(\frac{\delta\varphi'}{\bar{\varphi}'}\right)^2 + \frac{1}{2}\frac{(\nabla\delta\varphi)^2}{(\bar{\varphi}')^2} \right]\\
-    &\quad+ V(\bar{\varphi}) + V_{\varphi}(\bar{\varphi})\delta\varphi + \frac{1}{2}V_{\varphi\varphi}(\bar{\varphi})(\delta\varphi)^2 +\mathcal{O}(3,\mathrm{mix})\,.
+    \rho &= \frac{1}{2}X + V(\varphi)\\
+    &\simeq  \frac{1}{2\,a^2}(\bar{\varphi}')^2\left[1+ 2\left(\frac{\delta\varphi'}{\bar{\varphi}'}-\Phi\right) + \left(\frac{\delta\varphi'}{\bar{\varphi}'}\right)^2 - \frac{(\nabla\delta\varphi)^2}{(\bar{\varphi}')^2}\right]\\
+    &\quad + V(\bar{\varphi}) + V_{\varphi}(\bar{\varphi})\delta\varphi + \frac{1}{2}V_{\varphi\varphi}(\bar{\varphi})(\delta\varphi)^2 +\mathcal{O}(3,\mathrm{mix})
 \end{aligned}
 \end{align}
 and the \textbf{pressure} 
 \begin{align}
 \begin{aligned}
-    p &= \frac{1}{2}X - V(\varphi) = \frac{1}{2a^2}(1-2\Phi)(\varphi')^2 + \frac{1}{2a^2}(1+2\Psi)(\nabla\varphi)^2 - V(\varphi)\\
-    &\simeq \frac{1}{2}\frac{a}{\bar{\varphi}'}\left[1 - \left(\frac{\delta\varphi'}{\bar{\varphi}'}-\Phi\right) +\left(\frac{\delta\varphi'}{\bar{\varphi}'}\right)^2 + \frac{1}{2}\frac{(\nabla\delta\varphi)^2}{(\bar{\varphi}')^2} \right]\\
+    p &= \frac{1}{2}X - V(\varphi) \\
+    &\simeq  \frac{1}{2\,a^2}(\bar{\varphi}')^2\left[1+ 2\left(\frac{\delta\varphi'}{\bar{\varphi}'}-\Phi\right) + \left(\frac{\delta\varphi'}{\bar{\varphi}'}\right)^2 - \frac{(\nabla\delta\varphi)^2}{(\bar{\varphi}')^2}\right]\\
     &\quad- V(\bar{\varphi}) - V_{\varphi}(\bar{\varphi})\delta\varphi - \frac{1}{2}V_{\varphi\varphi}(\bar{\varphi})(\delta\varphi)^2 +\mathcal{O}(3,\mathrm{mix})\,.
 \end{aligned}
 \end{align}
@@ -604,33 +615,96 @@ Finally we have
 \end{align}
 Since we showed that $c_b^2:=\frac{\delta p}{\delta \rho}_{\mid \sigma}=1$ we identify the \textbf{non-adiabatic pressure perturbations} of the field
 \begin{align}
-    \delta p_{\text{nad}} =\frac{\delta p}{\delta \sigma}_{\mid \rho}\delta\sigma= \delta p - c_b^2 \delta \rho = - 2 V_{\varphi}(\bar{\varphi})\delta\varphi\,\quad \Rightarrow\quad \Gamma:= \frac{\delta p}{\delta \sigma}_{\mid \rho}\delta\sigma = - 2 V_{\varphi}(\bar{\varphi})\delta\varphi\,.
+    \delta p_{\text{nad}} =\frac{\partial p}{\partial \sigma}_{\mid \rho}\delta\sigma= \delta p - c_b^2 \delta \rho = - 2 V_{\varphi}(\bar{\varphi})\delta\varphi\,\quad \Rightarrow\quad \Gamma:= \frac{\partial p}{\partial \sigma}_{\mid \rho}= - \frac{\delta\varphi}{\delta \sigma_{\mid \rho}}2 V_{\varphi}(\bar{\varphi})\,
 \end{align}
-and we confim $\Gamma$ is a function of the potential only and that indeed $\delta\sigma\propto \delta\varphi$.
+and we confim below that $\Gamma$ is a function of the potential only and that indeed $\delta\sigma\propto \delta\varphi$.
 
 Finally note that in the comoving gauge $\varphi^I=x^I$ we have
 \begin{align}
     b=\left(\det(g^{\mu\nu}\partial_\mu\varphi^I\partial_\nu\varphi^J)\right)^{1/2} = \sqrt{\det(g^{ij})} = \frac{1}{a^3}(1+3\Psi)\,.
 \end{align}
 and
-\begin{align}
-    y=-\sqrt{X}= -\frac{\bar{\varphi}'}{a}\left[1 + \left(\frac{\delta\varphi'}{\bar{\varphi}'}-\Phi\right) - \frac{1}{2}\frac{(\nabla\delta\varphi)^2}{(\bar{\varphi}')^2} \right] +\mathcal{O}(3,\mathrm{mix})\,.
+\begin{align}\label{eq:expansion_y_quintessence}
+    y=-\sqrt{X}&= -\frac{\bar{\varphi}'}{a}\left[1 + \left(\frac{\delta\varphi'}{\bar{\varphi}'}-\Phi\right) - \frac{1}{2}\frac{(\nabla\delta\varphi)^2}{(\bar{\varphi}')^2} \right] +\mathcal{O}(3,\mathrm{mix})\\
+    &= -\frac{\bar{\varphi}'}{a} -\frac{\delta\varphi'}{a}+\frac{\bar{\varphi}'\Phi}{a} + \mathcal{O}(2)\,.
 \end{align}
-Therefore the \textbf{comoving entropy for the scalar field} is\todoAC{Formula $F_y/b$ does not account for $V$..}
+Therefore the \textbf{comoving entropy for the scalar field} is 
 \begin{align}
     \sigma = \frac{F_y}{b} = a^3(1-3\Psi) y =  -a^2\bar{\varphi}'\left[1 + \left(\frac{\delta\varphi'}{\bar{\varphi}'}-\Phi-3\Psi\right) - \frac{1}{2}\frac{(\nabla\delta\varphi)^2}{(\bar{\varphi}')^2} \right] +\mathcal{O}(3,\mathrm{mix})\,.
+\end{align}
+and the \textbf{entropy density} (fluctuations) are directly proportional to field fluctuations 
+\begin{align}
+    s = F_y = y =  -\frac{\bar{\varphi}'}{a} -\frac{\delta\varphi'}{a}+\frac{\bar{\varphi}'\Phi}{a} + \mathcal{O}(2)\,.
 \end{align}
 
 Finally the \textbf{equation of state}, upon inverting $\sigma$ to get $\varphi$, reads
 \begin{align}
     p=\rho-2V(\varphi) \sim \rho +\mathbf{f}(\sigma)\,,
 \end{align}
-confirming it is not a function of the potential only.
+confirming it is \emph{not} a function of the potential only.
 
 
+%----------------------------------------------------------------
+\subsection{Matching to k-essence scalar field}
+%----------------------------------------------------------------
+Consider the action for a k-essence scalar field $\varphi$ with lagrangian $P(X,\varphi)$
+\begin{equation}
+    S_\varphi = \int d^4x \sqrt{-g} P(X,\varphi)\,, \quad X:= -g^{\mu\nu}\partial_\mu\varphi \partial_\nu\varphi\,.
+\end{equation}
+The energy-momentum tensor is
+\begin{align}
+\begin{aligned}
+    T_{\mu\nu}&=-\frac{2}{\sqrt{-g}}\frac{\partial \left(\sqrt{-g}\mathcal{L}\right)}{\partial g^{\mu\nu}}
+    = -\frac{2}{\sqrt{-g}}\left(\sqrt{-g}\frac{\partial \mathcal{L}}{\partial g^{\mu\nu}}-\frac{1}{2}\sqrt{-g}g_{\mu\nu}\mathcal{L}\right)
+    \\[4pt]
+     &= P_X \partial_\mu\varphi \partial_\nu\varphi + g_{\mu\nu} P(X,\varphi)
+     = u_\mu u_\nu X P_X + g_{\mu\nu} P(X,\varphi)\,.
+\end{aligned}
+\end{align}
+The velocity field is $u_\mu = \partial_\mu\varphi/\sqrt{X}$ as in the quintessence case, and it enjoys the same expansion \eqref{eq:velocity_field_expansion}.
+Matching to a perfect fluid we identify the \textbf{energy density} and \textbf{pressure} as
+\begin{align}\label{eq:energy_density_pressure_k_essence}
+\begin{aligned}
+    \rho &= 2 X P_X - P(X,\varphi) = \bar{\rho} + \underbrace{(P_X+2XP_{XX})\delta X + (2XP_{X\varphi}-P_\varphi)\delta\varphi}_{=\delta\rho}\,,\\[4pt]
+    p&= P(X,\varphi) = \bar{p} + \underbrace{P_X \delta X + P_\varphi \delta\varphi}_{=\delta p}
+\end{aligned}
+\end{align}
+The expressions of $X$ is again given by \eqref{eq:expansion_X}, so that we find the \textbf{energy density and pressure fluctuations}
+\begin{align}
+\begin{aligned}
+    \delta\rho &= \big(P_X+2XP_{XX}\big)\,\,\frac{2}{a^2}\left[\bar{\varphi}'\delta\varphi' - (\bar{\varphi}')^2\Phi\right] + (2XP_{X\varphi}-P_\varphi)\,\delta\varphi\,,\\[4pt]
+    \delta p &= P_X\, \frac{2}{a^2}\left[\bar{\varphi}'\delta\varphi' - (\bar{\varphi}')^2\Phi\right] + P_\varphi \, \delta\varphi\,.
+\end{aligned}
+\end{align}
+Similarly we still have $y=-\sqrt{X}$ with epansion \eqref{eq:expansion_y_quintessence}, so that the \textbf{entropy density} is
+\begin{align}
+    s= F_y = \frac{\partial P}{\partial y}= 2yP_X = -\frac{2P_X}{a} \left(\bar{\varphi}' +\delta\varphi' - \bar{\varphi}'\Phi \right) + \mathcal{O}(2)\,
+\end{align}
+and since also $b=\det(\partial_\mu\phi^I\partial_\nu\phi^J g^{\mu\nu})^{1/2}$ is unchanged, the \textbf{comoving entropy} is
+\begin{align}
+    \sigma = \frac{F_y}{b} = a^3(1-3\Psi) \frac{\partial P}{\partial y}= -2a^2P_X \left(\bar{\varphi}' +\delta\varphi' - \bar{\varphi}'(\Phi+3\Psi) \right) + \mathcal{O}(2)\,.
+\end{align}
+In particular we see that $\delta\sigma\propto \delta\varphi$ as in the quintessence case.
 
-
-
+Finally we compute $c_b^2= \frac{\partial p}{\partial \rho}_{\mid \sigma}$ using the general formula in the previous sections, and in turn identify the non-adiabatic pressure perturbations $\delta p_{\text{nad}} = \frac{\partial p}{\partial \sigma}_{\mid \rho}\delta\sigma$.\todotag{Do it}
+We have $F(y,b)=P(X,\varphi)$ so that
+\begin{align}
+\begin{aligned}
+    c_b^2&=\frac{-b^2F_{bb} F_{yy}+(F_y-bF_{yb})^2}{F_{yy}\,(yF_y-bF_b)}= \frac{(P_X)^2}{(P_X)^2+2XP_XP_{XX}}
+\end{aligned}
+\end{align}
+Comparing to \eqref{eq:energy_density_pressure_k_essence} above we find
+\begin{align}
+\begin{aligned}
+    \delta p &= c_b^2 \delta\rho + \frac{\partial p}{\partial \sigma}_{\mid \rho}\delta\sigma
+    = P_X \delta X + \frac{P_X\Big(2XP_{X\varphi}-P_\varphi)}{P_X+2XP_{XX}}\delta\varphi  + \frac{\partial p}{\partial \sigma}_{\mid \rho}\delta\sigma \overset{!}{=} P_X\delta_X + P_\varphi\delta\varphi\,,
+\end{aligned}
+\end{align}
+we identify the \textbf{non-adiabatic pressure perturbations} of the k-essence field
+\begin{align}
+    \delta p_{\text{nad}} =\frac{\partial p}{\partial \sigma}_{\mid \rho}\delta\sigma
+    = \left(P_\varphi - \frac{P_X\Big(2XP_{X\varphi}-P_\varphi)}{P_X+2XP_{XX}}\right)\delta\varphi\,\quad \Rightarrow\quad \Gamma:= \frac{\partial p}{\partial \sigma}_{\mid \rho}= \left(P_\varphi - \frac{P_X\Big(2XP_{X\varphi}-P_\varphi)}{P_X+2XP_{XX}}\right)\frac{\delta\varphi}{\delta \sigma_{\mid \rho}}\,.
+\end{align}
 
 
 
