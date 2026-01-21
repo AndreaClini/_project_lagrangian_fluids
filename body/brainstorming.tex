@@ -605,21 +605,58 @@ We have
 \begin{align}
     \text{tr}(\epsilon) &= - h^{ii} + 2 (\eta-h)^{\mu i} \partial_\mu \pi^i + \partial_\mu \pi^i \eta^{\mu\nu} \partial_\nu \pi^i,
     \\
-    \text{tr}(\epsilon^2) &= h^{ij} h^{ji} - 4 h^{ij} \partial_i\pi^j + 2 \partial_i\pi^j\partial_j\pi^i + 2 \partial_j\pi^i \partial_j \pi^i\,,
+    \text{tr}(\epsilon)^2&= (h^{ii})^2 - 4 h^{ii} \partial_j \pi^j + 4 (\partial_i \pi^i)^2\,,
     \\
-    \Big(\text{tr}(\epsilon)\Big)^2 &= \big(- h^{ii} + 2 \partial_i\pi^i \big)^2 = (h^{ii})^2 - 4 h^{ii} \partial_j \pi^j + 4 (\partial_i \pi^i)^2\,.
+    \text{tr}(\epsilon^2) &= h^{ij} h^{ji} - 4 h^{ij} \partial_i\pi^j + 2 \partial_i\pi^j\partial_j\pi^i + 2 \partial_j\pi^i \partial_j \pi^i\,.
 \end{align}
 Therefore using
 \begin{align}
     \det(\mathbb{I}+ \epsilon) = 1 + \text{tr}(\epsilon) + \frac12 \left(\text{tr}(\epsilon)^2 - \text{tr}(\epsilon^2)\right) + \mathcal{O}(\epsilon^3)\\
-    \det(\mathbb{I}+\epsilon)^{1/2} = 1 + \frac12 \text{tr}(\epsilon) + \frac18 \left(\text{tr}(\epsilon)^2 - 2 \text{tr}(\epsilon^2)\right) + \mathcal{O}(\epsilon^3)
+    \det(\mathbb{I}+\epsilon)^{1/2} = 1 + \frac12 \text{tr}(\epsilon) + \frac18 \left(\text{tr}(\epsilon)^2 - 2 \text{tr}(\epsilon^2)\right) + \mathcal{O}(\epsilon^3)\\
+    \det(\mathbb{I}+\epsilon)^{-1/2} = 1 - \frac12 \text{tr}(\epsilon) + \frac18 \left(\text{tr}(\epsilon)^2 + 2 \text{tr}(\epsilon^2)\right) + \mathcal{O}(\epsilon^3)
 \end{align}
 we have
 \begin{align}
-    B=...\\
-    b=\sqrt{B}=...
+    \frac{a^6}{\lambda^6}B&= 1 - h^{ii} + 2 (\eta-h)^{\mu i} \partial_\mu \pi^i + \partial_\mu \pi^i \eta^{\mu\nu} \partial_\nu \pi^i\\
+    &\quad +\frac{1}{2}\left[
+        +(h^{ii})^2 - 4 h^{ii} \partial_j \pi^j + 4 (\partial_i \pi^i)^2
+        -h^{ij} h^{ji} + 4 h^{ij} \partial_i\pi^j - 2 \partial_i\pi^j\partial_j\pi^i - 2 \partial_j\pi^i \partial_j \pi^i
+    \right]
+    \\
+    &=1  + 2 (\partial_j\pi^j)- h^{ii} -(\dot{\pi}^j)^2 + 3(\partial_j\pi^j)^2 - \partial_i\pi^j\partial_j\pi^i - \partial_j\pi^i\partial_j \pi^i\\
+    &+\tfrac12 \Big((h^{ii})^2-h^{ij} h^{ji}\Big)-2h^{0 i} \,\,\dot{\pi}^i -2h^{ii}(\partial_j\pi^j)
+\end{align}
+and
+\begin{align}
+    \frac{a^3}{\lambda^3}B^{1/2}
+    =&1  +  (\partial_j\pi^j)- \tfrac12 h^{ii} -\tfrac12 (\dot{\pi}^j)^2 + \tfrac32(\partial_j\pi^j)^2 - \tfrac12 \partial_i\pi^j\partial_j\pi^i - \tfrac12 \partial_j\pi^i\partial_j \pi^i\\
+    &+\tfrac14 \Big((h^{ii})^2-h^{ij} h^{ji}\Big)-h^{0 i} \,\,\dot{\pi}^i -h^{ii}(\partial_j\pi^j)-\tfrac18\left[ (\partial_j\pi^j) -h^{ii}\right]^2\\
+    =&1  +  (\partial_j\pi^j)- \tfrac12 h^{ii} -\tfrac12 (\dot{\pi}^j)^2 + \tfrac{11}{8}(\partial_j\pi^j)^2 - \tfrac12 \partial_i\pi^j\partial_j\pi^i - \tfrac12 \partial_j\pi^i\partial_j \pi^i\\
+    &+\tfrac14 \Big(\tfrac12 (h^{ii})^2-h^{ij} h^{ji}\Big)-h^{0 i} \,\,\dot{\pi}^i -\tfrac34 h^{ii}(\partial_j\pi^j)
 \end{align}
 
+
+
+
+
+Just to double check
+\begin{align}
+    \frac{a^3}{\lambda^3}b=& 1 - \tfrac12 h^{ii} +  (\eta-h)^{\mu i} \partial_\mu \pi^i + \tfrac12 \partial_\mu \pi^i \eta^{\mu\nu} \partial_\nu \pi^i\\
+    & +\frac{1}{8}\left[
+        +(h^{ii})^2 - 4 h^{ii} \partial_j \pi^j + 4 (\partial_i \pi^i)^2
+        -2h^{ij} h^{ji} + 8 h^{ij} \partial_i\pi^j - 4 \partial_i\pi^j\partial_j\pi^i - 4 \partial_j\pi^i \partial_j \pi^i
+    \right]
+    \\
+\end{align}
+and finally
+\begin{align}
+    \left(\frac{a^3}{\lambda^3}b\right)^{-1}&= 1 + \tfrac12 h^{ii} -  (\eta-h)^{\mu i} \partial_\mu \pi^i - \tfrac12 \partial_\mu \pi^i \eta^{\mu\nu} \partial_\nu \pi^i\\
+    &\quad +\frac{1}{8}\left[
+        +(h^{ii})^2 - 4 h^{ii} \partial_j \pi^j + 4 (\partial_i \pi^i)^2
+        +2h^{ij} h^{ji} - 8 h^{ij} \partial_i\pi^j + 4 \partial_i\pi^j\partial_j\pi^i + 4 \partial_j\pi^i \partial_j \pi^i
+    \right]
+    \\
+\end{align}
 
 
 
