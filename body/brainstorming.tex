@@ -581,6 +581,48 @@ Then we have
 
 
 
+
+%=================================================================
+\subsection{Fluctuations: curved background}
+%=================================================================
+
+
+We analyze the fluctuations in a general curved background metric, wwritten wrt conformal time $\tau$ as
+\begin{align}
+    g_{\mu\nu}=a^2\Big(\eta_{\mu\nu}+h_{\mu\nu}\Big)\,,\quad g^{\mu\nu}=a^{-2}\Big(\eta^{\mu\nu}-h^{\mu\nu}\Big)\quad \text{with} \quad h^{\mu\nu}=\eta^{\mu\alpha}\eta^{\nu\beta}h_{\alpha\beta}\,.
+\end{align}
+The fluids variables are written for simplicity with a rescaling factor $\gamma$ and $\lambda$ as
+\begin{align}
+    \phi^0=\gamma\Big(\tau+\pi^0\Big), \quad \phi^i=\lambda\Big(x^i+\pi^i\Big),
+\end{align}
+Next we expand the invariants $B$ and $y$ up to quadratic order
+We have
+\begin{align}
+    B^{ij}= g^{\mu\nu} \partial_\mu \phi^i \partial_\nu \phi^j
+    &= \frac{\lambda^2}{a^2} \Big(\delta^{ij} - h^{ij} + (\eta-h)^{\mu i}\partial_\mu \pi^j + (\eta-h)^{\nu j}\partial_\nu \pi^i + \partial_\mu\pi^i\eta^{\mu\nu}\partial_\nu \pi^j \Big) =: \frac{\lambda^2}{a^2} \Big(\delta^{ij} + \epsilon^{ij}\Big),
+\end{align}
+We have
+\begin{align}
+    \text{tr}(\epsilon) &= - h^{ii} + 2 (\eta-h)^{\mu i} \partial_\mu \pi^i + \partial_\mu \pi^i \eta^{\mu\nu} \partial_\nu \pi^i,
+    \\
+    \text{tr}(\epsilon^2) &= h^{ij} h^{ji} - 4 h^{ij} \partial_i\pi^j + 2 \partial_i\pi^j\partial_j\pi^i + 2 \partial_j\pi^i \partial_j \pi^i\,,
+    \\
+    \Big(\text{tr}(\epsilon)\Big)^2 &= \big(- h^{ii} + 2 \partial_i\pi^i \big)^2 = (h^{ii})^2 - 4 h^{ii} \partial_j \pi^j + 4 (\partial_i \pi^i)^2\,.
+\end{align}
+Therefore using
+\begin{align}
+    \det(\mathbb{I}+ \epsilon) = 1 + \text{tr}(\epsilon) + \frac12 \left(\text{tr}(\epsilon)^2 - \text{tr}(\epsilon^2)\right) + \mathcal{O}(\epsilon^3)\\
+    \det(\mathbb{I}+\epsilon)^{1/2} = 1 + \frac12 \text{tr}(\epsilon) + \frac18 \left(\text{tr}(\epsilon)^2 - 2 \text{tr}(\epsilon^2)\right) + \mathcal{O}(\epsilon^3)
+\end{align}
+we have
+\begin{align}
+    B=...\\
+    b=\sqrt{B}=...
+\end{align}
+
+
+
+
 %------------------------------------------------------
 %======================================================
 \section{Sound speed and equation of state}
