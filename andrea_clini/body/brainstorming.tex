@@ -588,9 +588,11 @@ Then we have
 
 
 We analyze the fluctuations in a general curved background metric, wwritten wrt conformal time $\tau$ as
+{\small 
 \begin{align}
-    g_{\mu\nu}=a^2\Big(\eta_{\mu\nu}+h_{\mu\nu}\Big)\,,\quad g^{\mu\nu}=a^{-2}\Big(\eta^{\mu\nu}-h^{\mu\nu}\Big)\quad \text{with} \quad h^{\mu\nu}=\eta^{\mu\alpha}\eta^{\nu\beta}h_{\alpha\beta}\,.
+    g_{\mu\nu}=a^2\Big(\eta_{\mu\nu}+h_{\mu\nu}\Big)\,,\quad g^{\mu\nu}=a^{-2}\Big(\eta^{\mu\nu}-h^{\mu\nu}\Big)\quad \text{with} \quad h^{\mu\nu}=\eta^{\mu\alpha}\eta^{\nu\beta}h_{\alpha\beta},\quad \sqrt{|g|}= a^4\big(1+\tfrac12 h^{\mu\nu}\eta_{\mu\nu} +O(h^2)\big)\,.
 \end{align}
+}
 The fluids variables are written for simplicity with a rescaling factor $\gamma$ and $\lambda$ as
 \begin{align}
     \phi^0=\gamma\Big(\tau+\pi^0\Big), \quad \phi^i=\lambda\Big(x^i+\pi^i\Big),
@@ -659,6 +661,62 @@ Finally we have
     &= 1 + \Big[ \tfrac12 h^{ii} -(\partial_j \pi^j)\Big] + \Big[ h^{0 i} \dot{\pi}^i + \tfrac12  h^{ii} (\partial_j \pi^j) + \tfrac12 (\dot{\pi}^i)^2 + \tfrac12 (\partial_j \pi^j)^2 +\tfrac12 \partial_i\pi^j\partial_j\pi^i\Big] +\tfrac18 \Big((h^{ii})^2 +2h^{ij} h^{ji}\Big) 
 \end{align}
 }
+The metric 
+
+
+The 4-velocity $u^\mu$ reads
+{\small
+\begin{align}
+    u^\mu =& \frac{1}{\sqrt{-g}\, 6b} \epsilon^{\mu \alpha \beta \gamma} \epsilon_{ijk} \, \partial_\alpha \phi^i \partial_\beta \phi^j \partial_\gamma \phi^k
+    \\
+    =&a^{-4}\big(1-\tfrac12 h^{\mu\nu}\eta_{\mu\nu}\big) \epsilon^{\mu \alpha \beta \gamma} \epsilon_{ijk} \, \lambda^3 (\delta_\alpha^i + \partial_\alpha \pi^i) (\delta_\beta^j + \partial_\beta \pi^j) (\delta_\gamma^k + \partial_\gamma \pi^k)\\
+    &\tfrac{a^3}{6\lambda^3}\Bigg(1 + \Big[ \tfrac12 h^{ii} -(\partial_j \pi^j)\Big] + \Big[ h^{0 i} \dot{\pi}^i + \tfrac12  h^{ii} (\partial_j \pi^j) + \tfrac12 (\dot{\pi}^i)^2 + \tfrac12 (\partial_j \pi^j)^2 +\tfrac12 \partial_i\pi^j\partial_j\pi^i\Big]\Bigg)
+    \\
+    =&\frac{1}{6a}\big(1-\tfrac12 h^{\mu\nu}\eta_{\mu\nu}\big) \epsilon^{\mu \alpha \beta \gamma} \epsilon_{ijk} \, (\delta_\alpha^i + \partial_\alpha \pi^i) (\delta_\beta^j + \partial_\beta \pi^j) (\delta_\gamma^k + \partial_\gamma \pi^k)\\
+    &\Bigg(1 + \Big[ \tfrac12 h^{ii} -(\partial_j \pi^j)\Big] + \Big[ h^{0 i} \dot{\pi}^i + \tfrac12  h^{ii} (\partial_j \pi^j) + \tfrac12 (\dot{\pi}^i)^2 + \tfrac12 (\partial_j \pi^j)^2 +\tfrac12 \partial_i\pi^j\partial_j\pi^i\Big]\Bigg)
+\end{align}
+}
+Therefore
+{\small
+\begin{align}
+    a \, u^\mu =&\underbrace{\frac{1}{6}\epsilon^{\mu\alpha\beta\gamma} \epsilon_{\alpha\beta\gamma}}_{=\delta_0^\mu} \big(1+\tfrac12 h^{00}-\tfrac12 h^{ii}\big)\bigg(1 \!+\! \Big[ \tfrac12 h^{ii} -(\partial_j \pi^j)\Big]\! +\! \Big[ h^{0 i} \dot{\pi}^i + \tfrac12  h^{ii} (\partial_j \pi^j) + \tfrac12 (\dot{\pi}^i)^2 + \tfrac12 (\partial_j \pi^j)^2 +\tfrac12 \partial_i\pi^j\partial_j\pi^i\Big]\bigg)
+    \\
+    &+\frac{1}{6}\left[1 + \tfrac12 h^{ii}-(\partial_\ell\pi^\ell)\right]
+    \underbrace{\epsilon_{ijk} \,\left(\epsilon^{\mu\alpha j k}\partial_\alpha\pi^i+\epsilon^{\mu i \beta k}\partial_\beta\pi^j+\epsilon^{\mu i j \gamma}\partial_\gamma\pi^k\right)}_{=3\, \epsilon_{i j k}\,\epsilon^{\mu \alpha j k}\,\partial_\alpha\pi^i \text{ by symmetry}}\\
+    &+\frac{1}{6}\underbrace{\epsilon_{ijk} \,\left(\epsilon^{\mu i \beta\gamma}\partial_\beta\pi^j\,\partial_\gamma\pi^k + \epsilon^{\mu \alpha j \gamma}\,\partial_\alpha\pi^i\,\partial_\gamma\pi^k + \epsilon^{\mu \alpha \beta k}\,\partial_\alpha\pi^i\,\partial_\beta\pi^j\right)}_{=3\, \epsilon_{ijk}\, \epsilon^{\mu i \beta\gamma}\partial_\beta\pi^j\,\partial_\gamma\pi^k \text{ by symmetry}}
+    + O(\pi^3, h^2)\\
+    =&\delta_0^\mu \bigg(1 \!+\! \Big[\tfrac12 h^{00} -(\partial_j \pi^j)\Big]\! +\! \Big[ h^{0 i} \dot{\pi}^i + \big(h^{ii}-\tfrac12 h^{00}\big) (\partial_j \pi^j) + \tfrac12 (\dot{\pi}^i)^2 + \tfrac12 (\partial_j \pi^j)^2 +\tfrac12 \partial_i\pi^j\partial_j\pi^i\Big]\bigg)
+    \\
+    &+\frac{1}{2}\left[1 + \tfrac12 h^{ii}-(\partial_\ell\pi^\ell)\right]
+     \epsilon_{i j k}\,\epsilon^{\mu \alpha j k}\,\partial_\alpha\pi^i 
+     +\frac{1}{2} \epsilon_{ijk}\, \epsilon^{\mu i \beta\gamma}\partial_\beta\pi^j\,\partial_\gamma\pi^k
+    + O(\pi^3, h^2)\\
+\end{align}
+}
+
+We can finally compute $y=u^\mu \partial_\mu \phi^0$
+{\small
+\begin{align}
+    \frac{a}{\gamma}y &= \frac{a}{\gamma}u^\mu \partial_\mu \phi^0 = a u^\mu \big(\delta_\mu^0 + \partial_\mu \pi^0\big)\\
+    &= \big(\delta_\mu^0 + \partial_\mu \pi^0\big) \delta_0^\mu \bigg(1 \!+\! \Big[\tfrac12 h^{00} -(\partial_j \pi^j)\Big]\! +\! \Big[ h^{0 i} \dot{\pi}^i + \big(h^{ii}-\tfrac12 h^{00}\big) (\partial_j \pi^j) + \tfrac12 (\dot{\pi}^i)^2 + \tfrac12 (\partial_j \pi^j)^2 +\tfrac12 \partial_i\pi^j\partial_j\pi^i\Big]\bigg)\\
+    &+ \tfrac12 \big(\delta_\mu^0 + \partial_\mu \pi^0\big)\bigg(\left[1 + \tfrac12 h^{ii}-(\partial_\ell\pi^\ell)\right]
+     \epsilon_{i j k}\,\epsilon^{\mu \alpha j k}\,\partial_\alpha\pi^i 
+     +\epsilon_{ijk}\, \epsilon^{\mu i \beta\gamma}\partial_\beta\pi^j\,\partial_\gamma\pi^k\bigg)
+    \\
+    &= \bigg(1 \!+\! \Big[\tfrac12 h^{00} -(\partial_j \pi^j)\Big]\! +\! \Big[ h^{0 i} \dot{\pi}^i + \big(h^{ii}-\tfrac12 h^{00}\big) (\partial_j \pi^j) + \tfrac12 (\dot{\pi}^i)^2 + \tfrac12 (\partial_j \pi^j)^2 +\tfrac12 \partial_i\pi^j\partial_j\pi^i\Big]\bigg)\\
+    &+\dot{\pi}^0 \bigg(1 \!+\! \Big[\tfrac12 h^{00} -(\partial_j \pi^j)\Big]\bigg)\\
+    &+\tfrac12 \bigg(\left[1 + \tfrac12 h^{ii}-(\partial_\ell\pi^\ell)\right]
+     \epsilon_{i j k}\,\epsilon^{0 \alpha j k}\,\partial_\alpha\pi^i 
+     +\epsilon_{ijk}\, \epsilon^{0 i \beta\gamma}\partial_\beta\pi^j\,\partial_\gamma\pi^k\bigg)
+     +\tfrac12 \partial_\mu \pi^0 \epsilon_{i j k}\,\epsilon^{\mu \alpha j k}\,\partial_\alpha\pi^i
+\end{align}
+}
+That is to say 
+
+
+
+
+
 
 
 %------------------------------------------------------
