@@ -166,8 +166,14 @@
   {\setlength{\fboxsep}{1pt}\todo[backgroundcolor=TodoColor, bordercolor=black, linecolor=black, size=\scriptsize]{AC: #1}}}
 \newcommand{\answerAC}[1]{
   {\setlength{\fboxsep}{1pt}\todo[backgroundcolor=AnswerColor, bordercolor=black, linecolor=black, size=\scriptsize]{AC: #1}}}
-%=================================================
 
+%--------------- Colored cancel lines to strike through terms----------
+\newcommand{\redcancel}[1]{\renewcommand{\CancelColor}{\color{red}}\cancel{#1}}
+\newcommand{\bluecancel}[1]{\renewcommand{\CancelColor}{\color{blue}}\cancel{#1}}
+\newcommand{\greencancel}[1]{\renewcommand{\CancelColor}{\color{green}}\cancel{#1}}
+\newcommand{\graycancel}[1]{\renewcommand{\CancelColor}{\color{gray}}\cancel{#1}}
+\newcommand{\purplecancel}[1]{\renewcommand{\CancelColor}{\color{purple}}\cancel{#1}}
+%=================================================
 
 
 
@@ -525,6 +531,10 @@ Using $F=-\mathfrak{a}$ and $s=F_y=-\partial_T\mathfrak{a}$, we rewrite the adia
 which makes it manifest that $c_b^2\geq0$ provided no ghosts $\rho+P>0$, the second principle of thermodynamics $\partial_Ts\geq 0$ and thermodynamic stability $\partial_n^2\mathfrak{a}\geq 0$ hold.
 
 We also show $c_b^2\equiv c_s^2$ always, which show that absence of ghosts, thermodynamic stability and gradient instabilities are closely related.
+{\color{red}
+The computation below is wrong since both $\mathcal{C}_s^2$ and $\mathcal{M}$ contain wrong extra terms.
+Still these terms cancel between original and entropy contribution to $c_s^2$ and we still get $c_b^2=c_s^2$.
+Th correct computation in in appendix B.}\todotag{Remove this when polished}
 Indeed, using the above expressions 
 \begin{align}
 \begin{aligned}
@@ -709,7 +719,7 @@ we identify the \textbf{non-adiabatic pressure perturbations} of the k-essence f
 \end{aligned}
 \end{align}
 
-
+\include{quadratic_action_curved_spacetime}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

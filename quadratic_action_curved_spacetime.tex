@@ -1,0 +1,170 @@
+%==========================================================================
+\section{Quadratic action in curved spacetime}
+%===========================================================================
+We analyze the fluctuations in a general curved background metric, written wrt conformal time $\tau$ as
+{\small 
+\begin{align}
+\begin{aligned}
+    &g_{\mu\nu}=a^2\Big(\eta_{\mu\nu}+h_{\mu\nu}\Big)\,,\quad g^{\mu\nu}=a^{-2}\Big(\eta^{\mu\nu}-h^{\mu\nu}\Big)\quad \text{with} \quad h^{\mu\nu}=\eta^{\mu\alpha}\eta^{\nu\beta}h_{\alpha\beta},\\
+    &\quad \sqrt{|g|}= a^4\big(1+\tfrac12 h^{\mu\nu}\eta_{\mu\nu} +O(h^2)\big)\ = a^4\Big[1+\tfrac12 (h^{ii}-h^{00}) +O(h^2)\Big]\,.
+\end{aligned}
+\end{align}
+}
+The fluids variables are written for simplicity with a rescaling factor $\gamma$ and $\lambda$ as
+\begin{align}
+    \phi^0=\gamma\Big(\tau+\pi^0\Big), \quad \phi^i=\lambda\Big(x^i+\pi^i\Big)\,.
+\end{align}
+The invariants are again the number density $n\equiv b$ for
+\begin{align}
+    b=\sqrt{\det B}\quad \text{for}\quad
+    B^{ij}= g^{\mu\nu} \partial_\mu \phi^i \partial_\nu \phi^j,
+\end{align}
+and the temperature $T\equiv y$ for
+\begin{align}
+    y= u^\mu \partial_\mu \phi^0
+    \quad\text{for}\quad u^\mu=& \frac{1}{\sqrt{-g}\, 6b} \epsilon^{\mu \alpha \beta \gamma} \epsilon_{ijk} \, \partial_\alpha \phi^i \partial_\beta \phi^j \partial_\gamma \phi^k \propto\,  \star(d\phi^1\wedge d\phi^2\wedge d \phi^3).
+\end{align}
+
+We now expand up to quadratic order in the fields $\pi$ and mixed order in $\pi h$, ignoring pure second orders in the metric $h^2$.
+We have the expansions
+{
+\begin{align}
+\begin{aligned}
+    &b= \bar{b}(1+\delta b),\quad \bar{b}= \frac{\lambda^3}{a^3},\quad
+    \delta b^{(1)} = -\tfrac12 h^{ii} +(\partial_j \pi^j),\\[3pt]
+    &\delta b^{(2)} = - h^{0 i} \dot{\pi}^i - \tfrac12  h^{ii} (\partial_j \pi^j) - \tfrac12 (\dot{\pi}^i)^2 + \tfrac12 (\partial_j \pi^j)^2 -\tfrac12 \partial_i\pi^j\partial_j\pi^i\,,
+    \\[3pt]
+    &y= \bar{y}(1+\delta y),\quad \bar{y}= \frac{\gamma}{a},\quad \delta y^{(1)} = \tfrac12 h^{00}+ \dot{\pi}^0,\\[3pt]
+    &\delta y^{(2)} = \tfrac12 h^{00}\dot{\pi}^0+ h^{0 i} \dot{\pi}^i + \big(\tfrac32 h^{ii}-\tfrac12 h^{00}\big) (\partial_j \pi^j) + \tfrac12 (\dot{\pi}^i)^2 -\partial_j\pi^0\dot{\pi}^j.
+\end{aligned}
+\end{align}
+}
+We can now expand the action up to second order 
+{\small
+\begin{align}
+\begin{aligned}
+    S&=\int d^4x \sqrt{-g} F(b,y) = \int d^4x\,a^4 \big[1+\tfrac12 (h^{ii}-h^{00}) \big] F(\bar{b}(1+\delta b), \bar{y}(1+\delta y))
+    \\
+    &= \int d^4x\, a^4 \big[1+\tfrac12 (h^{ii}-h^{00}) \big]
+    \Bigg[ F(\bar{b}, \bar{y}) + (\bar{b}F_b)  (\delta b^{(1)} + \delta b^{(2)}) + (\bar{y}F_y) (\delta y^{(1)} + \delta y^{(2)})\\
+    &\qquad\qquad\qquad\qquad\qquad\qquad\qquad+ \tfrac12 (\bar{b}^2 F_{bb})(\delta b^{(1)})^2 + \tfrac12 (\bar{y}^2 F_{yy}) (\delta y^{(1)})^2
+    + (\bar{b}\bar{y} F_{by}) \delta b^{(1)} \delta y^{(1)} \Bigg]
+\end{aligned}
+\end{align}
+}
+The quadratic part of the action for fluid perturbations in a general curved background is therefore
+{\small
+\begin{align}
+\begin{aligned}
+    S^{(2)}&=\int d^4x\,\, a^4 \bigg\{
+        (\bar{b}F_b) (h^{ii}-h^{00}) \Big[(\partial_j \pi^j) - \tfrac12 h^{ii}\Big]
+        + (\bar{y}F_y) (h^{ii}-h^{00}) \Big[\tfrac12 h^{00}+ \dot{\pi}^0\Big]\\
+    &\quad + (\bar{b}F_b) \Big[ - h^{0 i} \dot{\pi}^i - \tfrac12  h^{ii} (\partial_j \pi^j) - \tfrac12 (\dot{\pi}^i)^2 + \tfrac12 (\partial_j \pi^j)^2 -\tfrac12 \partial_i\pi^j\partial_j\pi^i\Big]
+    \\
+    &\quad + (\bar{y}F_y) \Big[ \tfrac12 h^{00}\dot{\pi}^0+ h^{0 i} \dot{\pi}^i + \big(\tfrac32 h^{ii}-\tfrac12 h^{00}\big) (\partial_j \pi^j) + \tfrac12 (\dot{\pi}^i)^2 -\partial_j\pi^0\dot{\pi}^j\Big]
+    \\
+    &\quad + \tfrac12 (\bar{b}^2 F_{bb})\Big[ (\partial_j \pi^j) - \tfrac12 h^{ii}\Big]^2 
+    + \tfrac12 (\bar{y}^2 F_{yy})\Big[\tfrac12 h^{00}+ \dot{\pi}^0\Big]^2
+    + (\bar{b}\bar{y} F_{by}) \Big[(\partial_j \pi^j) - \tfrac12 h^{ii}\Big]\Big[\tfrac12 h^{00}+ \dot{\pi}^0\Big]
+        \bigg\}.
+\end{aligned}
+\end{align}
+}
+Dropping  further second orders in metric perturbations and {\color{blue} integrating by parts in space}, we get
+{\small
+\begin{align}
+\begin{aligned}
+    S^{(2)}=
+    &\int d^4x\,\, a^4 \bigg\{
+        (\bar{b}F_b) (h^{ii}-h^{00}) (\partial_j \pi^j)
+        + (\bar{y}F_y) (h^{ii}-h^{00}) \dot{\pi}^0 \\
+    &\quad + (\bar{b}F_b) \Big[ - h^{0 i} \dot{\pi}^i - \tfrac12  h^{ii} (\partial_j \pi^j) - \tfrac12 (\dot{\pi}^i)^2 + \bluecancel{\tfrac12 (\partial_j \pi^j)^2} -\bluecancel{\tfrac12 \partial_i\pi^j\partial_j\pi^i}\Big]
+    \\
+    &\quad + (\bar{y}F_y) \Big[ \tfrac12 h^{00}\dot{\pi}^0+ h^{0 i} \dot{\pi}^i + \big(\tfrac32 h^{ii}-\tfrac12 h^{00}\big) (\partial_j \pi^j) + \tfrac12 (\dot{\pi}^i)^2 -\partial_j\pi^0\dot{\pi}^j\Big]
+    \\
+    &\quad + \tfrac12 (\bar{b}^2 F_{bb})\Big[ (\partial_j \pi^j)^2 - h^{ii}(\partial_j \pi^j)\Big]
+    + \tfrac12 (\bar{y}^2 F_{yy})\Big[h^{00} \dot{\pi}^0+ (\dot{\pi}^0)^2\Big]
+    + (\bar{b}\bar{y} F_{by}) \Big[ \dot{\pi}^0(\partial_j \pi^j) - \tfrac12 h^{ii}\dot{\pi}^0 + \tfrac12 h^{00} (\partial_j\pi^j)\Big]
+        \bigg\}
+\end{aligned}
+\end{align}
+}
+Finally, collecting terms, the quadratic action read
+{\small
+\begin{align}
+\begin{aligned}
+    S^{(2)}=
+    &\int d^4x\,\,a^4\,\,\bigg\{
+    \tfrac12 (yF_y-bF_b) (\dot{\pi}^i)^2-(yF_y) (\partial_j \pi^0\dot{\pi}^j)+\tfrac12 b^2 F_{bb} (\partial_j \pi^j)^2
+    +\tfrac12 y^2 F_{yy} (\dot{\pi}^0)^2 + (b y F_{by}) (\dot{\pi}^0 \partial_j \pi^j)
+    \bigg\}\\
+    &\quad + a^4\,\,\bigg\{
+    \tfrac12\!\left(\bar{b}F_b + 3\bar{y}F_y - \bar{b}^2 F_{bb}\right) h^{ii}(\partial_j \pi^j)
+    + \tfrac12\!\left(-2\bar{b}F_b - \bar{y}F_y + \bar{b}\bar{y}F_{by}\right) h^{00}(\partial_j \pi^j)
+    + \left(\bar{y}F_y - \bar{b}F_b\right) h^{0 i}\,\dot{\pi}^j\\
+    &\qquad\qquad + \tfrac12\!\left(2\bar{y}F_y - \bar{b}\bar{y}F_{by}\right) h^{ii}\dot{\pi}^0
+    + \frac12\!\left(\bar{y}^2 F_{yy} - \bar{y}F_y\right) h^{00}\dot{\pi}^0
+    \bigg\}
+\end{aligned}
+\end{align}
+}
+Note that only \emph{longitudinal} modes $\pi^j_L\propto\, \partial_j\pi^j$ results dynamical.
+We can now specialize this to specific choices of gauge...
+
+\noindent
+\textbf{Flat spacetime}\\
+As a consistency check, in flat spacetime $a=1$ and $h_{\mu\nu}=0$, we can thus integrate by parts in both space and time the term $\partial_j \pi^0\dot{\pi}^j = -\dot{\pi}^0(\partial_j \pi^j)$ without Hubble friction, and we recover
+{\small
+\begin{align}
+\begin{aligned}
+    S^{(2)}=
+    &\int d^4x\,\,\bigg\{
+    \tfrac12 (yF_y-bF_b) (\dot{\pi}^i)^2-(yF_y) (\partial_j \pi^0\dot{\pi}^j)+\tfrac12 b^2 F_{bb} (\partial_j \pi^j)^2
+    +\tfrac12 y^2 F_{yy} (\dot{\pi}^0)^2 + (b y F_{by}) (\dot{\pi}^0 \partial_j \pi^j)
+    \bigg\}\\
+    &= \int d^4x \frac{yF_y-bF_b}{2}\bigg\{(\dot{\pi}^i)^2 - (\partial_j\pi^j)^2\Big[-\frac{b^2F_{bb}}{(yF_y-bF_b)}\Big]
+    + (\dot{\pi}^0)^2 \frac{y^2F_{yy}}{(yF_y-bF_b)}
+    - 2\dot{\pi}^0 (\partial_j \pi^j) \frac{(yF_y-byF_{by})}{(yF_y-bF_b)}
+    \bigg\}\\
+    &= \int d^4x \frac{(\rho+p)}{2}\bigg\{(\dot{\pi}^i)^2 - \mathcal{C} (\partial_j\pi^j)^2 
+    + (\dot{\pi}^0)^2 \mathcal{A}
+    - 2\mathcal{M}\dot{\pi}^0 (\partial_j \pi^j) 
+    \bigg\}
+\end{aligned}
+\end{align}
+}
+for 
+{\small
+\begin{align}
+\begin{aligned}
+    \rho= -F + y F_y, \quad p= F - b F_b,
+    \quad \mathcal{C} = -\frac{b^2F_{bb}}{(yF_y-bF_b)},\quad 
+    \mathcal{A} = \frac{y^2F_{yy}}{(yF_y-bF_b)} = \frac{T\, \frac{\partial\rho }{\partial T}}{\rho+p},\quad
+    \mathcal{M} = \frac{(yF_y-byF_{by})}{(yF_y-bF_b)}.
+\end{aligned}
+\end{align}
+}
+The entropy field $\pi^0$ is thus non-dynamical and the constraint equations gives
+\begin{align}
+    \dot{\pi}^0 = \frac{\mathcal{M}}{\mathcal{A}} (\partial_j \pi^j) + \text{const.}
+\end{align}
+The constant is not physically relevant and is reabsorbed in the original definition of $\phi^0=\gamma(t+\pi^0)$.
+Solving the constraint the action for the coordinate $\pi^i$ becomes
+{\small
+\begin{align}
+    S^{(2)}&= \int d^4x \frac{(\rho+p)}{2}\Big[(\dot{\pi}^i)^2 - c_s^2 (\partial_j\pi^j)^2 \Big], \quad \text{for}\quad c_s^2 = \mathcal{C} + \frac{\mathcal{M}^2}{\mathcal{A}}.
+\end{align}
+}
+We note the entropy contribution to the speed of sound is always positive in \emph{physical} situations.
+Indeed $\mathcal{M}^2$ is a true square and, recalling $y\equiv T$, we have
+\begin{equation}
+    \mathcal{A}= \frac{T\, \frac{\partial\rho }{\partial T}}{\rho+p}\geq 0 \quad\text{provided}\quad
+    \begin{cases}
+        \rho+p\geq 0 \quad(\text{no ghosts}),\\
+        \frac{\partial\rho }{\partial T} \geq 0 \quad(\text{positive heat capacity}).
+    \end{cases} 
+\end{equation}
+Finally we immediately check the speed of sound $c_s^2$, defined as the coefficient of the fluctuations above, always matches the thermodynamical definition of \emph{adiabatic sound speed}
+\begin{align}
+    c_b^2:= \frac{\partial p}{\partial \rho}_{\mid \sigma} \overset{\text{proved before}}{=}\frac{-b^2F_{bb} F_{yy}+(F_y-bF_{yb})^2}{F_{yy}\,(yF_y-bF_b)} \overset{\text{easy check}}{\equiv} c_s^2.
+\end{align}
