@@ -190,7 +190,9 @@
 \title{Accelerating the Universe with non-barotropic fluids}
 
 \author[a]{Andrea Clini,}
+\author[a]{Michele Redi,}
 \author[b]{Diego Redigolo,}
+\author[b]{Lorenzo La Penna,}
 
 \affiliation[a]{Dipartimento di Fisica “Aldo Pontremoli”, Universit\`a degli Studi di Milano,
 Via Celoria 16, 20133 Milan, Italy}
@@ -365,7 +367,7 @@ Finally, identifying the system temperature with $y=T$, then \eqref{eq:rho_press
 
 Explicitly we can write the lagrangian at quadratic order in the fluctuation around a fluid background configuration $\phi^0=t+\pi^0$ and $\phi^I=x^i+\pi^I$
 \begin{equation}
-S_2=\int d^4xd^4x\sqrt{-g}\left(\frac{p+\rho}{2}\right)\left[\dot\pi^2-\mathcal{C}_s^2(\nabla\pi)^2+2\mathcal{M}\dot{\pi}_0 (\nabla\!\!\cdot\!\pi)+\mathcal{A} \dot{\pi}_0^2\right]\ , 
+S_2=\int d^4x\sqrt{-g}\left(\frac{p+\rho}{2}\right)\left[\dot\pi^2-\mathcal{C}_s^2(\nabla\pi)^2+2\mathcal{M}\dot{\pi}_0 (\nabla\!\!\cdot\!\pi)+\mathcal{A} \dot{\pi}_0^2\right]\ , 
 \end{equation}
 the sound speed is now {\color{red} (likely wrong see appendix)}
 \begin{equation}
@@ -430,8 +432,13 @@ Equivalently, in terms of the overdensity $\delta$ we have
     &+3\left(1+\frac{\bar{P}}{\bar{\rho}}\right)\left[\left(\mathcal{H}+\frac{\bar{P}^\prime}{\bar{\rho}+\bar{P}}\right)\Psi^\prime+\Psi^{\prime\prime}\right] {\color{red}+ \frac{2}{3}k^4\frac{\Pi}{\bar{\rho}}}\,.
 \end{aligned}
 \end{align}
-Since the entropy is conserved along the flow $\dot{\delta y}=0$\questionAC{Mean $\dot{\delta \sigma}=0$? } we can write the equation in comoving gauge $(\delta p=0)$ and eliminate the non-propagating entropy fluctuation to get an expression for the sound speed similar to the one in 2.34. 
+Since the entropy is conserved along the flow $\dot{\delta y}=0$\questionAC{Mean $\dot{\delta \sigma}=0$? } we can write the equation in comoving gauge $(\delta p=0)$ and eliminate the non-propagating entropy fluctuation to get an expression for the sound speed similar to the one in 2.34. {\bf I would like to see the equations for the density constrast with $\Gamma$} {\bf I would like to do the gauging of the fluid with gravity showing that the phonons are identified with the adiabatic curvature mode a' la Weinberg and hence phonon scattering satisfies soft theorems as well as the adibatic curvature mode as it is well known. Don't know if it in this language.}
 
+Essentially we write something like {\bf okkio che la parametrizzazione e' una cazzata tremenda}
+\begin{equation}
+ds^2=-(1+2\Phi)dt^2+2a \partial_iB dt dx^i+ a^2 e^{2\xi} d\vec{x}^2    
+\end{equation}
+Now varying with respect to $\Phi$ gives the constraint on $\delta\rho$ and through that one shoud relate $\xi\sim\nabla\pi$. {\bf do this explicitly!} 
 
 \subsection{Scalar fluids}
 Here I will match the scalar fluids to the fluid EFTs developed so far. This will allow us to show in which sense the fluid EFT remains more general 
@@ -463,8 +470,17 @@ Next we extend to k-essence...
 
 \paragraph{generalized k-essence}
 
-\section{Adding dark matter and LSS phenomenology (next in line)}
-
+\section{Adding dark matter}
+Let us now consider the lagrangian for a two fluid system where the two fluids interact only through gravity 
+\begin{equation}
+S_2=\sum_{A=1,2}\int d^4x\sqrt{-g}\left(\frac{p_A+\rho_A}{2}\right)\left[\dot\pi_A^2-\mathcal{C}_{s,A}^2(\nabla\pi_A)^2+2\mathcal{M}_A\dot{\pi}_{0,A} (\nabla\!\!\cdot\!\pi_A)+\mathcal{A}_A \dot{\pi}_{0,A}^2\right]\ , 
+\end{equation}   
+In this setup I can define the sum of the two fluids and their difference. Let us define 
+\begin{align}
+&\pi_{\rm{tot}}=\frac{(\rho_A+p_A)\pi_A+(\rho_B+p_B)\pi_B}{\rho_A+p_A+\rho_B+p_B}\\
+&S\sim\frac{\rho^B_y}{f^B_{yy}} \pi^0_A-\frac{\rho_y^A}{f^A_{yy}} \pi^0_B
+\end{align}
+The first is the adiabatic mode again while the second (or a similar expression) should encode the relative entropy fluctuations which are now propagating! {\bf this is the idea but it should be done with more care not sure I did the diagonalization correctly}
 \section{Introducing bulk viscosity (to be continued)}
 The simple example one could think of to construct a dissipative system is to start with two scalar fluids in the UV
 \begin{equation}
