@@ -28,7 +28,7 @@ and the temperature $T\equiv y$ for
 We now expand up to quadratic order in the fields $\pi$ and mixed order in $\pi h$, ignoring pure second orders in the metric $h^2$.
 We have the expansions
 {
-\begin{align}
+\begin{align}\label{eq:expansions_b_y}
 \begin{aligned}
     &b= \bar{b}(1+\delta b),\quad \bar{b}= \frac{\lambda^3}{a^3},\quad
     \delta b^{(1)} = -\tfrac12 h^{ii} +(\partial_j \pi^j),\\[3pt]
@@ -39,6 +39,20 @@ We have the expansions
 \end{aligned}
 \end{align}
 }
+In turn we can express the fluctuations in density $\rho=-F+yF_y$ and pressure $p=F - bF_b$ as
+\begin{align}\label{eq:rho_p_fluctuations_via_b_y}
+\begin{aligned}
+    \delta\rho &= y^2F_{yy}\delta y + (-bF_b+byF_{by})\delta b
+    \\
+    &= (y^2F_{yy})\left(\tfrac12 h^{00}+ \dot{\pi}^0\right) + (-bF_b+byF_{by})\left(-\tfrac12 h^{ii} +(\partial_j \pi^j)\right) + O(2)
+    \\[3pt]
+    \delta p &= (yF_y-byF_{by})\delta y - (b^2 F_{bb})\delta b
+    \\
+    &= (yF_y-byF_{by})\left(\tfrac12 h^{00}+ \dot{\pi}^0\right) - (b^2 F_{bb})\left(-\tfrac12 h^{ii} +(\partial_j \pi^j)\right)+ O(2)\,.
+\end{aligned}
+\end{align}
+
+
 We can now expand the action up to second order 
 {\small
 \begin{align}
@@ -132,7 +146,7 @@ Finally integrating by parts in both time and space the term $\partial_j \pi^0\d
 \end{align}
 }
 %
-Resolving the constraint for $\pi^0$ we now get
+Resolving the constraint for $\pi^0$ we now get\todotag{Do it}
 {\small
 \begin{align}
 \begin{aligned}
