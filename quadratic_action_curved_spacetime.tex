@@ -35,7 +35,7 @@ We have the expansions
     &\delta b^{(2)} = - h^{0 i} \dot{\pi}^i - \tfrac12  h^{ii} (\partial_j \pi^j) - \tfrac12 (\dot{\pi}^i)^2 + \tfrac12 (\partial_j \pi^j)^2 -\tfrac12 \partial_i\pi^j\partial_j\pi^i\,,
     \\[3pt]
     &y= \bar{y}(1+\delta y),\quad \bar{y}= \frac{\gamma}{a},\quad \delta y^{(1)} = \tfrac12 h^{00}+ \dot{\pi}^0,\\[3pt]
-    &\delta y^{(2)} = \tfrac12 h^{00}\dot{\pi}^0+ h^{0 i} \dot{\pi}^i + \big(\tfrac32 h^{ii}-\tfrac12 h^{00}\big) (\partial_j \pi^j) + \tfrac12 (\dot{\pi}^i)^2 -\partial_j\pi^0\dot{\pi}^j.
+    &\delta y^{(2)} = \tfrac12 h^{00}\dot{\pi}^0+ h^{0 i} \dot{\pi}^i  + \tfrac12 (\dot{\pi}^i)^2 -\partial_j\pi^0\dot{\pi}^j.
 \end{aligned}
 \end{align}
 }
@@ -61,7 +61,7 @@ The quadratic part of the action for fluid perturbations in a general curved bac
         + (\bar{y}F_y) (h^{ii}-h^{00}) \Big[\tfrac12 h^{00}+ \dot{\pi}^0\Big]\\
     &\quad + (\bar{b}F_b) \Big[ - h^{0 i} \dot{\pi}^i - \tfrac12  h^{ii} (\partial_j \pi^j) - \tfrac12 (\dot{\pi}^i)^2 + \tfrac12 (\partial_j \pi^j)^2 -\tfrac12 \partial_i\pi^j\partial_j\pi^i\Big]
     \\
-    &\quad + (\bar{y}F_y) \Big[ \tfrac12 h^{00}\dot{\pi}^0+ h^{0 i} \dot{\pi}^i + \big(\tfrac32 h^{ii}-\tfrac12 h^{00}\big) (\partial_j \pi^j) + \tfrac12 (\dot{\pi}^i)^2 -\partial_j\pi^0\dot{\pi}^j\Big]
+    &\quad + (\bar{y}F_y) \Big[ \tfrac12 h^{00}\dot{\pi}^0+ h^{0 i} \dot{\pi}^i + \tfrac12 (\dot{\pi}^i)^2 -\partial_j\pi^0\dot{\pi}^j\Big]
     \\
     &\quad + \tfrac12 (\bar{b}^2 F_{bb})\Big[ (\partial_j \pi^j) - \tfrac12 h^{ii}\Big]^2 
     + \tfrac12 (\bar{y}^2 F_{yy})\Big[\tfrac12 h^{00}+ \dot{\pi}^0\Big]^2
@@ -80,7 +80,7 @@ Dropping  further second orders in metric perturbations and {\color{blue} integr
         + (\bar{y}F_y) (h^{ii}-h^{00}) \dot{\pi}^0 \\
     &\quad + (\bar{b}F_b) \Big[ - h^{0 i} \dot{\pi}^i - \tfrac12  h^{ii} (\partial_j \pi^j) - \tfrac12 (\dot{\pi}^i)^2 + \bluecancel{\tfrac12 (\partial_j \pi^j)^2} -\bluecancel{\tfrac12 \partial_i\pi^j\partial_j\pi^i}\Big]
     \\
-    &\quad + (\bar{y}F_y) \Big[ \tfrac12 h^{00}\dot{\pi}^0+ h^{0 i} \dot{\pi}^i + \big(\tfrac32 h^{ii}-\tfrac12 h^{00}\big) (\partial_j \pi^j) + \tfrac12 (\dot{\pi}^i)^2 -\partial_j\pi^0\dot{\pi}^j\Big]
+    &\quad + (\bar{y}F_y) \Big[ \tfrac12 h^{00}\dot{\pi}^0+ h^{0 i} \dot{\pi}^i + \tfrac12 (\dot{\pi}^i)^2 -\partial_j\pi^0\dot{\pi}^j\Big]
     \\
     &\quad + \tfrac12 (\bar{b}^2 F_{bb})\Big[ (\partial_j \pi^j)^2 - h^{ii}(\partial_j \pi^j)\Big]
     + \tfrac12 (\bar{y}^2 F_{yy})\Big[h^{00} \dot{\pi}^0+ (\dot{\pi}^0)^2\Big]
@@ -89,7 +89,7 @@ Dropping  further second orders in metric perturbations and {\color{blue} integr
 \end{aligned}
 \end{align}
 }
-Finally, collecting terms, the quadratic action read
+Collecting terms, the quadratic action read
 {\small
 \begin{align}
 \begin{aligned}
@@ -99,8 +99,8 @@ Finally, collecting terms, the quadratic action read
     +\tfrac12 y^2 F_{yy} (\dot{\pi}^0)^2 + (b y F_{by}) (\dot{\pi}^0 \partial_j \pi^j)
     \bigg\}\\
     &\quad + a^4\,\,\bigg\{
-    \tfrac12\!\left(\bar{b}F_b + 3\bar{y}F_y - \bar{b}^2 F_{bb}\right) h^{ii}(\partial_j \pi^j)
-    + \tfrac12\!\left(-2\bar{b}F_b - \bar{y}F_y + \bar{b}\bar{y}F_{by}\right) h^{00}(\partial_j \pi^j)
+    \tfrac12\!\left(\bar{b}F_b - \bar{b}^2 F_{bb}\right) h^{ii}(\partial_j \pi^j)
+    + \tfrac12\!\left(-2\bar{b}F_b + \bar{b}\bar{y}F_{by}\right) h^{00}(\partial_j \pi^j)
     + \left(\bar{y}F_y - \bar{b}F_b\right) h^{0 i}\,\dot{\pi}^j\\
     &\qquad\qquad + \tfrac12\!\left(2\bar{y}F_y - \bar{b}\bar{y}F_{by}\right) h^{ii}\dot{\pi}^0
     + \frac12\!\left(\bar{y}^2 F_{yy} - \bar{y}F_y\right) h^{00}\dot{\pi}^0
@@ -109,7 +109,40 @@ Finally, collecting terms, the quadratic action read
 \end{align}
 }
 Note that only \emph{longitudinal} modes $\pi^j_L\propto\, \partial_j\pi^j$ results dynamical.
+
+Finally integrating by parts in both time and space the term $\partial_j \pi^0\dot{\pi}^j$ we get
+{\small
+\begin{align}
+\begin{aligned}
+    S^{(2)}=
+    &\int d^4x\,\,a^4\,\,\bigg\{
+    \tfrac12 (yF_y-bF_b) (\dot{\pi}^i)^2-(yF_y) (\partial_j \pi^j) \dot{\pi}^0 
+    - \Big[ 4\mathcal{H}(yF_y)+ \tfrac{d}{d\tau}(yF_y)\Big] (\partial_j \pi^j) \pi^{0}\\
+    &\qquad\qquad\qquad+\tfrac12 b^2 F_{bb} (\partial_j \pi^j)^2
+    +\tfrac12 y^2 F_{yy} (\dot{\pi}^0)^2 + (b y F_{by}) (\dot{\pi}^0 \partial_j \pi^j)
+    \bigg\}\\
+    &\quad + a^4\,\,\bigg\{
+    \tfrac12\!\left(\bar{b}F_b - \bar{b}^2 F_{bb}\right) h^{ii}(\partial_j \pi^j)
+    + \tfrac12\!\left(-2\bar{b}F_b + \bar{b}\bar{y}F_{by}\right) h^{00}(\partial_j \pi^j)
+    + \left(\bar{y}F_y - \bar{b}F_b\right) h^{0 i}\,\dot{\pi}^j\\
+    &\qquad\qquad + \tfrac12\!\left(2\bar{y}F_y - \bar{b}\bar{y}F_{by}\right) h^{ii}\dot{\pi}^0
+    + \frac12\!\left(\bar{y}^2 F_{yy} - \bar{y}F_y\right) h^{00}\dot{\pi}^0
+    \bigg\}
+\end{aligned}
+\end{align}
+}
+%
+Resolving the constraint for $\pi^0$ we now get
+{\small
+\begin{align}
+\begin{aligned}
+    ...
+\end{aligned}
+\end{align}
+}
+%
 We can now specialize this to specific choices of gauge...
+\bigskip
 
 \noindent
 \textbf{Flat spacetime}\\
