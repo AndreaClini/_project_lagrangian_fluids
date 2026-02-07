@@ -737,12 +737,22 @@ In the 5-essence case we can express the potential in terms of the fluid variabl
 \begin{align}
     \rho=\tfrac12 X +V, \quad p =\tfrac12 X -V\quad \Rightarrow\quad V(\varphi) = \tfrac12(\rho - p) \equiv -F +\tfrac12 (yF_y+ bF_b)\,.
 \end{align}
-Thermodyncamically this identifies the potential with the legendre transform of the free energy density $\mathfrak{a}$ with respect to both $T$ and $n$.
+
 We also recover $X$ as 
 \begin{align}
     X=\rho+p = yF_y + bF_b\,.
 \end{align}
 We should now invert this to identify $y$ and $b$...
+Ideally, we would like to identify temperature and kinetic energy $y\sim X$.
+A solution is given by
+\begin{equation}
+    F=\frac{y^2}{2}-\beta \log b \quad \Rightarrow\quad \begin{array}{c}
+         X=yF_y+bF_b=y^2-\beta\\
+         V=-F+\tfrac12(yF_y+bF_b) = \beta\big(\log b+\tfrac12\big)
+    \end{array}
+\end{equation}
+
+
 }
 
 \include{quadratic_action_curved_spacetime}

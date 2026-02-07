@@ -110,8 +110,8 @@ Collecting terms, the quadratic action read
 \begin{aligned}
     S^{(2)}=
     &\int d^4x\,\,a^4\,\,\bigg\{
-    \tfrac12 (yF_y-bF_b) (\dot{\pi}^i)^2-(yF_y) (\partial_j \pi^0\dot{\pi}^j)+\tfrac12 b^2 F_{bb} (\partial_j \pi^j)^2
-    +\tfrac12 y^2 F_{yy} (\dot{\pi}^0)^2 + (b y F_{by}) (\dot{\pi}^0 \partial_j \pi^j)
+    \tfrac12 (yF_y-bF_b) (\dot{\pi}^i)^2+\tfrac12 b^2 F_{bb} (\partial_j \pi^j)^2
+    +\tfrac12 y^2 F_{yy} (\dot{\pi}^0)^2 + (b y F_{by}) (\dot{\pi}^0 \partial_j \pi^j)-(yF_y) (\partial_j \pi^0\dot{\pi}^j)
     \bigg\}\\
     &\quad + a^4\,\,\bigg\{
     \tfrac12\!\left(\bar{b}F_b - \bar{b}^2 F_{bb}\right) h^{ii}(\partial_j \pi^j)
@@ -131,10 +131,9 @@ Finally integrating by parts in both time and space the term $\partial_j \pi^0\d
 \begin{aligned}
     S^{(2)}=
     &\int d^4x\,\,a^4\,\,\bigg\{
-    \tfrac12 (yF_y-bF_b) (\dot{\pi}^i)^2-(yF_y) (\partial_j \pi^j) \dot{\pi}^0 
-    - \Big[ 4\mathcal{H}(yF_y)+ \tfrac{d}{d\tau}(yF_y)\Big] (\partial_j \pi^j) \pi^{0}\\
-    &\qquad\qquad\qquad+\tfrac12 b^2 F_{bb} (\partial_j \pi^j)^2
-    +\tfrac12 y^2 F_{yy} (\dot{\pi}^0)^2 + (b y F_{by}) (\dot{\pi}^0 \partial_j \pi^j)
+    \tfrac12 (yF_y-bF_b) (\dot{\pi}^i)^2+ \tfrac12 b^2 F_{bb} (\partial_j \pi^j)^2 +\tfrac12 y^2 F_{yy} (\dot{\pi}^0)^2\\
+    &\qquad\qquad\qquad-\Big[ 4\mathcal{H}(yF_y)+ \tfrac{d}{d\tau}(yF_y)\Big] (\partial_j \pi^j) \pi^{0}
+    + (b y F_{by}-yF_y) (\dot{\pi}^0 \partial_j \pi^j)
     \bigg\}\\
     &\quad + a^4\,\,\bigg\{
     \tfrac12\!\left(\bar{b}F_b - \bar{b}^2 F_{bb}\right) h^{ii}(\partial_j \pi^j)
