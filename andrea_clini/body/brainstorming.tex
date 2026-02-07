@@ -1,4 +1,4 @@
-%-----------------------------------------------------
+ %-----------------------------------------------------
 %=====================================================
 \section{Setting \& energy-momentum tensor}
 %=====================================================
@@ -1577,7 +1577,38 @@ Therefore the comoving entropy is
 \end{align}
 
 
+\section{Quintessence}
 
+The speed of sound in the rest frame is,
+\begin{equation}
+c_b^2=\frac {U_Y- b U_{Yb}}{Y U_{YY}}
+\end{equation}
+For quintessence $c_b^2=1$ so that,
+\begin{equation}
+U_Y- b U_{Yb}= Y U_{YY}
+\end{equation}
+we can look for solutions,
+\begin{equation}
+U_Y =b^\alpha Y^\beta
+\end{equation}
+This is solution for $\beta=1-\alpha$.
+The hopefully most general solution is then,
+\begin{equation}
+U=g(b)+\int d\alpha f(\alpha) b^\alpha Y^{2-\alpha}
+\end{equation}
+From this we can get the energy density and pressure,
+\begin{equation}
+\begin{split}
+p&= U - b U_b=g(b)- b g'(b) + \int d\alpha f(\alpha)(1-\alpha) b^\alpha Y^{2-\alpha} \\
+\rho&=Y U_Y-U=-g(b)+ \int d\alpha f(\alpha)(1-\alpha) b^\alpha Y^{2-\alpha}
+\end{split}
+\end{equation}
+For a given quintessence model we can get $\rho(a)$.
+On the background $b\propto 1/a^6$ while $Y\propto 1/a$ so that,
+\begin{equation}
+\rho(a) = - g(-1/a^6)+\int d\alpha f(\alpha) (1-\alpha) \frac 1 {a^{5\alpha-2}}
+\end{equation}
+We probably need another equation!
 %============================================================================
 \section{Matching to comoving curvature perturbations $\zeta$}
 %============================================================================
