@@ -367,15 +367,15 @@ Finally, identifying the system temperature with $y=T$, then \eqref{eq:rho_press
 
 Explicitly we can write the lagrangian at quadratic order in the fluctuation around a fluid background configuration $\phi^0=t+\pi^0$ and $\phi^I=x^i+\pi^I$
 \begin{equation}
-S_2=\int d^4x\sqrt{-g}\left(\frac{p+\rho}{2}\right)\left[\dot\pi^2-\mathcal{C}_s^2(\nabla\pi)^2+2\mathcal{M}\dot{\pi}_0 (\nabla\!\!\cdot\!\pi)+\mathcal{A} \dot{\pi}_0^2\right]\ , 
+S_2=\int d^4x\sqrt{-g}\left(\frac{p+\rho}{2}\right)\left[\dot\pi^2-\mathcal{C}_s^2(\nabla\pi)^2-2\mathcal{M}\dot{\pi}_0 (\nabla\!\!\cdot\!\pi)+\mathcal{A} \dot{\pi}_0^2\right]\ , 
 \end{equation}
-the sound speed is now {\color{red} (likely wrong see appendix)}
+the sound speed is now 
 \begin{equation}
-\mathcal{C}_s^2= \frac{-b^2F_{bb}-2yF_y-y^2F_{yy}+2byF_{by}}{yF_y-b F_b}\,.
+\mathcal{C} = -\frac{b^2F_{bb}}{(yF_y-bF_b)}\,.
 \end{equation}
-The mixing of the entropy mode with the phonons is given by  {\color{red} (likely wrong see appendix)}
+The mixing of the entropy mode with the phonons is given by 
 \begin{equation}
-\mathcal{M}=   \frac{by F_{by}-y F_y -y^2 F_{yy}}{y F_y-b F_b}\,,
+\mathcal{M} = \frac{(yF_y-byF_{by})}{(yF_y-bF_b)}.
 \end{equation}
 and the inertia of the entropy mode is
 \begin{equation}
@@ -384,15 +384,25 @@ and the inertia of the entropy mode is
 Crucially in this lagrangian only $p+\rho>0$ is necessary to avoid ghost instabilities.
 In case $\rho+p>0$, thermodynamic stability also demands $\mathcal{A}>0$, however at this level the speed of sound $c_s^2$ can be negative.
 
+
 The entropy mode is non propagating and can be integrated out as a constraint to get 
 \begin{equation}
 S_2=\int d^4xd^4x\sqrt{-g}\left(\frac{p+\rho}{2}\right)\left[\dot\pi^2-c_s^2(\nabla\pi)^2\right]\ , 
 \end{equation}
 where
 \begin{equation}
-    c_s^2=\mathcal{C}_s^2+\frac{\mathcal{M}^2}{\mathcal{A}}\,,\;\label{eq:csnonbaro} 
+    c_s^2:=\mathcal{C}_s^2+\frac{\mathcal{M}^2}{\mathcal{A}}\,.\;\label{eq:csnonbaro} 
 \end{equation}
-which shows that the contribution from the entropy mode is strictly positive. Now $c_s^2$ is actually an independent function of $c_a^2$. So that requiring the absence of gradient instabilities does not forbid accelerated expansion which is only constrained by the absence of ghosts. As a consequnce the non-barotropic fluid EFT can span the whole space of 
+It is immediate to check the speed of sound $c_s^2$, defined as the coefficient of the fluctuations, always matches the thermodynamical definition of \emph{adiabatic sound speed} $c_b^2:= \frac{\partial p}{\partial \rho}_{\mid \sigma}$.
+The entropy contribution to the speed of sound is always positive in \emph{physical} situations since
+\begin{equation}
+    \mathcal{A}= \frac{T\, \frac{\partial\rho }{\partial T}}{\rho+p}\geq 0 \quad\text{provided}\quad
+    \begin{cases}
+        \rho+p\geq 0 \quad(\text{no ghosts}),\\
+        \frac{\partial\rho }{\partial T} \geq 0 \quad(\text{positive heat capacity}).
+    \end{cases} 
+\end{equation}
+Now $c_s^2$ is actually an independent function of $c_a^2$. So that requiring the absence of gradient instabilities does not forbid accelerated expansion which is only constrained by the absence of ghosts. As a consequnce the non-barotropic fluid EFT can span the whole space of 
 \begin{equation}
 w>-1\quad 0<c_s^2\leq1\ .    
 \end{equation}
@@ -526,7 +536,7 @@ S^{\rm{heavy}}_{\rm SK}
 In this section we collect some useful or additional computations.
 
 %--------------------------------------------
-\subsection{Adiabatic sound speed}
+\subsection{Thermodynamic formula for adiabatic sound speed}
 %------------------------------------------------
 
 The entropy per particle is $\sigma=F_y/b$, imposing it be preserved gives\footnote{Subscripts mean $X_b=\partial_b X_{\mid y}$ and $X_y=\partial_y X_{\mid b}$ i.e. main variables $(b,y)$, unless otherwise stated.}
@@ -546,27 +556,7 @@ Using $F=-\mathfrak{a}$ and $s=F_y=-\partial_T\mathfrak{a}$, we rewrite the adia
 \end{align}
 which makes it manifest that $c_b^2\geq0$ provided no ghosts $\rho+P>0$, the second principle of thermodynamics $\partial_Ts\geq 0$ and thermodynamic stability $\partial_n^2\mathfrak{a}\geq 0$ hold.
 
-We also show $c_b^2\equiv c_s^2$ always, which show that absence of ghosts, thermodynamic stability and gradient instabilities are closely related.
-{\color{red}
-The computation below is wrong since both $\mathcal{C}_s^2$ and $\mathcal{M}$ contain wrong extra terms.
-Still these terms cancel between original and entropy contribution to $c_s^2$ and we still get $c_b^2=c_s^2$.
-Th correct computation in in appendix B.}\todotag{Remove this when polished}
-Indeed, using the above expressions 
-\begin{align}
-\begin{aligned}
-    c_s^2&=\mathcal{C}^2+\frac{\mathcal{M}^2}{\mathcal{A}}\\
-        &= \frac{-b^2F_{bb}-2yF_y-y^2F_{yy}+2byF_{by}
-    + \frac{(by F_{by}-y F_y -y^2 F_{yy})^2}{y^2 F_{yy}}}
-    {yF_y-b F_b}
-    \\[6pt]
-    &=\frac{-b^2F_{bb}y^2 F_{yy} -2y^3F_y F_{yy} -y^4 F_{yy}^2 +2by^3F_{by} F_{yy}
-    + (by F_{by}-y F_y -y^2 F_{yy})^2
-    }
-    {y^2F_{yy}(yF_y-b F_b)}
-    \\[6pt]
-    &=\frac{-b^2F_{bb} F_{yy}+(F_y-bF_{yb})^2}{F_{yy}\,(yF_y-bF_b)}\equiv c_b^2.
-\end{aligned}
-\end{align}
+We also note that $c_b^2\equiv c_s^2$ always, as proved in \eqref{eq:cs_equiv_cb_flat_spacetime} below for flat spacetime, which shows that absence of ghosts, thermodynamic stability and gradient instabilities are closely related.
 
 
 %----------------------------------------------------------------
