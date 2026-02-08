@@ -755,31 +755,37 @@ In turn we get
     c_b^2=\frac{-b^2F_{bb}y^2F_{yy}+\big(yF_y-byF_{by}\big)^2}{y^2F_{yy}(yF_y-bF_b)}=\frac{y^2-\beta}{y^2+\beta}
 \end{align}
 confirming we can have $c_s^2=1$ if $V=0$ that is $\beta=0$.
-Next we get
+Next we get the thermo variables
 \begin{align}
     \rho=\tfrac12 y^2+\beta\log b, \quad p=\tfrac12 y^2+\beta-\beta\log b=\rho+\beta-2\beta\log b, \quad \sigma=\frac{F_y}{b}=\frac{y^2}{b}.
 \end{align}
-We invert these to get
+We invert these to use $\rho$ and $\sigma$ as independent variables
 \begin{align}
     \rho+\beta\log\sigma=\tfrac12 y^2+\beta\log y^2\quad\Rightarrow\quad y=y(\rho,\sigma),\quad b=\frac{y^2}{\sigma}=\frac{y^2(\rho,\sigma)}{\sigma}
 \end{align}
 From the first one
 \begin{align}
-    1=y\frac{\partial y}{\partial\rho}_{|\sigma}+\frac{2\beta}{y}\frac{\partial y}{\partial\rho}_{|\sigma}\quad\Rightarrow\quad \frac{\partial y}{\partial\rho}_{|\sigma}=\frac{y}{y^2+2\beta}, \quad\frac{\partial b}{\partial\rho}_{|\sigma}=\frac{2y}{\sigma}\frac{\partial y}{\partial\rho}_{|\sigma}=\frac{2y^2}{\sigma}\frac{1}{y^2+2\beta}=\frac{2b}{y^2+2\beta}
+    1=y\frac{\partial y}{\partial\rho}_{|\sigma}+\frac{2\beta}{y}\frac{\partial y}{\partial\rho}_{|\sigma}\quad\Rightarrow\quad \begin{array}{c}\frac{\partial y}{\partial\rho}_{|\sigma}=\frac{y}{y^2+2\beta}\\[3pt]
+    \frac{\partial b}{\partial\rho}_{|\sigma}=\frac{2y}{\sigma}\frac{\partial y}{\partial\rho}_{|\sigma}=\frac{2y^2}{\sigma}\frac{1}{y^2+2\beta}=\frac{2b}{y^2+2\beta}
+    \end{array}
 \end{align}
-and
+and similarly
 \begin{align}
-    \frac{\beta}{\sigma}=y\frac{\partial y}{\partial\sigma}_{|\rho}+\frac{2\beta}{y}\frac{\partial y}{\partial\sigma}_{|\rho}\quad\Rightarrow\quad \frac{\partial y}{\partial\sigma}_{|\rho}=\frac{\beta}{\sigma}\frac{y}{y^2+2\beta}, \quad\frac{\partial b}{\partial\sigma}_{|\rho}=\frac{2y}{\sigma}\frac{\partial y}{\partial\sigma}_{|\rho}-\frac{y^2}{\sigma^2}=-\frac{y^2}{\sigma^2}\frac{y^2}{y^2+2\beta}.
+    \frac{\beta}{\sigma}=y\frac{\partial y}{\partial\sigma}_{|\rho}+\frac{2\beta}{y}\frac{\partial y}{\partial\sigma}_{|\rho}\quad\Rightarrow\quad \begin{array}{c}
+        \frac{\partial y}{\partial\sigma}_{|\rho}=\frac{\beta}{\sigma}\frac{y}{y^2+2\beta}, \\[3pt]
+        \frac{\partial b}{\partial\sigma}_{|\rho}=\frac{2y}{\sigma}\frac{\partial y}{\partial\sigma}_{|\rho}-\frac{y^2}{\sigma^2}=\frac{2\beta y^2}{\sigma^2(y^2+2\beta)}-\frac{y^2}{\sigma^2}=-\frac{y^2}{\sigma^2}\frac{y^2}{y^2+2\beta}=-\frac{b^2}{y^2+2\beta}
+        \end{array}
 \end{align}
 For fluctuations we have
 \begin{align}
     \delta p=\delta\rho-2\frac{\delta b}{b}= c_b^2\delta\rho+\Gamma\delta\sigma
 \end{align}
-We compare this with the explicit form\todotag{Made a mistake somewhere}
+We compare this with the explicit form
 \begin{align}
-    c_b^2:=\frac{\partial p}{\partial\rho}_{|\sigma}=1-\frac{2}{b}\frac{\partial b}{\partial\rho}_{|\sigma}=1-\frac{4}{y^2+2\beta},\qquad \Gamma:=\frac{\partial p}{\partial\sigma}_{|\rho}=-\frac{2}{b}\frac{\partial b}{\partial\sigma}_{|\rho}=+\frac{2}{b}\frac{y^2}{\sigma^2}\frac{y^2}{y^2+2\beta}=\frac{2b}{y^2+2\beta}
+    &c_b^2:=\frac{\partial p}{\partial\rho}_{|\sigma}=1-\frac{2\beta}{b}\frac{\partial b}{\partial\rho}_{|\sigma}= 1- \frac{2\beta}{b}\frac{2b}{y^2+2\beta}=\frac{y^2-2\beta}{y^2+2\beta}\\[3pt]
+    &\Gamma:=\frac{\partial p}{\partial\sigma}_{|\rho}=-\frac{2\beta}{b}\frac{\partial b}{\partial\sigma}_{|\rho}=\frac{2\beta b}{y^2+2\beta}
 \end{align}
-
+In the absence of potential $\beta=0$, then $c_b^2\equiv1$ and $\Gamma$ vanishes.
 
 \subsubsection{Alternative solution}
 Alternatively we can look for a solution $F=Cy^\alpha b^\beta$, then
