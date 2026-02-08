@@ -560,7 +560,7 @@ We also note that $c_b^2\equiv c_s^2$ always, as proved in \eqref{eq:cs_equiv_cb
 
 
 %----------------------------------------------------------------
-\subsection{Matching to quintessence scalar field}
+\subsection{Matching to quintessence scalar field {\color{red}(WRONG VERSION)}}
 %----------------------------------------------------------------
 
 Consider the metric in Newtonian gauge
@@ -661,7 +661,7 @@ confirming it is \emph{not} a function of the potential only.
 
 
 %----------------------------------------------------------------
-\subsection{Matching to k-essence scalar field}
+\subsection{Matching to k-essence scalar field {\color{red}(WRONG VERSION)}}
 %----------------------------------------------------------------
 Consider the action for a k-essence scalar field $\varphi$ with lagrangian $P(X,\varphi)$
 \begin{equation}
@@ -729,18 +729,15 @@ we identify the \textbf{non-adiabatic pressure perturbations} of the k-essence f
 %----------------------------------------------------------------
 \subsection{Matching to k-essence remastered}
 %----------------------------------------------------------------
-{\color{red} 
 The matching should be adjusted so as to preserve shift symmetry of $\phi^0$, thus forbidding the dentification of $\varphi$ with $\phi^0$ directly since $V(\varphi)$ would otherwise break it.
 In turn, the identification $y=\sqrt{X}$ need some rethinking.
 
-In the 5-essence case we can express the potential in terms of the fluid variables as
+In the 5-essence case we can express kinetic energy and potential in terms of the fluid variables as
 \begin{align}
-    \rho=\tfrac12 X +V, \quad p =\tfrac12 X -V\quad \Rightarrow\quad V(\varphi) = \tfrac12(\rho - p) \equiv -F +\tfrac12 (yF_y+ bF_b)\,.
-\end{align}
-
-We also recover $X$ as 
-\begin{align}
-    X=\rho+p = yF_y + bF_b\,.
+    \rho=\tfrac12 X +V, \quad p =\tfrac12 X -V\quad \Rightarrow\quad \begin{array}{c}
+        X=\rho+p = yF_y + bF_b,\\
+        V(\varphi) = \tfrac12(\rho - p) \equiv -F +\tfrac12 (yF_y+ bF_b)\,.
+    \end{array}
 \end{align}
 We should now invert this to identify $y$ and $b$...
 Ideally, we would like to identify temperature and kinetic energy $y\sim X$.
@@ -748,12 +745,56 @@ A solution is given by
 \begin{equation}
     F=\frac{y^2}{2}-\beta \log b \quad \Rightarrow\quad \begin{array}{c}
          X=yF_y+bF_b=y^2-\beta\\
-         V=-F+\tfrac12(yF_y+bF_b) = \beta\big(\log b+\tfrac12\big)
+         V=-F+\tfrac12(yF_y+bF_b) = \beta\big(\log b-\tfrac12\big)
     \end{array}
 \end{equation}
+which allow for $V\neq0$ by taking $\beta\neq0$.
+This suggests $X\sim y^2$ and $V\propto \log b$ which is somewhat physically reasonable.
+In turn we get
+\begin{align}
+    c_b^2=\frac{-b^2F_{bb}y^2F_{yy}+\big(yF_y-byF_{by}\big)^2}{y^2F_{yy}(yF_y-bF_b)}=\frac{y^2-\beta}{y^2+\beta}
+\end{align}
+confirming we can have $c_s^2=1$ if $V=0$ that is $\beta=0$.
+Next we get
+\begin{align}
+    \rho=\tfrac12 y^2+\beta\log b, \quad p=\tfrac12 y^2+\beta-\beta\log b=\rho+\beta-2\beta\log b, \quad \sigma=\frac{F_y}{b}=\frac{y^2}{b}.
+\end{align}
+We invert these to get
+\begin{align}
+    \rho+\beta\log\sigma=\tfrac12 y^2+\beta\log y^2\quad\Rightarrow\quad y=y(\rho,\sigma),\quad b=\frac{y^2}{\sigma}=\frac{y^2(\rho,\sigma)}{\sigma}
+\end{align}
+From the first one
+\begin{align}
+    1=y\frac{\partial y}{\partial\rho}_{|\sigma}+\frac{2\beta}{y}\frac{\partial y}{\partial\rho}_{|\sigma}\quad\Rightarrow\quad \frac{\partial y}{\partial\rho}_{|\sigma}=\frac{y}{y^2+2\beta}, \quad\frac{\partial b}{\partial\rho}_{|\sigma}=\frac{2y}{\sigma}\frac{\partial y}{\partial\rho}_{|\sigma}=\frac{2y^2}{\sigma}\frac{1}{y^2+2\beta}=\frac{2b}{y^2+2\beta}
+\end{align}
+and
+\begin{align}
+    \frac{\beta}{\sigma}=y\frac{\partial y}{\partial\sigma}_{|\rho}+\frac{2\beta}{y}\frac{\partial y}{\partial\sigma}_{|\rho}\quad\Rightarrow\quad \frac{\partial y}{\partial\sigma}_{|\rho}=\frac{\beta}{\sigma}\frac{y}{y^2+2\beta}, \quad\frac{\partial b}{\partial\sigma}_{|\rho}=\frac{2y}{\sigma}\frac{\partial y}{\partial\sigma}_{|\rho}-\frac{y^2}{\sigma^2}=-\frac{y^2}{\sigma^2}\frac{y^2}{y^2+2\beta}.
+\end{align}
+For fluctuations we have
+\begin{align}
+    \delta p=\delta\rho-2\frac{\delta b}{b}= c_b^2\delta\rho+\Gamma\delta\sigma
+\end{align}
+We compare this with the explicit form\todotag{Made a mistake somewhere}
+\begin{align}
+    c_b^2:=\frac{\partial p}{\partial\rho}_{|\sigma}=1-\frac{2}{b}\frac{\partial b}{\partial\rho}_{|\sigma}=1-\frac{4}{y^2+2\beta},\qquad \Gamma:=\frac{\partial p}{\partial\sigma}_{|\rho}=-\frac{2}{b}\frac{\partial b}{\partial\sigma}_{|\rho}=+\frac{2}{b}\frac{y^2}{\sigma^2}\frac{y^2}{y^2+2\beta}=\frac{2b}{y^2+2\beta}
+\end{align}
 
 
-}
+\subsubsection{Alternative solution}
+Alternatively we can look for a solution $F=Cy^\alpha b^\beta$, then
+\begin{align}
+    X=yF_y+bF_b=(\alpha+\beta)F,\quad V=-F+\tfrac12 (yF_y-bF_b)=\big(-1+\tfrac12(\alpha+\beta)\big)F.
+\end{align}
+In the case $V=0$ we take $\alpha+\beta=2$, that allows for $\alpha=1,\beta=0$ so that indeed $X=Cy^2$.
+Enforcing $c_s^2\equiv1$ in the quintessence case gives, provided $\alpha\neq \beta$ 
+\begin{align}
+    1\overset{!}{=}\frac{-b^2F_{bb}+\frac{\big(yF_y-byF_{by}\big)^2}{y^2F_{yy}}}{(yF_y-bF_b)}=\frac{-\beta(\beta-1)F+\frac{\alpha(1-\beta)^2F^2}{(\alpha-1)F}}{(\alpha-\beta)F}=\frac{\cancel{F(\alpha-\beta)}}{\cancel{F(\alpha-\beta)}}\frac{1-\beta}{\alpha-1}
+    \Rightarrow \alpha+\beta=2,
+\end{align}
+which again implies the potential vanishes...
+Note that both $\alpha=0,1$ are actually allowed, in the first case no $F_y,F_{yy}$ are present at all, while in the latter we can avoid division by $F_yy$.
+
 
 \include{quadratic_action_curved_spacetime}
 
