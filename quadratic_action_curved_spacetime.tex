@@ -117,45 +117,106 @@ Collecting terms, the final expression for the quadratic action is
     &\quad + a^4\,\,\bigg\{
     \tfrac12\!\left(\bar{b}F_b - \bar{b}^2 F_{bb}\right) h^{ii}(\partial_j \pi^j)
     + \tfrac12\!\left(-2\bar{b}F_b + \bar{b}\bar{y}F_{by}\right) h^{00}(\partial_j \pi^j)\\
-    &\qquad\qquad+ \left(\bar{y}F_y - \bar{b}F_b\right) h^{0 i}\,\dot{\pi}^j + \tfrac12\!\left(2\bar{y}F_y - \bar{b}\bar{y}F_{by}\right) h^{ii}\dot{\pi}^0
+    &\qquad\qquad+ \left(\bar{y}F_y - \bar{b}F_b\right) h^{0j}\,\dot{\pi}^j + \tfrac12\!\left(2\bar{y}F_y - \bar{b}\bar{y}F_{by}\right) h^{ii}\dot{\pi}^0
+    + \tfrac12\!\left(\bar{y}^2 F_{yy} - \bar{y}F_y\right) h^{00}\dot{\pi}^0
+    \bigg\}\,.
+\end{aligned}
+\end{align}}
+Note that only \emph{longitudinal} modes $\pi^j_L\propto\, \partial_j\pi^j$ results dynamical.
+Now gather $\rho+p=yF_y-bF_b$ outside the brackets and rewrite the action as
+{\small
+\begin{align}
+\begin{aligned}
+    S^{(2)}= &\int d^4x\,\,a^4\, (\rho+p)\,\bigg\{
+    \tfrac12 (\dot{\pi}^i)^2-\tfrac12 \underbrace{\tfrac{-b^2 F_{bb}}{(yF_y-bF_b)}}_{=\mathcal{C}} (\partial_j \pi^j)^2
+    +\tfrac12 \underbrace{\tfrac{y^2 F_{yy}}{(yF_y-bF_b)}}_{=\mathcal{A}} (\dot{\pi}^0)^2 \\
+    &\quad\qquad\qquad\qquad\qquad+ \tfrac{(b y F_{by})}{(yF_y-bF_b)} (\dot{\pi}^0 \partial_j \pi^j)-\tfrac{(yF_y)}{(yF_y-bF_b)} (\partial_j \pi^0\dot{\pi}^j)
+    \bigg\}\\
+    &\quad + a^4\, (\rho+p)\, \bigg\{
+    \tfrac12\!\left(\tfrac{\bar{b}F_b - \bar{b}^2 F_{bb}}{(yF_y-bF_b)}\right) h^{ii}(\partial_j \pi^j)
+    + \tfrac12\!\left(\tfrac{-2\bar{b}F_b + \bar{b}\bar{y}F_{by}}{(yF_y-bF_b)}\right) h^{00}(\partial_j \pi^j)\\
+    &\qquad\qquad\qquad\qquad+ \left(\tfrac{\bar{y}F_y - \bar{b}F_b}{(yF_y-bF_b)}\right) h^{0 j}\,\dot{\pi}^j + \tfrac12\!\left(\tfrac{2\bar{y}F_y - \bar{b}\bar{y}F_{by}}{(yF_y-bF_b)}\right) h^{ii}\dot{\pi}^0
+    + \tfrac12\!\left(\tfrac{\bar{y}^2 F_{yy} - \bar{y}F_y}{(yF_y-bF_b)}\right) h^{00}\dot{\pi}^0
+    \bigg\}.
+\end{aligned}
+\end{align}}
+%
+Integrating by parts in both time and space the term $\partial_j \pi^0\dot{\pi}^j$ we get
+{\small
+\begin{align}
+\begin{aligned}
+    S^{(2)}=&\int d^4x\, -(\partial_j \pi^j\, \pi^{0})\tfrac{d}{d\tau}(a^4yF_y)\\
+    &\quad+a^4\,\bigg\{
+    \tfrac12 (yF_y-bF_b) (\dot{\pi}^i)^2+ \tfrac12 b^2 F_{bb} (\partial_j \pi^j)^2 +\tfrac12 y^2 F_{yy} (\dot{\pi}^0)^2+(b y F_{by}-yF_y) (\dot{\pi}^0 \partial_j \pi^j)\bigg\}\\
+    &\quad + a^4\,\,\bigg\{
+    \tfrac12\!\left(\bar{b}F_b - \bar{b}^2 F_{bb}\right) h^{ii}(\partial_j \pi^j)
+    + \tfrac12\!\left(-2\bar{b}F_b + \bar{b}\bar{y}F_{by}\right) h^{00}(\partial_j \pi^j)+\left(\bar{y}F_y - \bar{b}F_b\right) h^{0 j}\,\dot{\pi}^j\\
+    &\qquad\qquad +\tfrac12\!\left(2\bar{y}F_y - \bar{b}\bar{y}F_{by}\right) h^{ii}\dot{\pi}^0
     + \tfrac12\!\left(\bar{y}^2 F_{yy} - \bar{y}F_y\right) h^{00}\dot{\pi}^0
     \bigg\}
 \end{aligned}
-\end{align}
-}
-Note that only \emph{longitudinal} modes $\pi^j_L\propto\, \partial_j\pi^j$ results dynamical.
-
-Finally integrating by parts in both time and space the term $\partial_j \pi^0\dot{\pi}^j$ we get\todoAC{Collect $\rho+p$ \& rewrite}
+\end{align}}
+%
+Resolving the constraint for $\pi^0$ we now get
+{\small
+\begin{align}
+\begin{aligned}
+    \frac{d}{d\tau}a^4\bigg[y^2F_{yy}\dot{\pi}^0+(byF_{by}-yF_y) (\partial_j\pi^j)+\tfrac12\!\big(2{y}F_y - byF_{by}\big) h^{ii}
+    + \tfrac12\!\left({y}^2 F_{yy} - {y}F_y\right) h^{00}\bigg]=-(\partial_j \pi^j)\tfrac{d}{d\tau}(a^4yF_y)\,.
+\end{aligned}
+\end{align}}
+Substituting back in the action we get
 {\small
 \begin{align}
 \begin{aligned}
     S^{(2)}=
-    &\int d^4x\,\,a^4\,\,\bigg\{
-    \tfrac12 (yF_y-bF_b) (\dot{\pi}^i)^2+ \tfrac12 b^2 F_{bb} (\partial_j \pi^j)^2 +\tfrac12 y^2 F_{yy} (\dot{\pi}^0)^2\\
-    &\qquad\qquad\qquad-\Big[ 4\mathcal{H}(yF_y)+ \tfrac{d}{d\tau}(yF_y)\Big] (\partial_j \pi^j) \pi^{0}
-    + (b y F_{by}-yF_y) (\dot{\pi}^0 \partial_j \pi^j)
-    \bigg\}\\
-    &\quad + a^4\,\,\bigg\{
-    \tfrac12\!\left(\bar{b}F_b - \bar{b}^2 F_{bb}\right) h^{ii}(\partial_j \pi^j)
-    + \tfrac12\!\left(-2\bar{b}F_b + \bar{b}\bar{y}F_{by}\right) h^{00}(\partial_j \pi^j)\\
-    &\qquad\qquad+\left(\bar{y}F_y - \bar{b}F_b\right) h^{0 i}\,\dot{\pi}^j +\tfrac12\!\left(2\bar{y}F_y - \bar{b}\bar{y}F_{by}\right) h^{ii}\dot{\pi}^0
-    + \frac12\!\left(\bar{y}^2 F_{yy} - \bar{y}F_y\right) h^{00}\dot{\pi}^0
-    \bigg\}
+    &\int d^4x\,\, a^4\,\bigg\{
+    \tfrac12 (yF_y-bF_b) (\dot{\pi}^i)^2+ \tfrac12 b^2 F_{bb} (\partial_j \pi^j)^2\bigg\} -\tfrac12 a^4 y^2F_{yy} (\dot{\pi}^0)^2\\
+    &\quad + a^4\,\,\bigg\{\tfrac12\!\left(\bar{b}F_b - \bar{b}^2 F_{bb}\right) h^{ii}(\partial_j \pi^j)
+    + \tfrac12\!\left(-2\bar{b}F_b + \bar{b}\bar{y}F_{by}\right) h^{00}(\partial_j \pi^j)+\left(\bar{y}F_y - \bar{b}F_b\right) h^{0j}\,\dot{\pi}^j \bigg\}\,,
 \end{aligned}
-\end{align}
-}
-%
-Resolving the constraint for $\pi^0$ we now get\todotag{Do it}
+\end{align}}
+where now
 {\small
 \begin{align}
 \begin{aligned}
-    ...
+    a^4y^2F_{yy}\dot{\pi}^0
+    &=-a^4\bigg[(byF_{by}-yF_y) (\partial_j\pi^j)+\tfrac12\!\big(2{y}F_y - byF_{by}\big) h^{ii}
+    + \tfrac12\!\left({y}^2 F_{yy} - {y}F_y\right) h^{00}\bigg]-\int d\tau\, (\partial_j \pi^j)\tfrac{d}{d\tau}(a^4yF_y)\\
+    &{\color{red}=-a^4\bigg[(byF_{by}-yF_y) (\partial_j\pi^j)+\bigg(\tfrac{1}{a^4}\!\!\int(\partial_j \pi^j)\tfrac{d}{d\tau}(a^4yF_y)\bigg)\bigg]-a^4\tfrac12\Big[\big(2{y}F_y - byF_{by}\big) h^{ii}+ \left({y}^2 F_{yy} - {y}F_y\right) h^{00}\Big]}
 \end{aligned}
-\end{align}
-}
-%
-We can now specialize this to specific choices of gauge...
-\bigskip
+\end{align}}
+That is\todotag{Rewrite exp using 2nd form  red above}
+{\small
+\begin{align}
+\begin{aligned}
+    -\tfrac12 a^4y^2F_{yy}\big(\dot{\pi}^0\big)^2
+    &=-\tfrac12 a^4 \tfrac{(byF_{by}-yF_y)^2}{y^2F_{yy}} (\partial_j\pi^j)^2\\
+    &\quad-\tfrac{(byF_{by}-yF_y)}{y^2F_{yy}} (\partial_j\pi^j)\bigg(\int(\partial_\ell\pi^\ell)\tfrac{d}{d\tau}(a^4yF_y) \bigg)
+    -\tfrac12 \tfrac{a^{-4}}{y^2F_{yy}}\bigg(\int(\partial_\ell\pi^\ell)\tfrac{d}{d\tau}(a^4yF_y)\bigg)^2
+    \\
+    &\quad-\tfrac12 a^4\tfrac{\big(2{y}F_y-byF_{by}\big)(byF_{by}-yF_y)}{y^2F_{yy}}h^{ii}(\partial_j\pi^j)
+    -\tfrac12 a^4\tfrac{\left({y}^2 F_{yy} - {y}F_y\right)(byF_{by}-yF_y)}{y^2F_{yy}}h^{00}(\partial_j\pi^j)
+    \\
+    &\quad -\tfrac12 \tfrac{\big(2{y}F_y-byF_{by}\big)}{y^2F_{yy}}h^{ii}\bigg(\int(\partial_\ell\pi^\ell)\tfrac{d}{d\tau}(a^4yF_y)\bigg)
+    -\tfrac12 \tfrac{\left({y}^2 F_{yy} - {y}F_y\right)}{y^2F_{yy}}h^{00}\bigg(\int(\partial_\ell\pi^\ell)\tfrac{d}{d\tau}(a^4yF_y)\bigg).
+\end{aligned}
+\end{align}}
+Substituting back in the action we finally get\todotag{Rewrite using 2nd form red above, keep $\nabla\pi+\int$ together}
+{\small
+\begin{align}
+\begin{aligned}
+    S^{(2)}=&\int d^4x\,\, a^4\,\frac{\rho+p}{2}\Bigg\{
+    (\dot{\pi}^i)^2-\bigg[-\tfrac{b^2 F_{bb}}{(yF_y-bF_b)} +\tfrac{(byF_{by}-yF_y)^2}{y^2F_{yy}(yF_y-bF_b)}\bigg] (\partial_j \pi^j)^2 \\
+    &\quad-2\tfrac{(byF_{by}-yF_y)}{y^2F_{yy}(yF_y-bF_b)} (\partial_j\pi^j)\bigg(\tfrac{1}{a^4}\int(\partial_\ell\pi^\ell)\tfrac{d}{d\tau}(a^4yF_y) \bigg)
+    -\tfrac{1}{y^2F_{yy}(yF_y-bF_b)}\bigg(\tfrac{1}{a^4}\int(\partial_\ell\pi^\ell)\tfrac{d}{d\tau}(a^4yF_y)\bigg)^2\\
+    &\quad +\left(\tfrac{\bar{b}F_b-\bar{b}^2 F_{bb}}{yF_y-bF_b} - \tfrac{\big(2{y}F_y-byF_{by}\big)(byF_{by}-yF_y)}{(yF_y-bF_b)y^2F_{yy}}\right) h^{ii}(\partial_j \pi^j)\\
+    &\qquad\qquad\qquad+\!\left(\tfrac{\bar{b}\bar{y}F_{by}-2\bar{b}F_b}{yF_y-bF_b} - \tfrac{\left({y}^2 F_{yy} - {y}F_y\right)(byF_{by}-yF_y)}{(yF_y-bF_b)y^2F_{yy}}\right) h^{00}(\partial_j \pi^j)
+    +2h^{0 j}\,\dot{\pi}^j\\
+    &-\tfrac{\big(2{y}F_y-byF_{by}\big)}{y^2F_{yy}(yF_y-bF_b)}h^{ii}\bigg(\tfrac{1}{a^4}\int(\partial_\ell\pi^\ell)\tfrac{d}{d\tau}(a^4yF_y)\bigg)
+    -\tfrac{\left({y}^2 F_{yy} - {y}F_y\right)}{y^2F_{yy}(yF_y-bF_b)}h^{00}\bigg(\tfrac{1}{a^4}\int(\partial_\ell\pi^\ell)\tfrac{d}{d\tau}(a^4yF_y)\bigg)\Bigg\}.
+\end{aligned}
+\end{align}}
 
 
 %-----------------------------------------------------------------
