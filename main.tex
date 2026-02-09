@@ -787,6 +787,25 @@ We compare this with the explicit form
     &\Gamma:=\frac{\partial p}{\partial\sigma}_{|\rho}=-\frac{2\beta}{b}\frac{\partial b}{\partial\sigma}_{|\rho}=\frac{2\beta b}{y^2+2\beta}
 \end{align}
 In the absence of potential $\beta=0$, then $c_b^2\equiv1$ and $\Gamma$ vanishes.
+Using $X$ and $V(\varphi)$ a variable we rewrtite the nonadiabatic pressure perturbations as
+\begin{align}
+    \Gamma = \frac{\partial p}{\partial \sigma}_{|\rho}=\frac{2\beta b}{y^2+2\beta} = \frac{2\beta}{X+3\beta}\,\exp\Big(\frac{\tfrac12 \beta+V(\varphi)}{\beta}\Big).
+\end{align}
+We also express the comoving entropy and its variation in terms of $X$ and $V(\varphi)$ as
+{\small
+\begin{align}
+\begin{aligned}
+    &\sigma=\frac{y^2}{b}=(X+\beta)\, {\exp\Big(-\tfrac{\tfrac12 \beta+V(\varphi)}{\beta}\Big)}\\
+    &\,\Rightarrow\quad \delta\sigma = \frac{\partial\sigma}{\partial X}\delta X + \frac{\partial\sigma}{\partial V}\frac{\delta V}{\delta \varphi} \delta \varphi = \exp\Big(-\tfrac{\tfrac12 \beta+V(\varphi)}{\beta}\Big)\left(\delta X - \tfrac{X+\beta}{\beta} V_{\varphi}\delta \varphi\right)\\
+    &\qquad\qquad= \exp\Big(-\tfrac{\tfrac12 \beta+V(\bar{\varphi})}{\beta}\Big)\left(2\dot{\bar{\varphi}}\dot{\delta\varphi}- \tfrac{\dot{\bar{\varphi}}^2+\beta}{\beta} V_{\varphi}\delta \varphi\right)
+\end{aligned}
+\end{align}}
+In conclusion, the nonadiabatic pressure perturbations are
+\begin{align}
+    \delta P_{\text{nad}} = \Gamma \delta\sigma = \frac{2\beta}{X+3\beta}\,\left(2\dot{\bar{\varphi}}\,\dot{\delta\varphi}- \frac{\dot{\bar{\varphi}}^2+\beta}{\beta} V_{\varphi}\delta \varphi\right)\,.
+\end{align}
+
+
 
 
 \subsubsection{Alternative solution 1}
