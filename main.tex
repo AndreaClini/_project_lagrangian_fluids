@@ -727,7 +727,7 @@ we identify the \textbf{non-adiabatic pressure perturbations} of the k-essence f
 
 
 %----------------------------------------------------------------
-\subsection{Matching to k-essence remastered}
+\subsection{Matching to 5-essence remastered}
 %----------------------------------------------------------------
 The matching should be adjusted so as to preserve shift symmetry of $\phi^0$, thus forbidding the dentification of $\varphi$ with $\phi^0$ directly since $V(\varphi)$ would otherwise break it.
 In turn, the identification $y=\sqrt{X}$ need some rethinking.
@@ -790,7 +790,60 @@ In the absence of potential $\beta=0$, then $c_b^2\equiv1$ and $\Gamma$ vanishes
 
 
 \subsubsection{Alternative solution 1}
-More generally we can look for a solution
+More generally we can look for a solution of the form $F=\tfrac12 y^2 + C b^\beta$.
+Then we have
+\begin{align}
+    X=yF_y+bF_b=y^2 + C\beta b^\beta,\quad V=-F+\tfrac12(yF_y+bF_b)=C\big(\beta-1\big) b^\beta.
+\end{align}
+In the case $V=0$ we might $\beta=1$ to allow for $C\neq0$ so that $X=y^2 + C b$.
+However enforcing $c_s^2\equiv1$ in the quintessence case gives
+\begin{align}
+    1\overset{!}{=}\frac{-b^2F_{bb}+\frac{\big(yF_y-byF_{by}\big)^2}{y^2F_{yy}}}{(yF_y-bF_b)}=\frac{-C\beta(\beta-1) b^\beta+y^2}{y^2 + C\beta b^\beta}= 1 - \frac{C\beta^2 b^\beta}{y^2 + C\beta b^\beta}\quad \Rightarrow\quad \beta=0,
+\end{align}
+which again implies the potential vanishes...
+
+The thermo variables are
+\begin{align}
+    \rho=\tfrac12 y^2 -Cb^\beta,\quad p=\tfrac12 y^2 + C(1-\beta) b^\beta = \rho+C(2-\beta)b^\beta, \quad \sigma=\frac{F_y}{b}=\frac{y^2}{b}.
+\end{align}
+Again we combine $\rho$ and $\sigma$ to get
+\begin{align}
+    \rho=\tfrac12 y^2 -C\big(\frac{y^2}{\sigma}\big)^\beta,\quad \sigma=\frac{y^2}{b}\quad \Rightarrow\quad y=y(\rho,\sigma),\quad b=\frac{y^2(\rho,\sigma)}{\sigma}.
+\end{align}
+Differentiating the first one wrt $\rho$ at fixed $\sigma$ we get
+\begin{align}
+    1=y\frac{\partial y}{\partial\rho}_{|\sigma}-C\beta\big(\frac{y^2}{\sigma}\big)^{\beta-1}\frac{2y}{\sigma}\frac{\partial y}{\partial\rho}_{|\sigma}=y\frac{\partial y}{\partial\rho}_{|\sigma}-C\beta b^{\beta}\frac{2}{y}\frac{\partial y}{\partial\rho}_{|\sigma}
+    \quad\Rightarrow\quad \begin{array}{c}
+    \frac{\partial y}{\partial\rho}_{|\sigma}=\frac{y}{y^2-2C\beta b^{\beta}},\\[3pt]
+    \frac{\partial b}{\partial\rho}_{|\sigma}=\frac{2y}{\sigma}\frac{\partial y}{\partial\rho}_{|\sigma}=\frac{2b}{y^2-2C\beta b^{\beta}}\,.
+    \end{array}
+\end{align}
+Similarly differentiating wrt $\sigma$ at fixed $\rho$ we get
+{\small
+\begin{align}
+    \frac{\partial b}{\partial \sigma}_{|\rho}=-\frac{b^2}{y^2+2C\beta b^\beta}, \quad
+     \frac{\partial y}{\partial \sigma}_{|\rho}=-C\beta\frac{b^{\beta-1}}{y}\frac{\partial b}{\partial \sigma}_{|\rho}=-\frac{C\beta b^{\beta+1}}{y(y^2+2C\beta b^\beta)}\,.
+\end{align}}
+Then finally we compute
+\begin{align}
+    c_b^2&=\frac{\partial p}{\partial \rho}_{|\sigma}=1+C(2-\beta)\beta b^{\beta-1} \frac{\partial b}{\partial \rho}_{|\sigma}=1+\frac{2C(2-\beta)\beta b^{\beta}}{y^2-2C\beta b^{\beta}}=\frac{y^2-2C\beta^2 b^\beta}{y^2-2C\beta b^{\beta}}\,,
+\end{align}
+and
+\begin{align}
+    \Gamma&=\frac{\partial p}{\partial \sigma}_{|\rho}=C(2-\beta)\beta b^{\beta-1}\frac{\partial b}{\partial \sigma}_{|\rho}=-\frac{C(2-\beta)\beta b^{\beta+1}}{y^2+2C\beta b^{\beta}}\,.
+\end{align}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \subsubsection{Alternative solution 2}
