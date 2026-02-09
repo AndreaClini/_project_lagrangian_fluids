@@ -60,9 +60,9 @@ In turn we can express the fluctuations in density $\rho=-F+yF_y$ and pressure $
 \end{align}
 
 We also introduce the phonon potential $\partial_\ell\pi_L=\pi^\ell$, so that $\partial_j \pi^j = \nabla^2 \pi_L$ and $[\pi_L]=E^{-2}$.
-From the velocity expansion $au^\mu =a(1+\dots, v^\ell)$ above we identify the peculiar velocity and the velocity potential (for phonons/scalar perturbations) as
+From the velocity expansion \eqref{eq:expansions_b_y} we identify the peculiar velocity $au^\mu =a(1+.., v^\ell)$ and the velocity potential (for phonons/scalar perturbations) as
 \begin{align}
-    av^\ell = \frac{1}{2}\epsilon_{i j k}\,\epsilon^{\ell \alpha j k}\,\partial_\alpha\pi^i = -\dot{\pi}^\ell\quad \Rightarrow \quad av = -\dot{\pi}_L\quad \text{where}\quad \partial_\ell\pi_L=\pi^\ell
+    v^\ell = \frac{1}{2}\epsilon_{i j k}\,\epsilon^{\ell \alpha j k}\,\partial_\alpha\pi^i = -\dot{\pi}^\ell\quad \Rightarrow \quad v = -\dot{\pi}_L\quad \text{where}\quad \partial_\ell\pi_L=\pi^\ell
 \end{align}
 
 We can now expand the action up to second order 
@@ -194,14 +194,15 @@ where now
     a^4y^2F_{yy}\dot{\pi}^0
     &=-a^4\bigg[(byF_{by}-yF_y) (\partial_j\pi^j)+\tfrac12\!\big(2{y}F_y - byF_{by}\big) h^{ii}
     + \tfrac12\!\left({y}^2 F_{yy} - {y}F_y\right) h^{00}\bigg]-\int d\tau\, (\partial_j \pi^j)\tfrac{d}{d\tau}(a^4yF_y)\\
-    &{\color{red}=-a^4\bigg[(byF_{by}-yF_y) (\partial_j\pi^j)+\bigg(\tfrac{1}{a^4}\!\!\int(\partial_j \pi^j)\tfrac{d}{d\tau}(a^4yF_y)\bigg)\bigg]-a^4\tfrac12\Big[\big(2{y}F_y - byF_{by}\big) h^{ii}+ \left({y}^2 F_{yy} - {y}F_y\right) h^{00}\Big]}
+    &{\color{red}=-a^4\bigg[(byF_{by}-yF_y) (\partial_j\pi^j)+\bigg(\tfrac{1}{a^4}\!\!\int(\partial_j \pi^j)\tfrac{d}{d\tau}(a^4yF_y)\bigg)\bigg]}\\
+    &{\color{red}\qquad-a^4\tfrac12\Big[\big(2{y}F_y - byF_{by}\big) h^{ii}+ \left({y}^2 F_{yy} - {y}F_y\right) h^{00}\Big]}.
 \end{aligned}
 \end{align}}
-That is\todotag{Rewrite exp using 2nd form  red above}
+That is
 {\small
 \begin{align}
 \begin{aligned}
-    -\tfrac12 a^4y^2F_{yy}\big(\dot{\pi}^0\big)^2
+    -\tfrac12&a^4y^2F_{yy}\big(\dot{\pi}^0\big)^2\\
     &=-\tfrac12 a^4 \tfrac{(byF_{by}-yF_y)^2}{y^2F_{yy}} (\partial_j\pi^j)^2\\
     &\quad-\tfrac{(byF_{by}-yF_y)}{y^2F_{yy}} (\partial_j\pi^j)\bigg(\int(\partial_\ell\pi^\ell)\tfrac{d}{d\tau}(a^4yF_y) \bigg)
     -\tfrac12 \tfrac{a^{-4}}{y^2F_{yy}}\bigg(\int(\partial_\ell\pi^\ell)\tfrac{d}{d\tau}(a^4yF_y)\bigg)^2
@@ -213,7 +214,18 @@ That is\todotag{Rewrite exp using 2nd form  red above}
     -\tfrac12 \tfrac{\left({y}^2 F_{yy} - {y}F_y\right)}{y^2F_{yy}}h^{00}\bigg(\int(\partial_\ell\pi^\ell)\tfrac{d}{d\tau}(a^4yF_y)\bigg).
 \end{aligned}
 \end{align}}
-Substituting back in the action we finally get\todotag{Rewrite using 2nd form red above, keep $\nabla\pi+\int$ together}
+Or equivalently keeping therms $\propto \, \nabla \pi+\int d\tau \nabla\pi$ together
+{\small\color{red}
+\begin{align}
+\begin{aligned}
+    -\tfrac12 a^4y^2F_{yy}\big(\dot{\pi}^0\big)^2
+    &=-\tfrac{1}{2}\tfrac{a^4}{y^2F_{yy}}\bigg[(byF_{by}-yF_y) (\partial_j\pi^j)+\bigg(\tfrac{1}{a^4}\!\!\int(\partial_j \pi^j)\tfrac{d}{d\tau}(a^4yF_y)\bigg)\bigg]^2\\
+    &\quad-\tfrac{a^4}{y^2F_{yy}}\Big[\big(2{y}F_y - byF_{by}\big) h^{ii}+ \left({y}^2 F_{yy} - {y}F_y\right) h^{00}\Big]\\
+    &\qquad\qquad\cdot \bigg[(byF_{by}-yF_y) (\partial_j\pi^j)+\bigg(\tfrac{1}{a^4}\!\!\int(\partial_j \pi^j)\tfrac{d}{d\tau}(a^4yF_y)\bigg)\bigg]\,.
+\end{aligned}
+\end{align}}
+%
+Substituting back in the action we finally get\todotag{Rewrite w red exp, keeping $\nabla\pi+\int$ together}
 {\small
 \begin{align}
 \begin{aligned}
