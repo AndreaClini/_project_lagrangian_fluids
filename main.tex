@@ -759,20 +759,21 @@ Next we get the thermo variables
 \begin{align}
     \rho=\tfrac12 y^2+\beta\log b, \quad p=\tfrac12 y^2+\beta-\beta\log b=\rho+\beta-2\beta\log b, \quad \sigma=\frac{F_y}{b}=\frac{y^2}{b}.
 \end{align}
-We invert these to use $\rho$ and $\sigma$ as independent variables
+We invert the expressions for $\rho$ and $\sigma$ to use them as independent variables.
+Combining the equation for $\rho$ and $\sigma$
 \begin{align}
-    \rho+\beta\log\sigma=\tfrac12 y^2+\beta\log y^2\quad\Rightarrow\quad y=y(\rho,\sigma),\quad b=\frac{y^2}{\sigma}=\frac{y^2(\rho,\sigma)}{\sigma}
+    \rho+\beta\log\sigma=\tfrac12 y^2+\beta\log y^2\quad\Rightarrow\quad y=y(\rho,\sigma),\quad b=\frac{y^2}{\sigma}=\frac{y^2(\rho,\sigma)}{\sigma}.
 \end{align}
-From the first one
+Differentiating the first one wrt $\rho$ at fixed $\sigma$ we get
 \begin{align}
     1=y\frac{\partial y}{\partial\rho}_{|\sigma}+\frac{2\beta}{y}\frac{\partial y}{\partial\rho}_{|\sigma}\quad\Rightarrow\quad \begin{array}{c}\frac{\partial y}{\partial\rho}_{|\sigma}=\frac{y}{y^2+2\beta}\\[3pt]
-    \frac{\partial b}{\partial\rho}_{|\sigma}=\frac{2y}{\sigma}\frac{\partial y}{\partial\rho}_{|\sigma}=\frac{2y^2}{\sigma}\frac{1}{y^2+2\beta}=\frac{2b}{y^2+2\beta}
+    \frac{\partial b}{\partial\rho}_{|\sigma}=\frac{2y}{\sigma}\frac{\partial y}{\partial\rho}_{|\sigma}=\frac{2y^2}{\sigma}\frac{1}{y^2+2\beta}=\frac{2b}{y^2+2\beta}\,.
     \end{array}
 \end{align}
-and similarly
+Similarly differentiating wrt $\sigma$ at fixed $\rho$ we get
 \begin{align}
     \frac{\beta}{\sigma}=y\frac{\partial y}{\partial\sigma}_{|\rho}+\frac{2\beta}{y}\frac{\partial y}{\partial\sigma}_{|\rho}\quad\Rightarrow\quad \begin{array}{c}
-        \frac{\partial y}{\partial\sigma}_{|\rho}=\frac{\beta}{\sigma}\frac{y}{y^2+2\beta}, \\[3pt]
+        \frac{\partial y}{\partial\sigma}_{|\rho}=\frac{\beta}{\sigma}\frac{y}{y^2+2\beta}=\frac{\beta b}{y(y^2+2\beta)}, \\[3pt]
         \frac{\partial b}{\partial\sigma}_{|\rho}=\frac{2y}{\sigma}\frac{\partial y}{\partial\sigma}_{|\rho}-\frac{y^2}{\sigma^2}=\frac{2\beta y^2}{\sigma^2(y^2+2\beta)}-\frac{y^2}{\sigma^2}=-\frac{y^2}{\sigma^2}\frac{y^2}{y^2+2\beta}=-\frac{b^2}{y^2+2\beta}
         \end{array}
 \end{align}
@@ -787,7 +788,12 @@ We compare this with the explicit form
 \end{align}
 In the absence of potential $\beta=0$, then $c_b^2\equiv1$ and $\Gamma$ vanishes.
 
-\subsubsection{Alternative solution}
+
+\subsubsection{Alternative solution 1}
+More generally we can look for a solution
+
+
+\subsubsection{Alternative solution 2}
 Alternatively we can look for a solution $F=Cy^\alpha b^\beta$, then
 \begin{align}
     X=yF_y+bF_b=(\alpha+\beta)F,\quad V=-F+\tfrac12 (yF_y-bF_b)=\big(-1+\tfrac12(\alpha+\beta)\big)F.
