@@ -729,19 +729,21 @@ we identify the \textbf{non-adiabatic pressure perturbations} of the k-essence f
 %----------------------------------------------------------------
 \subsection{Matching to 5-essence remastered}
 %----------------------------------------------------------------
-The matching should be adjusted so as to preserve shift symmetry of $\phi^0$, thus forbidding the dentification of $\varphi$ with $\phi^0$ directly since $V(\varphi)$ would otherwise break it.
+The matching should be adjusted so as to preserve shift symmetry of $\phi^0$, thus forbidding the identification of $\varphi$ with $\phi^0$ directly since $V(\varphi)$ would otherwise break it.
 In turn, the identification $y=\sqrt{X}$ need some rethinking.
 
-In the 5-essence case we can express kinetic energy and potential in terms of the fluid variables as
+In the 5-essence case we can express kinetic energy and potential in terms of energy density and pressure. 
+Next we use the expression \eqref{eq:rho_pressure_exp_nonbaro} of the stress tensor in the fluid EFT to express kinetic energy and potential in terms of $F$ and its derivatives
 \begin{align}
     \rho=\tfrac12 X +V, \quad p =\tfrac12 X -V\quad \Rightarrow\quad \begin{array}{c}
         X=\rho+p = yF_y + bF_b,\\
         V(\varphi) = \tfrac12(\rho - p) \equiv -F +\tfrac12 (yF_y+ bF_b)\,.
     \end{array}
 \end{align}
-We should now invert this to identify $y$ and $b$...
+We now invert these relations to identify $y,b$ in terms of $X,V$.
+We need further constraints to identify the form of the function $F$.
 Ideally, we would like to identify temperature and kinetic energy $y\sim X$.
-A solution is given by
+Enforcing $F_{yb}=0$ and the $c_b^2=1$ in the case with no potential, a solution is given by
 \begin{equation}
     F=\frac{y^2}{2}-\beta \log b \quad \Rightarrow\quad \begin{array}{c}
          X=yF_y+bF_b=y^2-\beta\\
@@ -752,19 +754,21 @@ which allow for $V\neq0$ by taking $\beta\neq0$.
 This suggests $X\sim y^2$ and $V\propto \log b$ which is somewhat physically reasonable.
 In turn we get
 \begin{align}
-    c_b^2=\frac{-b^2F_{bb}y^2F_{yy}+\big(yF_y-byF_{by}\big)^2}{y^2F_{yy}(yF_y-bF_b)}=\frac{y^2-\beta}{y^2+\beta}
+    c_b^2=\frac{\partial p}{\partial \rho}_{|\sigma}=\frac{-b^2F_{bb}y^2F_{yy}+\big(yF_y-byF_{by}\big)^2}{y^2F_{yy}(yF_y-bF_b)}=\frac{y^2-\beta}{y^2+\beta}
 \end{align}
 confirming we can have $c_s^2=1$ if $V=0$ that is $\beta=0$.
-Next we get the thermo variables
-\begin{align}
+Next we identify energy density, pressure and comoving entropy specified by this form of $F$
+\begin{align}\label{eq:enerrgy_density_pressure_entropy_vs_y_b}
     \rho=\tfrac12 y^2+\beta\log b, \quad p=\tfrac12 y^2+\beta-\beta\log b=\rho+\beta-2\beta\log b, \quad \sigma=\frac{F_y}{b}=\frac{y^2}{b}.
 \end{align}
-We invert the expressions for $\rho$ and $\sigma$ to use them as independent variables.
-Combining the equation for $\rho$ and $\sigma$
+Now we invert the expressions to use $\rho,\sigma$ as independent thermodynamic variables in place of $y,b$.
+This will allow to compute the nonadiabatic pressure.
+Combining the equations \eqref{eq:enerrgy_density_pressure_entropy_vs_y_b} for $\rho$ and $\sigma$ we get
 \begin{align}
     \rho+\beta\log\sigma=\tfrac12 y^2+\beta\log y^2\quad\Rightarrow\quad y=y(\rho,\sigma),\quad b=\frac{y^2}{\sigma}=\frac{y^2(\rho,\sigma)}{\sigma}.
 \end{align}
-Differentiating the first one wrt $\rho$ at fixed $\sigma$ we get
+There is no need to explicitly invert the relation for $y$, since we ultimately want to express $\delta P_{\text{nad}}$ in terms of $y,b$.
+In practice, differentiating the first one wrt $\rho$ at fixed $\sigma$ we get
 \begin{align}
     1=y\frac{\partial y}{\partial\rho}_{|\sigma}+\frac{2\beta}{y}\frac{\partial y}{\partial\rho}_{|\sigma}\quad\Rightarrow\quad \begin{array}{c}\frac{\partial y}{\partial\rho}_{|\sigma}=\frac{y}{y^2+2\beta}\\[3pt]
     \frac{\partial b}{\partial\rho}_{|\sigma}=\frac{2y}{\sigma}\frac{\partial y}{\partial\rho}_{|\sigma}=\frac{2y^2}{\sigma}\frac{1}{y^2+2\beta}=\frac{2b}{y^2+2\beta}\,.
@@ -777,17 +781,19 @@ Similarly differentiating wrt $\sigma$ at fixed $\rho$ we get
         \frac{\partial b}{\partial\sigma}_{|\rho}=\frac{2y}{\sigma}\frac{\partial y}{\partial\sigma}_{|\rho}-\frac{y^2}{\sigma^2}=\frac{2\beta y^2}{\sigma^2(y^2+2\beta)}-\frac{y^2}{\sigma^2}=-\frac{y^2}{\sigma^2}\frac{y^2}{y^2+2\beta}=-\frac{b^2}{y^2+2\beta}
         \end{array}
 \end{align}
-For fluctuations we have
-\begin{align}
-    \delta p=\delta\rho-2\frac{\delta b}{b}= c_b^2\delta\rho+\Gamma\delta\sigma
-\end{align}
-We compare this with the explicit form
-\begin{align}
+We can finally express the adiabatic and entropic pressure fluctuations
+\begin{align}\label{eq:cb_gamma_vs_y_b}
     &c_b^2:=\frac{\partial p}{\partial\rho}_{|\sigma}=1-\frac{2\beta}{b}\frac{\partial b}{\partial\rho}_{|\sigma}= 1- \frac{2\beta}{b}\frac{2b}{y^2+2\beta}=\frac{y^2-2\beta}{y^2+2\beta}\\[3pt]
     &\Gamma:=\frac{\partial p}{\partial\sigma}_{|\rho}=-\frac{2\beta}{b}\frac{\partial b}{\partial\sigma}_{|\rho}=\frac{2\beta b}{y^2+2\beta}
 \end{align}
 In the absence of potential $\beta=0$, then $c_b^2\equiv1$ and $\Gamma$ vanishes.
-Using $X$ and $V(\varphi)$ a variable we rewrtite the nonadiabatic pressure perturbations as
+The total pressure fluctuations are then
+\begin{align}
+    \delta p=\delta\rho-2\frac{\delta b}{b}= c_b^2\delta\rho+\Gamma\delta\sigma
+\end{align}
+
+Finally we go back to the variables $X$ and $V(\varphi)$.
+From the above expression \eqref{eq:cb_gamma_vs_y_b} for $\Gamma$ rewrite the nonadiabatic pressure perturbations as
 \begin{align}
     \Gamma = \frac{\partial p}{\partial \sigma}_{|\rho}=\frac{2\beta b}{y^2+2\beta} = \frac{2\beta}{X+3\beta}\,\exp\Big(\frac{\tfrac12 \beta+V(\varphi)}{\beta}\Big).
 \end{align}
@@ -809,8 +815,8 @@ In conclusion, the nonadiabatic pressure perturbations are
 
 
 \subsubsection{Alternative solution 1}
-More generally we can look for a solution of the form $F=\tfrac12 y^2 + C b^\beta$.
-Then we have
+More generally, repeating the above argument (matching the stress tensor of the scalar field, imposing $F_{by}=0$, $y\sim \sqrt{X}$ and $c_b^2=1$) we find solutions of the form $F=\tfrac12 y^2 + C b^\beta$.
+With such a form for $F$ we again identify $X,V(\varphi)$ in terms of $y,b$ 
 \begin{align}
     X=yF_y+bF_b=y^2 + C\beta b^\beta,\quad V=-F+\tfrac12(yF_y+bF_b)=C\big(\beta-1\big) b^\beta.
 \end{align}
@@ -821,15 +827,17 @@ However enforcing $c_s^2\equiv1$ in the quintessence case gives
 \end{align}
 which again implies the potential vanishes...
 
-The thermo variables are
+We now repeat the previous reasoning.
+We obtain energy density, pressure and comoving entropy
 \begin{align}
     \rho=\tfrac12 y^2 -Cb^\beta,\quad p=\tfrac12 y^2 + C(1-\beta) b^\beta = \rho+C(2-\beta)b^\beta, \quad \sigma=\frac{F_y}{b}=\frac{y^2}{b}.
 \end{align}
-Again we combine $\rho$ and $\sigma$ to get
+We combine the equations to (formally) use $\rho,\sigma$ as thermodynamic variables instead of $y,b$
 \begin{align}
     \rho=\tfrac12 y^2 -C\big(\frac{y^2}{\sigma}\big)^\beta,\quad \sigma=\frac{y^2}{b}\quad \Rightarrow\quad y=y(\rho,\sigma),\quad b=\frac{y^2(\rho,\sigma)}{\sigma}.
 \end{align}
-Differentiating the first one wrt $\rho$ at fixed $\sigma$ we get
+We do some massaging to find $\frac{\partial \cdot}{\partial \rho}_{|\sigma}$ and $\frac{\partial \cdot}{\partial \sigma}_{|\rho}$ without having to invert the relation $y=y(\rho,\sigma),b=b(\rho,\sigma)$ explicitly.
+Namely, differentiating the first one wrt $\rho$ at fixed $\sigma$ we get
 \begin{align}
     1=y\frac{\partial y}{\partial\rho}_{|\sigma}-C\beta\big(\frac{y^2}{\sigma}\big)^{\beta-1}\frac{2y}{\sigma}\frac{\partial y}{\partial\rho}_{|\sigma}=y\frac{\partial y}{\partial\rho}_{|\sigma}-C\beta b^{\beta}\frac{2}{y}\frac{\partial y}{\partial\rho}_{|\sigma}
     \quad\Rightarrow\quad \begin{array}{c}
@@ -846,9 +854,7 @@ Similarly differentiating wrt $\sigma$ at fixed $\rho$ we get
 Then finally we compute
 \begin{align}
     c_b^2&=\frac{\partial p}{\partial \rho}_{|\sigma}=1+C(2-\beta)\beta b^{\beta-1} \frac{\partial b}{\partial \rho}_{|\sigma}=1+\frac{2C(2-\beta)\beta b^{\beta}}{y^2-2C\beta b^{\beta}}=\frac{y^2-2C\beta^2 b^\beta}{y^2-2C\beta b^{\beta}}\,,
-\end{align}
-and
-\begin{align}
+    \\[3pt]
     \Gamma&=\frac{\partial p}{\partial \sigma}_{|\rho}=C(2-\beta)\beta b^{\beta-1}\frac{\partial b}{\partial \sigma}_{|\rho}=-\frac{C(2-\beta)\beta b^{\beta+1}}{y^2+2C\beta b^{\beta}}\,.
 \end{align}
 {\color{red}
