@@ -78,6 +78,9 @@ The most general solution is, for arbitrary one variable function $f=f(z)$,
 \end{align}
 It captures the barotropic case simply setting $y=0$.
 
+Let us study the implications of $w=\mathrm{const}$ on $c_s^2$ and $\Gamma$.
+Of course we expect $\Gamma=0$ since we enforced the constant EoS in full generality...\todotag{finish}
+
 
 \subsection*{Fluids with arbitrary EoS parameter $w(b,y)$}
 
@@ -95,6 +98,14 @@ Choosing variables $\gamma:=\log uy$ and $\beta:=\log b$, the characteristics ar
 \end{aligned}\end{align}
 }
 The solution can be written in general but is probably not worth it.
+
+Crucially, we cannot say anything more on $c_s^2$ or $\Gamma$for a completely general $w(y,b)$.
+This is no surprise: in general we always have 2 independent thermodynamical DoFs and 1 independent function of these, furnishing the `equation of state' in a broader sense.
+These can be for example $b,y$, $\rho,p$ or $\rho,w$ and the function might be $F$.
+Here we are trading some of the arbitrariness of $F$ into the arbitrariness of $w$ and of $f$ (where $f$ is the initial function/data on the hypersurface e.g. $b=b_0$ we solve the PDE with characteristic cf. the constant $w$ case for the notation) with the functional dependence of $f$ constrained by characteristics.
+
+As soon as we say something more on $w$ e.g. that $w=\mathrm{const}$ then we can draw further conclusions.
+
 It is quite simple when variables split $w=w_1(y)w_2(b)$.
 For example when $w=w(b)$ characteristic simply becomes
 {\small
@@ -103,8 +114,6 @@ For example when $w=w(b)$ characteristic simply becomes
     z(\beta):=F(\gamma(\beta,\gamma_0),\beta)= f(\gamma_0)\,\exp\left(\int_{\beta_0}^\beta\, d\beta\,\,(1+w(\beta))\right)
 \end{aligned}\end{align}
 }
-
-To get some intuition in the general case.
 The general solution for $w=w(b)$ is then
 \begin{align}
     F(y,b)=f\Big(y\, e^{-\int_{b_0}^bd\log b\, w(b)}\Big)\exp\left(\int_{b_0}^bd\log b\, \big(1+w(b)\big)\right)
