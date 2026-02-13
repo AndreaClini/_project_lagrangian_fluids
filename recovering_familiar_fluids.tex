@@ -74,12 +74,27 @@ Consider fluids with an almost constant EoS
 The first order PDE is solved by characteristic\footnote{A convenient choice of variables is $\gamma:=\log uy$ and $\beta:=\log b$.}.
 The most general solution is, for arbitrary one variable function $f=f(z)$,
 \begin{align}
-    F(y,b)=f(y\,b^{-w})\, b^{(1+\omega)}.
+    F(y,b)=f(y\,b^{-w})\, b^{(1+w)}.
 \end{align}
 It captures the barotropic case simply setting $y=0$.
 
 Let us study the implications of $w=\mathrm{const}$ on $c_s^2$ defined in \eqref{eq:adiabatic_sound_speed} and $\Gamma$ defined in \eqref{eq:nonadiabatic_pressure_coefficient_gamma}.
 Of course we expect $\Gamma=0$ since we enforced the constant EoS in full generality...\todotag{finish}
+
+
+\subsection*{Fluids with EoS parameter $w=w(a)$}
+A simple generalization of the constant EoS case is to consider a time-varying EoS parameter $w=w(a)$ with the scale factor $a$, but otherwise independent of $b,y$.
+The PDE is still formally solved by the above expression
+\begin{align}
+    F(y,b)=f(y\,b^{-w(a)})\, b^{(1+w(a))}.
+\end{align}
+We should now impose a consistency relation on $f$ to ensure 1st Friedmann equation and continuity are satisfied \todotag{check if it makes sense}
+\begin{align}
+    (\dot{a}/a)^2=\frac{1}{3M_{\mathrm{Pl}}^2}\rho=\frac{1}{3M_{\mathrm{Pl}}^2}(-F+yF_y)\\
+    \dot{\rho}=-3\mathcal{H}(\rho+p)=-3\mathcal{H}(-bF_b+yF_y)
+\end{align}
+This will give consistency constraints on $f$ and its derivatives for the equations to hold.
+Indeed, for a given form of $f$ we can invert the relations to express $b,y$ in terms of $\rho,p$ and then check if the above equations are satisfied.
 
 
 \subsection*{Fluids with arbitrary EoS parameter $w(b,y)$}
