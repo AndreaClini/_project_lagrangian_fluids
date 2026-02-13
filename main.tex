@@ -544,7 +544,7 @@ The entropy per particle is $\sigma=F_y/b$, imposing it be preserved gives\footn
     0=d\sigma = \frac{F_{yy}}{b}dy+\Big(\frac{bF_{by}-F_y}{b^2}\Big)db\quad \Rightarrow\quad \frac{dy}{db}_{\mid\sigma}= \frac{F_y-b F_{yb}}{bF_{yy}}=\frac{y}{b}\frac{p_y}{\rho_y}
 \end{align}
 The adiabatic sound speed is then by definition
-\begin{align}
+\begin{align}\label{eq:adiabatic_sound_speed}
     c_b^2:=\frac{dp}{d\rho}_{\mid\sigma}&=\frac{p_b + p_y\, \tfrac{dy}{db}_{\mid\sigma}}{\rho_b + \rho_y\, \tfrac{dy}{db}_{\mid\sigma}} = \frac{b p_b\, y\rho_y+(yp_y)^2}{b\rho_b\,y\rho_y+y\rho_y\,yp_y}\,
     \\[5pt]
     &=\frac{-b^2F_{bb} F_{yy}+(F_y-bF_{yb})^2}{F_{yy}\,(yF_y-bF_b)} = \frac{b\,p_b \,y\rho_y + (y\,p_y)^2}{y \rho_y (\rho+p)}\,.
@@ -558,17 +558,21 @@ which makes it manifest that $c_b^2\geq0$ provided no ghosts $\rho+P>0$, the sec
 
 We also note that $c_b^2\equiv c_s^2$ always, as proved in \eqref{eq:cs_equiv_cb_flat_spacetime} below for flat spacetime, which shows that absence of ghosts, thermodynamic stability and gradient instabilities are closely related.
 
-It is now straightfroward to compute $\frac{\partial P}{\partial \sigma}_{|\rho}$.
-We can proceed as before enforcing 
+Similarly we compute the nonadiabatic pressure coefficient $\frac{\partial P}{\partial \sigma}_{|\rho}$.
+We proceed as before enforcing 
 \begin{equation}
     0=d\rho=yF_{yy}dy+(yF_{yb}-F_b)db\quad \Rightarrow\quad \frac{dy}{db}_{|\rho}=\frac{F_b-yF_{yb}}{yF_{yy}}
 \end{equation}
-Then again
-\begin{align}
+As above we get, with analgous possible thermoodynamical rewriting in terms of the free energy density $\mathfrak{a}$,  
+{\small
+\begin{align}\label{eq:nonadiabatic_pressure_coefficient_gamma}
+\begin{aligned}
     \Gamma:=\frac{\partial p}{\partial \sigma}_{\mid\rho}&=\frac{p_b + p_y\, \tfrac{dy}{db}_{\mid\rho}}{\sigma_b + \sigma_y\, \tfrac{dy}{db}_{\mid\rho}}=\frac{-bF_{bb}+(F_y-bF_{by})\tfrac{F_b-yF_{yb}}{yF_{yy}}}{\Big(\tfrac{bF_{by}-F_y}{b^2}\Big)+\tfrac{F_{yy}}{b}\frac{F_b-yF_{yb}}{yF_{yy}}}
     \\
     &=\frac{-b^2F_{bb}y^2F_{yy}+(yF_y-byF_{by})(bF_b-byF_{yb})}{y^2F_{yy}\Big(\tfrac{bF_{by}-F_y}{b}\Big)+yF_{yy}(F_b-yF_{yb})}
-\end{align}
+    \\
+    &=\frac{b^2F_{bb}y^2F_{yy}-(yF_y-byF_{by})(bF_b-byF_{yb})}{\tfrac{1}{by}y^2F_{yy}(yF_y-bF_b)}.
+\end{aligned}\end{align}}
 
 
 
