@@ -2,10 +2,14 @@
 \section{Recovering fluids with known EoS in the EFT language}
 %============================================================================
 
+
+In this section we want to get some intuition for the form of the function $F(y,b)$ that describes some familiar fluids, such as cold dark matter and radiation.
+Hopefully this will also reveal how the fluid EFT is more general than the usual scalar field description of fluids.
 Recall the expressions
-\begin{align}
-    \rho=-F+yF_y,\quad p=F-bF_b,\quad w=\frac{F-bF_b}{yF_y-F},\quad c_s^2=\frac{\partial p}{\partial \rho}_{|\sigma}=\frac{-y^2F_{yy}b^2F_{bb}+(yF_y-bF_b)^2}{y^2F_{yy}(yF_y-bF_b)}.
-\end{align}
+\begin{align}\begin{aligned}
+    &\rho=-F+yF_y,\quad p=F-bF_b,\quad w=\frac{F-bF_b}{yF_y-F},\\
+    &c_s^2=\frac{\partial p}{\partial \rho}_{|\sigma}=\frac{-y^2F_{yy}b^2F_{bb}+(yF_y-bF_b)^2}{y^2F_{yy}(yF_y-bF_b)}.
+\end{aligned}\end{align}
 and in the barotropic case
 \begin{align}
     \rho=-F,\quad p=F-bF_b,\quad w=\frac{bF_b-F}{F},\quad \frac{d p}{d \rho}=c_s^2=\frac{b^2F_{bb}}{bF_b}.
@@ -14,7 +18,7 @@ Recall $[\phi]=[\pi]=[x]=E^{-1}$, $b=[\partial_\mu\phi\partial^\mu\phi]=E^0$, $[
 
 
 \subsection*{Dark Matter}
-Demanding Dark Matter be a barotropic fluid and imposing $=0$ we get
+Demanding Dark Matter be a barotropic fluid and imposing $w=0$ we get
 \begin{align}
     0= w=\frac{bF_b-F}{F}\quad \Rightarrow\quad F=\Lambda^4 \,b\quad \text{for some scale } \, [\Lambda]=E,
 \end{align}
