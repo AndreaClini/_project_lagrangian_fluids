@@ -1,0 +1,233 @@
+%==========================================================================
+\section{Quadratic action in curved spacetime}
+%===========================================================================
+Using the expansions \eqref{eq:expansions_b_y_summary} we now expand the action up to second order 
+{\small
+\begin{align}
+\begin{aligned}
+    S&=\int d^4x \sqrt{-g} F(b,y) = \int d^4x\,a^4 \big[1+\tfrac12 (h^{ii}-h^{00}) \big] F(\bar{b}(1+\delta b), \bar{y}(1+\delta y))
+    \\
+    &= \int d^4x\, a^4 \big[1+\tfrac12 (h^{ii}-h^{00}) \big]
+    \Bigg[ F(\bar{b}, \bar{y}) + (\bar{b}F_b)  (\delta b^{(1)} + \delta b^{(2)}) + (\bar{y}F_y) (\delta y^{(1)} + \delta y^{(2)})\\
+    &\qquad\qquad\qquad\qquad\qquad\qquad\qquad+ \tfrac12 (\bar{b}^2 F_{bb})(\delta b^{(1)})^2 + \tfrac12 (\bar{y}^2 F_{yy}) (\delta y^{(1)})^2
+    + (\bar{b}\bar{y} F_{by}) \delta b^{(1)} \delta y^{(1)} \Bigg]
+\end{aligned}
+\end{align}
+}
+The quadratic part of the action for fluid perturbations in a general curved background is therefore
+{\small
+\begin{align}
+\begin{aligned}
+    S^{(2)}&=\int d^4x\,\, a^4 \bigg\{
+        (\bar{b}F_b) (h^{ii}-h^{00}) \Big[(\partial_j \pi^j) - \tfrac12 h^{ii}\Big]
+        + (\bar{y}F_y) (h^{ii}-h^{00}) \Big[\tfrac12 h^{00}+ \dot{\pi}^0\Big]\\
+    &\quad + (\bar{b}F_b) \Big[ - h^{0 i} \dot{\pi}^i - \tfrac12  h^{ii} (\partial_j \pi^j) - \tfrac12 (\dot{\pi}^i)^2 + \tfrac12 (\partial_j \pi^j)^2 -\tfrac12 \partial_i\pi^j\partial_j\pi^i\Big]
+    \\
+    &\quad + (\bar{y}F_y) \Big[ \tfrac12 h^{00}\dot{\pi}^0+ h^{0 i} \dot{\pi}^i + \tfrac12 (\dot{\pi}^i)^2 -\partial_j\pi^0\dot{\pi}^j\Big]
+    \\
+    &\quad + \tfrac12 (\bar{b}^2 F_{bb})\Big[ (\partial_j \pi^j) - \tfrac12 h^{ii}\Big]^2 
+    + \tfrac12 (\bar{y}^2 F_{yy})\Big[\tfrac12 h^{00}+ \dot{\pi}^0\Big]^2
+    + (\bar{b}\bar{y} F_{by}) \Big[(\partial_j \pi^j) - \tfrac12 h^{ii}\Big]\Big[\tfrac12 h^{00}+ \dot{\pi}^0\Big]
+        \bigg\}.
+\end{aligned}
+\end{align}
+}
+Dropping  further second orders in metric perturbations and {\color{blue} integrating by parts in space}, we get
+{\small
+\begin{align}
+\begin{aligned}
+    S^{(2)}=
+    \int d^4x\,\, a^4 \bigg\{&
+        (\bar{b}F_b) (h^{ii}-h^{00}) (\partial_j \pi^j)
+        + (\bar{y}F_y) (h^{ii}-h^{00}) \dot{\pi}^0 \\
+    &\quad + (\bar{b}F_b) \Big[ - h^{0 i} \dot{\pi}^i - \tfrac12  h^{ii} (\partial_j \pi^j) - \tfrac12 (\dot{\pi}^i)^2 + \bluecancel{\tfrac12 (\partial_j \pi^j)^2} -\bluecancel{\tfrac12 \partial_i\pi^j\partial_j\pi^i}\Big]
+    \\
+    &\quad + (\bar{y}F_y) \Big[ \tfrac12 h^{00}\dot{\pi}^0+ h^{0 i} \dot{\pi}^i + \tfrac12 (\dot{\pi}^i)^2 -\partial_j\pi^0\dot{\pi}^j\Big]
+    \\
+    &\quad + \tfrac12 (\bar{b}^2 F_{bb})\Big[ (\partial_j \pi^j)^2 - h^{ii}(\partial_j \pi^j)\Big]
+    + \tfrac12 (\bar{y}^2 F_{yy})\Big[h^{00} \dot{\pi}^0+ (\dot{\pi}^0)^2\Big]\\
+    &\quad+ (\bar{b}\bar{y} F_{by}) \Big[ \dot{\pi}^0(\partial_j \pi^j) - \tfrac12 h^{ii}\dot{\pi}^0 + \tfrac12 h^{00} (\partial_j\pi^j)\Big]
+        \bigg\}
+\end{aligned}
+\end{align}
+}
+Collecting terms, the final expression for the quadratic action is
+{\small
+\begin{align}\label{eq:final_quadratic_action_curved_spacetime}
+\begin{aligned}
+    S^{(2)}=
+    &\int d^4x\,\,a^4\,\,\bigg\{
+    \tfrac12 (yF_y-bF_b) (\dot{\pi}^i)^2+\tfrac12 b^2 F_{bb} (\partial_j \pi^j)^2
+    +\tfrac12 y^2 F_{yy} (\dot{\pi}^0)^2 \\
+    &\qquad\qquad\qquad+ (b y F_{by}) (\dot{\pi}^0 \partial_j \pi^j)-(yF_y) (\partial_j \pi^0\dot{\pi}^j)
+    \bigg\}\\
+    &\quad + a^4\,\,\bigg\{
+    \tfrac12\!\left(\bar{b}F_b - \bar{b}^2 F_{bb}\right) h^{ii}(\partial_j \pi^j)
+    + \tfrac12\!\left(-2\bar{b}F_b + \bar{b}\bar{y}F_{by}\right) h^{00}(\partial_j \pi^j)\\
+    &\qquad\qquad+ \left(\bar{y}F_y - \bar{b}F_b\right) h^{0j}\,\dot{\pi}^j + \tfrac12\!\left(2\bar{y}F_y - \bar{b}\bar{y}F_{by}\right) h^{ii}\dot{\pi}^0
+    + \tfrac12\!\left(\bar{y}^2 F_{yy} - \bar{y}F_y\right) h^{00}\dot{\pi}^0
+    \bigg\}\,.
+\end{aligned}
+\end{align}}
+Note that only \emph{longitudinal} modes $\pi^j_L\propto\, \partial_j\pi^j$ results dynamical.
+Now gather $\rho+p=yF_y-bF_b$ outside the brackets and rewrite the action as
+{\small
+\begin{align}
+\begin{aligned}
+    S^{(2)}= &\int d^4x\,\,a^4\, (\rho+p)\,\bigg\{
+    \tfrac12 (\dot{\pi}^i)^2-\tfrac12 \underbrace{\tfrac{-b^2 F_{bb}}{(yF_y-bF_b)}}_{=\mathcal{C}} (\partial_j \pi^j)^2
+    +\tfrac12 \underbrace{\tfrac{y^2 F_{yy}}{(yF_y-bF_b)}}_{=\mathcal{A}} (\dot{\pi}^0)^2 \\
+    &\quad\qquad\qquad\qquad\qquad+ \tfrac{(b y F_{by})}{(yF_y-bF_b)} (\dot{\pi}^0 \partial_j \pi^j)-\tfrac{(yF_y)}{(yF_y-bF_b)} (\partial_j \pi^0\dot{\pi}^j)
+    \bigg\}\\
+    &\quad + a^4\, (\rho+p)\, \bigg\{
+    \tfrac12\!\left(\tfrac{\bar{b}F_b - \bar{b}^2 F_{bb}}{(yF_y-bF_b)}\right) h^{ii}(\partial_j \pi^j)
+    + \tfrac12\!\left(\tfrac{-2\bar{b}F_b + \bar{b}\bar{y}F_{by}}{(yF_y-bF_b)}\right) h^{00}(\partial_j \pi^j)\\
+    &\qquad\qquad\qquad\qquad+ \left(\tfrac{\bar{y}F_y - \bar{b}F_b}{(yF_y-bF_b)}\right) h^{0 j}\,\dot{\pi}^j + \tfrac12\!\left(\tfrac{2\bar{y}F_y - \bar{b}\bar{y}F_{by}}{(yF_y-bF_b)}\right) h^{ii}\dot{\pi}^0
+    + \tfrac12\!\left(\tfrac{\bar{y}^2 F_{yy} - \bar{y}F_y}{(yF_y-bF_b)}\right) h^{00}\dot{\pi}^0
+    \bigg\}.
+\end{aligned}
+\end{align}}
+%
+Integrating by parts in both time and space the term $\partial_j \pi^0\dot{\pi}^j$ we get
+{\small
+\begin{align}
+\begin{aligned}
+    S^{(2)}=&\int d^4x\, -(\partial_j \pi^j\, \pi^{0})\tfrac{d}{d\tau}(a^4yF_y)\\
+    &\quad+a^4\,\bigg\{
+    \tfrac12 (yF_y-bF_b) (\dot{\pi}^i)^2+ \tfrac12 b^2 F_{bb} (\partial_j \pi^j)^2 +\tfrac12 y^2 F_{yy} (\dot{\pi}^0)^2+(b y F_{by}-yF_y) (\dot{\pi}^0 \partial_j \pi^j)\bigg\}\\
+    &\quad + a^4\,\,\bigg\{
+    \tfrac12\!\left(\bar{b}F_b - \bar{b}^2 F_{bb}\right) h^{ii}(\partial_j \pi^j)
+    + \tfrac12\!\left(-2\bar{b}F_b + \bar{b}\bar{y}F_{by}\right) h^{00}(\partial_j \pi^j)+\left(\bar{y}F_y - \bar{b}F_b\right) h^{0 j}\,\dot{\pi}^j\\
+    &\qquad\qquad +\tfrac12\!\left(2\bar{y}F_y - \bar{b}\bar{y}F_{by}\right) h^{ii}\dot{\pi}^0
+    + \tfrac12\!\left(\bar{y}^2 F_{yy} - \bar{y}F_y\right) h^{00}\dot{\pi}^0
+    \bigg\}
+\end{aligned}
+\end{align}}
+%
+Resolving the constraint for $\pi^0$ we now get
+{\small
+\begin{align}
+\begin{aligned}
+    \frac{d}{d\tau}a^4\bigg[y^2F_{yy}\dot{\pi}^0+(byF_{by}-yF_y) (\partial_j\pi^j)+\tfrac12\!\big(2{y}F_y - byF_{by}\big) h^{ii}
+    + \tfrac12\!\left({y}^2 F_{yy} - {y}F_y\right) h^{00}\bigg]=-(\partial_j \pi^j)\tfrac{d}{d\tau}(a^4yF_y)\,.
+\end{aligned}
+\end{align}}
+Substituting back in the action we get
+{\small
+\begin{align}
+\begin{aligned}
+    S^{(2)}=
+    &\int d^4x\,\, a^4\,\bigg\{
+    \tfrac12 (yF_y-bF_b) (\dot{\pi}^i)^2+ \tfrac12 b^2 F_{bb} (\partial_j \pi^j)^2\bigg\} -\tfrac12 a^4 y^2F_{yy} (\dot{\pi}^0)^2\\
+    &\quad + a^4\,\,\bigg\{\tfrac12\!\left(\bar{b}F_b - \bar{b}^2 F_{bb}\right) h^{ii}(\partial_j \pi^j)
+    + \tfrac12\!\left(-2\bar{b}F_b + \bar{b}\bar{y}F_{by}\right) h^{00}(\partial_j \pi^j)+\left(\bar{y}F_y - \bar{b}F_b\right) h^{0j}\,\dot{\pi}^j \bigg\}\,,
+\end{aligned}
+\end{align}}
+where now
+{\small
+\begin{align}
+\begin{aligned}
+    a^4y^2F_{yy}\dot{\pi}^0
+    &=-a^4\bigg[(byF_{by}-yF_y) (\partial_j\pi^j)+\tfrac12\!\big(2{y}F_y - byF_{by}\big) h^{ii}
+    + \tfrac12\!\left({y}^2 F_{yy} - {y}F_y\right) h^{00}\bigg]-\int d\tau\, (\partial_j \pi^j)\tfrac{d}{d\tau}(a^4yF_y)\\
+    &{\color{red}=-a^4\bigg[(byF_{by}-yF_y) (\partial_j\pi^j)+\bigg(\tfrac{1}{a^4}\!\!\int(\partial_j \pi^j)\tfrac{d}{d\tau}(a^4yF_y)\bigg)\bigg]}\\
+    &{\color{red}\qquad-a^4\tfrac12\Big[\big(2{y}F_y - byF_{by}\big) h^{ii}+ \left({y}^2 F_{yy} - {y}F_y\right) h^{00}\Big]}.
+\end{aligned}
+\end{align}}
+That is
+{\small
+\begin{align}
+\begin{aligned}
+    -\tfrac12&a^4y^2F_{yy}\big(\dot{\pi}^0\big)^2\\
+    &=-\tfrac12 a^4 \tfrac{(byF_{by}-yF_y)^2}{y^2F_{yy}} (\partial_j\pi^j)^2\\
+    &\quad-\tfrac{(byF_{by}-yF_y)}{y^2F_{yy}} (\partial_j\pi^j)\bigg(\int(\partial_\ell\pi^\ell)\tfrac{d}{d\tau}(a^4yF_y) \bigg)
+    -\tfrac12 \tfrac{a^{-4}}{y^2F_{yy}}\bigg(\int(\partial_\ell\pi^\ell)\tfrac{d}{d\tau}(a^4yF_y)\bigg)^2
+    \\
+    &\quad-\tfrac12 a^4\tfrac{\big(2{y}F_y-byF_{by}\big)(byF_{by}-yF_y)}{y^2F_{yy}}h^{ii}(\partial_j\pi^j)
+    -\tfrac12 a^4\tfrac{\left({y}^2 F_{yy} - {y}F_y\right)(byF_{by}-yF_y)}{y^2F_{yy}}h^{00}(\partial_j\pi^j)
+    \\
+    &\quad -\tfrac12 \tfrac{\big(2{y}F_y-byF_{by}\big)}{y^2F_{yy}}h^{ii}\bigg(\int(\partial_\ell\pi^\ell)\tfrac{d}{d\tau}(a^4yF_y)\bigg)
+    -\tfrac12 \tfrac{\left({y}^2 F_{yy} - {y}F_y\right)}{y^2F_{yy}}h^{00}\bigg(\int(\partial_\ell\pi^\ell)\tfrac{d}{d\tau}(a^4yF_y)\bigg).
+\end{aligned}
+\end{align}}
+Or equivalently keeping therms $\propto \, \nabla \pi+\int d\tau \nabla\pi$ together
+{\small\color{red}
+\begin{align}
+\begin{aligned}
+    -\tfrac12 a^4y^2F_{yy}\big(\dot{\pi}^0\big)^2
+    &=-\tfrac{1}{2}\tfrac{a^4}{y^2F_{yy}}\bigg[(byF_{by}-yF_y) (\partial_j\pi^j)+\bigg(\tfrac{1}{a^4}\!\!\int(\partial_j \pi^j)\tfrac{d}{d\tau}(a^4yF_y)\bigg)\bigg]^2\\
+    &\quad-\tfrac{a^4}{y^2F_{yy}}\Big[\big(2{y}F_y - byF_{by}\big) h^{ii}+ \left({y}^2 F_{yy} - {y}F_y\right) h^{00}\Big]\\
+    &\qquad\qquad\cdot \bigg[(byF_{by}-yF_y) (\partial_j\pi^j)+\bigg(\tfrac{1}{a^4}\!\!\int(\partial_j \pi^j)\tfrac{d}{d\tau}(a^4yF_y)\bigg)\bigg]\,.
+\end{aligned}
+\end{align}}
+%
+Substituting back in the action we finally get\todotag{Rewrite w red exp, keeping $\nabla\pi+\int$ together}
+{\small
+\begin{align}
+\begin{aligned}
+    S^{(2)}=&\int d^4x\,\, a^4\,\frac{\rho+p}{2}\Bigg\{
+    (\dot{\pi}^i)^2-\bigg[-\tfrac{b^2 F_{bb}}{(yF_y-bF_b)} +\tfrac{(byF_{by}-yF_y)^2}{y^2F_{yy}(yF_y-bF_b)}\bigg] (\partial_j \pi^j)^2 \\
+    &\quad-2\tfrac{(byF_{by}-yF_y)}{y^2F_{yy}(yF_y-bF_b)} (\partial_j\pi^j)\bigg(\tfrac{1}{a^4}\int(\partial_\ell\pi^\ell)\tfrac{d}{d\tau}(a^4yF_y) \bigg)
+    -\tfrac{1}{y^2F_{yy}(yF_y-bF_b)}\bigg(\tfrac{1}{a^4}\int(\partial_\ell\pi^\ell)\tfrac{d}{d\tau}(a^4yF_y)\bigg)^2\\
+    &\quad +\left(\tfrac{\bar{b}F_b-\bar{b}^2 F_{bb}}{yF_y-bF_b} - \tfrac{\big(2{y}F_y-byF_{by}\big)(byF_{by}-yF_y)}{(yF_y-bF_b)y^2F_{yy}}\right) h^{ii}(\partial_j \pi^j)\\
+    &\qquad\qquad\qquad+\!\left(\tfrac{\bar{b}\bar{y}F_{by}-2\bar{b}F_b}{yF_y-bF_b} - \tfrac{\left({y}^2 F_{yy} - {y}F_y\right)(byF_{by}-yF_y)}{(yF_y-bF_b)y^2F_{yy}}\right) h^{00}(\partial_j \pi^j)
+    +2h^{0 j}\,\dot{\pi}^j\\
+    &-\tfrac{\big(2{y}F_y-byF_{by}\big)}{y^2F_{yy}(yF_y-bF_b)}h^{ii}\bigg(\tfrac{1}{a^4}\int(\partial_\ell\pi^\ell)\tfrac{d}{d\tau}(a^4yF_y)\bigg)
+    -\tfrac{\left({y}^2 F_{yy} - {y}F_y\right)}{y^2F_{yy}(yF_y-bF_b)}h^{00}\bigg(\tfrac{1}{a^4}\int(\partial_\ell\pi^\ell)\tfrac{d}{d\tau}(a^4yF_y)\bigg)\Bigg\}.
+\end{aligned}
+\end{align}}
+
+
+%-----------------------------------------------------------------
+\subsection{Quadratic action in flat spacetime}
+%-------------------------------------------------------
+In flat spacetime $a=1$ and $h_{\mu\nu}=0$, only the first terms in the quadratic action \eqref{eq:final_quadratic_action_curved_spacetime} survive, and we can integrate by parts in both space and time the term $\partial_j \pi^0\dot{\pi}^j = -\dot{\pi}^0(\partial_j \pi^j)$ to get
+{\small
+\begin{align}
+\begin{aligned}
+    S^{(2)}&= \int d^4x \frac{(yF_y-bF_b)}{2}\bigg\{(\dot{\pi}^i)^2 - (\partial_j\pi^j)^2\Big[-\frac{b^2F_{bb}}{(yF_y-bF_b)}\Big]\\
+    &\qquad\qquad\qquad\qquad\qquad+(\dot{\pi}^0)^2 \frac{y^2F_{yy}}{(yF_y-bF_b)}
+    - 2\dot{\pi}^0 (\partial_j \pi^j) \frac{(yF_y-byF_{by})}{(yF_y-bF_b)}
+    \bigg\}\\
+    &=\int d^4x \frac{(\rho+p)}{2}\bigg\{(\dot{\pi}^i)^2 - \mathcal{C} (\partial_j\pi^j)^2 
+    + (\dot{\pi}^0)^2 \mathcal{A}
+    - 2\mathcal{M}\dot{\pi}^0 (\partial_j \pi^j) 
+    \bigg\}
+\end{aligned}
+\end{align}
+}
+for $\rho= -F + y F_y$, $p= F - b F_b$ and 
+{\small
+\begin{align}
+\begin{aligned}
+    &\mathcal{C} = -\frac{b^2F_{bb}}{(yF_y-bF_b)},\quad 
+    \mathcal{A} = \frac{y^2F_{yy}}{(yF_y-bF_b)} = \frac{T\, \frac{\partial\rho }{\partial T}}{\rho+p},\quad
+    \mathcal{M} = \frac{(yF_y-byF_{by})}{(yF_y-bF_b)}.
+\end{aligned}
+\end{align}
+}
+The entropy field $\pi^0$ is thus non-dynamical and the constraint equations gives
+\begin{align}
+    \dot{\pi}^0 = \frac{\mathcal{M}}{\mathcal{A}} (\partial_j \pi^j) + \text{const.}
+\end{align}
+The constant is not physical and is reabsorbed in the original definition of $\phi^0=\gamma(t+\pi^0)$.
+Solving the constraint the action for the coordinate $\pi^i$ becomes
+{\small
+\begin{align}
+    S^{(2)}&= \int d^4x \frac{(\rho+p)}{2}\Big[(\dot{\pi}^i)^2 - c_s^2 (\partial_j\pi^j)^2 \Big], \quad \text{for}\quad c_s^2 = \mathcal{C} + \frac{\mathcal{M}^2}{\mathcal{A}}.
+\end{align}
+}
+We note the entropy contribution to the speed of sound is always positive in \emph{physical} situations.
+Indeed $\mathcal{M}^2$ is a true square and, recalling $y\equiv T$, we have
+\begin{equation}
+    \mathcal{A}= \frac{T\, \frac{\partial\rho }{\partial T}}{\rho+p}\geq 0 \quad\text{provided}\quad
+    \begin{cases}
+        \rho+p\geq 0 \quad(\text{no ghosts}),\\
+        \frac{\partial\rho }{\partial T} \geq 0 \quad(\text{positive heat capacity}).
+    \end{cases} 
+\end{equation}
+Finally we immediately check the speed of sound $c_s^2$, defined as the coefficient of the fluctuations above, always matches the thermodynamical definition of \emph{adiabatic sound speed}
+\begin{align}\label{eq:cs_equiv_cb_flat_spacetime}
+    c_b^2:= \frac{\partial p}{\partial \rho}_{\mid \sigma} \overset{\text{proved before}}{=}\frac{-b^2F_{bb} F_{yy}+(F_y-bF_{yb})^2}{F_{yy}\,(yF_y-bF_b)} \overset{\text{easy check}}{\equiv} c_s^2.
+\end{align}
+

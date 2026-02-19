@@ -1,0 +1,241 @@
+%==============================================
+\section{Dark Energy as a single fluid}
+%=============================================
+Here we summarize some key results about fluid in the literature.
+
+
+%---------------------------------------------------------
+\subsection{Barotropic perfect fluid can't be dark energy}
+%-------------------------------------------------------
+A relativistic barotropic perfect fluid is described by three scalar fields $\phi^I(x)$ with $I=1,2,3$ which label the fluid elements~\cite{Dubovsky:2005xd}. The lagrangian should be invariant under volume-preserving diffeos
+\begin{equation}
+\phi^I\to f^I(\phi)\quad ,\quad \det\frac{\partial f}{\partial \phi^I}=1\ .   
+\end{equation}
+We define
+\begin{equation}
+    B^{IJ}\equiv g^{\mu\nu}\partial_\mu\phi^I\partial_\nu\phi^J\quad,\quad b=\sqrt{\det B_{IJ}}\, ,   \label{eq:b}
+\end{equation}
+which is invariant under volume-preserving diffeos. The physical interpretaion of $b$ can be understood in terms of the conservation of the comoving volume current $b=\sqrt{-J^\mu J_\mu}$, where 
+\begin{equation}
+    J^\mu_n=\frac{1}{6\sqrt{-g}}\epsilon^{\mu\nu\rho\sigma}\epsilon_{IJK}\partial_\nu\phi^I\partial_\rho\phi^I\partial_\sigma\phi^K\quad \rm{s.t.}\quad  \nabla_\mu J^\mu=0  \,.  
+\end{equation}
+This allows to define the flow velocity orthogonal to the constant $\Phi^I$ surfaces
+\begin{equation}
+J^\mu_n=b u^\mu\quad \rm{s.t}\quad u^\mu u_\mu=-1\ ,
+\end{equation}
+where the definition of the current makes it manifest that $b$ is the comoving number density.
+In the barotropic case $b$ also coincides with the entropy density, and it is conserved in the absence of dissipation. The entropy per particle $\sigma=s/n$ is exactly constant in this case, and the entropy is directly proportional to the number density $s\propto n$.
+
+The action is then specified by a single function
+\begin{equation}
+S=\int d^4x\sqrt{-g} F(b)\ .    
+\end{equation}
+The function $F(b)$ is in one to one correspondence with the equation of state, which also fixes the behavior of fluctuations. Explicitly we can derive the background thermodynamic by writing the stress energy tensor and matching it to the one of a perfect fluid 
+\begin{equation}
+    T_{\mu\nu}=(p+\rho)u_\mu u_\nu+p g_{\mu\nu}=F_{IJ} \partial_\mu\phi^I \partial_\nu\phi^I-g_{\mu\nu} F\ ,
+\end{equation}
+This results in
+\begin{equation}
+    \rho=-F\,,\quad p=F-bF_b\,, \quad \rho+p=-bF_b\,,
+\end{equation}
+and the equation of state 
+\begin{equation}
+    w\equiv\frac{p}{\rho}=-1+\frac{b F_b}{F}\ .
+\end{equation}
+Notice that at the level of the background the barotropic perfect fluid is fully specified by a single function which specifies its equation of state.  
+
+Explicitly we can write the lagrangian at quadratic order in the fluctuation around a fluid background configuration $\phi^I=x^i+\pi^I$
+\begin{equation}
+S_2^{\rm{baro}}=\int d^4x\sqrt{-g}\,\,\left(\frac{p+\rho}{2}\right)\left[\dot\pi^2-c_s^2(\nabla\pi)^2\right]\ ,
+\end{equation}
+where\footnote{Coupling a barotropic fluid to FRW the conservation of the entropy current implies $\nabla_\mu J^{\mu}=\dot{b}+3Hb=0$.} 
+\begin{equation}
+ c_s^2=\frac{b F_{bb}}{ F_b}=\frac{d p}{d\rho}=\frac{\dot{p}}{\dot{\rho}}=w-\frac{\dot{w}}{3H(1+w)}\,,  \label{eq:adiabatic}
+\end{equation}
+and it is fully determined by the equation of state as expected for a barotropic fluid. 
+Notice that the absence of ghosts, and gradient instabilities and superluminal modes imply respectively 
+\begin{equation}
+w>-1\,\qquad 0<c_s^2\leq1\ .
+\end{equation}
+Moreover, using $c_s^2(w)$ derived from \eqref{eq:adiabatic} we can rewrite the absence of gradient instabilities as a further constraint on the equation of state 
+\begin{equation}
+w-\frac{\dot{w}}{3H(1+w)}>0\ , \label{eq:nogradbaro}
+\end{equation}
+which parametrizing $\dot w= \beta_w H w$ becomes 
+\begin{equation}
+ w\left(1-\frac{\beta_w}{3(1+w)}\right)>0\ .   
+\end{equation}
+Notice that, in order to have $-1<w<-1/3$ and hence accelerated expansion, stability requires $\beta_w>3(1+w)\sim\mathcal{O}(1)$ which then implies that $w$ must evolve rapidly, making a long accelerating phase impossible. Indeed going back to Eq.~\eqref{eq:nogradbaro} and assuming constant equation of state we get $w>0$ which is incompatible with accelerated expansion. 
+
+
+As usual from the conservation of the stress tensor in a perturbed FRW background we can derive the equation controlling the behavior of the fluctuations of energy density and pressure: energy conservation gives the continuity equation and momentum conservation the Euler equation. Crucially for a barotropic fluid 
+\begin{equation}
+\delta p=c_s^2\delta\rho\,,
+\end{equation}
+the above conservation equations heavily simplify and eventually result in the second order equation for the density contrast $\delta=\delta\rho/\rho$:\todotag{rewrite according to convention in appendix}
+\begin{equation}
+\ddot{\delta\rho}+3H(1+c_s^2))\dot{\delta\rho}+\left[\frac{c_s^2k^2}{a^2}-4\pi G(1+w)\rho\right]\delta\rho=(1+w)\left[\ddot{\phi}+6H\dot{\phi}\right]\ .
+\end{equation}
+Now for $k^2/a^2\gg H^2$ and $\dot{\phi}\approx 0$ the equation reduces to 
+\begin{equation}
+\ddot{\delta\rho}+3H(1+c_s^2)\dot{\delta\rho}+\left[\frac{c_s^2k^2}{a^2}-4\pi G(1+w)(1+3c_s^2)\rho+3H\dot c_s^2\right]\delta\rho=0\ .
+\end{equation}
+and we recognize the usual competition between pressure support (for $c_s^2>0$) and gravitational instability. The barotropicity of the fluid implies that the adiabatic sound speed completely fixes the pressure support. 
+
+\subsection{Non-barotropic perfect fluid}
+To describe a fluid with entropy we can follow \cite{Dubovsky:2011sj,Ballesteros:2016kdx} and just add an extra scalar $\Phi^0$ to the construction above which enjoys a shift symmetry. 
+\begin{equation}
+\Phi^0\to\Phi^0+c\label{eq:shifttime}
+\end{equation}
+which allow us to define a new invariant 
+\begin{equation}
+y=u^\mu\partial_\mu\Phi^0
+\end{equation}
+which plays the role of the temperature or the chemical potential. This quantity will control the entropy per particle independently on the particle number density which is always controlled by $b$ defined in Eq.~\eqref{eq:b}.
+
+The action is now described by a single function of two scalar quantities
+\begin{equation}
+S=\int d^4 x\sqrt{-g} F(b,y)\ .
+\end{equation}
+From this we can derive the stress energy tensor
+\begin{equation}
+T_{\mu\nu}=(-b F_b+y F_y )\,u_\mu u_\nu
+           + (F - b F_b)\,g_{\mu\nu}\ ,
+\end{equation}
+which matching to the perfect fluid expression gives
+\begin{equation}\label{eq:rho_pressure_exp_nonbaro}
+\rho = - F+yF_y , \qquad p = F- b F_b \ .
+\end{equation}
+so that 
+\begin{equation}
+w=\frac{ F- b F_b}{- F+yF_y}\,. 
+\end{equation}
+
+Notice that in this case the presence of $y$ makes the entropy per particle not fixed by the equation of state but still conserved along the flow lines as expected in the absence of dissipation. In the EFT language the entropy per particle current is nothing else than the Noether current associated to the shift symmetry in Eq.~\eqref{eq:shifttime}
+\begin{equation}
+J_s^{\mu}=F_y u_\mu\quad \rm{s.t.}\quad \nabla_\mu J^\mu_s=0\ .
+\end{equation}
+The entropy per particle is not constant in this case, and it can be identified as
+\begin{align}
+    \sigma=\frac{s}{n}=\frac{F_y}{b}\ .
+\end{align}
+The adiabatic sound speed is then by definition
+\begin{equation}
+c_b^2:=\frac{dp}{d\rho}_{\mid\sigma}=w+\rho\frac{dw}{d\rho}_{\mid\sigma}=\frac{-b^2F_{bb} F_{yy}+(F_y-bF_{yb})^2}{F_{yy}\,(yF_y-bF_b)} = \frac{b\,p_b \,y\rho_y + (y\,p_y)^2}{y \rho_y (\rho+p)}\,.
+\end{equation}
+Finally, identifying the system temperature with $y=T$, then \eqref{eq:rho_pressure_exp_nonbaro} implies the function $F$ is minus the Helmholtz free energy density 
+\begin{equation}
+    F=-(\rho-Ts)\equiv-\mathfrak{a}\,.
+\end{equation}
+
+Explicitly we can write the lagrangian at quadratic order in the fluctuation around a fluid background configuration $\phi^0=t+\pi^0$ and $\phi^I=x^i+\pi^I$
+\begin{equation}
+S_2=\int d^4x\sqrt{-g}\left(\frac{p+\rho}{2}\right)\left[\dot\pi^2-\mathcal{C}_s^2(\nabla\pi)^2-2\mathcal{M}\dot{\pi}_0 (\nabla\!\!\cdot\!\pi)+\mathcal{A} \dot{\pi}_0^2\right]\ , 
+\end{equation}
+the sound speed is now 
+\begin{equation}
+\mathcal{C} = -\frac{b^2F_{bb}}{(yF_y-bF_b)}\,.
+\end{equation}
+The mixing of the entropy mode with the phonons is given by 
+\begin{equation}
+\mathcal{M} = \frac{(yF_y-byF_{by})}{(yF_y-bF_b)}.
+\end{equation}
+and the inertia of the entropy mode is
+\begin{equation}
+\mathcal{A}= \frac{y^2 F_{yy}}{y F_y-b F_b}\,.
+\end{equation}
+Crucially in this lagrangian only $p+\rho>0$ is necessary to avoid ghost instabilities.
+In case $\rho+p>0$, thermodynamic stability also demands $\mathcal{A}>0$, however at this level the speed of sound $c_s^2$ can be negative.
+
+
+The entropy mode is non propagating and can be integrated out as a constraint to get 
+\begin{equation}
+S_2=\int d^4xd^4x\sqrt{-g}\left(\frac{p+\rho}{2}\right)\left[\dot\pi^2-c_s^2(\nabla\pi)^2\right]\ , 
+\end{equation}
+where
+\begin{equation}
+    c_s^2:=\mathcal{C}_s^2+\frac{\mathcal{M}^2}{\mathcal{A}}\,.\;\label{eq:csnonbaro} 
+\end{equation}
+It is immediate to check the speed of sound $c_s^2$, defined as the coefficient of the fluctuations, always matches the thermodynamical definition of \emph{adiabatic sound speed} $c_b^2:= \frac{\partial p}{\partial \rho}_{\mid \sigma}$.
+The entropy contribution to the speed of sound is always positive in \emph{physical} situations since
+\begin{equation}
+    \mathcal{A}= \frac{T\, \frac{\partial\rho }{\partial T}}{\rho+p}\geq 0 \quad\text{provided}\quad
+    \begin{cases}
+        \rho+p\geq 0 \quad(\text{no ghosts}),\\
+        \frac{\partial\rho }{\partial T} \geq 0 \quad(\text{positive heat capacity}).
+    \end{cases} 
+\end{equation}
+Now $c_s^2$ is actually an independent function of $c_a^2$. So that requiring the absence of gradient instabilities does not forbid accelerated expansion which is only constrained by the absence of ghosts. As a consequnce the non-barotropic fluid EFT can span the whole space of 
+\begin{equation}
+w>-1\quad 0<c_s^2\leq1\ .    
+\end{equation}
+
+In order to understand non barotropic fluids it is important to write the pressure fluctuations. These can be written in two ways 
+\begin{align}
+\delta p &=c_s^2\delta\rho+\Gamma\delta \sigma\ ,
+\end{align}
+where we defined $c_s^2=\partial p/\partial \rho\vert_\sigma$ is exactly the as the speed of sound appearing in the phonon Lagrangian defined in Eq.~\eqref{eq:csnonbaro}. In addition to the speed of sound the pressure fluctuation receive contribution from the fluctuation of the entropy mode $\Gamma=\partial p/\partial \sigma\vert_\rho$. 
+Now we can write the continuity and Euler equation (see appendix).
+
+Since the entropy is conserved along the flow we can write the equation in comoving gauge $(\delta p=0)$ and eliminate the non-propagating entropy fluctuation to get an expression for the sound speed similar to the one in 2.34. {\bf I would like to see the equations for the density constrast with $\Gamma$} {\bf I would like to do the gauging of the fluid with gravity showing that the phonons are identified with the adiabatic curvature mode a' la Weinberg and hence phonon scattering satisfies soft theorems as well as the adibatic curvature mode as it is well known. Don't know if it in this language.}
+
+
+\subsection{Scalar fluids}
+Here I will match the scalar fluids to the fluid EFTs developed so far. This will allow us to show in which sense the fluid EFT remains more general.
+
+\paragraph{Quintessence} is typically defined as a scalar with a canonical kinetic term $X=-g^{\mu\nu}\partial_\mu\phi\partial_\nu\phi$, so that $\partial_\mu\phi=\sqrt{X}u_\mu$ with $u_\mu u^\mu=-1$, and an arbitrary potential $V(\phi)$
+\begin{equation}
+S=\int d^4x\sqrt{-g}\left[\tfrac{1}{2}X-V(\phi)\right]
+\end{equation}
+I can map this scalar theory into the non-barotropic fluid EFT by identifying...
+
+
+%======================================================================
+\section{Adding dark matter}
+%====================================================================
+
+Let us now consider the lagrangian for a two fluid system where the two fluids interact only through gravity 
+\begin{equation}
+S_2=\sum_{A=1,2}\int d^4x\sqrt{-g}\left(\frac{p_A+\rho_A}{2}\right)\left[\dot\pi_A^2-\mathcal{C}_{s,A}^2(\nabla\pi_A)^2+2\mathcal{M}_A\dot{\pi}_{0,A} (\nabla\!\!\cdot\!\pi_A)+\mathcal{A}_A \dot{\pi}_{0,A}^2\right]\ , 
+\end{equation}   
+In this setup I can define the sum of the two fluids and their difference. Let us define 
+\begin{align}
+&\pi_{\rm{tot}}=\frac{(\rho_A+p_A)\pi_A+(\rho_B+p_B)\pi_B}{\rho_A+p_A+\rho_B+p_B}\\
+&S\sim\frac{\rho^B_y}{f^B_{yy}} \pi^0_A-\frac{\rho_y^A}{f^A_{yy}} \pi^0_B
+\end{align}
+The first is the adiabatic mode again while the second (or a similar expression) should encode the relative entropy fluctuations which are now propagating! {\bf this is the idea but it should be done with more care not sure I did the diagonalization correctly}
+\section{Introducing bulk viscosity (to be continued)}
+The simple example one could think of to construct a dissipative system is to start with two scalar fluids in the UV
+\begin{equation}
+S=\int d^4x\left[\frac{1}{2}(\partial\phi)^2+\frac{1}{2}(\partial\chi)^2+\frac{m_\chi^2}{2}\chi^2+ y \chi \psi^2+ M_\psi\psi^2+ \epsilon\partial\phi \partial\chi\right]    
+\end{equation}
+Where we wrote an interaction between the two scalars that respect the shift symmetry and we assume the mass hierarchy $m_\chi>2 M_\psi$. As we will see the presence of fermions is required to give to the heavy scalar $\chi$ a finite width.  
+\begin{equation}
+\Gamma_\chi\approx\frac{y^2}{8\pi}m_\chi\ ,
+\end{equation}
+Since we want the evolution of the scalar fluids we need to go to the SK formalism~\cite{Crossley:2015evo,Liu:2018kfw} putting the theory above on a SK time contour. In SK every field is doubled because $\phi_{\pm}, \chi_{\pm},\psi_{\pm}$ encode the time on the forward/backward branch. This is unavoidable to distinguish retarded and advanced response. The SK actions is
+\begin{equation}
+S_{\rm{SK}}=S[\phi_+,\chi_+]-S[\phi_-,\chi_-]    
+\end{equation}
+Now I can rotate to the SK variables
+\begin{align}
+&\phi_{p,m}=\frac{\phi_+\pm \phi_-}{2}
+&\chi_{p,m}=\frac{\chi_+\pm \chi_-}{2}
+\end{align}
+The SK action for the heavy sector is
+\begin{equation}
+\begin{split}
+S^{\rm{heavy}}_{\rm SK}
+=
+&\int d^4x\left\{\chi_a (\Box - M^2) \chi_r
++
+\bar{\psi}_a (i\slashed{\partial}-m_\psi)\psi_r
++
+\bar{\psi}_r (i\slashed{\partial}-m_\psi)\psi_a
+]\right.
+\\
+&\left.+y[
+\chi_a \bar{\psi}_r \psi_r
++\chi_r(\bar{\psi}_a \psi_r + \bar{\psi}_r \psi_a)\right\}
+\end{split}
+\end{equation}

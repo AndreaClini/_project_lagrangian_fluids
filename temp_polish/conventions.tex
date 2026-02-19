@@ -52,16 +52,75 @@ The energy-momentum tensor is finally decomposed as
 \end{align}
 
 
-%===========================================================================
-\subsection{Formulas in different gauges}
-%============================================================================
+%=================================================
+\subsection{Gauge invariant variables \& comoving curvature perturbations}
+%=================================================
+Under a transformation $x^\mu \mapsto x^\mu +\xi^\mu$ with $\xi^\mu=(T,\,\partial^i L+\hat{L}^i)$, the pertubations transform as
+\begin{align}
+\begin{aligned}
+    \begin{array}{ll}
+    A \mapsto A-\dot{T}-\mathcal{H} T, & \\
+    B \mapsto B+T-\dot{L}, & \hat{B}_{i} \mapsto \hat{B}_{i}-\dot{\hat{L}}_{i}, \\
+    C \mapsto C-\mathcal{H} T-\frac{1}{3} \nabla^{2} L, & \\
+    E \mapsto E-L, & \hat{E}_{i} \mapsto \hat{E}_{i}-\hat{L}_{i}, \quad \tilde{E}_{i j} \mapsto \tilde{E}_{i j} .
+    \end{array}
+\end{aligned}
+\end{align}
+and fluid perturbations transform as
+\begin{align}
+\begin{aligned}
+    \delta \rho & \mapsto \delta \rho-\dot{\bar{\rho}}\, T, \\
+    \delta P & \mapsto \delta P-\dot{\bar{P}}\, T, \\
+    v_{i} & \mapsto v_{i}+\dot{L}_{i}, \\
+    \Sigma_{i j} & \mapsto \Sigma_{i j}
+\end{aligned}
+\end{align}
+The gauge-invariant Bardeen potentials are
+\begin{align}
+\begin{aligned}
+    \Psi & \equiv A+\mathcal{H}\left(B-\dot{E}\right)+\left(\dot{B}-\ddot{E}\right), \quad \hat{\Phi}_{i} \equiv \hat{B}_{i}-\dot{\hat{E}}_{i}, \\
+    \Phi & \equiv-C+\frac{1}{3} \nabla^{2} E-\mathcal{H}\left(B-\dot{E}\right), \qquad \hat{E}_{i j}.
+\end{aligned}
+\end{align}
+The gauge-invariant density perturbation are
+\begin{align}
+\begin{aligned}
+    \bar{\rho} \Delta \equiv \delta \rho+\dot{\bar{\rho}}(v+B)
+\end{aligned}
+\end{align}
+The gauge-invariant comoving curvature perturbation $\mathcal{R}$, i.e. the geometric 3-curvature of \emph{comoving} spatial slices, is defined by
+\begin{align}\label{eq:comoving_curvature_perturbations_gauge_inv_and_newtonian}
+\begin{aligned}
+    \mathcal{R}\equiv -C+\tfrac13\nabla^2E-\mathcal{H}(B+v) = \Phi -\mathcal{H}\big(v+\dot{E}\big).
+\end{aligned}
+\end{align}
+Beware another gauge invariant quantity $\zeta$ is often used in place of the comoving curvature $\mathcal{R}$, namely\footnote{Beware different signs for $\zeta$ and $\mathcal{R}$ are used in the literature, as well as swapping $\zeta\leftrightarrow\mathcal{R}$.}
+{\small\begin{align}
+\begin{aligned}
+    \zeta & =-C+\frac{1}{3} \nabla^{2} E+\mathcal{H} \frac{\delta \rho}{\dot{\bar{\rho}}} = \Phi +\mathcal{H}(B-\dot{E})+ \mathcal{H}\frac{\delta \rho}{\dot{\bar{\rho}}} = \mathcal{R}+\frac{\mathcal{H}}{\dot{\bar{\rho}}} \bar{\rho} \Delta.
+\end{aligned}
+\end{align}}
+Only two of $\Delta, \mathcal{R}, \zeta$ are thus independent.
+Moreover on large scales $\zeta \simeq \mathcal{R}$ since from the gauge-invariant Poisson equation \eqref{eq:poisson_gauge_invariant} and the 1st Friedman equation we have\footnote{The second equality holds for total species and for separately conserved $\nabla_\mu T^\mu_0=$ species.}
+{\small
+\begin{align}
+\begin{aligned}
+    \zeta-\mathcal{R}=\mathcal{H}\frac{\bar{\rho}\, \Delta }{\dot{\bar{\rho}}}
+    = -\tfrac13 \frac{\bar{\rho}\Delta}{\bar{\rho}+\bar{p}}
+    =\frac{k^2}{\mathcal{H}^2}\frac{\Phi}{\tfrac92 \Big(1+\frac{\bar{p}}{\bar{\rho}}\Big)}
+    \,\to 0\quad\text{as}\,\,\frac{k}{\mathcal{H}}\to0.
+\end{aligned}
+\end{align}}
+A distinctive feature of \emph{adiabatic} perturbations is that they are conserved in the superhorizon limit.
 
 
-%----------------------------------------------------------------------
-\subsubsection{Conformal Newtonian Gauge}
-%----------------------------------------------------------------------
 
-In this gauge, vector and tensor modes are excluded from the beginning $\hat{B}=\hat{E}=\bar{E}=0$, and the residual gauge freedom is used to kill the non-diagonal scalar terms $\tilde{B}=\tilde{E}=0$.
+
+%=====================================================================
+\subsection{Conformal Newtonian Gauge}
+%====================================================================
+
+In this gauge, vector and tensor modes are excluded from the beginning $\hat{B}=\hat{E}=\bar{E}=0$, and the residual gauge freedom is used to kill the non-diagonal scalar terms $\tilde{B}=\tilde{E}=0$, leaving \emph{no residual gauge freedom}.
 The metric is conventionally\footnote{Beware of different conventions in the literature, swapping $\phi \leftrightarrow \psi$ or their signs. Here we adopt the convention of Ma and BertschingerBaumann MaBertschinger, Baumann \cite{Baumann_Cosmology_2022} and\texttt{CLASS} \cite{Lesgourgues_CosmicLinearAnisotropySolvingSystemCLASSIOverview_2011}, so that $\psi\approx \phi$ in the absence of anisotropic stress.
 Dodelson \cite{DodelsonSchmidt_ModernCosmology_2025} uses $\phi\mapsto -\phi$. Weinberg \cite{Weinberg_AdiabaticModesCosmology_2003,Weinberg_Cosmology_2008} and Pajer swap $\phi\leftrightarrow \psi$.} written by calling $A=\psi$, $C=-\phi$
 \begin{align}\label{eq:newtonian_gauge_metric}
@@ -107,10 +166,11 @@ k^{2}(\phi-\psi)&=12 \pi G a^{2} \sum_{s}\left(\hat{k}^{j} \hat{k}_{i}-\frac{1}{
 \end{align}
 A linear combination of the 00 and 0i Einstein equation gives the gauge-invariant Poisson equation
 \begin{align}\label{eq:poisson_gauge_invariant}
-    \nabla^2\phi= 4\pi G a^2 \Big(\underbrace{\bar{\rho}\delta-3\mathcal{H}(\bar{\rho}+\bar{p})v}_{=\bar{\rho}\Delta}\Big), \quad \text{where}\quad \Delta:=\delta +\frac{\dot{\bar{\rho}}}{\bar{\rho}}v.
+    \nabla^2\Phi= 4\pi G a^2 \bar{\rho}\Delta,  \text{for}\quad \Delta:=\delta +\frac{\dot{\bar{\rho}}}{\bar{\rho}}(v+B),
 \end{align}
+where $\Phi$ is the gauge-invariant Bardeen potential, equal to $\phi$ in Newtonian gauge, and $\Delta$ is the gauge-invariant density contrast, where again we used $B=0$ in Newtonian gauge. 
 % 
-The continuity and Euler equations $\nabla_\mu T^\mu_\nu=0$ for a \emph{separately conserved} species are
+The continuity and Euler equations $\nabla_\mu T^\mu_\nu=0$ for a \emph{separately conserved} species are\footnote{For now we keep {\color{blue}scalar anisotropic stress} and highlight in blue.}
 {\small\begin{align}
     &\dot{\bar{\rho}} +3\mathcal{H}(\bar{\rho}+\bar{p})=0\,, \label{eq:backround_continuity}\\
     &\dot{\delta\rho}= -3\mathcal{H}(\delta\rho+\delta P) + (\bar{\rho}+\bar{P})\big(3\dot{\phi}-\partial_j v^j \big)\,,\label{eq:perturbed_continuity_drho}\\
@@ -141,113 +201,66 @@ Equivalently, in terms of the overdensity $\delta$ we have\todotag{Check 2nd ord
 \end{align}
 
 
-%----------------------------------------------------------------------
-\subsubsection{Synchronous Gauge}
-%----------------------------------------------------------------------
 
+%=======================================================================
+\subsection{Other gauges}
+%====================================================================
+
+%-------------------------------------------------------
+\subsubsection*{Synchronous gauge}
+%-------------------------------------------------------
 If ever needed we collect here the relevant expressions for the synchronous gauge\dots
-In particular recall in this gauge there is some residual gauge freedom that can be fixed by demanding the peculiar velocity of a \emph{cold} ($w\simeq 0$) species to vanish.\todotag{Finish this section}
+In particular recall in this gauge there is some residual gauge freedom that can be fixed by demanding the peculiar velocity of a \emph{cold} ($w\simeq 0$) species to vanish.\questiontag{Finish this if needed eventually cf. \cite{Weinberg_Cosmology_2008}}
 
 
-%----------------------------------------------------------------------
-\subsubsection{ADM Gauge}
-%----------------------------------------------------------------------
+%----------------------------------------------------------------
+\subsubsection*{Comoving gauge}
+%--------------------------------------------------------------------
+To simplify some of the expressions in the fluid EFT, it will be useful to work in a gauge where the peculiar velocity $v=0$ or the total mometum density $v+B=0$ vanish.\questiontag{Finish this if needed eventually}
 
-In order to explicitate the comoving curvature perurbations and later match them to phonons, it is useful to work in the ADM gauge, where the metric is written as
 
-% ADM in conformal time
+%--------------------------------------------------------------------
+\subsubsection{ADM decomposition}
+%---------------------------------------------------------------------
+
+In order to make the comoving curvature perturbation $\mathcal{R}$ appear explicitly in the spatial metric (and later match it to phonon variables), it is useful to work in the ADM decomposition
 \begin{align}
-ds^2
-=
-a^2(\tau)\Big[
--\mathcal{N}^2(\tau,\mathbf{x})\,d\tau^2
-+
-h_{ij}(\tau,\mathbf{x})\bigl(d x^i+\mathcal{N}^i(\tau,\mathbf{x})\,d\tau\bigr)\bigl(d x^j+\mathcal{N}^j(\tau,\mathbf{x})\,d\tau\bigr)
-\Big].
+\begin{aligned}
+    ds^2
+    =
+    a^2(\tau)\Big[
+    - N^2(\tau,\mathbf{x})\,d\tau^2
+    +
+    h_{ij}(\tau,\mathbf{x})\bigl(dx^i+N^i(\tau,\mathbf{x})\,d\tau\bigr)\bigl(dx^j+N^j(\tau,\mathbf{x})\,d\tau\bigr)
+    \Big].
+\end{aligned}
 \end{align}
+Here $N$ is the lapse, $N^i$ the shift, and $h_{ij}$ the induced metric on $\tau=\mathrm{const}$ hypersurfaces.
 
-% Comoving gauge parameterization of the spatial metric
+Since $\mathcal{R}$ is defined as the intrinsic 3-curvature perturbation of \emph{comoving} hypersurfaces, we can use the 2 scalar DoFs $T,L$ of the gauge freedom to fix the comoving condition and remove the scalar shear so that
 \begin{align}
-h_{ij}(\tau,\mathbf{x})
-=
-e^{2\zeta(\tau,\mathbf{x})}\,\big[\exp(\gamma(\tau,\mathbf{x}))\big]_{ij},
-\qquad
-\gamma^i{}_i=0,
-\qquad
-\partial_i\gamma^i{}_j=0.
+\begin{aligned}
+    B+v=0, \,\, E=0\quad \Rightarrow\quad \mathcal{R}=-C+\frac{1}{3}\nabla^2 E-\mathcal{H}(B+v)=-C.
+\end{aligned}
 \end{align}
-
-% Matrix exponential definition
+According to the SVT decomposition \eqref{eq:metric_general_form_svt}, in this ``comoving-type'' gauge we can then parametrize the spatial metric nonlinearly as
 \begin{align}
-\big[\exp(\gamma)\big]_{ij}
-\equiv
-\delta_{ij}
-+
-\gamma_{ij}
-+
-\frac{1}{2}\,\gamma_{ik}\gamma_{kj}
-+
-\frac{1}{3!}\,\gamma_{ik}\gamma_{k\ell}\gamma_{\ell j}
-+\cdots .
+\begin{aligned}
+    h_{ij}(\tau,\mathbf{x})
+    =
+    e^{2\mathcal{R}(\tau,\mathbf{x})}\,\big[\exp(\gamma(\tau,\mathbf{x}))\big]_{ij} \simeq\, \delta_{ij} (1+2\mathcal{R})+ \gamma_{ij}+O(2)\,,
+    \qquad
+    \gamma^i{}_i=0,
+    \qquad
+    \partial_i\gamma^i{}_j=0,
+\end{aligned}
 \end{align}
-
-% Tensorless limit
-\begin{align}
-\gamma_{ij}=0
-\quad\Longrightarrow\quad
-ds^2_{\rm spatial}=a^2(\tau)\,e^{2\zeta(\tau,\mathbf{x})}\,\delta_{ij}\,dx^i dx^j.
-\end{align}
-
-% Your Newtonian-gauge convention
-\begin{align}
-ds^2
-=
-a^2(\tau)\Big[-(1+2\psi)\,d\tau^2+(1-2\phi)\,\delta_{ij}\,dx^i dx^j\Big].
-\end{align}
-
-% Linear relation (comoving slicing)
-\begin{align}
-\zeta=-\phi.
-\end{align}
-
-% More general (still linear) Newtonian-gauge expression
-\begin{align}
-\zeta
-=
--\phi
--
-\mathcal{H}\,v,
-\qquad
-\mathcal{H}\equiv \frac{1}{a(\tau)}\,\frac{d a(\tau)}{d\tau},
-\qquad
-T^{0}{}_{i}=-(\rho+P)\,\partial_i v.
-\end{align}
+where $\gamma_{ij}$ contains the transverse-traceless tensor modes, and the matrix exponential is in the Taylor sense.
+This form is convenient because $\det\!\big(\exp(\gamma)\big)=1$, so the scalar volume perturbation is entirely carried by $e^{2\mathcal{R}}$.
+In particular we can compute $\mathcal{R}$ in any gauge and then interpret it geometrically through the exponential factor in $h_{ij}$ when working on comoving hypersurfaces.
 
 
 
-%==============================================================================
-\subsection{Comving curvature perturbations}
-%===============================================================================
 
-The gauge-invariant comoving curvature perturbation $\mathcal{R}$, i.e. the 3-curvature of comoving spatial slices, is defined in terms of metric and matter perturbations
-\begin{align}\label{eq:comoving_curvature_perturbations_newtonian}
-    \mathcal{R}\equiv C-\tfrac13\nabla^2E+\mathcal{H}(B+v) \overset{\text{newt. gauge}}{=} -\phi +\mathcal{H}v,
-\end{align}
-since in Newtonian gauge $C=-\phi$ and $B=E=0$.
-Beware another gauge invariant quantity $\zeta$ is often used in place of the comoving curvature $\mathcal{R}$.
-In Newtonian gauge it is defined by\footnote{The second equality holds for separately conserved em tensors}. 
-\begin{align}
-    \zeta\overset{\text{newt gauge}}{=} -\phi-\mathcal{H}\frac{\delta \rho}{\dot{\rho}} = -\phi +\tfrac13 \frac{\delta }{1+(\bar{p}/\bar{\rho})}.
-\end{align}
-From the gauge-invariant Poisson equation \eqref{eq:poisson_gauge_invariant} we can relate the two quantities
-{\small
-\begin{align}
-    \zeta-\mathcal{R}=-\mathcal{H}\frac{\delta \rho}{\dot{\rho}}-\mathcal{H}v
-    = -\mathcal{H}\frac{\bar{\rho}}{\dot{\bar{\rho}}}\Big(\delta +\frac{\dot{\bar{\rho}}}{\bar{\rho}}v\Big)
-    = \tfrac13 \frac{\bar{\rho}\Delta}{\bar{\rho}+\bar{p}}
-    =-\frac{k^2}{12\pi G a^2 (\bar{\rho}+\bar{p})}\phi
-    \,\to 0\quad\text{as}\,\,k\to0,
-\end{align}}
-confirming the two quantities indeed coincide on large scales.
 
 

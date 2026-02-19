@@ -1,21 +1,16 @@
-%-------------------------------------------------------
-%=============================================================
-\section{Matching to phonons}
-%===============================================================
-%------------------------------------------------------------
+%-------------------------------------------------------------------------
+%======================================================================
+\section{Superhorizon conservation of curvature perturbations from phonon EoM}
+%======================================================================
+%---------------------------------------------------------------------------
+A distinctive feature of \emph{adiabatic} perturbations is that they are conserved in the superhorizon limit.
+We would like to show this explicitly from the EoM of phonons.
 
-
-Matching the general expression for the 4-velocity \eqref{eq:velocity_decomposition} to the one for the phonon field \eqref{eq:phonon_4_velocity} we get
-\begin{align}\label{eq:peculiar_velocity_via_phonons}
-    v^\ell = \frac{1}{2}\epsilon_{i j k}\,\epsilon^{\ell \alpha j k}\,\partial_\alpha\pi^i = -\dot{\pi}^\ell\quad \Rightarrow \quad v = -\dot{\pi}_L\quad \text{where we define $\pi_L$ by}\quad \partial_\ell\pi_L=\pi^\ell
-\end{align}
-Dimensions are respected since $[\pi^\alpha]=E^{-1}$ and $[v^\ell]=E^0$, so that $[v]=E^{-1}$ and $[\pi_L]=E^{-2}$. 
-From \label{eq:peculiar_velocity_via_phonons} we identify the comoving curvature perturbations \eqref{eq:comoving_curvature_perturbations_newtonian} in terms of metric potentials and phonon potential
+From \label{eq:peculiar_velocity_via_phonons} we identify the comoving curvature perturbations \eqref{eq:comoving_curvature_perturbations_gauge_inv_and_newtonian} in terms of metric potentials and phonon potential
 \begin{equation}
-    \mathcal{R} = -\phi +\mathcal{H}v = -\phi - \mathcal{H}\,\dot{\pi}_L\,.
+    \mathcal{R} \overset{\text{Newt.}}{=} \phi -\mathcal{H}v = \phi + \mathcal{H}\,\dot{\pi}_L\,.
 \end{equation}
-
-
+%
 In Newtonian gauge \eqref{eq:newtonian_gauge_metric}, the quadratic lagrangian becomes 
 {\small
 \begin{align}
@@ -37,7 +32,7 @@ where
     &\qquad\qquad\cdot \bigg[(byF_{by}-yF_y) (\partial_j\pi^j)+\bigg(\tfrac{1}{a^4}\!\!\int(\partial_j \pi^j)\tfrac{d}{d\tau}(a^4yF_y)\bigg)\bigg]\,.
 \end{aligned}
 \end{align}}
-Taking $\psi=\phi$ in the large scale limit and simplifying terms we finally get\todotag{write}
+Taking $\psi=\phi$ at \emph{late times} and in the large scale limit, and simplifying terms we \todotag{write}finally get
 \begin{align}
     ...
 \end{align}
@@ -48,6 +43,6 @@ The equation of motion for phonons will be something like
 giving that $\ddot{\pi}_L\to 0$ as $k\to0$.
 For the comoving curvature then
 \begin{align}
-    \dot{\mathcal{R}}=-\dot{\phi}+\dot{\mathcal{H}}\,\dot{\pi}_L+\mathcal{H}\,\ddot{\pi}_L
+    \dot{\mathcal{R}}=\dot{\phi}+\dot{\mathcal{H}}\,\dot{\pi}_L+\mathcal{H}\,\ddot{\pi}_L
 \end{align}
 and, upon using the 0i Einstein equation for $\dot{\phi}+\mathcal{H}\phi=...$, the vanishing of $\ddot{\pi}$ from the EoM of phonons might be the fastest way to predict that $\mathcal{R}$ is conserved on superhorizon scales.\todotag{Finish this argument}
