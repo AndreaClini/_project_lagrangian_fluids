@@ -1,0 +1,253 @@
+%--------------------------------------
+%=======================================
+\section{Notations, conventions \& cosmology}
+%=======================================
+%---------------------------------------
+
+We mainly follow the standard notation from \cite{MaBertschinger_CosmologicalPerturbationTheorySynchronousConformalNewtonianGauges_1995,Baumann_Cosmology_2022}.
+The metric has signature $-+++$.
+The conformal time is denoted by $\tau$ and differentiation with respect to it is denoted by $\dot{f}$.
+The proper time of a comoving observer is denoted by $t$, related to conformal time by $dt=a \,d\tau$, and differentiation with respect to it is denoted by $f'$.
+
+We parametrize the general perturbation to a homogeneous isotropic FLRW metric as
+{\small\begin{equation} \label{eq:metric_general_form_svt}
+-\mathrm{d} s^{2}:=g_{\mu\nu}dx^\mu dx^\nu=a^{2}(\tau)\left[-(1+2 A) \,\mathrm{d} \tau^{2}+2 B_{i} \mathrm{~d} x^{i} \mathrm{~d} \tau+\left((1+2C)\delta_{ij}+2E_{ij}\right) \mathrm{d} x^{i} \,\mathrm{~d} x^{j}\right],
+\end{equation}}
+with SVT decomposition
+{\small\begin{equation*}
+\underbrace{A,\, C}_{\text {scalar }}, \quad
+B_{i}=\underbrace{\partial_{i} {B}}_{\text {scalar }}+\underbrace{\hat{B}_{i}}_{\text {vector }},\quad E_{i j}=\underbrace{\partial_{\langle i} \partial_{j\rangle} {E}}_{\text {scalar }}+\underbrace{\partial_{(i} \hat{E}_{j)}}_{\text {vector }}+\underbrace{\tilde{E}_{i j}}_{\text {tensor }},
+\end{equation*}}
+where we use the shorthand
+{\small\begin{align}\label{eq:convention_svt_decomposition}
+\partial_{\langle i} \partial_{j\rangle} {E} \equiv\left(\partial_{i} \partial_{j}-\frac{1}{3} \delta_{i j} \nabla^{2}\right) \tilde{E},\qquad
+\partial_{(i} \hat{E}_{j)}\equiv \frac{1}{2}\left(\partial_{i} \hat{E}_{j}+\partial_{j} \hat{E}_{i}\right).
+\end{align}}
+%
+The energy-momentum tensor of a perturbed perfect fluid is
+\begin{align}\label{eq:em_tensor_fluid_perturbed}
+    T^\mu_\nu= u^\mu u_\nu (\rho+p) + p \delta^\mu_\nu + \Sigma^\mu_\nu
+\end{align}
+The 4-velocity $u^\mu$ and the peculiar velocity $v^i$, split into scalar and vector part, are\footnote{Fourier transform convention $f(k)=\int dx e^{-ikx}f(x)$.}
+{\small\begin{align}\label{eq:velocity_decomposition}
+\begin{aligned}
+    u^\mu=\frac{1}{a}\left(1-A,\,v^i\right),\quad u_\mu=a\left(-(1+A),\,v_i\right),\quad v^i=\delta^{ij}v_j,\\[2pt]
+    v_i=\partial_i v + \hat{v}_i, \quad \theta= \partial_i v^i = ik_i v^i = -k^2 v, \quad \hat{v}^i=(\nabla\times \omega)^i
+\end{aligned}\end{align}}
+The (symmetric) anisotropic stress $\Sigma^\mu_\nu$ is traceless and orthogonal to the 4-velocity, and the remaining DoFs are again decomposed into scalar, vector and tensor part
+{\small\begin{align}\label{eq:anisotropic_stress_decomposition}
+\begin{aligned}
+    &\Sigma^\mu_\mu=0,\quad \Sigma^\mu_\nu u_\mu=\Sigma^\mu_\nu u^\nu=0, \quad \Rightarrow\quad \Sigma^0_0=\Sigma^0_i=\Sigma^i_0=0, \quad \Sigma^i_i=0, \,,\\[3pt]
+    &\Sigma^i_j=\Sigma^i_j =\Sigma_{ij},\quad
+    \Sigma_{i j}=\underbrace{\partial_{\langle i} \partial_{j\rangle} \Sigma}_{\text {scalar }}+\underbrace{\partial_{(i} \hat{\Sigma}_{j)}}_{\text {vector }}+\underbrace{\tilde{\Sigma}_{i j}}_{\text {tensor }}.
+\end{aligned}
+\end{align}}
+The energy-momentum tensor is finally decomposed as
+\begin{align}\label{eq:energy_momentum_tensor_decomposition}
+\begin{aligned}
+    T_{0}^{0} & =-(\bar{\rho}+\delta \rho), \\
+    T_{i}^{0} & =(\bar{\rho}+\bar{p}) \,v_{i}=-T_{\,0}^{i}, \\
+    T_{j}^{i} & =(\bar{p}+\delta p) \delta_{j}^{i}+\Sigma_{j}^{i}, \quad \Sigma_{i}^{i}=0.
+\end{aligned}
+\end{align}
+
+
+%===========================================================================
+\subsection{Formulas in different gauges}
+%============================================================================
+
+
+%----------------------------------------------------------------------
+\subsubsection{Conformal Newtonian Gauge}
+%----------------------------------------------------------------------
+
+In this gauge, vector and tensor modes are excluded from the beginning $\hat{B}=\hat{E}=\bar{E}=0$, and the residual gauge freedom is used to kill the non-diagonal scalar terms $\tilde{B}=\tilde{E}=0$.
+The metric is conventionally\footnote{Beware of different conventions in the literature, swapping $\phi \leftrightarrow \psi$ or their signs. Here we adopt the convention of Ma and BertschingerBaumann MaBertschinger, Baumann \cite{Baumann_Cosmology_2022} and\texttt{CLASS} \cite{Lesgourgues_CosmicLinearAnisotropySolvingSystemCLASSIOverview_2011}, so that $\psi\approx \phi$ in the absence of anisotropic stress.
+Dodelson \cite{DodelsonSchmidt_ModernCosmology_2025} uses $\phi\mapsto -\phi$. Weinberg \cite{Weinberg_AdiabaticModesCosmology_2003,Weinberg_Cosmology_2008} and Pajer swap $\phi\leftrightarrow \psi$.} written by calling $A=\psi$, $C=-\phi$
+\begin{align}\label{eq:newtonian_gauge_metric}
+\begin{aligned}
+    &g_{\mu\nu}=a^2\begin{pmatrix}
+        -(1+2\psi) & 0 \\
+        0 & (1-2\phi)\delta_{ij}
+    \end{pmatrix}\equiv a^2(\eta_{\mu\nu}+h_{\mu\nu})\\[5pt]
+    &\quad \Rightarrow \quad h^{00}=h_{00}=-2\psi,\quad h^{ii}=h_{ii}=-6\phi\,.
+\end{aligned}
+\end{align}
+%
+In the Newtonian limit $\psi$ plays the role of the gravitational potential, while $\phi$ is a local perturbation to the scale factor.
+In the absence of anisotropic stress, Einstein equations imply  $\psi\simeq \phi$.
+%
+The Christoffel symbols in this gauge
+\begin{align}\label{eq:christoffel_newtonian_gauge}
+    \begin{aligned}[t]
+    \Gamma_{00}^{0} & =\mathcal{H}+\dot\psi,  \\
+    \Gamma_{0 i}^{0} & =\partial_{i} \psi,  \\
+    \Gamma_{00}^{i} & = \partial_{i} \psi,
+    \end{aligned}
+    \qquad
+    \begin{aligned}[t]
+    \Gamma_{i j}^{0} & =\mathcal{H} \delta_{i j}-\left[\dot\phi+2 \mathcal{H}(\phi+\psi)\right] \delta_{i j}, \\
+    \Gamma_{j 0}^{i} & =\mathcal{H} \delta_{ij}-\dot\phi \delta_{ij}, \\
+    \Gamma_{j k}^{i} & = -\partial_j \phi\, \delta_{ki} - \partial_k \phi\,\delta_{ji} + \partial_i \phi\,\delta_{jk}.
+    \end{aligned}
+\end{align}
+The perturbed Einstein equations in this gauge, with (i,j)-component already split int trace and traceless part and $s$ denotes different species, are
+\begin{align}
+\label{eq:EE_00_poisson}
+k^{2} \phi+3 \mathcal{H}(\dot{\phi}+\mathcal{H} \psi)&=-4 \pi G a^{2} \sum_{s} \bar{\rho}_{s} \,\delta_{s},
+\\
+%
+k^{2}(\dot{\phi}+\mathcal{H} \psi)&=4 \pi G a^{2} \sum_{s}\left(\bar{\rho}_{s}+\bar{P}_{s}\right) \theta_{s},  \label{eq:EE_0j}
+\\
+%
+\ddot{\phi}+\mathcal{H}(2 \dot{\phi}+\dot{\psi})+\left(2 \frac{\ddot{a}}{a}-\mathcal{H}^{2}\right) \psi+\frac{k^{2}}{3}(\phi-\psi)&=4 \pi G a^{2} \sum_{s} \delta P_{s}, \label{eq:EE_ij_diagonal}
+\\
+%
+k^{2}(\phi-\psi)&=12 \pi G a^{2} \sum_{s}\left(\hat{k}^{j} \hat{k}_{i}-\frac{1}{3}\delta_{i}^{j}\right) \Sigma_{s\,j}^{i}. \label{eq:EE_ij_off_diagonal}
+\end{align}
+A linear combination of the 00 and 0i Einstein equation gives the gauge-invariant Poisson equation
+\begin{align}\label{eq:poisson_gauge_invariant}
+    \nabla^2\phi= 4\pi G a^2 \Big(\underbrace{\bar{\rho}\delta-3\mathcal{H}(\bar{\rho}+\bar{p})v}_{=\bar{\rho}\Delta}\Big), \quad \text{where}\quad \Delta:=\delta +\frac{\dot{\bar{\rho}}}{\bar{\rho}}v.
+\end{align}
+% 
+The continuity and Euler equations $\nabla_\mu T^\mu_\nu=0$ for a \emph{separately conserved} species are
+{\small\begin{align}
+    &\dot{\bar{\rho}} +3\mathcal{H}(\bar{\rho}+\bar{p})=0\,, \label{eq:backround_continuity}\\
+    &\dot{\delta\rho}= -3\mathcal{H}(\delta\rho+\delta P) + (\bar{\rho}+\bar{P})\big(3\dot{\phi}-\partial_j v^j \big)\,,\label{eq:perturbed_continuity_drho}\\
+    &\dot{v}_j+ \mathcal{H}v_j-3\mathcal{H}\frac{\dot{\bar{p}}}{\dot{\bar{\rho}}}v_j+\frac{\partial_j\delta p}{(\bar{\rho}+\bar{p})}+\partial_j\psi{\color{blue}+\frac{\partial_\ell \Sigma^{\ell}_{j}}{(\bar{\rho}+\bar{p})}}=0\,,\label{eq:euler_vector_form}
+\end{align}}
+Introducing the density contrast $\delta=\delta\rho/\bar{\rho}$, the velocity divergence \eqref{eq:velocity_decomposition} and the scalar anisotropic stress \eqref{eq:anisotropic_stress_decomposition}, and taking the divergence of the Euler equation, we get
+\begin{align}
+    &\dot{\delta}= 3\mathcal{H}\left(\frac{\bar{p}}{\bar{\rho}}-\frac{\delta p}{\delta\rho}\right)\delta + \left(1+\frac{\bar{p}}{\bar{\rho}}\right)3\dot{\phi} - \left(1+\frac{\bar{p}}{\bar{\rho}}\right)\theta\, \label{eq:continuity_overdensity_form}\\
+    &\dot{\theta}+ \mathcal{H}\theta-3\mathcal{H}\frac{\dot{\bar{p}}}{\dot{\bar{\rho}}}\theta+\frac{\nabla^2\delta P}{(\bar{\rho}+\bar{P})}+\nabla^2\psi\,\,{\color{blue}+\frac{2}{3}\frac{\nabla^4 \Sigma}{(\bar{\rho}+\bar{p})}}=0\,.\label{eq:euler_divergence_form}
+\end{align}
+These are combined into a 2nd order equation for overdensities\todotag{Check 2nd order eq are correct}
+\begin{align}
+\begin{aligned}
+    \ddot{\delta\rho}=&-3\big(\dot{\mathcal{H}}+4\mathcal{H}^2\big)\left(1+\frac{\delta p}{\delta\rho}\right)\delta\rho
+    -\mathcal{H}(7\dot{\delta\rho}+3\dot{\delta p})+\nabla^2\delta P +(\bar{\rho}+\bar{P})\nabla^2\psi\\
+    &+3(\bar{\rho}+\bar{p})\left[\left(\mathcal{H}+\frac{\dot{\bar{p}}}{\bar{\rho}+\bar{p}}\right)\dot{\phi}+\ddot{\phi}\right] {\color{blue}+ \frac{2}{3}\nabla^4\Sigma}\,.
+\end{aligned}
+\end{align}
+Equivalently, in terms of the overdensity $\delta$ we have\todotag{Check 2nd order eq are correct}
+\begin{align}
+\begin{aligned}
+    \ddot{\delta}=&-\dot{\delta}\mathcal{H}\left(1-6\frac{\bar{p}}{\bar{\rho}}\right)
+    +\delta\left[3(\dot{\mathcal{H}}+4\mathcal{H}^2)\left(\frac{\bar{p}}{\bar{\rho}}-\frac{\delta p}{\delta\rho}\right)+3\mathcal{H}\frac{\dot{\bar{p}}}{\bar{\rho}}\right]
+    +\frac{\nabla^2\delta p}{\bar{\rho}}\\
+    & +\left(1+\frac{\bar{p}}{\bar{\rho}}\right)\nabla^2\psi
+    +3\left(1+\frac{\bar{p}}{\bar{\rho}}\right)\left[\left(\mathcal{H}+\frac{\dot{\bar{p}}}{\bar{\rho}+\bar{p}}\right)\dot{\phi}+\ddot{\phi}\right] {\color{blue}+ \frac{2}{3\bar{\rho}}\nabla^4\Sigma}\,.
+\end{aligned}
+\end{align}
+
+
+%----------------------------------------------------------------------
+\subsubsection{Synchronous Gauge}
+%----------------------------------------------------------------------
+
+If ever needed we collect here the relevant expressions for the synchronous gauge\dots
+In particular recall in this gauge there is some residual gauge freedom that can be fixed by demanding the peculiar velocity of a \emph{cold} ($w\simeq 0$) species to vanish.\todotag{Finish this section}
+
+
+%----------------------------------------------------------------------
+\subsubsection{ADM Gauge}
+%----------------------------------------------------------------------
+
+In order to explicitate the comoving curvature perurbations and later match them to phonons, it is useful to work in the ADM gauge, where the metric is written as
+
+% ADM in conformal time
+\begin{align}
+ds^2
+=
+a^2(\tau)\Big[
+-\mathcal{N}^2(\tau,\mathbf{x})\,d\tau^2
++
+h_{ij}(\tau,\mathbf{x})\bigl(d x^i+\mathcal{N}^i(\tau,\mathbf{x})\,d\tau\bigr)\bigl(d x^j+\mathcal{N}^j(\tau,\mathbf{x})\,d\tau\bigr)
+\Big].
+\end{align}
+
+% Comoving gauge parameterization of the spatial metric
+\begin{align}
+h_{ij}(\tau,\mathbf{x})
+=
+e^{2\zeta(\tau,\mathbf{x})}\,\big[\exp(\gamma(\tau,\mathbf{x}))\big]_{ij},
+\qquad
+\gamma^i{}_i=0,
+\qquad
+\partial_i\gamma^i{}_j=0.
+\end{align}
+
+% Matrix exponential definition
+\begin{align}
+\big[\exp(\gamma)\big]_{ij}
+\equiv
+\delta_{ij}
++
+\gamma_{ij}
++
+\frac{1}{2}\,\gamma_{ik}\gamma_{kj}
++
+\frac{1}{3!}\,\gamma_{ik}\gamma_{k\ell}\gamma_{\ell j}
++\cdots .
+\end{align}
+
+% Tensorless limit
+\begin{align}
+\gamma_{ij}=0
+\quad\Longrightarrow\quad
+ds^2_{\rm spatial}=a^2(\tau)\,e^{2\zeta(\tau,\mathbf{x})}\,\delta_{ij}\,dx^i dx^j.
+\end{align}
+
+% Your Newtonian-gauge convention
+\begin{align}
+ds^2
+=
+a^2(\tau)\Big[-(1+2\psi)\,d\tau^2+(1-2\phi)\,\delta_{ij}\,dx^i dx^j\Big].
+\end{align}
+
+% Linear relation (comoving slicing)
+\begin{align}
+\zeta=-\phi.
+\end{align}
+
+% More general (still linear) Newtonian-gauge expression
+\begin{align}
+\zeta
+=
+-\phi
+-
+\mathcal{H}\,v,
+\qquad
+\mathcal{H}\equiv \frac{1}{a(\tau)}\,\frac{d a(\tau)}{d\tau},
+\qquad
+T^{0}{}_{i}=-(\rho+P)\,\partial_i v.
+\end{align}
+
+
+
+%==============================================================================
+\subsection{Comving curvature perturbations}
+%===============================================================================
+
+The gauge-invariant comoving curvature perturbation $\mathcal{R}$, i.e. the 3-curvature of comoving spatial slices, is defined in terms of metric and matter perturbations
+\begin{align}\label{eq:comoving_curvature_perturbations_newtonian}
+    \mathcal{R}\equiv C-\tfrac13\nabla^2E+\mathcal{H}(B+v) \overset{\text{newt. gauge}}{=} -\phi +\mathcal{H}v,
+\end{align}
+since in Newtonian gauge $C=-\phi$ and $B=E=0$.
+Beware another gauge invariant quantity $\zeta$ is often used in place of the comoving curvature $\mathcal{R}$.
+In Newtonian gauge it is defined by\footnote{The second equality holds for separately conserved em tensors}. 
+\begin{align}
+    \zeta\overset{\text{newt gauge}}{=} -\phi-\mathcal{H}\frac{\delta \rho}{\dot{\rho}} = -\phi +\tfrac13 \frac{\delta }{1+(\bar{p}/\bar{\rho})}.
+\end{align}
+From the gauge-invariant Poisson equation \eqref{eq:poisson_gauge_invariant} we can relate the two quantities
+{\small
+\begin{align}
+    \zeta-\mathcal{R}=-\mathcal{H}\frac{\delta \rho}{\dot{\rho}}-\mathcal{H}v
+    = -\mathcal{H}\frac{\bar{\rho}}{\dot{\bar{\rho}}}\Big(\delta +\frac{\dot{\bar{\rho}}}{\bar{\rho}}v\Big)
+    = \tfrac13 \frac{\bar{\rho}\Delta}{\bar{\rho}+\bar{p}}
+    =-\frac{k^2}{12\pi G a^2 (\bar{\rho}+\bar{p})}\phi
+    \,\to 0\quad\text{as}\,\,k\to0,
+\end{align}}
+confirming the two quantities indeed coincide on large scales.
+
+

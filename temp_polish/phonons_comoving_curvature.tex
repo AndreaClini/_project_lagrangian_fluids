@@ -1,0 +1,53 @@
+%-------------------------------------------------------
+%=============================================================
+\section{Matching to phonons}
+%===============================================================
+%------------------------------------------------------------
+
+
+Matching the general expression for the 4-velocity \eqref{eq:velocity_decomposition} to the one for the phonon field \eqref{eq:phonon_4_velocity} we get
+\begin{align}\label{eq:peculiar_velocity_via_phonons}
+    v^\ell = \frac{1}{2}\epsilon_{i j k}\,\epsilon^{\ell \alpha j k}\,\partial_\alpha\pi^i = -\dot{\pi}^\ell\quad \Rightarrow \quad v = -\dot{\pi}_L\quad \text{where we define $\pi_L$ by}\quad \partial_\ell\pi_L=\pi^\ell
+\end{align}
+Dimensions are respected since $[\pi^\alpha]=E^{-1}$ and $[v^\ell]=E^0$, so that $[v]=E^{-1}$ and $[\pi_L]=E^{-2}$. 
+From \label{eq:peculiar_velocity_via_phonons} we identify the comoving curvature perturbations \eqref{eq:comoving_curvature_perturbations_newtonian} in terms of metric potentials and phonon potential
+\begin{equation}
+    \mathcal{R} = -\phi +\mathcal{H}v = -\phi - \mathcal{H}\,\dot{\pi}_L\,.
+\end{equation}
+
+
+In Newtonian gauge \eqref{eq:newtonian_gauge_metric}, the quadratic lagrangian becomes 
+{\small
+\begin{align}
+\begin{aligned}
+    S^{(2)}=
+    &\int d^4x\,\, a^4\,\bigg\{
+    \tfrac12 (yF_y-bF_b) (\dot{\pi}^i)^2+ \tfrac12 b^2 F_{bb} (\partial_j \pi^j)^2\bigg\} -\tfrac12 a^4 y^2F_{yy} (\dot{\pi}^0)^2\\
+    &\quad + a^4\,\,\bigg\{-3\phi(\partial_j \pi^j)\left(\bar{b}F_b - \bar{b}^2 F_{bb}\right) 
+    -\psi(\partial_j \pi^j)\!\left(-2\bar{b}F_b + \bar{b}\bar{y}F_{by}\right) \bigg\}\,,
+\end{aligned}
+\end{align}}
+where
+{\small
+\begin{align}
+\begin{aligned}
+    -\tfrac12 a^4y^2F_{yy}\big(\dot{\pi}^0\big)^2
+    &=-\tfrac{1}{2}\tfrac{a^4}{y^2F_{yy}}\bigg[(byF_{by}-yF_y) (\partial_j\pi^j)+\bigg(\tfrac{1}{a^4}\!\!\int(\partial_j \pi^j)\tfrac{d}{d\tau}(a^4yF_y)\bigg)\bigg]^2\\
+    &\quad+\tfrac{a^4}{y^2F_{yy}}\Big[\big(2{y}F_y - byF_{by}\big) 6\phi+ \left({y}^2 F_{yy} - {y}F_y\right) 2\psi\Big]\\
+    &\qquad\qquad\cdot \bigg[(byF_{by}-yF_y) (\partial_j\pi^j)+\bigg(\tfrac{1}{a^4}\!\!\int(\partial_j \pi^j)\tfrac{d}{d\tau}(a^4yF_y)\bigg)\bigg]\,.
+\end{aligned}
+\end{align}}
+Taking $\psi=\phi$ in the large scale limit and simplifying terms we finally get\todotag{write}
+\begin{align}
+    ...
+\end{align}
+The equation of motion for phonons will be something like
+\begin{align}
+    \ddot{\pi}_L=-\underbrace{c_s^2 k^2\pi_L}_{\to0}+\text{friction}
+\end{align}
+giving that $\ddot{\pi}_L\to 0$ as $k\to0$.
+For the comoving curvature then
+\begin{align}
+    \dot{\mathcal{R}}=-\dot{\phi}+\dot{\mathcal{H}}\,\dot{\pi}_L+\mathcal{H}\,\ddot{\pi}_L
+\end{align}
+and, upon using the 0i Einstein equation for $\dot{\phi}+\mathcal{H}\phi=...$, the vanishing of $\ddot{\pi}$ from the EoM of phonons might be the fastest way to predict that $\mathcal{R}$ is conserved on superhorizon scales.\todotag{Finish this argument}
