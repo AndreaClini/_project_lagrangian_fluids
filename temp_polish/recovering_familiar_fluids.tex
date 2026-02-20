@@ -1,7 +1,8 @@
+%----------------------------------------------------------------------------
 %============================================================================
 \section{Recovering fluids with known EoS in the EFT language}
 %============================================================================
-
+%-----------------------------------------------------------------------------
 
 In this section we want to get some intuition for the form of the function $F(y,b)$ that describes some familiar fluids, such as cold dark matter and radiation.
 Hopefully this will also reveal how the fluid EFT is more general than the usual scalar field description of fluids.
@@ -16,8 +17,14 @@ and in the barotropic case
 \end{align}
 Recall $[\phi]=[\pi]=[x]=E^{-1}$, $b=[\partial_\mu\phi\partial^\mu\phi]=E^0$, $[u^\mu]=E^0$ and $y=[u^\mu\partial_\mu\phi]=E^0$.
 
+%========================================================================
+\subsection{Fluids with constant EoS parameter {\color{red}(in progress)}}
+%========================================================================
 
-\subsection*{Dark Matter}
+%-----------------------------------------------------------------------
+\subsubsection*{Dark Matter}
+%-----------------------------------------------------------------------
+%
 Demanding Dark Matter be a barotropic fluid and imposing $w=0$ we get
 \begin{align}
     0= w=\frac{bF_b-F}{F}\quad \Rightarrow\quad F=\Lambda^4 \,b\quad \text{for some scale } \, [\Lambda]=E,
@@ -25,8 +32,9 @@ Demanding Dark Matter be a barotropic fluid and imposing $w=0$ we get
 which gives energy density $\rho=-F\propto \, b$ with the expecte behavior for cold matter $\rho \approx \, m \, n$.
 
 
-
-\subsection*{Relativistic fluids}
+%-------------------------------------------------------------------------
+\subsubsection*{Relativistic fluids}
+%-------------------------------------------------------------------------
 How to match a relativistic fluid in the EFT, say the photon-baryon fluid early on?
 
 A fully relativistic fluid $p\simeq E$ that can be described in the Boltzmann formalism is necessarily barotropic, with the familiar EoS $w=\tfrac13$, namely
@@ -68,8 +76,9 @@ Plugging these into
     c_s^2=\frac{-y^2F_{yy}b^2F_{bb}+(yF_y-bF_b)^2}{y^2F_{yy}(yF_y-bF_b)}\overset{identically}{=}\frac13\,.
 \end{align}
 
-
-\subsection*{Fluids with constant EoS parameter}
+%-------------------------------------------------------------------------
+\subsubsection{Fluids with arbitrary constant EoS parameter {\color{red}(in progress)}}
+%-------------------------------------------------------------------------
 
 Consider fluids with an almost constant EoS
 \begin{align}
@@ -86,7 +95,10 @@ Let us study the implications of $w=\mathrm{const}$ on $c_s^2$ defined in \eqref
 Of course we expect $\Gamma=0$ since we enforced the constant EoS in full generality...\todotag{finish}
 
 
-\subsection*{Fluids with EoS parameter $w=w(a)$}
+%========================================================================
+\subsection{Fluids with time depdendent EoS parameter $w=w(a)$ {\color{red}(in progress)}}
+%=======================================================================
+%
 A simple generalization of the constant EoS case is to consider a time-varying EoS parameter $w=w(a)$ with the scale factor $a$, but otherwise independent of $b,y$.
 The PDE is still formally solved by the above expression
 \begin{align}
@@ -101,9 +113,11 @@ This will give consistency constraints on $f$ and its derivatives for the equati
 Indeed, for a given form of $f$ we can invert the relations to express $b,y$ in terms of $\rho,p$ and then check if the above equations are satisfied.
 
 
-\subsection*{Fluids with arbitrary EoS parameter $w(b,y)$}
+%=======================================================================
+\subsection{Fluids with arbitrary EoS parameter $w(b,y)$ {\color{red}(in progress)}}
+%==========================================================================
 
-More generally we can solve by characteristics the EoS for arbitrary parameters $w=w(b,\gamma)$
+More generally we can solve by characteristics the EoS for arbitrary parameters $w=w(b,\gamma)$\todotag{not sure it is needed}
 \begin{align}
     \frac{F-F_b}{yF_y-F}=w\approx \mathrm{const}\quad\Rightarrow\quad (1+w)F=w\, yF_y+bF_b.
 \end{align}

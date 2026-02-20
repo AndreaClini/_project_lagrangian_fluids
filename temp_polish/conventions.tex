@@ -4,6 +4,8 @@
 %=======================================
 %---------------------------------------
 
+In this section we fix notations, conventions, and report relevant formulas in Cosmology so that we do not to waste time looking them up or worrying about conventions, signs etc. \notetag{This sec will be shortened at the end}
+
 We mainly follow the standard notation from \cite{MaBertschinger_CosmologicalPerturbationTheorySynchronousConformalNewtonianGauges_1995,Baumann_Cosmology_2022}.
 The metric has signature $-+++$.
 The conformal time is denoted by $\tau$ and differentiation with respect to it is denoted by $\dot{f}$.
@@ -55,24 +57,22 @@ The energy-momentum tensor is finally decomposed as
 %=================================================
 \subsection{Gauge invariant variables \& comoving curvature perturbations}
 %=================================================
-Under a transformation $x^\mu \mapsto x^\mu +\xi^\mu$ with $\xi^\mu=(T,\,\partial^i L+\hat{L}^i)$, the pertubations transform as
+Under a transformation $x^\mu \mapsto x^\mu +\xi^\mu$ with $\xi^\mu=(T,\,\partial^i L+\hat{L}^i)$, the metric pertubations transform as
 \begin{align}
 \begin{aligned}
     \begin{array}{ll}
     A \mapsto A-\dot{T}-\mathcal{H} T, & \\
     B \mapsto B+T-\dot{L}, & \hat{B}_{i} \mapsto \hat{B}_{i}-\dot{\hat{L}}_{i}, \\
     C \mapsto C-\mathcal{H} T-\frac{1}{3} \nabla^{2} L, & \\
-    E \mapsto E-L, & \hat{E}_{i} \mapsto \hat{E}_{i}-\hat{L}_{i}, \quad \tilde{E}_{i j} \mapsto \tilde{E}_{i j} .
+    E \mapsto E-L, & \hat{E}_{i} \mapsto \hat{E}_{i}-\hat{L}_{i}, \quad \tilde{E}_{i j} \mapsto \tilde{E}_{i j},
     \end{array}
 \end{aligned}
 \end{align}
 and fluid perturbations transform as
 \begin{align}
 \begin{aligned}
-    \delta \rho & \mapsto \delta \rho-\dot{\bar{\rho}}\, T, \\
-    \delta P & \mapsto \delta P-\dot{\bar{P}}\, T, \\
-    v_{i} & \mapsto v_{i}+\dot{L}_{i}, \\
-    \Sigma_{i j} & \mapsto \Sigma_{i j}
+    \delta \rho & \mapsto \delta \rho-\dot{\bar{\rho}}\, T, \quad\qquad v_{i}  \mapsto v_{i}+\dot{L}_{i},\\[2pt]
+    \delta P & \mapsto \delta P-\dot{\bar{P}}\, T, \,\,\qquad \Sigma_{i j}  \mapsto \Sigma_{i j}.
 \end{aligned}
 \end{align}
 The gauge-invariant Bardeen potentials are
@@ -101,7 +101,7 @@ Beware another gauge invariant quantity $\zeta$ is often used in place of the co
 \end{aligned}
 \end{align}}
 Only two of $\Delta, \mathcal{R}, \zeta$ are thus independent.
-Moreover on large scales $\zeta \simeq \mathcal{R}$ since from the gauge-invariant Poisson equation \eqref{eq:poisson_gauge_invariant} and the 1st Friedman equation we have\footnote{The second equality holds for total species and for separately conserved $\nabla_\mu T^\mu_0=$ species.}
+Moreover on large scales $\zeta \simeq \mathcal{R}$ since the gauge-invariant Poisson equation \eqref{eq:poisson_gauge_invariant} and the 1st Friedman equation give\footnote{The second equality holds for total species and for separately conserved $\nabla_\mu T^\mu_0=$ species.}
 {\small
 \begin{align}
 \begin{aligned}
@@ -136,7 +136,7 @@ Dodelson \cite{DodelsonSchmidt_ModernCosmology_2025} uses $\phi\mapsto -\phi$. W
 In the Newtonian limit $\psi$ plays the role of the gravitational potential, while $\phi$ is a local perturbation to the scale factor.
 In the absence of anisotropic stress, Einstein equations imply  $\psi\simeq \phi$.
 %
-The Christoffel symbols in this gauge
+For reference, the Christoffel symbols in this gauge
 \begin{align}\label{eq:christoffel_newtonian_gauge}
     \begin{aligned}[t]
     \Gamma_{00}^{0} & =\mathcal{H}+\dot\psi,  \\
@@ -150,7 +150,7 @@ The Christoffel symbols in this gauge
     \Gamma_{j k}^{i} & = -\partial_j \phi\, \delta_{ki} - \partial_k \phi\,\delta_{ji} + \partial_i \phi\,\delta_{jk}.
     \end{aligned}
 \end{align}
-The perturbed Einstein equations in this gauge, with (i,j)-component already split int trace and traceless part and $s$ denotes different species, are
+The perturbed Einstein equations in this gauge, with (i,j)-component already split int trace and traceless part and $s$ denoting different species, are
 \begin{align}
 \label{eq:EE_00_poisson}
 k^{2} \phi+3 \mathcal{H}(\dot{\phi}+\mathcal{H} \psi)&=-4 \pi G a^{2} \sum_{s} \bar{\rho}_{s} \,\delta_{s},
@@ -164,9 +164,9 @@ k^{2}(\dot{\phi}+\mathcal{H} \psi)&=4 \pi G a^{2} \sum_{s}\left(\bar{\rho}_{s}+\
 %
 k^{2}(\phi-\psi)&=12 \pi G a^{2} \sum_{s}\left(\hat{k}^{j} \hat{k}_{i}-\frac{1}{3}\delta_{i}^{j}\right) \Sigma_{s\,j}^{i}. \label{eq:EE_ij_off_diagonal}
 \end{align}
-A linear combination of the 00 and 0i Einstein equation gives the gauge-invariant Poisson equation
+A linear combination of the 00 and 0i Einstein equations gives the gauge-invariant Poisson equation
 \begin{align}\label{eq:poisson_gauge_invariant}
-    \nabla^2\Phi= 4\pi G a^2 \bar{\rho}\Delta,  \text{for}\quad \Delta:=\delta +\frac{\dot{\bar{\rho}}}{\bar{\rho}}(v+B),
+    \nabla^2\Phi= 4\pi G a^2 \bar{\rho}\Delta\, ,\quad  \text{for}\quad \Delta:=\delta +\frac{\dot{\bar{\rho}}}{\bar{\rho}}(v+B),
 \end{align}
 where $\Phi$ is the gauge-invariant Bardeen potential, equal to $\phi$ in Newtonian gauge, and $\Delta$ is the gauge-invariant density contrast, where again we used $B=0$ in Newtonian gauge. 
 % 
@@ -203,14 +203,14 @@ Equivalently, in terms of the overdensity $\delta$ we have\todotag{Check 2nd ord
 
 
 %=======================================================================
-\subsection{Other gauges}
+\subsection{Other gauges \& ADM decomposition}
 %====================================================================
 
 %-------------------------------------------------------
 \subsubsection*{Synchronous gauge}
 %-------------------------------------------------------
 If ever needed we collect here the relevant expressions for the synchronous gauge\dots
-In particular recall in this gauge there is some residual gauge freedom that can be fixed by demanding the peculiar velocity of a \emph{cold} ($w\simeq 0$) species to vanish.\questiontag{Finish this if needed eventually cf. \cite{Weinberg_Cosmology_2008}}
+In particular recall in this gauge there is some residual gauge freedom that can be fixed by demanding the peculiar velocity of a \emph{cold} ($w\simeq 0$) species vanish.\questiontag{Finish this if needed eventually cf. \cite{Weinberg_Cosmology_2008}}
 
 
 %----------------------------------------------------------------
@@ -244,18 +244,18 @@ Since $\mathcal{R}$ is defined as the intrinsic 3-curvature perturbation of \emp
 \end{aligned}
 \end{align}
 According to the SVT decomposition \eqref{eq:metric_general_form_svt}, in this ``comoving-type'' gauge we can then parametrize the spatial metric nonlinearly as
-\begin{align}
+{\small\begin{align}
 \begin{aligned}
     h_{ij}(\tau,\mathbf{x})
     =
     e^{2\mathcal{R}(\tau,\mathbf{x})}\,\big[\exp(\gamma(\tau,\mathbf{x}))\big]_{ij} \simeq\, \delta_{ij} (1+2\mathcal{R})+ \gamma_{ij}+O(2)\,,
-    \qquad
+    \quad
     \gamma^i{}_i=0,
-    \qquad
+    \quad
     \partial_i\gamma^i{}_j=0,
 \end{aligned}
-\end{align}
-where $\gamma_{ij}$ contains the transverse-traceless tensor modes, and the matrix exponential is in the Taylor sense.
+\end{align}}
+where $\gamma_{ij}$ contains the transverse-traceless vector and tensor modes, and the matrix exponential is in the Taylor sense.
 This form is convenient because $\det\!\big(\exp(\gamma)\big)=1$, so the scalar volume perturbation is entirely carried by $e^{2\mathcal{R}}$.
 In particular we can compute $\mathcal{R}$ in any gauge and then interpret it geometrically through the exponential factor in $h_{ij}$ when working on comoving hypersurfaces.
 

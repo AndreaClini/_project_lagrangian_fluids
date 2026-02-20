@@ -1,0 +1,241 @@
+%---------------------------------------------------------------------
+%====================================================================
+\section{Summary of Fluid EFT}
+%====================================================================
+%-----------------------------------------------------------------
+%
+In this section we summarize the conventions and formulas of the fluid EFT for our convenience while drafting, regardless of what will actually appear in the main text.\notetag{This sec will be shortened at the end.}
+First we present the fomrmulas valid at any order and then the perturbative expansion.
+
+
+%====================================================================
+\subsection{Effective larangian \& thermodynamic interpretation}
+%====================================================================
+%
+The mapping from the spacetime manifold $\mathcal{M}^{(4)}$ to the internal fluid space $\mathcal{F}^{(3)}$ is given by four scalar fields\footnote{Note we use $\varphi$ for fluid coordinates, not to confuse them with Bardeen or Newtonian potentials.}  
+{\small\begin{align}\label{eq:internal_coord_fluid}
+    \varphi^{\alpha}:(\mathcal{M},g)\to \mathbb{R}\times \mathcal{F},\quad \alpha=0,1,2,3.
+\end{align}}
+Note we are free to choose the coordinates in the 3-dimensional internal space and to shift $\varphi^0$ by a constant without using any gauge freedom of the spacetime manifold itself.
+In particular, we might choose $\varphi^\alpha(x)=x^\alpha$ at some fixed initial time $x^0=\tau_{in}$.
+
+The 4-velocity of the fluid is identified by requiring the spatial coordinates of the fluid be indeed comoving with it, that is $\partial_\mu \varphi^i=0$ for $i=1,2,3$.
+After normalizing the 4-velocity we get
+\begin{align}\label{eq:definition_4_velocity}
+    u^\mu=& \frac{1}{\sqrt{-g}\, 3!\,b} \epsilon^{\mu \alpha \beta \gamma} \epsilon_{ijk} \, \partial_\alpha \varphi^i \partial_\beta \varphi^j \partial_\gamma \varphi^k\, \propto\,\,  \star(d\varphi^1\wedge d\varphi^2\wedge d \varphi^3), \quad u_\mu u^\mu=-1\,.
+\end{align}
+We can identify 2 adimensional quantities
+\begin{align}\label{eq:definition_b_y}
+    b=\sqrt{\det B}\quad \text{for}\quad
+    B^{ij}= g^{\mu\nu} \partial_\mu \varphi^i \partial_\nu \varphi^j,\quad y= u^\mu \partial_\mu \varphi^0, \qquad [b]=[y]=[u^\mu]=E^0,
+\end{align}
+that respect Lorentz invariance in the spacetime manifold and the internal symmetries of the fluid, namely 
+{\small\begin{align}\label{eq:symmetries_fluid_internal}
+    &\varphi^i \mapsto \tilde{\varphi}^i\big(\{\varphi^j\}_j\big)\,\,\text{with}\,\, \det\Big(\frac{\partial \tilde{\varphi}^i}{\partial\varphi^j}\Big)=1\,\,\quad \text{(volume preserving 3d diffeo invariance)},\\
+    &\varphi^0 \mapsto \varphi^0 + c\quad\qquad\quad\qquad\qquad\qquad\qquad \text{(shift symmetry in $\varphi^0$)}.
+\end{align}}
+Up to a \emph{dimensional} scale $\Lambda$ these variables are naturally identified with the number density $b\equiv n$ and the temperature $y\equiv T$ in the fluid EFT as explained in the next section.
+
+The lagrangian is a generic function of the invariants
+\begin{align}\label{eq:eft_action_exact}
+    S=\int d^4x \sqrt{-g} F(b,y)\,.
+\end{align}
+The conserved Noether currents are the number density current (from volume-preserving diffeo invariance in the $\varphi^i$) and the entropy current\footnote{\label{fn:thermodynamic_interpretation}See next subsection for the explanation of this thermodynamic interpretation.} (from shift symmetry in $\varphi^0$)
+\begin{align}\label{eq:noether_currents_nonbaro}
+    J_n^\mu = b\, u^\mu\,,\qquad J_s^\mu = F_y \,u^\mu\,.
+\end{align}
+Varying the action wrt the metric, the energy-momentum tensor takes the perfect fluid form\footnote{Subscripts mean $X_b=\partial_b X_{\mid y}$ and $X_y=\partial_y X_{\mid b}$ i.e. main variables $(b,y)$, unless otherwise stated.}
+\begin{align}\label{eq:em_tensor_nonbaro}
+    T_{\mu\nu} = u_\mu u_\nu (yF_y - bF_b) + g_{\mu\nu} (F-bF_b) = u_\mu u_\nu(\rho+p) + g_{\mu\nu}\, p\,.
+\end{align}
+Energy density, pressure and equation of state parameter are then identified as
+\begin{align}\label{eq:thermo_rho_p_nonbaro}
+    \rho=-F+yF_y,\quad p=F-bF_b,\quad w=\frac{F-bF_b}{yF_y-F}.
+\end{align}
+The entropy density $s$, comoving entropy $\sigma$, temperature $T$, chemical potential $\mu$ and number density $n$ are identified as\footnotemark[\getrefnumber{fn:thermodynamic_interpretation}]
+\begin{align}\label{eq:thermo_other_variables_nonbaro}
+    s=F_y,\quad \sigma:=\frac{s}{n}=\frac{F_y}{b},\quad T=y,\quad \mu:=F_b, \quad n=b, \quad F=-\rho+Ts=-\mathfrak{a}.
+\end{align}
+Notably this identifies $F(y,b)$ with minus the Helmoltz free-energy density {\small $\mathfrak{a}=\frac{U-TS}{V}$.}
+Adiabatic sound speed $c_a^2$ and non-adiabatic pressure coefficient $\Gamma$ are then by definition
+{\small\begin{align}\label{eq:adiabatic_cs_nonadiabatic_pressure}
+\begin{aligned}
+    &c_a^2=\frac{\partial p}{\partial \rho}_{|\sigma}=\frac{-y^2F_{yy}b^2F_{bb}+(yF_y-bF_b)^2}{y^2F_{yy}(yF_y-bF_b)}, \\
+    &\Gamma:=\frac{\partial p}{\partial \sigma}_{\mid\rho}= \frac{b^2F_{bb}y^2F_{yy}-(yF_y-byF_{by})(bF_b-byF_{yb})}{\tfrac{1}{by}y^2F_{yy}(yF_y-bF_b)}.
+\end{aligned}
+\end{align}}
+Using $F=-\mathfrak{a}$ and $s=F_y=-\partial_T\mathfrak{a}$, we rewrite the adiabatic sound speed as
+\begin{align}
+    c_a^2:=
+    &=\frac{-b^2F_{bb} F_{yy}+(F_y-bF_{yb})^2}{F_{yy}\,(yF_y-bF_b)} = \frac{n^2\,\partial_n^2\mathfrak{a}\,\partial_Ts + (s-n\partial_ns)^2}{\partial_Ts\,\,(\rho+p)}\,,
+\end{align}
+which makes it manifest that $c_a^2\geq0$ provided no ghosts $\rho+P>0$, the second principle of thermodynamics $\partial_Ts\geq 0$ and thermodynamic stability $\partial_n^2\mathfrak{a}\geq 0$ hold.
+
+The adiabatic sound speed \eqref{eq:adiabatic_cs_nonadiabatic_pressure} always coincides with the coefficient $c_s^2$ of the gradient term in the quadratic action for phonons, after integrating out the non-dynamical entropy mode $\pi^0$,
+\begin{align}
+    c_s^2\equiv c_a^2\,,
+\end{align}
+which shows that absence of ghosts, thermodynamic stability and gradient instabilities are closely related.
+For flat spacetimes this is proved in \eqref{eq:cs_equiv_cb_flat_spacetime} below.\todotag{prove it in curved space}
+
+Finally, in the barotropic case we can still define $y=\partial_\mu\varphi^0u^\mu$, but $F=F(b)$ does not depend on $y$ and the above formulas reduce to
+{\small\begin{align}\label{eq:thermo_variables_barotropic}
+    \rho=-F,\quad p=F-bF_b,\quad w=\frac{bF_b-F}{F},\quad n=b,\quad \mu=F_b,\quad T=y\,\quad s\equiv0,\quad \frac{d p}{d \rho}=c_a^2=\frac{b^2F_{bb}}{bF_b}.
+\end{align}}
+
+
+
+%-----------------------------------------------------------------------
+\subsubsection{Justification of the thermodynamic interpretation}
+%----------------------------------------------------------------------
+In this section we justify the thermodynamic interpretation of the fluid EFT variables and formulas.
+As argued above, the identification of the 4-velocity \eqref{eq:definition_4_velocity} follows unavoidably from the requirement the spatial coordinates $\varphi^i$ be indeed comoving with the fluid.
+
+The next point is the unequivocal identification of $b$ with the number density $n$.
+Indeed, in order for the mapping \eqref{eq:internal_coord_fluid} from spacetime to the internal fluid space to make sense, it is necessary that the restriction $\varphi^{I}:\Sigma_\tau^{(3)}\to \mathcal{F}^{(3)}$ is a diffeomorphism for any spacelike hypersurface $\Sigma_\tau^{(3)}\subset \mathcal{M}^{(4)}$.
+The fluid coordinates $\{\varphi^i\}_{i=1,2,3}$ can thus be used as coordinates for the hypersurface $\Sigma_\tau^{(3)}$, and $g^{\mu\nu}\partial_\nu\varphi^i$ are 3 independent vectors spanning its tangent space.
+In these coordinates, the metric $g_{|\Sigma}$ induced on spatial slices reads
+\begin{align}
+    (g^\varphi_{\Sigma})_{ij} = \partial_\mu \varphi^i\partial_\nu \varphi^j g^{\mu\nu}\equiv B^{ij}.
+\end{align}
+The volume factor $\sqrt{g^\varphi_\Sigma}=\sqrt{\det B}=b$, i.e. the jacobian of the transformation from spatial coordinates to internal fluid coordinates, is then precisely the density of the fluid elements wrt the original spacetime coordinates $b\equiv n$.
+
+To complete the thermodynamic interpretation we need some final imput, which comes from matching the EFT energy-momentum tensor to that of a perfect fluid \eqref{eq:em_tensor_nonbaro}, thereby identifying the energy density and pressure \eqref{eq:thermo_rho_p_nonbaro}.
+Finally we simply impose the first law of thermodynamics
+\begin{align}\label{eq:first_law_thermo}
+    T s+ \mu n = \rho+p \overset{!}{=} yF_y-bF_b.
+\end{align}
+Since we have already shown $n=b$, we are lead to identify $\mu=-F_b$, and $s=F_y$ and $y=T$.
+This is consistent with all the thermodynamical relations, for example we find back $\mu$ imposing entropy is conserved
+\begin{align}\label{eq:chemical_potential_and_entropy_consistency}
+    \begin{array}{c}
+     0\overset{!}{=}ds = F_{yb} db + F_{yy}dy\\[3pt]
+    \displaystyle\Rightarrow\,\, \frac{dy}{db}_{|s}=-\frac{F_{yb}}{F_{yy}}
+    \end{array}
+    \quad\Rightarrow\quad \mu:=\frac{\partial\rho}{\partial n}_{|s}= \underbrace{\frac{\partial\rho}{\partial b}_{|y}}_{=-F_b+yF_{by}}+ \underbrace{\frac{\partial\rho}{\partial y}_{|b}}_{=yF_{yy}}\,\,\frac{dy}{db}_{|s}=-F_b.
+\end{align}
+In fact, after enforcing $n=b$ and the expressions for $\rho$ and $p$, equating $s=F_y,\,T=y$ is the \emph{only} consistent identification.
+Indeed taking $n=b$ and $y=s$ predicts wrong conjugate variables and fails the 1st law of thermodynamics \eqref{eq:first_law_thermo} since
+\begin{align}\begin{aligned}
+    &n=b,\,\,s= y \,\,\Rightarrow\,\, \begin{cases}
+        \mu:=\frac{\partial\rho}{\partial n}_{|s}= \frac{\partial\rho}{\partial b}_{|y}=-F_b+yF_{by}\\
+         T:=\frac{\partial\rho}{\partial s}_{|n}= \frac{\partial\rho}{\partial y}_{|b}=yF_{yy}
+    \end{cases}\\[4pt]
+    &\,\,\Rightarrow\,\, \mu n +T s= -bF_b+byF_{by}+y^2F_{yy}\neq yF_y-bF_b=\rho+p.
+\end{aligned}\end{align}
+
+
+
+
+%==============================================================
+\subsection{Quadratic expansion \& matching phonons to fluid perturbations}
+%============================================================
+%
+The above formulas are exact to any order in the fluid coordinates.o
+We now expand to quadratic order around unperturbed\footnote{Beware this choice of fluid coordinates does not use any gauge freedom of the spacetime manifold!} fluid coordinates $\bar{\varphi}^\alpha\equiv x^\alpha$ and FLRW spacetime.
+The general perturbed FLRW metric is written wrt conformal time $\tau$ as
+{\small \begin{align}\label{eq:general_perturbed_FLRW_metric}
+\begin{aligned}
+    &g_{\mu\nu}=a^2\Big(\eta_{\mu\nu}+h_{\mu\nu}\Big)\,,\quad g^{\mu\nu}=a^{-2}\Big(\eta^{\mu\nu}-h^{\mu\nu}\Big)\quad \text{with} \quad h^{\mu\nu}=\eta^{\mu\alpha}\eta^{\nu\beta}h_{\alpha\beta},\\
+    &\quad \sqrt{|g|}= a^4\big(1+\tfrac12 h^{\mu\nu}\eta_{\mu\nu} +O(h^2)\big)\ = a^4\Big[1+\tfrac12 (h^{ii}-h^{00}) +O(h^2)\Big]\,.
+\end{aligned}
+\end{align}}
+The fluid variables are written for simplicity with rescaling factors $\gamma$ and $\lambda$ that will be used to reabsord unphysical constants in the compuations
+{\small\begin{align}\label{eq:perturbed_fluid_coordinates}
+    \varphi^0=\gamma\Big(\tau+\pi^0\Big), \quad \varphi^i=\lambda\Big(x^i+\pi^i\Big)\,, \quad [\varphi^\alpha]=[x^\alpha]=[\pi^\alpha]=E^{-1},\quad [\gamma]=[\lambda]=E^0.
+\end{align}}
+We have the expansions for the invariants $b,y$ and the 4-velocity
+{\small\begin{align}\label{eq:expansions_b_y_u}
+\begin{aligned}
+    &b= \bar{b}(1+\delta b),\quad \bar{b}= \frac{\lambda^3}{a^3},\quad
+    \delta b^{(1)} = -\tfrac12 h^{ii} +(\partial_j \pi^j),\\[3pt]
+    &\delta b^{(2)} = - h^{0 i} \dot{\pi}^i - \tfrac12  h^{ii} (\partial_j \pi^j) - \tfrac12 (\dot{\pi}^i)^2 + \tfrac12 (\partial_j \pi^j)^2 -\tfrac12 \partial_i\pi^j\partial_j\pi^i\,,
+    \\[3pt]
+    &y= \bar{y}(1+\delta y),\quad \bar{y}= \frac{\gamma}{a},\quad \delta y^{(1)} = \tfrac12 h^{00}+ \dot{\pi}^0,\\[3pt]
+    &\delta y^{(2)} = \tfrac12 h^{00}\dot{\pi}^0+ h^{0 i} \dot{\pi}^i  + \tfrac12 (\dot{\pi}^i)^2 -\partial_j\pi^0\dot{\pi}^j\,\\[3pt]
+    &au^\mu=\delta_0^\mu \bigg(1 \!+\! \Big[\tfrac12 h^{00} -(\partial_j \pi^j)\Big]\! +\! \Big[ h^{0 i} \dot{\pi}^i -\tfrac12 h^{00} (\partial_j \pi^j) + \tfrac12 (\dot{\pi}^i)^2 + \tfrac12 (\partial_j \pi^j)^2 +\tfrac12 \partial_i\pi^j\partial_j\pi^i\Big]\bigg)
+    \\
+    &\quad\qquad+\tfrac{1}{2}\left[1 + \tfrac12 h^{00}-(\partial_\ell\pi^\ell)\right]
+     \epsilon_{i j k}\,\epsilon^{\mu \alpha j k}\,\partial_\alpha\pi^i 
+     +\frac{1}{2} \epsilon_{ijk}\, \epsilon^{\mu i \beta\gamma}\partial_\beta\pi^j\,\partial_\gamma\pi^k
+    + O(\pi^3, h^2)
+\end{aligned}\end{align}}
+%
+In turn we recast the fluctuations in density $\rho=-F+yF_y$ and pressure $p=F-bF_b$ as
+\begin{align}\label{eq:rho_p_fluctuations_via_b_y}
+\begin{aligned}
+    \delta\rho &= y^2F_{yy}\delta y + (-bF_b+byF_{by})\delta b
+    \\
+    &= (y^2F_{yy})\left(\tfrac12 h^{00}+ \dot{\pi}^0\right) + (-bF_b+byF_{by})\left(-\tfrac12 h^{ii} +(\partial_j \pi^j)\right) + O(2)
+    \\[3pt]
+    \delta p &= (yF_y-byF_{by})\delta y - (b^2 F_{bb})\delta b
+    \\
+    &= (yF_y-byF_{by})\left(\tfrac12 h^{00}+ \dot{\pi}^0\right) - (b^2 F_{bb})\left(-\tfrac12 h^{ii} +(\partial_j \pi^j)\right)+ O(2)\,.
+\end{aligned}
+\end{align}
+We also introduce the phonon potential to rewrite longitudinal (scalar) phonons
+\begin{align}\label{eq:phonon_potential}
+    \pi_L=\nabla^{-2}\partial_\ell\pi^\ell, \quad \pi^\ell_{\text{||}}=\partial_\ell \pi_L,\quad  [\pi_L]=E^{-2}.
+\end{align}
+Matching the velocity expansion \eqref{eq:expansions_b_y_u} in the fluid EFT to the general expression \eqref{eq:velocity_decomposition} in pertrubed FLRW spacetime $au^\mu =a(1+.., v^\ell)$, we identify the peculiar velocity and the velocity potential/divergence in terms of phonons as
+\begin{align}\label{eq:peculiar_velocity_fluid_vs_phonons}
+    v^\ell = \frac{1}{2}\epsilon_{i j k}\,\epsilon^{\ell \alpha j k}\,\partial_\alpha\pi^i = -\dot{\pi}^\ell\quad \Rightarrow \quad \theta=-\partial_\ell\dot{\pi}^\ell= -\nabla^2\dot{\pi}_L,\,\, \,\,v = -\dot{\pi}_L\,.
+\end{align}
+
+
+
+%==========================================================================
+%\subsection{Quadratic action for phonons}
+%==========================================================================
+%
+\input{temp_polish/quadratic_action}
+
+
+
+%================================================================================
+\subsection{Related computations (to be removed at the end)}
+%================================================================================
+
+Dear collaborators, I know you just want to see the results, but I need a safe place to keep my computations for several reasons: they might (often) be wrong, I want to improve or simplify them, we might disagree on the results, they remind me how to do the math the fastest way in case I need to redo them, etc.
+I promise I will keep them hidden here without polutting the main text and will remove them at the end.
+
+
+%-------------------------------------------------------------------------
+\subsubsection{Thermo formulas adiabatic sound speed \& non-adiabatic pressure}
+%--------------------------------------------------------------------------
+
+The entropy per particle is $\sigma=F_y/b$, imposing it be preserved gives
+\begin{align}
+    0=d\sigma = \frac{F_{yy}}{b}dy+\Big(\frac{bF_{by}-F_y}{b^2}\Big)db\quad \Rightarrow\quad \frac{dy}{db}_{\mid\sigma}= \frac{F_y-b F_{yb}}{bF_{yy}}=\frac{y}{b}\frac{p_y}{\rho_y}.
+\end{align}
+The adiabatic sound speed is then by definition\notetag{Polish redundant formulas}
+\begin{align}
+    c_b^2:=\frac{dp}{d\rho}_{\mid\sigma}&=\frac{p_b + p_y\, \tfrac{dy}{db}_{\mid\sigma}}{\rho_b + \rho_y\, \tfrac{dy}{db}_{\mid\sigma}} 
+    =\frac{-b^2F_{bb} F_{yy}+(F_y-bF_{yb})^2}{F_{yy}\,(yF_y-bF_b)}\\[5pt]
+    &= \frac{b p_b\, y\rho_y+(yp_y)^2}{b\rho_b\,y\rho_y+y\rho_y\,yp_y} = \frac{b\,p_b \,y\rho_y + (y\,p_y)^2}{y \rho_y (\rho+p)}\,.
+\end{align}
+The rewritings in the second line might come handy when trying to show positivity or other relations.
+Using $F=-\mathfrak{a}$ and $s=F_y=-\partial_T\mathfrak{a}$, we rewrite the adiabatic sound speed as
+\begin{align}
+    c_b^2:=
+    &=\frac{-b^2F_{bb} F_{yy}+(F_y-bF_{yb})^2}{F_{yy}\,(yF_y-bF_b)} = \frac{n^2\,\partial_n^2\mathfrak{a}\,\partial_Ts + (s-n\partial_ns)^2}{\partial_Ts\,\,(\rho+p)}\,,
+\end{align}
+which makes it manifest that $c_b^2\geq0$ provided no ghosts $\rho+P>0$, the second principle of thermodynamics $\partial_Ts\geq 0$ and thermodynamic stability $\partial_n^2\mathfrak{a}\geq 0$ hold.
+The equivalence $c_a^2\equiv c_s^2$ is proved in \eqref{eq:cs_equiv_ca_flat_spacetime} for flat spacetime.\todotag{check curved spacetime}
+
+Similarly we compute the nonadiabatic pressure coefficient $\frac{\partial P}{\partial \sigma}_{|\rho}$.
+We proceed as before enforcing 
+\begin{equation}
+    0=d\rho=yF_{yy}dy+(yF_{yb}-F_b)db\quad \Rightarrow\quad \frac{dy}{db}_{|\rho}=\frac{F_b-yF_{yb}}{yF_{yy}}
+\end{equation}
+As above we get, with analgous possible thermoodynamical rewriting in terms of the free energy density $\mathfrak{a}$,  
+{\small
+\begin{align}\label{eq:nonadiabatic_pressure_coefficient_gamma}
+\begin{aligned}
+    \Gamma:=\frac{\partial p}{\partial \sigma}_{\mid\rho}&=\frac{p_b + p_y\, \tfrac{dy}{db}_{\mid\rho}}{\sigma_b + \sigma_y\, \tfrac{dy}{db}_{\mid\rho}}=\frac{-bF_{bb}+(F_y-bF_{by})\tfrac{F_b-yF_{yb}}{yF_{yy}}}{\Big(\tfrac{bF_{by}-F_y}{b^2}\Big)+\tfrac{F_{yy}}{b}\frac{F_b-yF_{yb}}{yF_{yy}}}
+    \\
+    &=\frac{-b^2F_{bb}y^2F_{yy}+(yF_y-byF_{by})(bF_b-byF_{yb})}{y^2F_{yy}\Big(\tfrac{bF_{by}-F_y}{b}\Big)+yF_{yy}(F_b-yF_{yb})}
+    \\
+    &=\frac{b^2F_{bb}y^2F_{yy}-(yF_y-byF_{by})(bF_b-byF_{yb})}{\tfrac{1}{by}y^2F_{yy}(yF_y-bF_b)}.
+\end{aligned}\end{align}}
+
