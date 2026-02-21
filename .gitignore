@@ -36,3 +36,9 @@ out/
 # LATEX WORKSHOP TEMP FILES
 # ────────────────────────────────
 .vscode/.texlab
+
+# ────────────────────────────────
+# BIBLIOGRAPHY FILES
+# (if you don't want to track them)
+# ────────────────────────────────
+paperpile.bib
