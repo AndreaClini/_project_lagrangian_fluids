@@ -83,10 +83,19 @@ Finally, in the barotropic case we can still define $y=\partial_\mu\varphi^0u^\m
 {\small\begin{align}\label{eq:thermo_variables_barotropic}
     \rho=-F,\,\,\, p=F-bF_b,\,\,\, w=\frac{bF_b-F}{F},\,\,\, n=b,\,\,\, \mu=F_b,\,\,\, T=y\,\,\,\, s\equiv0,\,\,\, \frac{d p}{d \rho}=c_a^2=\frac{b^2F_{bb}}{bF_b}.
 \end{align}}
-In this case we can show explicitly that indeed\todotag{Write better this bit}
+In this case, there is only one indepedent thermodynamic variable, which can be any of $b$, $\rho$ etc, and hence no ambiguity in the variables to keep fixed when computing $dp/d\rho$.
+In particular, defining $c_b^2:=\dot{\bar{p}}/\dot{\bar{\rho}}$, we see explicitly that
 \begin{align}
-    c_a^2=c_s^2=\frac{\dot{\bar{p}}}{\dot{\bar{\rho}}}= \frac{d (w\rho)}{d \rho}=\frac{b^2F_{bb}}{bF_b}\,.
+    c_s^2\overset{\text{shown above}}{=}c_a^2:=\frac{dp}{d\rho}=\frac{\tfrac{dp}{db}\cancel{db}}{\tfrac{d\rho}{db}\cancel{db}}= \frac{b^2F_{bb}}{bF_b}=\frac{\tfrac{dp}{db}\cancel{\tfrac{db}{dt}dt}}{\tfrac{d\rho}{db}\cancel{\tfrac{db}{dt}dt}}=
+    \frac{\dot{\bar{p}}}{\dot{\bar{\rho}}}=:c_b^2= w-\frac{\dot{w}\bar{\rho}}{\dot{\bar{\rho}}}.
 \end{align}
+That is adiabatic sound speed, gradient coefficient and ratio of time variations of pressure to density all coincide $c_s^2=c_a^2=c_b^2$ in the barotropic case.\footnote{In the nonbarotropic case this is false. In fact $\frac{dp}{d\rho}$ is not even well-defined without specifying variables to keep fixed.}
+In particular, if the relative variation of the EoS parameter is small compated to the Hubble rate
+\begin{align}
+    \frac{\tfrac{\dot{w}}{w}}{\tfrac{\dot{\bar{\rho}}}{\bar{\rho}}}\simeq \frac{\tfrac{\dot{w}}{w}}{-3\mathcal{H}(1+w)}\ll 1 \quad \Rightarrow \quad c_s^2\simeq w,
+\end{align}
+the EoS parameter and the gradient coefficient esentially coincide, so that accelerated expansion $w<-1/3$ unavoidably leads to gradient instabilities $c_s^2<0$.
+That is, a barotropic fluid cannot support long-lasting accelerated expansion without instabilities!
 
 
 %-----------------------------------------------------------------------
