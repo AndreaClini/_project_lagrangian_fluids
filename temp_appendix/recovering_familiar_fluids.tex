@@ -9,11 +9,11 @@ Hopefully this will also reveal how the fluid EFT is more general than the usual
 Recall the expressions
 \begin{align}\begin{aligned}
     &\rho=-F+yF_y,\quad p=F-bF_b,\quad w=\frac{F-bF_b}{yF_y-F},\\
-    &c_s^2=\frac{\partial p}{\partial \rho}_{|\sigma}=\frac{-y^2F_{yy}b^2F_{bb}+(yF_y-bF_b)^2}{y^2F_{yy}(yF_y-bF_b)}.
+    &c_a^2=\frac{\partial p}{\partial \rho}_{|\sigma}=\frac{-y^2F_{yy}b^2F_{bb}+(yF_y-bF_b)^2}{y^2F_{yy}(yF_y-bF_b)}.
 \end{aligned}\end{align}
 and in the barotropic case
 \begin{align}
-    \rho=-F,\quad p=F-bF_b,\quad w=\frac{bF_b-F}{F},\quad \frac{d p}{d \rho}=c_s^2=\frac{b^2F_{bb}}{bF_b}.
+    \rho=-F,\quad p=F-bF_b,\quad w=\frac{bF_b-F}{F},\quad \frac{d p}{d \rho}=c_a^2=\frac{b^2F_{bb}}{bF_b}.
 \end{align}
 Recall $[\phi]=[\pi]=[x]=E^{-1}$, $b=[\partial_\mu\phi\partial^\mu\phi]=E^0$, $[u^\mu]=E^0$ and $y=[u^\mu\partial_\mu\phi]=E^0$.
 
@@ -42,7 +42,7 @@ A fully relativistic fluid $p\simeq E$ that can be described in the Boltzmann fo
     \rho:=T^0_0=\int\frac{d^3\vec{p}}{(2\pi)^3} E\, f, \quad P:= \tfrac13 T^i_i =\int\frac{d^3\vec{p}}{(2\pi)^3} \frac{p^2}{3E}= \frac13 \int\frac{d^3\vec{p}}{(2\pi)^3} E\, f = \tfrac13 \rho.
 \end{align}
 This holds at any order since perturbations are encoded into $f=\bar{f}+\delta f$.
-In particular we also find $c_s^2=\tfrac13$ necessarily
+In particular we also find $c_a^2=\tfrac13$ necessarily
 \begin{align}
     \delta P:=\int\frac{d^3\vec{p}}{(2\pi)^3} \frac{p^2}{3E}\, \delta f = \frac13 \int\frac{d^3\vec{p}}{(2\pi)^3} E \delta f =: \tfrac13 \delta\rho.
 \end{align}
@@ -59,22 +59,23 @@ In the fluid EFT treatment, for a barotropic fluid we enforce
 Which captures the usual scaling for radiation $\rho\propto T^4 \propto n^{4/3}$.
 Consistently, this automatically implies 
 \begin{align}
-    c_s^2=\frac{b^2F_{bb}}{bF_b}=\frac{1}{3}.
+    c_a^2=\frac{b^2F_{bb}}{bF_b}=\frac{1}{3}.
 \end{align}
 
-This begs the question:  are there \emph{nonbarotropic} relativistic fluids, in the fluid EFT this simply means enforcing $w=\tfrac13$, where however $c_s^2\neq\tfrac13$?\, NO.
+This begs the question:  are there \emph{nonbarotropic} relativistic fluids, in the fluid EFT this simply means enforcing $w=\tfrac13$, where however $c_a^2\neq\tfrac13$?\, NO.
 Enforcing $w=\tfrac13$ we find
 \begin{align}
     \tfrac13=w=\frac{F-bF_b}{yF_y-F} \quad \Rightarrow\quad \tfrac43 F=\tfrac13 yF_y+bF_b.
 \end{align}
 Differentiating this relation wrt $y$ and $b$ respectively and rearranging a bit we get
 \begin{align}
-    yF_y-ybF_{yb}=\tfrac13 y^2F_{yy}, \quad \tfrac13 (bF_b-ybF_{yb})=bF_{bb}.
+    yF_y-ybF_{yb}=\tfrac13 y^2F_{yy}, \quad \tfrac13 (bF_b-ybF_{yb})=b^2F_{bb}.
 \end{align}
 Plugging these into
 \begin{align}
-    c_s^2=\frac{-y^2F_{yy}b^2F_{bb}+(yF_y-bF_b)^2}{y^2F_{yy}(yF_y-bF_b)}\overset{identically}{=}\frac13\,.
+    c_a^2=\frac{-y^2F_{yy}b^2F_{bb}+(yF_y-bF_b)^2}{y^2F_{yy}(yF_y-bF_b)}\overset{identically}{=}\frac13\,, \quad \Gamma =0.
 \end{align}
+This is just expected: since $p=w\rho$ with $w$ constant, pressure is a function of energy density only, so the fluid is barotropic and adiabatic by construction.
 
 %-------------------------------------------------------------------------
 \subsubsection{Fluids with arbitrary constant EoS parameter {\color{red}(in progress)}}
@@ -84,22 +85,32 @@ Consider fluids with an almost constant EoS
 \begin{align}
     \frac{F-F_b}{yF_y-F}=w\approx \mathrm{const}\quad\Rightarrow\quad (1+w)F=w\, yF_y+bF_b.
 \end{align}
-The first order PDE is solved by characteristic\footnote{A convenient choice of variables is $\gamma:=\log uy$ and $\beta:=\log b$.}.
+The first order PDE is solved by characteristic.
+Choosing variables $\gamma:=\log uy$ and $\beta:=\log b$, the characteristics are
+{\small
+\begin{align}\begin{aligned}
+    \dot{\beta}&=1\\
+    \dot{\gamma}&=w \quad \Rightarrow\quad y = C b^w\, \\
+    \dot{z}&=(1+w)z\,.
+\end{aligned}\end{align}}
+This confirms that a fluid with constant EoS parameter $w$ is ultimately barotropic (i.e. it depends only on $b$) since we can take $y=C b^w$.
 The most general solution is, for arbitrary one variable function $f=f(z)$,
 \begin{align}
-    F(y,b)=f(y\,b^{-w})\, b^{(1+w)}.
+    F(y,b)=f(y\,b^{-w})\, b^{(1+w)}, 
 \end{align}
+which reduced to the barotropic case simply taking $y\propto b^w$ so that $f(yb^{-w})\mapsto \mathrm{const}$.
 It captures the barotropic case simply setting $y=0$.
-
-Let us study the implications of $w=\mathrm{const}$ on $c_s^2$ defined in \eqref{eq:adiabatic_sound_speed} and $\Gamma$ defined in \eqref{eq:nonadiabatic_pressure_coefficient_gamma}.
-Of course we expect $\Gamma=0$ since we enforced the constant EoS in full generality...\todotag{finish}
+The implications of $w=\mathrm{const}$ on $c_a^2$ and $\Gamma$ defined in \eqref{eq:adiabatic_cs_nonadiabatic_pressure} are obvius, since $p=w\rho$ with $w$ constant implies $p=p(\rho)$ and then
+\begin{align}
+    c_a^2=\frac{\partial p}{\partial \rho}_{|\sigma}=\frac{dp}{d\rho}=w,\qquad \Gamma=0.
+\end{align}
 
 
 %========================================================================
 \subsection{Fluids with time depdendent EoS parameter $w=w(a)$ {\color{red}(in progress)}}
 %=======================================================================
 %
-A simple generalization of the constant EoS case is to consider a time-varying EoS parameter $w=w(a)$ with the scale factor $a$, but otherwise independent of $b,y$.
+Despite reducing to the barotropic case, the solution for constant $w$ is nonetheless useful since a simple generalization is to consider a time-varying EoS parameter $w=w(a)$ with the scale factor $a$, but otherwise independent of $b,y$.
 The PDE is still formally solved by the above expression
 \begin{align}
     F(y,b)=f(y\,b^{-w(a)})\, b^{(1+w(a))}.
@@ -132,7 +143,7 @@ Choosing variables $\gamma:=\log uy$ and $\beta:=\log b$, the characteristics ar
 }
 The solution can be written in general but is probably not worth it.
 
-Crucially, we cannot say anything more on $c_s^2$ or $\Gamma$for a completely general $w(y,b)$.
+Crucially, we cannot say anything more on $c_a^2$ or $\Gamma$for a completely general $w(y,b)$.
 This is no surprise: in general we always have 2 independent thermodynamical DoFs and 1 independent function of these, furnishing the `equation of state' in a broader sense.
 These can be for example $b,y$, $\rho,p$ or $\rho,w$ and the function might be $F$.
 Here we are trading some of the arbitrariness of $F$ into the arbitrariness of $w$ and of $f$ (where $f$ is the initial function/data on the hypersurface e.g. $b=b_0$ we solve the PDE with characteristic cf. the constant $w$ case for the notation) with the functional dependence of $f$ constrained by characteristics.
