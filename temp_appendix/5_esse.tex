@@ -38,11 +38,32 @@ Dropping mixed and second order in the metric perturbations we have
     =\frac{1}{a^2}\bigg[(1+h^{00})\dot{\bar{\varphi}}^2 + 2\dot{\bar{\varphi}}\, \dot{\delta\varphi} + 2\dot{\bar{\varphi}}h^{0\mu}\partial_\mu\delta\varphi + (\dot{\delta\varphi})^2 - (\nabla\delta\varphi)^2\bigg]\\
     &= \frac{1}{a^2}\dot{\bar{\varphi}}^2\bigg[1+h^{00} + \frac{2\dot{\delta\varphi}}{\dot{\bar{\varphi}}} + \frac{2h^{0\mu}\partial_\mu\delta\varphi}{\dot{\bar{\varphi}}} + \frac{(\dot{\delta\varphi})^2 - (\nabla\delta\varphi)^2}{\dot{\bar{\varphi}}^2}\bigg]+O(3,h^2)\\[3pt]
     X^{-1/2}&= \frac{a}{\dot{\bar{\varphi}}}\bigg[1-\tfrac12 h^{00}-\frac{\dot{\delta\varphi}}{\dot{\bar{\varphi}}}-\frac{h^{0\mu}\partial_\mu\delta\varphi}{\dot{\bar{\varphi}}}+ \frac{(\dot{\delta\varphi})^2 +\tfrac12 (\nabla\delta\varphi)^2}{\dot{\bar{\varphi}}^2}\bigg]+O(3,h^2)\\
-    V(\varphi)&= V(\bar{\varphi}) + V'(\bar{\varphi})\delta\varphi + \tfrac12 V''(\bar{\varphi})(\delta\varphi)^2+O(3).
+    V(\varphi)&= V(\bar{\varphi}) + V_\varphi(\bar{\varphi})\delta\varphi + \tfrac12 V_{\varphi\varphi}(\bar{\varphi})(\delta\varphi)^2+O(3).
 \end{aligned}
 \end{align}
+The 
 The 4-velocity is then
 \begin{align}
-    au^\mu = \Big(1+\tfrac12 h^{00},\, h^{j0}-\tfrac{\partial_j\delta\varphi}{\dot{\bar{\varphi}}}\Big)+O(2,mix).
+    au^\mu = \Big(1+\tfrac12 h^{00}+\tfrac12 \tfrac{(\nabla\delta\varphi)^2}{\dot{\bar{\varphi}}^2}-\tfrac32 h^{00}\tfrac{\dot{\delta\varphi}}{\dot{\bar{\varphi}}}, h^{j0}-\tfrac{\partial_j\delta\varphi}{\dot{\bar{\varphi}}}+\tfrac{\partial_j\delta\varphi \dot{\delta\varphi}}{\dot{\bar{\varphi}}^2}
+    +\tfrac{h^{ji}\partial_i\delta\varphi }{\dot{\bar{\varphi}}}+\tfrac12 h^{00}\tfrac{\partial_j\delta\varphi}{\dot{\bar{\varphi}}}\Big)+O(3,h^2).
 \end{align}
 The energy density and pressure are then
+\begin{align}
+\begin{aligned}
+    &\rho = \tfrac12 X + V = \\[3pt]
+    &p= \tfrac12 X - V 
+\end{aligned}
+\end{align}
+{\small \begin{align}\label{eq:general_perturbed_FLRW_metric}
+\begin{aligned}
+    &g_{\mu\nu}=a^2\Big(\eta_{\mu\nu}+h_{\mu\nu}\Big)\,,\quad g^{\mu\nu}=a^{-2}\Big(\eta^{\mu\nu}-h^{\mu\nu}\Big)\quad \text{with} \quad h^{\mu\nu}=\eta^{\mu\alpha}\eta^{\nu\beta}h_{\alpha\beta},\\
+    &\quad \sqrt{|g|}= a^4\big(1+\tfrac12 h^{\mu\nu}\eta_{\mu\nu} +O(h^2)\big)\ = a^4\Big[1+\tfrac12 (h^{ii}-h^{00}) +O(h^2)\Big]\,.
+\end{aligned}
+\end{align}}
+The quadratic action for the perturbations is then
+\begin{align}
+\begin{aligned}
+    S_\varphi&= \int d^4x \sqrt{-g} \left[\tfrac12 X - V(\varphi)\right]\\
+\end{aligned}
+\end{align}
+    

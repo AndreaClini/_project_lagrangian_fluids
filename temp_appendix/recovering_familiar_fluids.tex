@@ -6,16 +6,7 @@
 
 In this section we want to get some intuition for the form of the function $F(y,b)$ that describes some familiar fluids, such as cold dark matter and radiation.
 Hopefully this will also reveal how the fluid EFT is more general than the usual scalar field description of fluids.
-Recall the expressions
-\begin{align}\begin{aligned}
-    &\rho=-F+yF_y,\quad p=F-bF_b,\quad w=\frac{F-bF_b}{yF_y-F},\\
-    &c_a^2=\frac{\partial p}{\partial \rho}_{|\sigma}=\frac{-y^2F_{yy}b^2F_{bb}+(yF_y-bF_b)^2}{y^2F_{yy}(yF_y-bF_b)}.
-\end{aligned}\end{align}
-and in the barotropic case
-\begin{align}
-    \rho=-F,\quad p=F-bF_b,\quad w=\frac{bF_b-F}{F},\quad \frac{d p}{d \rho}=c_a^2=\frac{b^2F_{bb}}{bF_b}.
-\end{align}
-Recall $[\phi]=[\pi]=[x]=E^{-1}$, $b=[\partial_\mu\phi\partial^\mu\phi]=E^0$, $[u^\mu]=E^0$ and $y=[u^\mu\partial_\mu\phi]=E^0$.
+Recall the general expressions \eqref{eq:thermo_rho_p_nonbaro}-\eqref{eq:adiabatic_cs_nonadiabatic_pressure} for the nonbarotropic case and \eqref{eq:thermo_variables_barotropic} for the barotropic case.
 
 %========================================================================
 \subsection{Fluids with constant EoS parameter {\color{red}(in progress)}}
@@ -99,8 +90,8 @@ The most general solution is, for arbitrary one variable function $f=f(z)$,
     F(y,b)=f(y\,b^{-w})\, b^{(1+w)}, 
 \end{align}
 which reduced to the barotropic case simply taking $y\propto b^w$ so that $f(yb^{-w})\mapsto \mathrm{const}$.
-It captures the barotropic case simply setting $y=0$.
-The implications of $w=\mathrm{const}$ on $c_a^2$ and $\Gamma$ defined in \eqref{eq:adiabatic_cs_nonadiabatic_pressure} are obvius, since $p=w\rho$ with $w$ constant implies $p=p(\rho)$ and then
+It captures the barotropic case simply setting $y=b^w$.
+The implications of $w=\mathrm{const}$ on $c_a^2$ and $\Gamma$ defined in \eqref{eq:adiabatic_cs_nonadiabatic_pressure} are obvius, since $p=w\rho$ with $w$ constant implies $p=p(\rho)$ and then\todotag{Check explicitly, it will be useful for $w(a)$ case}
 \begin{align}
     c_a^2=\frac{\partial p}{\partial \rho}_{|\sigma}=\frac{dp}{d\rho}=w,\qquad \Gamma=0.
 \end{align}
