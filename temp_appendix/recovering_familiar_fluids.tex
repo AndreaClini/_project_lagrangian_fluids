@@ -64,7 +64,7 @@ Differentiating this relation wrt $y$ and $b$ respectively and rearranging a bit
 \end{align}
 Plugging these into
 \begin{align}
-    c_a^2=\frac{-y^2F_{yy}b^2F_{bb}+(yF_y-bF_b)^2}{y^2F_{yy}(yF_y-bF_b)}\overset{identically}{=}\frac13\,, \quad \Gamma =0.
+    c_a^2=\frac{-y^2F_{yy}b^2F_{bb}+(yF_y-byF_{by})^2}{y^2F_{yy}(yF_y-bF_b)}\overset{identically}{=}\frac13\,, \quad \Gamma =0.
 \end{align}
 This is just expected: since $p=w\rho$ with $w$ constant, pressure is a function of energy density only, so the fluid is barotropic and adiabatic by construction.
 
@@ -73,7 +73,7 @@ This is just expected: since $p=w\rho$ with $w$ constant, pressure is a function
 %-------------------------------------------------------------------------
 
 Consider fluids with an almost constant EoS
-\begin{align}
+\begin{align}\label{eq:constant_eos_w}
     \frac{F-F_b}{yF_y-F}=w\approx \mathrm{const}\quad\Rightarrow\quad (1+w)F=w\, yF_y+bF_b.
 \end{align}
 The first order PDE is solved by characteristic.
@@ -84,17 +84,26 @@ Choosing variables $\gamma:=\log uy$ and $\beta:=\log b$, the characteristics ar
     \dot{\gamma}&=w \quad \Rightarrow\quad y = C b^w\, \\
     \dot{z}&=(1+w)z\,.
 \end{aligned}\end{align}}
-This confirms that a fluid with constant EoS parameter $w$ is ultimately barotropic (i.e. it depends only on $b$) since we can take $y=C b^w$.
-The most general solution is, for arbitrary one variable function $f=f(z)$,
+This confirms that a fluid with constant EoS parameter $w$ is ultimately barotropic, i.e. it depends only on $b$, since we can take $y=C b^w$.
+The most general solution is, for an arbitrary function $f=f(z)$ on one variable,
 \begin{align}\label{eq:constant_eos_w_solution_pde}
     F(y,b)=f(y\,b^{-w})\, b^{(1+w)}, 
 \end{align}
-which reduced to the barotropic case simply taking $y\propto b^w$ so that $f(yb^{-w})\mapsto \mathrm{const}$.
-It captures the barotropic case simply setting $y=b^w$.
-The implications of $w=\mathrm{const}$ on $c_a^2$ and $\Gamma$ defined in \eqref{eq:adiabatic_cs_nonadiabatic_pressure} are obvius, since $p=w\rho$ with $w$ constant implies $p=p(\rho)$ and then\todotag{Check explicitly, it will be useful for $w(a)$ case}
+which reduces to the barotropic case simply taking $y\propto b^w$ so that $f(yb^{-w})\mapsto \mathrm{const}$.
+
+The implications of $w=\mathrm{const}$ on $c_a^2$ and $\Gamma$ defined in \eqref{eq:adiabatic_cs_nonadiabatic_pressure} are obvius, since $p=w\rho$ with $w$ constant implies $p=p(\rho)$.
+Indeed, differentiating the relation \eqref{eq:constant_eos_w} with respect to $y$ and $b$ respectively we get
 \begin{align}
-    c_a^2=\frac{\partial p}{\partial \rho}_{|\sigma}=\frac{dp}{d\rho}=w,\qquad \Gamma=0.
+    y^2F_{yy}=t\frac{1}{w}\big(yF_y-byF_{by}\big), \qquad b^2 F_{bb}=w\big(bF_b-ybF_{yb}\big),
 \end{align}
+and plugging this into \eqref{eq:adiabatic_cs_nonadiabatic_pressure} we explicitly verify
+{\small\begin{align}
+\begin{aligned}
+    &c_a^2=\frac{\partial p}{\partial \rho}_{|\sigma}=\frac{-y^2F_{yy}b^2F_{bb}+(yF_y-byF_{by})^2}{y^2F_{yy}(yF_y-bF_b)} \equiv w \\[3pt]
+    &\Gamma:=\frac{\partial p}{\partial \sigma}_{\mid\rho}= \frac{b^2F_{bb}y^2F_{yy}-(yF_y-byF_{by})(bF_b-byF_{yb})}{\tfrac{1}{by}y^2F_{yy}(yF_y-bF_b)}\equiv 0.
+\end{aligned}
+\end{align}}
+As expected, a fluid with constant EoS is purely barotropic in practice!
 
 
 %========================================================================

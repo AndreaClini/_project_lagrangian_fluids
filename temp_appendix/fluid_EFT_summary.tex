@@ -55,6 +55,7 @@ Varying the action wrt the metric, the energy-momentum tensor takes the perfect 
 \begin{align}\label{eq:em_tensor_nonbaro}
     T_{\mu\nu} = u_\mu u_\nu (yF_y - bF_b) + g_{\mu\nu} (F-bF_b) = u_\mu u_\nu(\rho+p) + g_{\mu\nu}\, p\,.
 \end{align}
+Notably the computation is exact to any order so that no anisotropic stress appear in the EFt of a single fluid.
 Energy density, pressure and equation of state parameter are then identified as
 \begin{align}\label{eq:thermo_rho_p_nonbaro}
     \rho=-F+yF_y,\quad p=F-bF_b,\quad w=\frac{F-bF_b}{yF_y-F}.
@@ -73,7 +74,7 @@ Beware \eqref{eq:comoving_entropy_conserved_along_flow} implies that $\sigma$ wi
 Adiabatic sound speed $c_a^2$ and non-adiabatic pressure coefficient $\Gamma$ are then obtained plugging \eqref{eq:variation_y_vs_b_fixed_entropy_energy_density} into the definitions,\todotag{Write exp that makes manifest the baroropic limit $f_y=0$}
 {\small\begin{align}\label{eq:adiabatic_cs_nonadiabatic_pressure}
 \begin{aligned}
-    &c_a^2=\frac{\partial p}{\partial \rho}_{|\sigma}=\frac{-y^2F_{yy}b^2F_{bb}+(yF_y-bF_b)^2}{y^2F_{yy}(yF_y-bF_b)}, \\
+    &c_a^2=\frac{\partial p}{\partial \rho}_{|\sigma}=\frac{-y^2F_{yy}b^2F_{bb}+(yF_y-byF_{by})^2}{y^2F_{yy}(yF_y-bF_b)}, \\
     &\Gamma:=\frac{\partial p}{\partial \sigma}_{\mid\rho}= \frac{b^2F_{bb}y^2F_{yy}-(yF_y-byF_{by})(bF_b-byF_{yb})}{\tfrac{1}{by}y^2F_{yy}(yF_y-bF_b)}.
 \end{aligned}
 \end{align}}
@@ -159,10 +160,12 @@ Indeed taking $n=b$ and $y=s$ predicts wrong conjugate variables and fails the 1
 %==============================================================================
 %
 We consider first the conservation of the Noether currents.
-At the background level $u^\mu=a^{-1}\delta^\mu_0$ and $\sqrt{g}=a^{4}$, so that
+Since $u^\mu=a^{-1}\delta^\mu_0$ and $\sqrt{g}=a^{4}$ at the background level, we have
 \begin{align}\label{eq:conservation_noether_current_background_eft}
+\begin{aligned}
     &0=\nabla_\mu J_n^\mu \frac{1}{\sqrt{g}} \partial_\mu\Big(\sqrt{-g} b u^\mu\Big) \revpropto \frac{d}{d\tau}(a^3 b)\quad \Rightarrow \quad b = b_0 a^{-3},\\[3pt]
     &0=\nabla_\mu J_s^\mu =\frac{1}{\sqrt{g}} \partial_\mu\Big(\sqrt{-g} F_y u^\mu\Big) \revpropto \frac{d}{d\tau}(a^3 F_y)\quad \Rightarrow \quad F_y\propto a^{-3}.
+\end{aligned}
 \end{align}
 These are combined to give the evolution of $y$
 \begin{align}\label{eq:eolvution_y_background}
@@ -286,7 +289,7 @@ For simplicity we start in Newtonian gauge \eqref{eq:newtonian_gauge_metric} and
 %\subsection{Quadratic action for phonons}
 %==========================================================================
 %
-\input{temp_appendix/quadratic_action}
+\input{temp_appendix/quadratic_action.tex}
 
 
 
@@ -342,6 +345,35 @@ Proceeding as above we get, with possible analgous rewritings in terms of the fr
 %------------------------------------------------------------------------------
 \subsubsection{Energy-momentum tensor of the fluid EFT {\color{red}(insert from other file)}}
 %------------------------------------------------------------------------------
+
+
+Note that $\Phi:=\{u^\mu, \partial^\mu \phi^i\}_{i=1,2,3}$ is a basis of the tangent spacetime.
+The metric $g_{\mu\nu}$ in the coordinate basis to the metric $g^\Phi_{ab}$ in the $\Phi$-basis as
+\begin{align}
+     \begin{pmatrix} u^\mu \mid  \partial^\mu \phi^j\end{pmatrix}^T g_{\mu\nu} \begin{pmatrix} u^\nu  \mid  \partial^\nu \phi^j\end{pmatrix}= \begin{pmatrix} -1 & 0\\ 0 & B^{ij}\end{pmatrix} = g^{\Phi}_{ab}.
+\end{align}
+Inverting the matrices we find 
+\begin{align}
+    g^{\mu\nu}=\begin{pmatrix} u^\nu  \mid  \partial^\nu \phi^j\end{pmatrix}\begin{pmatrix} -1 & 0\\ 0 & (B^{ij})^{-1}\end{pmatrix} \begin{pmatrix} u^\mu \mid  \partial^\mu \phi^j\end{pmatrix}^T = -u^\mu u^\nu + B^{-1}_{ij} \partial^\mu \phi^i \partial^\nu \phi^j,
+\end{align}
+confirming that indeed $B^{-1}_{ij} \partial^\mu \phi^i \partial^\nu \phi^j= g^{\mu\nu}+u^\mu u^\nu$ is the projector on the space orthogonal to the 4-velocity.
+The variation of $b=\sqrt{\det B}$ wrt $g^{\mu\nu}\mapsto g^{\mu\nu}+\delta g^{\mu\nu}$ is then
+\begin{align}
+    \delta b= \tfrac12 \frac{1}{\sqrt{\det B}}\, \big(\det B\big)\, \text{Tr}\Big((B^{-1})^{ij} \partial_\mu \phi^i \partial_\nu \phi^j\Big) \, \delta g^{\mu\nu} = \tfrac12 \sqrt{B}\,  (g_{\mu\nu}+u_\mu u_\nu)\, \delta g^{\mu\nu}
+\end{align}
+The variation of $y$ is computed similarly and gives\questiontag{Write computation if you like}
+\begin{align}
+    \delta y = -\tfrac12 y \, u_\mu u_\nu \, \delta g^{\mu\nu}.
+\end{align}
+The energy momentum tensor is then
+{\small
+\begin{align}
+    T_{\mu\nu}:&=-\frac{2}{\sqrt{g}}\frac{\delta \big(\sqrt{g}F\big)}{\delta g^{\mu\nu}} = -\frac{2}{\sqrt{g}}\Big[ -\tfrac12 \sqrt{g}g_{\mu\nu} F +\sqrt{g}\tfrac12 b F_b (g_{\mu\nu}+u_\mu u_\nu) - \sqrt{g}\tfrac12 y F_y u_\mu u_\nu\Big]\\[2.5pt]
+    & = (yF_y - bF_b) u_\mu u_\nu + g_{\mu\nu} (F-bF_b).
+\end{align}}
+Notably the computation is exact to any order so that no anisotropic stress appear in thhe EFt of a single fluid.
+
+
 
 %------------------------------------------------------------------------------
 \subsubsection{Quadratic expansion of the fluid variables {\color{red}(insert from other file)}}
