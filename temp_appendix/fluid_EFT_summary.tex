@@ -187,8 +187,10 @@ From the solution \eqref{eq:constant_eos_w_solution_pde} of the equation of stat
 \end{align}
 Combining this with \eqref{eq:eolvution_y_background} get\todotag{check}
 \begin{align}
+\begin{aligned}
     \frac{\dot{y}}{y}=w\frac{\dot{b}}{b}=-3w\mathcal{H}\quad \Rightarrow \quad y &=y_* \exp\Big(-3\int^a_{a_*} d\log(a)\,\, w(a)\Big) \\[2pt]
-    &= y_0 \, \left(\frac{b}{b_0}\right)^{w(a)}\exp\left(-\int_{a_0}^a\!\!\!da\,\, \frac{dw}{da}\, \underbrace{\log(b/b_0)}_{=-3\log a}\right)\,.
+    &= y_0 \, \underbrace{\left(\frac{b}{b_0}\right)^{w(a)}}_{=a^{-3w(a)}}\exp\left(-\int_{a_0}^a\!\!\!da\,\, \frac{dw}{da}\, \underbrace{\log(b/b_0)}_{=-3\log a}\right)\,.
+\end{aligned}
 \end{align}
 As argued after \eqref{eq:constant_eos_w_solution_pde} the above expression for $F$ is a formal solution of the equation of state PDE even for time-varying $w=w(a)$, provided we impose consistency with the other background equations, namely the two Noether currents and the first Friedmann equation.
 
