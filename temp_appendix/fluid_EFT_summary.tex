@@ -161,38 +161,51 @@ Indeed taking $n=b$ and $y=s$ predicts wrong conjugate variables and fails the 1
 %
 We consider first the conservation of the Noether currents.
 Since $u^\mu=a^{-1}\delta^\mu_0$ and $\sqrt{g}=a^{4}$ at the background level, we have
-\begin{align}\label{eq:conservation_noether_current_background_eft}
-\begin{aligned}
-    &0=\nabla_\mu J_n^\mu \frac{1}{\sqrt{g}} \partial_\mu\Big(\sqrt{-g} b u^\mu\Big) \revpropto \frac{d}{d\tau}(a^3 b)\quad \Rightarrow \quad b = b_0 a^{-3},\\[3pt]
-    &0=\nabla_\mu J_s^\mu =\frac{1}{\sqrt{g}} \partial_\mu\Big(\sqrt{-g} F_y u^\mu\Big) \revpropto \frac{d}{d\tau}(a^3 F_y)\quad \Rightarrow \quad F_y\propto a^{-3}.
-\end{aligned}
+\begin{subequations}\label{eq:conservation_noether_current_background_eft}
+\begin{align}
+    &0=\nabla_\mu J_n^\mu \frac{1}{\sqrt{g}} \partial_\mu\Big(\sqrt{-g} b u^\mu\Big) \revpropto \frac{d}{d\tau}(a^3 b)\quad \Rightarrow \quad b = b_0 a^{-3},\label{eq:conservation_noether_current_background_eft_number}\\[3pt]
+    &0=\nabla_\mu J_s^\mu =\frac{1}{\sqrt{g}} \partial_\mu\Big(\sqrt{-g} F_y u^\mu\Big) \revpropto \frac{d}{d\tau}(a^3 F_y)\quad \Rightarrow \quad F_y\propto a^{-3}. \label{eq:conservation_noether_current_background_eft_entropy}
 \end{align}
-Using the first equation, the second can be equivalently rewritten as an evolution equation for $y$
+\end{subequations}
+Using \eqref{eq:conservation_noether_current_background_eft_number}, the second equation \eqref {eq:conservation_noether_current_background_eft_entropy} can be equivalently rewritten as an evolution equation for $y$,
 \begin{align}\label{eq:eolvution_y_background}
-    \dot{y}=-3\mathcal{H}\frac{F_y-bF_{by}}{bF_{yy}} \overset{!}{=}\dot{b}\frac{dy}{db}_{|\sigma}\,.
+    \dot{y}=\underbrace{\dot{b}}_{=-3\mathcal{H}b}\,\frac{F_y-bF_{by}}{bF_{yy}} =\dot{b}\, \frac{dy}{db}_{|\sigma}\,.
 \end{align}
 The second equality follows from \eqref{eq:variation_y_vs_b_fixed_entropy_energy_density} and implies that the evolution of $y$ is adiabatic at the background level.
-This is no surprise since from \eqref{eq:comoving_entropy_conserved_along_flow} we alredy knew that $\dot{\bar{sigma}}=0$ at the background level.
-Note this is precisely the evolution equation along characteristics of the PDE \eqref{eq:characteristics_eos_pde_solution_w_depending_b} for the equation of state with $w=w(b)$, as we will see below!
+This is no surprise since from \eqref{eq:comoving_entropy_conserved_along_flow} we alredy knew that $\dot{\bar{\sigma}}=0$ at the background level.
 
-Using expressions \eqref{eq:thermo_rho_p_nonbaro} for $\rho$ and $p$, the background continuity equation \eqref{eq:background_continuity} simply reads
+Crucially \eqref{eq:eolvution_y_background} is equivalent to the characteristic ODE \eqref{eq:characteristics_eos_pde_w_depending_b}-\eqref{eq:characteristics_eos_pde_solution_w_depending_b} of the equation of state with $w=w(b)$.
+Evolution in time thus coincides with evolution along characteristics of the equation of state \eqref{eq:eos_pde_w_depending_b}.
+This was expected since $a\propto\, b^{-1/3}$ from \eqref{eq:conservation_noether_current_background_eft_number} implies we can use either variable to parametrize time.
+Indeed, from the general solution \eqref{eq:eos_pde_solution_w_depending_b} of the EoS we compute
+\begin{align}
+    F(y,b)=f\Big(y\, e^{-\int_{b_0}^bd\log b\, w(b)}\Big)\, e^{\int_{b_0}^bd\log b\, \big(1+w(b)\big)} \quad \Rightarrow\quad  \frac{F_y-bF_{by}}{bF_{yy}} \equiv w(b)\frac{y}{b}.
+\end{align}
+Plugging this into \eqref{eq:eolvution_y_background} we get
+{\small\begin{align}\label{eq:evolution_y_background_equation_final}
+\begin{aligned}
+    \frac{\dot{y}}{y}=w(b)\frac{\dot{b}}{b}=-3w(a)\mathcal{H}
+\end{aligned}
+\end{align}}
+This is precisely the characteristic ODE \eqref{eq:characteristics_eos_pde_w_depending_b}, and the solution \eqref{eq:characteristics_eos_pde_solution_w_depending_b} is rewritten in terms of $a$ or $b$ respectively as 
+{\small\begin{align}\label{eq:evolution_y_background_solution}
+\begin{aligned}
+    y
+    &=y_0\,\,\exp\Big(\!\!-\!\!3\!\!\int^a_{a_0}\!\!\!\!\!d\!\log(a)\,\, w(a)\Big)\\[2.5pt]
+    &=y_0\,\exp\Big(\!\!-\!\!\!\int_{b_0}^b\!\!\!\!\!d\!\log\big(\tfrac{b}{b_0}\big)\,w(b)\Big)
+    =y_0\,\underbrace{\left(\tfrac{b}{b_0}\right)^{w(a)}}_{=a^{-3w(a)}}\,\exp\Big(\!\!-\!\!\!\int_{a_0}^a\!\!\!\!\!da\, \tfrac{dw}{da}\, \underbrace{\log\big(\tfrac{b}{b_0}\big)}_{=-3\log a}\Big).
+\end{aligned}
+\end{align}}
+
+The continuity equation for the background is automatically implied by the conservation of Noether currents, and yields no further constraint or information.
+Indeed, using expressions \eqref{eq:thermo_rho_p_nonbaro} for $\rho$ and $p$, the continuity equation \eqref{eq:background_continuity} reads
 \begin{align}\label{eq:backgroud_continuity_eft}
     \frac{d}{d\tau}(-F+yF_y)+3\mathcal{H}(yF_y-bF_b)=0.
 \end{align}
-Expanding $\dot{F}=F_b\dot{b}+F_y\dot{y}$ etc one verifies the continuity equation is already implied by the conservation of the Noether currents \eqref{eq:conservation_noether_current_background_eft}.
-In the barotropic case \eqref{eq:thermo_variables_barotropic} it reduces to the $a^{-3}$ dilution of the number density $b$.
+Expanding $\dot{F}=F_b\dot{b}+F_y\dot{y}$ etc one verifies the above is automtically satified by \eqref{eq:conservation_noether_current_background_eft}.
+In the barotropic case \eqref{eq:thermo_variables_barotropic} it reduces to the familiar $a^{-3}$ dilution of the number density $b$.
 
-From the solution \eqref{eq:eos_pde_solution_w_depending_b} of the equation of state with parameter $w=w(b)$ we compute
-\begin{align}
-    F(y,b)=f\Big(y\, e^{-\int_{b_0}^bd\log b\, w(b)}\Big)\, e^{\int_{b_0}^bd\log b\, \big(1+w(b)\big)} \quad \Rightarrow\quad  \frac{F_y-bF_{by}}{F_{yy}} \equiv w(b)\frac{y}{b}.
-\end{align}
-Combining this with \eqref{eq:eolvution_y_background} we indeed get back the prescribed evolution of $y$ along characteristics of the PDE \eqref{eq:characteristics_eos_pde_solution_w_depending_b}, which is simply evolution in time since $a\propto b^{-1/3}$,\todotag{check}
-\begin{align}
-\begin{aligned}
-    \frac{\dot{y}}{y}=w\frac{\dot{b}}{b}=-3w\mathcal{H}\quad \Rightarrow \quad y &=y_* \exp\Big(-3\int^a_{a_*} d\log(a)\,\, w(a)\Big) \\[2pt]
-    &= y_0 \, \underbrace{\left(\frac{b}{b_0}\right)^{w(a)}}_{=a^{-3w(a)}}\exp\left(-\int_{a_0}^a\!\!\!da\,\, \frac{dw}{da}\, \underbrace{\log(b/b_0)}_{=-3\log a}\right)\,.
-\end{aligned}
-\end{align}
+
 As argued after \eqref{eq:constant_eos_w_solution_pde} the above solution $F$ of the EoS PDE should be consistent with the two Noether currents, i.e. the continuity equation, and the first Friedmann equation.
 
 We now solve Friedman and continuity equation, consistenly with the possible time variation of $w$, \todotag{Finish}
