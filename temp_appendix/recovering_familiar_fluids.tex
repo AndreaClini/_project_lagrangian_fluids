@@ -133,7 +133,7 @@ More generally we can solve by characteristics the EoS for arbitrary parameters 
     \frac{F-F_b}{yF_y-F}=w\approx \mathrm{const}\quad\Rightarrow\quad (1+w)F=w\, yF_y+bF_b.
 \end{align}
 This is just a linear transport equation.
-Choosing variables $\gamma:=\log uy$ and $\beta:=\log b$, the characteristics are
+Choosing variables $\gamma:=\log y$ and $\beta:=\log b$, the characteristics are
 {\small
 \begin{align}\begin{aligned}
     \dot{\beta}&=1\\
@@ -149,20 +149,36 @@ These can be for example $b,y$, $\rho,p$ or $\rho,w$ and the function might be $
 Here we are trading some of the arbitrariness of $F$ into the arbitrariness of $w$ and of $f$ (where $f$ is the initial function/data on the hypersurface e.g. $b=b_0$ we solve the PDE with characteristic cf. the constant $w$ case for the notation) with the functional dependence of $f$ constrained by characteristics.
 As soon as we say something more on $w$ e.g. that $w=\mathrm{const}$ then we can draw further conclusions.
 
+\paragraph{The relevant case.}
 The equation is quite simple when variables split $w=w_1(y)w_2(b)$.
-Since the conservation of the Nother current gives $b\propto a^3$ at the backgorund level, a very intteresting case is  $w=w(b)$ since it ultimately corresponds to $w=(a)$ up to perturbations.
+Since the conservation of the Nother current gives $b\propto a^3$ at the backgorund level, a very intteresting case is  $w=w(b)$ since it ultimately corresponds to $w=(a)$ up to perturbations,
+\begin{equation}
+    (1+w(b))F=w(b)\, yF_y+bF_b.
+\end{equation}
+Choosing variables $\gamma:=\log (y/y_0)$ and $\beta:=\log (b/b_0)$, the characteristics are
+{\small
+\begin{align}
+\begin{aligned}
+    \dot{\beta}&=1\\
+    \dot{\gamma}&=w(\beta)\\
+    \dot{z}&=\big(1+w(\beta)\big)z
+\end{aligned}\end{align}
+}
 The characteristic simply becomes
 {\small
-\begin{align}\begin{aligned}
-    \gamma(\beta,\gamma_0)=\int_{\beta_0}^\beta d\beta\, w(\beta)+\gamma_0\quad\Rightarrow\quad \gamma_0=\gamma-\int_{b_0}^b \!\!d\log b\,\, w(b)\\
+\begin{align}\label{eq:characteristics_eos_pde_solution_w_depending_b}
+\begin{aligned}
+    \gamma(\beta,\gamma_0)=\int_{\beta_0}^\beta w(\beta)\,\,d\beta\,\,+\gamma_0\quad\Rightarrow\quad \gamma_0=\gamma-\int_{b_0}^b \!\!d\log(b/b_0)\,\, w(b)\\
     z(\beta):=F(\gamma(\beta,\gamma_0),\beta)= f(\gamma_0)\,\exp\left(\int_{\beta_0}^\beta\, d\beta\,\,(1+w(\beta))\right)
 \end{aligned}\end{align}
 }
 The general solution for $w=w(b)$ is then
-\begin{align}
-    F(y,b)=f\Big(y\, e^{-\int_{b_0}^bd\log b\, w(b)}\Big)\exp\left(\int_{b_0}^bd\log b\, \big(1+w(b)\big)\right)
+\begin{align}\label{eq:eos_pde_solution_w_depending_b}
+    F(y,b)=f\Big(y\, e^{-\int_{b_0}^bd\log b\, w(b)}\Big)\, e^{\int_{b_0}^bd\log b\, \big(1+w(b)\big)}
 \end{align}
-Similarly the general solutions for $w=w(y)$ is
+which reduces to the constant EoS solution if $w=\text{const}$.
+
+For the record, the general solutions for $w=w(y)$ is similarly 
 \begin{align}
     F(y,b)=f\Big(b\, e^{-\int_{y_0}^yd\log y\, \frac{1}{w(y)}}\Big)\exp\left(\int_{y_0}^bd\log y\,\Big(1+\tfrac{1}{w(y)}\Big)\right)
 \end{align}
