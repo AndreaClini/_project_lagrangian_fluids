@@ -9,7 +9,7 @@ Hopefully this will also reveal how the fluid EFT is more general than the usual
 Recall the general expressions \eqref{eq:thermo_rho_p_nonbaro}-\eqref{eq:adiabatic_cs_nonadiabatic_pressure} for the nonbarotropic case and \eqref{eq:thermo_variables_barotropic} for the barotropic case.
 
 %========================================================================
-\subsection{Fluids with constant EoS parameter {\color{red}(in progress)}}
+\subsection{Fluids with constant EoS parameter}
 %========================================================================
 
 %-----------------------------------------------------------------------
@@ -69,15 +69,16 @@ Plugging these into
 This is just expected: since $p=w\rho$ with $w$ constant, pressure is a function of energy density only, so the fluid is barotropic and adiabatic by construction.
 
 %-------------------------------------------------------------------------
-\subsubsection{Fluids with arbitrary constant EoS parameter {\color{red}(in progress)}}
+\subsubsection{Fluids with arbitrary constant EoS parameter}
 %-------------------------------------------------------------------------
 
+This case is completely analogous to the relativistic fluid case, simply with general $w$ instead of $w=\tfrac13$.
 Consider fluids with an almost constant EoS
 \begin{align}\label{eq:constant_eos_w}
     \frac{F-F_b}{yF_y-F}=w\approx \mathrm{const}\quad\Rightarrow\quad (1+w)F=w\, yF_y+bF_b.
 \end{align}
 The first order PDE is solved by characteristic.
-Choosing variables $\gamma:=\log uy$ and $\beta:=\log b$, the characteristics are
+Choosing variables $\gamma:=\log y$ and $\beta:=\log b$, the characteristics are
 {\small
 \begin{align}\begin{aligned}
     \dot{\beta}&=1\\
@@ -107,30 +108,28 @@ As expected, a fluid with constant EoS is purely barotropic in practice!
 
 
 %========================================================================
-\subsection{Fluids with time depdendent EoS parameter $w=w(a)$ {\color{red}(in progress)}}
+\subsection{Fluids with time depdendent EoS parameter $w=w(a)$}
 %=======================================================================
 %
-Despite reducing to the barotropic case, the solution for constant $w$ is nonetheless useful since a simple generalization is to consider a time-varying EoS parameter $w=w(a)$ with the scale factor $a$, but otherwise independent of $b,y$.
-The PDE is still formally solved by the above expression
+Despite reducing to the barotropic case, the solution for constant $w$ is nonetheless useful since a simple generalization is to consider a time-varying EoS parameter $w=w(a)$ with the scale factor $a$.
+One might think the PDE is still formally solved by the above expression
 \begin{align}
-    F(y,b)=f(y\,b^{-w(a)})\, b^{(1+w(a))}.
+    F(y,b)=f(y\,b^{-w(a)})\, b^{(1+w(a))},
 \end{align}
-We should now impose a consistency relation on $f$ to ensure 1st Friedmann equation and continuity are satisfied \todotag{check if it makes sense}
-\begin{align}
-    (\dot{a}/a)^2=\frac{1}{3M_{\mathrm{Pl}}^2}\rho=\frac{1}{3M_{\mathrm{Pl}}^2}(-F+yF_y)\\
-    \dot{\rho}=-3\mathcal{H}(\rho+p)=-3\mathcal{H}(-bF_b+yF_y)
-\end{align}
-This will give consistency constraints on $f$ and its derivatives for the equations to hold.
-Indeed, for a given form of $f$ we can invert the relations to express $b,y$ in terms of $\rho,p$ and then check if the above equations are satisfied.
+but this is NOT the case, since $y$ and $b$ ultimately depend on $a$ through the background equations.
+We might still try the solution above, and then use the residual freedom in the form of the function $f$ to impose the other background equations, i.e. continuity and first Friedmann equation, giving consistency constraints on $f$ and its derivatives for the equations to hold.
+
+It turns out it is more convient to first solve for the evolution of the background variables $b(\tau),y(\tau)$ from the conservation of the Noether number-density and entropy currents \eqref{eq:conservation_noether_current_background_eft}.
+The former \eqref{eq:conservation_noether_current_background_eft_number} implies that $b\propto a^3$ at the background level, so that $w=w(a)$ can be equivalently written as $w=w(b)$ and we are naturally lead to solving an equation of state with $w=w(b)$.
 
 
 %=======================================================================
-\subsection{Fluids with arbitrary EoS parameter $w(b,y)$ {\color{red}(in progress)}}
+\subsection{Fluids with arbitrary EoS parameter $w(b,y)$}
 %==========================================================================
 
-More generally we can solve by characteristics the EoS for arbitrary parameters $w=w(b,\gamma)$\todotag{not sure it is needed}
+We can solve by characteristics the EoS for arbitrary parameters $w=w(b,\gamma)$
 \begin{align}
-    \frac{F-F_b}{yF_y-F}=w\approx \mathrm{const}\quad\Rightarrow\quad (1+w)F=w\, yF_y+bF_b.
+    \frac{F-F_b}{yF_y-F}=w(b,y)\quad\Rightarrow\quad (1+w)F=w\, yF_y+bF_b.
 \end{align}
 This is just a linear transport equation.
 Choosing variables $\gamma:=\log y$ and $\beta:=\log b$, the characteristics are
@@ -139,21 +138,22 @@ Choosing variables $\gamma:=\log y$ and $\beta:=\log b$, the characteristics are
     \dot{\beta}&=1\\
     \dot{\gamma}&=w(\gamma,\beta)\\
     \dot{z}&=(1+w)z
-\end{aligned}\end{align}
-}
-The solution can be written in general but is probably not worth it.
+\end{aligned}\end{align}}
+The solution can be written in general, but it is not needed it for the moment.
+The solution is also quite simple when variables split $w=w_1(y)w_2(b)$.  
 
-Crucially, we cannot say anything more on $c_a^2$ or $\Gamma$for a completely general $w(y,b)$.
-This is no surprise: in general we always have 2 independent thermodynamical DoFs and 1 independent function of these, furnishing the `equation of state' in a broader sense.
-These can be for example $b,y$, $\rho,p$ or $\rho,w$ and the function might be $F$.
-Here we are trading some of the arbitrariness of $F$ into the arbitrariness of $w$ and of $f$ (where $f$ is the initial function/data on the hypersurface e.g. $b=b_0$ we solve the PDE with characteristic cf. the constant $w$ case for the notation) with the functional dependence of $f$ constrained by characteristics.
-As soon as we say something more on $w$ e.g. that $w=\mathrm{const}$ then we can draw further conclusions.
+It is just worth noticing that for $w=w(b)$ or $w=w(y)$ we could draw some further conclusions (e.g. on $c_a^2$ or $\Gamma$) from the sole equation of state, while  for completely general $w(y,b)$ we cannot say anything more.
+To proceed further we would need to couple the EoS with the background equations.
 
-\paragraph{The relevant case.}
-The equation is quite simple when variables split $w=w_1(y)w_2(b)$.
-Since the conservation of the Nother current gives $b\propto a^3$ at the backgorund level, a very intteresting case is  $w=w(b)$ since it ultimately corresponds to $w=(a)$ up to perturbations,
+
+%-------------------------------------------------------------------------
+\subsubsection{The relevant case $w=w(b)$}
+%---------------------------------------------------------------------
+%
+The most relevant case is $w=w(b)$ since the conservation of the Nother current \eqref{eq:conservation_noether_current_background_eft_number} gives $b\propto a^3$ at the backgorund level, so that  $w=w(b)$ ultimately corresponds to $w=(a)$ up to perturbations.
+The equation of state pde is again
 \begin{equation}\label{eq:eos_pde_w_depending_b}
-    (1+w(b))F=w(b)\, yF_y+bF_b.
+    \frac{F-F_b}{yF_y-F}=w(b)\quad\Rightarrow\quad \big(1+w(b)\big)F=w(b)\, yF_y+bF_b.
 \end{equation}
 Choosing variables $\gamma:=\log (y/y_0)$ and $\beta:=\log (b/b_0)$, the characteristics are
 {\small
@@ -164,23 +164,20 @@ Choosing variables $\gamma:=\log (y/y_0)$ and $\beta:=\log (b/b_0)$, the charact
     z^\prime&=\big(1+w(\beta)\big)\,z
 \end{aligned}\end{align}
 }
-The characteristic simply becomes
-{\small
-\begin{align}\label{eq:characteristics_eos_pde_solution_w_depending_b}
+The solution of the characteristics are simply 
+{\small\begin{align}\label{eq:characteristics_eos_pde_solution_w_depending_b}
 \begin{aligned}
     \gamma(\beta,\gamma_0)=\int_{\beta_0}^\beta w(\beta)\,\,d\beta\,\,+\gamma_0\quad\Rightarrow\quad \gamma_0=\gamma-\int_{b_0}^b \!\!d\log(b/b_0)\,\, w(b)\\
     z(\beta):=F(\gamma(\beta,\gamma_0),\beta)= f(\gamma_0)\,\exp\left(\int_{\beta_0}^\beta\, d\beta\,\,(1+w(\beta))\right)
-\end{aligned}\end{align}
-}
+\end{aligned}\end{align}}
 The general solution for $w=w(b)$ is then
 \begin{align}\label{eq:eos_pde_solution_w_depending_b}
-    F(y,b)=f\Big(y\, e^{-\int_{b_0}^bd\log b\, w(b)}\Big)\, e^{\int_{b_0}^bd\log b\, \big(1+w(b)\big)}
+    F(y,b)=f\Big(y\, e^{-\int_{b_0}^bd\log b\, w(b)}\Big)\, e^{\int_{b_0}^bd\log b\, \big(1+w(b)\big)},
 \end{align}
 which reduces to the constant EoS solution if $w=\text{const}$.
-
 For the record, the general solutions for $w=w(y)$ is similarly 
 \begin{align}
-    F(y,b)=f\Big(b\, e^{-\int_{y_0}^yd\log y\, \frac{1}{w(y)}}\Big)\exp\left(\int_{y_0}^bd\log y\,\Big(1+\tfrac{1}{w(y)}\Big)\right)
+    F(y,b)=f\Big(b\, e^{-\int_{y_0}^yd\log y\, \frac{1}{w(y)}}\Big)\exp\left(\int_{y_0}^bd\log y\,\Big(1+\tfrac{1}{w(y)}\Big)\right).
 \end{align}
 
 

@@ -176,11 +176,15 @@ After integrating by parts in time, we get
 \end{aligned}
 \end{align}}
 Beware that in a general curved background we pick up an extra term
-\begin{align}\label{eq:nontrivial_integ_by_part_time_curved}
-    \tfrac{d}{d\tau}(a^4yF_y)=(a^3F_y)\, \tfrac{d}{d\tau}(ay)\neq 0\,,
-\end{align}
+{\small\begin{align}\label{eq:nontrivial_integ_by_part_time_curved}
+    \tfrac{d}{d\tau}(a^4yF_y)=\underbrace{(a^3F_y)}_{=\text{const}}\, \tfrac{d}{d\tau}(ay)\neq 0\,,
+\end{align}}
 where the first equality follows from conservation of the Noether entropy current \eqref{eq:conservation_noether_current_background_eft}.
-Even in the simplest case $w=\text{const}$ of constant EoS, from \eqref{eq:eolvution_y_background} we get $a\,y\propto a^{1-3w}$, so that the term is indeed non-zero.
+In case of time-dependent EoS parameter $w=w(a)$, using the background evolution \eqref{eq:evolution_y_background_solution} of $y$ we compute
+{\small\begin{align}\label{eq:integ_part_time_nontrivial_term_a_dependent_eos}
+    \tfrac{d}{d\tau}(a^4yF_y)=a^4 yF_y\, \mathcal{H}\, (1-3w(a))\,.
+\end{align}}
+Even in the simplest case of constant $w$ the term is in general non-zero.
 
 The constraint equation for $\pi^0$ now reads
 {\small\begin{align}
@@ -221,7 +225,7 @@ so that the ultimate contribution of the entropy field $\pi^0$ to the action is
 \end{aligned}
 \end{align}}
 %
-Substituting back in the action and collecting $(\rho+p)$ outside to highlight ghosts, we finally get\todotag{Write}
+Substituting back in the action and collecting $(\rho+p)$ outside to highlight ghosts, we finally get
 {\small
 \begin{align}
 \begin{aligned}
@@ -242,5 +246,19 @@ for
     &\quad\qquad\cdot \bigg[(yF_y-byF_{by}) (\partial_j\pi^j)-\bigg(\tfrac{1}{a^4}\!\!\int\! d\tau\,(\partial_j \pi^j)\tfrac{d}{d\tau}(a^4yF_y)\bigg)\bigg]\,.
 \end{aligned}
 \end{align}}
-Note several cancellations arise and the spped of sound pops up $c_a^2$ showing $h^{ii}$ is a modulation of $\nabla\pi$\todotag{Finish}
+Several cancellations and simplifications arise and the speed of sound pops up $c_a^2$ showing $h^{ii}$ is a modulation of $\nabla\pi$.
+The final form is\todotag{Finish}
+{\small
+\begin{align}
+\begin{aligned}
+    ...
+\end{aligned}
+\end{align}}
+It is also worth noticing that in the time-dependent $w=w(a)$ case, from \eqref{eq:conservation_noether_current_background_eft_entropy} and \eqref{eq:integ_part_time_nontrivial_term_a_dependent_eos} the integral term reads
+{\small\begin{align}
+\begin{aligned}
+    \bigg(\tfrac{1}{a^4}\!\!\int d\tau\,(\partial_j \pi^j)\tfrac{d}{d\tau}(a^4yF_y)\bigg) &= 
+    yF_y\, \frac{1}{a}\!\!\int_{-\infty}^\tau \!\!\underbrace{d\tau\mathcal{H}}_{=d\log\!a}\,a\, \big(1-3w(a)\big)\, (\partial_j \pi^j)\,.
+\end{aligned}\end{align}}
+Possibly this leads to a nicer form of the quadratic action\todotag{Finish}
 
