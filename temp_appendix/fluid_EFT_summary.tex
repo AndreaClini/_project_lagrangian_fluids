@@ -93,26 +93,54 @@ which shows that absence of ghosts, thermodynamic stability and gradient instabi
 This was expected: longitudinal phonons, i.e. sound waves, do propagate with the speed of sound!
 For flat spacetimes this is proved in \eqref{eq:cs_equiv_ca_flat_spacetime} below.\todotag{prove it in curved space}
 
-Finally, in the barotropic case we can still define $y=\partial_\mu\varphi^0u^\mu$, but $F=F(b)$ does not depend on $y$ and the above formulas reduce to
-{\small\begin{align}\label{eq:thermo_variables_barotropic}
-\begin{aligned}
-    &\rho=-F,\quad p=F-bF_b,\quad w=\frac{bF_b-F}{F},\quad n=b,\quad \mu=F_b,\\[3pt]
-    & \frac{d p}{d \rho}=c_a^2=\frac{b^2F_{bb}}{bF_b}= w+w_b \frac{\rho}{\rho_b},\qquad T=y,\quad s=\sigma=0,\quad \Gamma=\frac{\partial p}{\partial \sigma}_{|\rho}=0.
-\end{aligned}\end{align}}
-In this case, there is only one indepedent thermodynamic variable, which can be any of $b$, $\rho$ etc, and hence no ambiguity in the variables to keep fixed when computing $dp/d\rho$.
-In particular, defining $c_b^2:=\dot{\bar{p}}/\dot{\bar{\rho}}$, we see explicitly that
+
+Beware that, whenever $p$ is not a function of $\rho$ only, we have\todoAC{Polish from her below}
 \begin{align}
-    c_s^2\overset{\substack{\text{shown}\\ \text{in general}}}{=}
-c_a^2:=\frac{dp}{d\rho}=\frac{\tfrac{dp}{db}\cancel{db}}{\tfrac{d\rho}{db}\cancel{db}}= \frac{b^2F_{bb}}{bF_b}=\frac{\tfrac{dp}{db}\cancel{\tfrac{db}{dt}dt}}{\tfrac{d\rho}{db}\cancel{\tfrac{db}{dt}dt}}=
-    \frac{\dot{\bar{p}}}{\dot{\bar{\rho}}}=:c_b^2= w-\frac{\dot{w}\bar{\rho}}{\dot{\bar{\rho}}}.
+    \underbrace{c_s^2}_{\text{grad coef}}\equiv c_a^2:=\frac{\partial p}{\partial \rho}_{|\sigma}\neq \frac{\dot{p}}{\dot{\rho}}=:c_g^2.
 \end{align}
-That is adiabatic sound speed, gradient coefficient and ratio of time variations of pressure to density all coincide $c_s^2=c_a^2=c_b^2$ in the barotropic case.\footnote{In the nonbarotropic case this is false. In fact $\frac{dp}{d\rho}$ is not even well-defined without specifying variables to keep fixed.}
+For 2 \emph{truly} independent thermodynamic variables, the ratio of time variations of pressure to density corresponds to taking derivatives along a \emph{curved} trajectory in the thermodynamic plane, i.e. directional derivatives $\tfrac{\dot{p}}{\dot{\rho}}=\tfrac{\partial P}{\partial \hat{v}(t)}$ along a time-dependent direction $\hat{v}(t)$ ultimately depending on the background evolution of the fluid.
+In the general case, this procedure has no fixed relation with derivatives with a well-defined thermodynamic variable kept fixed.
+
+On the other hand, in the barotropic case $p=p(\rho)$, the expression $dp/d\rho$ is unambiguous since variations of $p$ and $\rho$ are proportional with the same coefficient $\tfrac{dp}{d\rho}$ for any direction  thermodynamic plane,
+\begin{align}
+    \frac{dp}{d\rho}=\frac{\tfrac{dp}{d\hat{x}}}{\tfrac{d\rho}{d\hat{x}}}=\frac{\tfrac{dp}{d\hat{z}}\cancel{\tfrac{d\hat{z}}{d\hat{x}}}}{\tfrac{d\rho}{d\hat{z}}\cancel{\tfrac{d\hat{z}}{d\hat{x}}}}=\frac{\tfrac{dp}{d\hat{z}}}{\tfrac{d\rho}{d\hat{z}}} = \frac{\dot{p}}{\dot{\rho}}\quad \forall  \text{ directions } x,z.
+\end{align}
+In this case adiabatic sound speed, gradient coefficient and ratio of time variations of pressure to density all coincide $c_s^2=c_a^2=c_g^2$.
+
 In particular, if the relative variation of the EoS parameter is small compated to the Hubble rate
 \begin{align}
     \frac{\tfrac{\dot{w}}{w}}{\tfrac{\dot{\bar{\rho}}}{\bar{\rho}}}\simeq \frac{\tfrac{\dot{w}}{w}}{-3\mathcal{H}(1+w)}\ll 1 \quad \Rightarrow \quad c_s^2\simeq w,
 \end{align}
 the EoS parameter and the gradient coefficient esentially coincide, so that accelerated expansion $w<-1/3$ unavoidably leads to gradient instabilities $c_s^2<0$.
 That is, a barotropic fluid cannot support long-lasting accelerated expansion without instabilities!
+
+For convenience, we compare our formalism to Wayne Hu's \cite[equation (3)]{Hu:1998kj} we find
+\begin{align}
+    \delta p\overset{\text{us}}{=} \underbrace{\tfrac{\partial p}{\partial \rho}_{|\sigma}}_{=:c_a^2}\delta\rho + \underbrace{\tfrac{\partial p}{\partial \sigma}_{|\rho}}_{=:\Gamma}\delta\sigma \overset{\text{Hu}}{=} \underbrace{\tfrac{\dot{p}}{\dot{\rho}}}_{=:c_g^2} \delta \rho + \Gamma_{\text{Hu}} p
+    \,\,\Rightarrow\,\, \Gamma_{\text{Hu}} p = \Gamma \delta\sigma + (c_a^2-c_g^2)\delta\rho.
+\end{align}
+Wayne's definition of $\Gamma_{Hu}$ is thus a mixture of energy density and entropy perturbations.
+Recallig that entropy perturbations and velocity divergence are proportional $\delta\sigma \propto \theta$ and dividing the above equation by $\Gamma_{\text{Hu}}$, we find precisely the expression given in Hu's \cite[equation (3)]{Hu:1998kj} in the rest frame of the fluid where $\theta=0$.
+
+Finally, we discuss the case $F=F(b)$.
+Beware this is only a special case of barotropic fluid.
+Indeed we can keep the barotropic condition $p=p(\rho)$ and still allow for $F=F(b,y)$.
+The simplest example is a constant EoS parameter, but more generally any $w=w(\rho)=w(-F+yF_y)$ works.
+
+When $F=F(b)$, we can still define $y=\partial_\mu\varphi^0u^\mu$, but since $F$ is independent of $y$, the above formulas reduce to
+{\small\begin{align}\label{eq:thermo_variables_barotropic}
+\begin{aligned}
+    &\rho=-F,\quad p=F-bF_b,\quad w=\frac{bF_b-F}{F},\quad n=b,\quad \mu=F_b,\\[3pt]
+    & \frac{d p}{d \rho}=c_a^2=\frac{b^2F_{bb}}{bF_b}= w+w_b \frac{\rho}{\rho_b},\qquad T=y,\quad s=\sigma=0,\quad \Gamma=\frac{\partial p}{\partial \sigma}_{|\rho}=0.
+\end{aligned}\end{align}}
+As discussed for the general barotropic case, there is now only one indepedent thermodynamic variable, which can be any of $b$, $\rho$ etc, and hence no ambiguity in the variables to keep fixed when computing $dp/d\rho$.
+Therefore
+\begin{align}
+    c_s^2\overset{\substack{\text{shown}\\ \text{in general}}}{=}
+c_a^2:=\frac{dp}{d\rho}=\frac{\tfrac{dp}{db}\cancel{db}}{\tfrac{d\rho}{db}\cancel{db}}= \frac{b^2F_{bb}}{bF_b}=\frac{\tfrac{dp}{db}\cancel{\tfrac{db}{dt}dt}}{\tfrac{d\rho}{db}\cancel{\tfrac{db}{dt}dt}}=
+    \frac{\dot{\bar{p}}}{\dot{\bar{\rho}}}=:c_g^2= w-\frac{\dot{w}\bar{\rho}}{\dot{\bar{\rho}}}.
+\end{align}
+
 
 
 %-----------------------------------------------------------------------
@@ -287,7 +315,17 @@ Matching the velocity expansion \eqref{eq:expansion_u_4_velocity} in the fluid E
     v^\ell = \frac{1}{2}\epsilon_{i j k}\,\epsilon^{\ell \alpha j k}\,\partial_\alpha\pi^i = -\dot{\pi}^\ell\quad \Rightarrow \quad \theta=-\partial_\ell\dot{\pi}^\ell= -\nabla^2\dot{\pi}_L,\,\, \,\,v = -\dot{\pi}_L\,.
 \end{align}
 
-
+Finally we compute\todoAC{FINISH!!}
+\begin{align}
+    \delta\sigma = F_{yy}\delta y + ...
+\end{align}
+Finally let us compare variations of $\delta p$ and $\delta \rho$.
+Recalling that $\dot{\pi}^0=\tfrac{\mathcal{M}}{\mathcal{A}}(\partial_j\pi^j)+ H(\vec{x})$ and recalling the expression for $c_a^2$ and $\Gamma$ and doing the math we miracoulously find
+\begin{align}
+    \delta p = c_a^2 \delta\rho + \Gamma \delta\sigma .
+\end{align}
+where we must identify $\delta \sigma = by H(x)$.
+The entropy fluctuations are thus the leftover of the out integration f $\pi^0$.
 %------------------------------------------------------------------------
 \subsubsection{Continuity \& Euler equation in the fluid EFT}\todotag{Finish section}
 %---------------------------------------------------------------------
