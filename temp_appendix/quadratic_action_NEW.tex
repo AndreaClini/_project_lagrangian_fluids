@@ -1,0 +1,189 @@
+%=======================================================================
+\subsection{Quadratic action for phonons}
+%======================================================================
+%
+In this section we use the expansions \eqref{eq:expansions_b_y} to expand the action \eqref{eq:eft_action_exact} up to second order in phonon fields $\pi^\alpha \pi^\beta$ and mixed order in metric perturbations $h_{\mu\nu}\,\pi^\alpha$.
+To get some intuition we first present the flat-spacetime case, since formulas are cleaner and  ultimately exact in the limit $\rho/ M_{Pl}^{4}\to0$.
+
+%-----------------------------------------------------------------
+\subsubsection{Quadratic action in flat spacetime}
+%-------------------------------------------------------
+%
+We refer to the full computation in curved spacetime below not to repeat the same steps.
+In flat spacetime $a=1$ and $h_{\mu\nu}=0$, so that the last line \eqref{eq:integrating_part_time_quadratic_action} vanishes.
+Moreover the conservation of Noether currents \eqref{eq:conservation_noether_current_background_eft}-\eqref{eq:eolvution_y_background} at the background level always implies $\tfrac{d}{d\tau}(yF_y)=0$, so that also the first term in \eqref{eq:integrating_part_time_quadratic_action} vanishes.
+The final expression for the quadratic action in flat spacetime is then
+{\small\begin{align}
+\begin{aligned}
+    S^{(2)}&=\int d^4x \frac{(\rho+p)}{2}\bigg\{(\dot{\pi}^i)^2 - \mathcal{C} (\partial_j\pi^j)^2 
+    + (\dot{\pi}^0)^2 \mathcal{A}
+    - 2\mathcal{M}\dot{\pi}^0 (\partial_j \pi^j)
+    \bigg\},
+\end{aligned}
+\end{align}}
+for $\rho= -F + y F_y$, $p= F - b F_b$, and 
+{\small\begin{align}\label{eq:mixing_coefficients_entropy_phonons}
+\begin{aligned}
+    &\mathcal{C} = -\frac{b^2F_{bb}}{(yF_y-bF_b)},\quad 
+    \mathcal{A} = \frac{y^2F_{yy}}{(yF_y-bF_b)} = \frac{T\, \frac{\partial\rho }{\partial T}}{\rho+p},\quad
+    \mathcal{M} = \frac{(yF_y-byF_{by})}{(yF_y-bF_b)}.
+\end{aligned}
+\end{align}}
+Transverse modes have no dynamics nor metric terms to couple to, and simply solve
+\begin{equation}
+    (\bar{\rho}+\bar{p})\dot{\pi}_\perp^j=\text{const}.
+\end{equation}
+The entropy field $\pi^0$ is also non-dynamical and the resulting constraint equation gives\answertag{Note the crucial role of $E(x)$ below!}
+\begin{align}\label{eq:integrate_out_entropy_flat_spacetime}
+    \dot{\pi}^0 = \frac{\mathcal{M}}{\mathcal{A}} (\partial_j \pi^j) +  \mathcal{E}{E(\mathbf{x})}\,,\quad \mathcal{E}:=\frac{1}{(\rho+p)\mathcal{A}} =\frac{1}{y^2F_{yy}},
+\end{align}
+for a function of space only $E(\mathbf{x})$ directly proportional to entropy fluctuations as shown in \eqref{eq:rho_p_sigma_fluctuations_vs_phonon_entropy_field}.
+After solving the constraint, the action for the coordinate $\pi^i$ becomes
+{\small
+\begin{align}
+    S^{(2)}&= \int d^4x \frac{(\rho+p)}{2}\Big[(\dot{\pi}^i)^2 - c_s^2 (\partial_j\pi^j)^2 +\mathcal{A}\mathcal{E}^2\big(E(\mathbf{x})\big)^2\Big], \quad \text{for}\quad c_s^2 = \mathcal{C} + \frac{\mathcal{M}^2}{\mathcal{A}}.
+\end{align}
+}
+We note the entropy contributions both to the speed of sound and to the total action are always positive in \emph{physical} situations.
+Indeed $\mathcal{M}^2$ is a true square and, recalling $y\equiv T$ is the conjugate variable to the generalized entropy, we have
+\begin{equation}\label{eq:entropy_contribution_always_positive}
+    \mathcal{A}= \frac{T\, \frac{\partial\rho }{\partial T}}{\rho+p}\geq 0 \quad\text{provided}\quad
+    \begin{cases}
+        \rho+p\geq 0 \quad(\text{no ghosts}),\\
+        \frac{\partial\rho }{\partial T} \geq 0 \quad(\text{positive `generalized' heat capacity}).
+    \end{cases} 
+\end{equation}
+Finally we confirm the speed of sound $c_s^2$, defined as the coefficient of the gradient term of the fluctuations above, always matches the thermodynamical definition of \emph{adiabatic} sound speed \eqref{eq:adiabatic_cs_nonadiabatic_pressure}, namely
+\begin{align}\label{eq:cs_equiv_ca_flat_spacetime}
+    c_a^2:= \frac{\partial p}{\partial \rho}_{\mid \sigma} \overset{\text{proved before}}{=}\frac{-b^2F_{bb} F_{yy}+(F_y-bF_{yb})^2}{F_{yy}\,(yF_y-bF_b)} \overset{\text{easy check}}{\equiv} c_s^2.
+\end{align}
+This is expected: longitudinal phonons, i.e. sound waves, do propagate with the speed of sound!
+
+
+
+
+%-----------------------------------------------------------------
+\subsubsection{Quadratic action in curved spacetime}
+\label{sec:qudratic_action_curved_spacetime}
+%--------------------------------------------------------------
+%
+
+We now consider a general perturbed FRW metric written as in \eqref{eq:general_perturbed_FLRW_metric} and expand the action up to quadratic order  $\pi^\alpha \pi^\beta,\,h_{\mu\nu}\,\pi^\alpha$ for fluid perturbations
+{\small\begin{align}
+\begin{aligned}
+    S&=\int d^4x \sqrt{-g} F(b,y) = \int d^4x\,a^4 \big[1+\tfrac12 (h^{ii}-h^{00}) \big] F(\bar{b}(1+\delta b), \bar{y}(1+\delta y))
+    \\
+    &= \int \!\!\!d^4\!x\, a^4 \!\big[1+\tfrac12 (h^{ii}-h^{00}) \big]
+    \Bigg[ F(\bar{b}, \bar{y}) + (\bar{b}F_b)  (\delta b^{(1)} + \delta b^{(2)}) + (\bar{y}F_y) (\delta y^{(1)} + \delta y^{(2)})\\
+    &\,\,\qquad\qquad\qquad\qquad\qquad\qquad+ \tfrac12 (\bar{b}^2 F_{bb})(\delta b^{(1)})^2 + \tfrac12 (\bar{y}^2 F_{yy}) (\delta y^{(1)})^2
+    + (\bar{b}\bar{y} F_{by}) \delta b^{(1)} \delta y^{(1)} \Bigg].
+\end{aligned}
+\end{align}}
+Inserting the expansions \eqref{eq:expansions_b_y} for $b$ and $y$, the quadratic part of the action is then
+{\small\begin{align}
+\begin{aligned}
+    S^{(2)}&=\int d^4x\,\, a^4 \bigg\{
+        (\bar{b}F_b) \tfrac12(h^{ii}-h^{00}) \Big[(\partial_j \pi^j) - \tfrac12 h^{ii}\Big]
+        + (\bar{y}F_y) \tfrac12 (h^{ii}-h^{00}) \Big[\tfrac12 h^{00}+ \dot{\pi}^0\Big]\\
+    &\quad + (\bar{b}F_b) \Big[ - h^{0 i} \dot{\pi}^i - \tfrac12  h^{ii} (\partial_j \pi^j) - \tfrac12 (\dot{\pi}^i)^2 + \tfrac12 (\partial_j \pi^j)^2 -\tfrac12 \partial_i\pi^j\partial_j\pi^i\Big]
+    \\
+    &\quad + (\bar{y}F_y) \Big[ \tfrac12 h^{00}\dot{\pi}^0+ h^{0 i} \dot{\pi}^i + \tfrac12 (\dot{\pi}^i)^2 -\partial_j\pi^0\dot{\pi}^j\Big]
+    + \tfrac12 (\bar{b}^2 F_{bb})\Big[ (\partial_j \pi^j) - \tfrac12 h^{ii}\Big]^2
+    \\
+    &\quad + \tfrac12 (\bar{y}^2 F_{yy})\Big[\tfrac12 h^{00}+ \dot{\pi}^0\Big]^2
+    + (\bar{b}\bar{y} F_{by}) \Big[(\partial_j \pi^j) - \tfrac12 h^{ii}\Big]\Big[\tfrac12 h^{00}+ \dot{\pi}^0\Big]
+        \bigg\}.
+\end{aligned}
+\end{align}}
+Dropping further second orders in metric perturbations, highlighting cancellations and {\color{blue} integrating by parts in space}\footnote{\label{fn:integrating_parts_space_backround}Space derivatives yield no further terms since the background isspatially homogenous.}, we get
+{\small\begin{align}
+\begin{aligned}
+    S^{(2)}=
+    \int d^4x\,\, a^4 \bigg\{&
+        (\bar{b}F_b) \big[\redcancel{\tfrac12h^{ii}(\partial_j \pi^j)}-\tfrac12 h^{00}(\partial_j \pi^j)\big]
+        + (\bar{y}F_y) \big[\tfrac12 h^{ii} \dot{\pi}^0\greencancel{-\tfrac12 h^{00}\dot{\pi}^0} \big]\\
+    &\quad + (\bar{b}F_b) \Big[ - h^{0 i} \dot{\pi}^i \redcancel{-\tfrac12  h^{ii}(\partial_j \pi^j)} - \tfrac12 (\dot{\pi}^i)^2 + \bluecancel{\tfrac12 (\partial_j \pi^j)^2} -\bluecancel{\tfrac12 \partial_i\pi^j\partial_j\pi^i}\Big]
+    \\
+    &\quad + (\bar{y}F_y) \Big[ \greencancel{\tfrac12 h^{00}\dot{\pi}^0}+ h^{0 i} \dot{\pi}^i + \tfrac12 (\dot{\pi}^i)^2 -\partial_j\pi^0\dot{\pi}^j\Big]
+    \\
+    &\quad + \tfrac12 (\bar{b}^2 F_{bb})\Big[ (\partial_j \pi^j)^2 - h^{ii}(\partial_j \pi^j)\Big]
+    + \tfrac12 (\bar{y}^2 F_{yy})\Big[h^{00} \dot{\pi}^0+ (\dot{\pi}^0)^2\Big]\\
+    &\quad+ (\bar{b}\bar{y} F_{by}) \Big[ \dot{\pi}^0(\partial_j \pi^j) - \tfrac12 h^{ii}\dot{\pi}^0 + \tfrac12 h^{00} (\partial_j\pi^j)\Big]
+        \bigg\}.
+\end{aligned}
+\end{align}}
+Collecting terms $\pi^\alpha\pi^\beta$ and $\pi^\alpha h_{\mu\nu}$, and integrating by parts in space\footnotemark[\getrefnumber{fn:integrating_parts_space_backround}] and in time the term $\partial_j \pi^0\dot{\pi}^j$ we eventually get
+{\small\begin{align}\label{eq:integrating_part_time_quadratic_action}
+\begin{aligned}
+    S^{(2)}&=\int d^4x\, -(\partial_j \pi^j\, \pi^{0})\graycancel{\tfrac{d}{d\tau}(a^4yF_y)}\\
+    &+a^4\,\bigg\{
+    \tfrac12 (yF_y-bF_b) (\dot{\pi}^i)^2+ \tfrac12 b^2 F_{bb} (\partial_j \pi^j)^2 +\tfrac12 y^2 F_{yy} (\dot{\pi}^0)^2+(b y F_{by}-yF_y) (\dot{\pi}^0 \partial_j \pi^j)\bigg\}\\
+    &+ a^4\,\,\bigg\{
+    -\tfrac12 b^2 F_{bb} h^{ii}(\partial_j \pi^j)
+    + \tfrac12\!\left(-\bar{b}F_b + \bar{b}\bar{y}F_{by}\right) h^{00}(\partial_j \pi^j)+\left(\bar{y}F_y - \bar{b}F_b\right) h^{0 j}\,\dot{\pi}^j\\
+    &\qquad\qquad +\tfrac12\!\left(\bar{y}F_y - \bar{b}\bar{y}F_{by}\right) h^{ii}\dot{\pi}^0
+    + \tfrac12 y^2 F_{yy} h^{00}\dot{\pi}^0
+    \bigg\}.
+\end{aligned}
+\end{align}}
+Crucially, even in a general curved spacetime we pick up no extra term
+{\small\begin{align}\label{eq:nontrivial_integ_by_part_time_curved}
+    \tfrac{d}{d\tau}(a^4yF_y)=\tfrac{d}{d\tau}\Big[\underbrace{(ay)}_{=\text{const}}\cdot \underbrace{(a^3F_y)}_{=\text{const}}\Big]=0
+\end{align}}
+since at the background level $F_y\propto a^{-3}$ from the conservation of entropy current \eqref{eq:conservation_noether_current_background_eft_entropy} and $y\propto a^{-1}$ from \eqref{eq:evolution_y_background_from_definition} if $\bar{\varphi}^0=\tau$.
+
+Note we could also integrate by parts in space only, and then integrated out directly the non-dynamical entropy field $\pi^0$.
+Both procedures ultimately yield the same expression after resolving the constraint for $\pi^0$, but the former makes more evident the background-evolution effect and the flat-spacetime limit.
+
+Also note that only \emph{longitudinal} modes $\pi^j_{||}\propto\, \partial_j\pi^j$ are dynamical.
+Transverse modes $\pi^j_{\perp}$ simply mix with vector metric perturbations $h^{0j}$ with resulting equation of motion
+{\small\begin{align}\label{eq:eom_transverse_phonons}
+    a^4\,\big(\bar{\rho}+\bar{p}\big)\,\big(\dot{\pi}_\perp^j + h^{0j}\,\big)=\text{const}\,.
+\end{align}}
+This is expected since vorticity in the fluid sources vector modes in the metric and viceversa.
+In the following we thus restrict to longitudinal modes $\pi_{||}^j$.
+
+Now we gather together the effective combined perturbations of $\pi^i$ and $h_{\mu\nu}$, dropping terms $O(h^2)$, and collect an overall factor $\rho+p$ to highlight the effect of ghosts.
+The final form of the action is 
+{\small\begin{align}\label{eq:quadrati_action_final_with_entropy_field}
+\begin{aligned}
+     S^{(2)}&=\int\! d^4x\, a^4\frac{\rho+p}{2}\bigg\{
+    (\dot{\pi}^j+h^{0j})^2 -\mathcal{C}(\partial_j \pi^j-\tfrac12 h^{ii})^2 \\[2.5pt]
+    &\qquad\qquad\qquad \qquad + \mathcal{A} (\dot{\pi}^0+\tfrac12 h^{00})^2 - 2\mathcal{M}(\dot{\pi}^0+\tfrac12 h^{00}) (\partial_j \pi^j-\tfrac12 h^{ii}) \bigg\},
+\end{aligned}
+\end{align}}
+where the mixing coefficients $\mathcal{C},\mathcal{A},\mathcal{M}$ are defined as in \eqref{eq:mixing_coefficients_entropy_phonons}.
+%
+The constraint equation for the non-dynamical field $\pi^0$ now reads
+{\small\begin{align}\label{eq:integrate_out_entropy_curved_spactime}
+\begin{aligned}
+     (\dot{\pi}^0+\tfrac12 h^{00}) = \frac{\mathcal{M}}{\mathcal{A}}(\partial_j \pi^j-\tfrac12 h^{ii}) + \mathcal{E}\,{E(\mathbf{x})},\quad \mathcal{E}:=\frac{1}{a^4(\rho+p)\mathcal{A}} = \frac{1}{a^4 y^2 F_{yy}}\,,
+\end{aligned}
+\end{align}}
+for a function of space only $E(\mathbf{x})$ directly proportional to entropy fluctuations as shown in \eqref{eq:rho_p_sigma_fluctuations_vs_phonon_entropy_field}.
+Resolving the constraint and plugging it back into the action, we get the final action for phonons
+{\small\begin{align}\label{eq:quadrati_action_final_integrated_out_entropy_field}
+\begin{aligned}
+     S^{(2)}&=\int\! d^4x\, a^4\frac{\rho+p}{2}\bigg\{
+    (\dot{\pi}^j+h^{0j})^2 -\big(\underbrace{\mathcal{C}+\tfrac{\mathcal{M}^2}{\mathcal{A}}}_{=:c_s^2}\big)(\partial_j \pi^j-\tfrac12 h^{ii})^2  + \mathcal{A}\mathcal{E}^2 E(\mathbf{x})^2\bigg\}.
+\end{aligned}
+\end{align}}
+The entropy contribution to the gradient coefficient $c_s^2$ and to the total action is always positive in \emph{physical} situations as discussed in \eqref{eq:entropy_contribution_always_positive}, and the gradient coefficient always matches the thermodynamical definition of \emph{adiabatic} sound speed $c_a^2\equiv c_s^2$ as in \eqref{eq:cs_equiv_ca_flat_spacetime}.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
