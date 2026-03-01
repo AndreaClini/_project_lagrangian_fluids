@@ -56,3 +56,22 @@ Alternatively, we could simply define $c_s^2$ as the effective coefficients for 
 \end{align}
 to get an expression for $\Gamma \delta\sigma$ in terms of 5-essence variables.
 If I am not retarded, we should hopefully recover the above relation for $\dot{\delta\sigma}$ in terms of $v_\phi+\text{(metric)}$ confirming the two ways are indeed equivalent.
+
+
+%=====================================
+\subsection{Matching via $c_a^2=1$}
+%=======================================
+
+Differentiating an equation of state of the form $w=w(b)$ wrt $y$ and $b$ respectively we find the relations
+\begin{align}
+    y^2F_{yy}=\tfrac{1}{w}(yF_y-byF_{by}), \quad b^2F_{bb}=w(bF_b-byF_{by})+bw_b(F-yF_y)\,.
+\end{align}
+Plugging into the expression for $c_a^2$ we find 
+\begin{align}
+    c_a^2=w+w_b\frac{-F+yF_y}{yF_y-bF_b}=w+bw_b\tfrac{1}{1+w}\overset{!}{=}1\,\,\Rightarrow\,\,\frac{dw}{d\log b}=1-w^2.
+\end{align}
+This is integrated to give
+\begin{align}
+    w=\frac{C(b/b_0)^2-1}{C(b/b_0)^2+1},\quad C=\frac{1+w_0}{1-w_0}.
+\end{align}
+This is quite weird though, since $b\propto a^{-3}$ it seems we could get the behavior of $w=w(a)$ without knowing the potential $V$ at all

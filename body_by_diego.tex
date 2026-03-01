@@ -24,7 +24,7 @@ This allows to define the flow velocity orthogonal to the constant $\Phi^I$ surf
 J^\mu_n=b u^\mu\quad \rm{s.t}\quad u^\mu u_\mu=-1\ ,
 \end{equation}
 where the definition of the current makes it manifest that $b$ is the comoving number density.
-In the barotropic case $b$ also coincides with the entropy density, and it is conserved in the absence of dissipation. The entropy per particle $\sigma=s/n$ is exactly constant in this case, and the entropy is directly proportional to the number density $s\propto n$.
+In the barotropic case $b$ also coincides with the entropy density, and it is conserved in the absence of dissipation. The entropy per particle $\sigma=s/n$ is constant in time  and space in this case, and the entropy is directly proportional to the number density $s\propto n$.
 
 The action is then specified by a single function
 \begin{equation}
@@ -91,7 +91,15 @@ which allow us to define a new invariant
 \begin{equation}
 y=u^\mu\partial_\mu\Phi^0
 \end{equation}
-which plays the role of the temperature or the chemical potential. This quantity will control the entropy per particle independently on the particle number density which is always controlled by $b$ defined in Eq.~\eqref{eq:b}.
+which should be thought as the conjugate varibale to the entropy. Indeed the entropy current is nothing else than the Noether current associated to the shift symmetry in Eq.~\eqref{eq:shifttime}
+\begin{equation}
+J_s^{\mu}=F_y u_\mu\quad \rm{s.t.}\quad \nabla_\mu J^\mu_s=0\ .
+\end{equation}
+The entropy per particle is not constant in this case, and can be identified as
+\begin{align}
+    \sigma=\frac{s}{n}=\frac{F_y}{b}\ .
+\end{align}
+This quantity will control the entropy per particle independently on the particle number density which is always controlled by $b$ defined in Eq.~\eqref{eq:b}.
 
 The action is now described by a single function of two scalar quantities
 \begin{equation}
@@ -111,14 +119,7 @@ so that
 w=\frac{ F- b F_b}{- F+yF_y}\,. 
 \end{equation}
 
-Notice that in this case the presence of $y$ makes the entropy per particle not fixed by the equation of state but still conserved along the flow lines as expected in the absence of dissipation. In the EFT language the entropy per particle current is nothing else than the Noether current associated to the shift symmetry in Eq.~\eqref{eq:shifttime}
-\begin{equation}
-J_s^{\mu}=F_y u_\mu\quad \rm{s.t.}\quad \nabla_\mu J^\mu_s=0\ .
-\end{equation}
-The entropy per particle is not constant in this case, and it can be identified as
-\begin{align}
-    \sigma=\frac{s}{n}=\frac{F_y}{b}\ .
-\end{align}
+Notice that in this case the presence of $y$ makes the entropy per particle not fixed by the equation of state but still conserved along the flow lines as expected in the absence of dissipation. 
 The adiabatic sound speed is then by definition
 \begin{equation}
 c_b^2:=\frac{dp}{d\rho}_{\mid\sigma}=w+\rho\frac{dw}{d\rho}_{\mid\sigma}=\frac{-b^2F_{bb} F_{yy}+(F_y-bF_{yb})^2}{F_{yy}\,(yF_y-bF_b)} = \frac{b\,p_b \,y\rho_y + (y\,p_y)^2}{y \rho_y (\rho+p)}\,.
@@ -177,13 +178,13 @@ In order to understand non barotropic fluids it is important to write the pressu
 where we defined $c_s^2=\partial p/\partial \rho\vert_\sigma$ is exactly the as the speed of sound appearing in the phonon Lagrangian defined in Eq.~\eqref{eq:csnonbaro}. In addition to the speed of sound the pressure fluctuation receive contribution from the fluctuation of the entropy mode $\Gamma=\partial p/\partial \sigma\vert_\rho$. 
 Now we can write the continuity and Euler equation (see appendix).
 
-Since the entropy is conserved along the flow we can write the equation in comoving gauge $(\delta p=0)$ and eliminate the non-propagating entropy fluctuation to get an expression for the sound speed similar to the one in 2.34. {\bf I would like to see the equations for the density constrast with $\Gamma$} {\bf I would like to do the gauging of the fluid with gravity showing that the phonons are identified with the adiabatic curvature mode a' la Weinberg and hence phonon scattering satisfies soft theorems as well as the adibatic curvature mode as it is well known. Don't know if it in this language.}
+%Since the entropy is conserved along the flow we can write the equation in comoving gauge $(\delta p=0)$ and eliminate the non-propagating entropy fluctuation to get an expression for the sound speed similar to the one in 2.34. {\bf I would like to see the equations for the density constrast with $\Gamma$} {\bf I would like to do the gauging of the fluid with gravity showing that the phonons are identified with the adiabatic curvature mode a' la Weinberg and hence phonon scattering satisfies soft theorems as well as the adibatic curvature mode as it is well known. Don't know if it in this language.}
 
-Essentially we write something like {\bf okkio che la parametrizzazione e' una cazzata tremenda}
-\begin{equation}
-ds^2=-(1+2\Phi)dt^2+2a \partial_iB dt dx^i+ a^2 e^{2\xi} d\vec{x}^2    
-\end{equation}
-Now varying with respect to $\Phi$ gives the constraint on $\delta\rho$ and through that one shoud relate $\xi\sim\nabla\pi$. {\bf do this explicitly!} 
+%Essentially we write something like {\bf okkio che la parametrizzazione e' una cazzata tremenda}
+%\begin{equation}
+%ds^2=-(1+2\Phi)dt^2+2a \partial_iB dt dx^i+ a^2 e^{2\xi} d\vec{x}^2    
+%\end{equation}
+%Now varying with respect to $\Phi$ gives the constraint on $\delta\rho$ and through that one shoud relate $\xi\sim\nabla\pi$. {\bf do this explicitly!} 
 
 
 \subsection{Scalar fluids}

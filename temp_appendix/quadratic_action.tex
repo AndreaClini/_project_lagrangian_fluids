@@ -25,7 +25,7 @@ The final expression for the quadratic action in flat spacetime is then
     \bigg\}
 \end{aligned}
 \end{align}}
-for $\rho= -F + y F_y$, $p= F - b F_b$ and 
+for $\rho= -F + y F_y$, $p= F - b F_b$, and 
 {\small\begin{align}
 \begin{aligned}
     &\mathcal{C} = -\frac{b^2F_{bb}}{(yF_y-bF_b)},\quad 
@@ -37,28 +37,27 @@ Transverse modes have no dynamics nor metric terms to couple to, and simply solv
 \begin{equation}
     (\bar{\rho}+\bar{p})\dot{\pi}_\perp^j=\text{const}.
 \end{equation}
-The entropy field $\pi^0$ is also non-dynamical and the resulting constraint equation gives\todotag{Fix}
-\begin{align}
-    \dot{\pi}^0 = \frac{\mathcal{M}}{\mathcal{A}} (\partial_j \pi^j) +  \textcolor{red}{\text{const}\mapsto E(x^i)}
+The entropy field $\pi^0$ is also non-dynamical and the resulting constraint equation gives\answertag{Note the crucial role of $E(x)$ below!}
+\begin{align}\label{eq:integrate_out_entropy_flat_spacetime}
+    \dot{\pi}^0 = \frac{\mathcal{M}}{\mathcal{A}} \Big[(\partial_j \pi^j) +  {E(x^i)}\Big]\,,
 \end{align}
-\textcolor{red}{This constant actually saves the day!!!
-The constant is not physical and is reabsorbed in the factor $\gamma$ of the original definition $\varphi^0:=\gamma(t+\pi^0)$.} \todotag{NEED HUGE FIX FROM HERE ON}
+for a function of space only $E(\mathbf{x})$ directly proportional to entropy fluctuations as shown in \eqref{eq:rho_p_sigma_fluctuations_vs_phonon_entropy_field}.
 After solving the constraint, the action for the coordinate $\pi^i$ becomes
 {\small
 \begin{align}
-    S^{(2)}&= \int d^4x \frac{(\rho+p)}{2}\Big[(\dot{\pi}^i)^2 - c_s^2 (\partial_j\pi^j)^2 \Big], \quad \text{for}\quad c_s^2 = \mathcal{C} + \frac{\mathcal{M}^2}{\mathcal{A}}.
+    S^{(2)}&= \int d^4x \frac{(\rho+p)}{2}\Big[(\dot{\pi}^i)^2 - c_s^2 (\partial_j\pi^j)^2 +\tfrac{\mathcal{M}^2}{\mathcal{A}}\big(E(\mathbf{x})\big)^2\Big], \quad \text{for}\quad c_s^2 = \mathcal{C} + \frac{\mathcal{M}^2}{\mathcal{A}}.
 \end{align}
 }
-We note the entropy contribution to the speed of sound is always positive in \emph{physical} situations.
-Indeed $\mathcal{M}^2$ is a true square and, recalling $y\equiv T$, we have
+We note the entropy contributions both to the speed of sound and to the total action are always positive in \emph{physical} situations.
+Indeed $\mathcal{M}^2$ is a true square and, recalling $y\equiv T$ is the conjugate variable to the generalized entropy, we have
 \begin{equation}
     \mathcal{A}= \frac{T\, \frac{\partial\rho }{\partial T}}{\rho+p}\geq 0 \quad\text{provided}\quad
     \begin{cases}
         \rho+p\geq 0 \quad(\text{no ghosts}),\\
-        \frac{\partial\rho }{\partial T} \geq 0 \quad(\text{positive heat capacity}).
+        \frac{\partial\rho }{\partial T} \geq 0 \quad(\text{positive `generalized' heat capacity}).
     \end{cases} 
 \end{equation}
-Finally we confirm the speed of sound $c_s^2$, defined as the coefficient of the gradient term for the fluctuations above, always matches the thermodynamical definition of \emph{adiabatic} sound speed \eqref{eq:adiabatic_cs_nonadiabatic_pressure}, namely
+Finally we confirm the speed of sound $c_s^2$, defined as the coefficient of the gradient term of the fluctuations above, always matches the thermodynamical definition of \emph{adiabatic} sound speed \eqref{eq:adiabatic_cs_nonadiabatic_pressure}, namely
 \begin{align}\label{eq:cs_equiv_ca_flat_spacetime}
     c_a^2:= \frac{\partial p}{\partial \rho}_{\mid \sigma} \overset{\text{proved before}}{=}\frac{-b^2F_{bb} F_{yy}+(F_y-bF_{yb})^2}{F_{yy}\,(yF_y-bF_b)} \overset{\text{easy check}}{\equiv} c_s^2.
 \end{align}
@@ -69,6 +68,7 @@ This is expected: longitudinal phonons, i.e. sound waves, do propagate with the 
 
 %-----------------------------------------------------------------
 \subsubsection{Quadratic action in curved spacetime {\color{red}(in progress)}}
+\label{sec:qudratic_action_curved_spacetime}
 %--------------------------------------------------------------
 %
 {\color{red}[I am reporting the full computation here since I am not yet satisfied with the final form. It will eventually be moved to the computation appendix.]}\todotag{Read \& feel the struggle}
@@ -205,23 +205,26 @@ Resolving the constraint and plugging it back into the action we get
     + \tfrac12\!\left(\bar{b}\bar{y}F_{by}-\bar{b}F_b\right) h^{00}(\partial_j \pi^j)+\left(\bar{y}F_y - \bar{b}F_b\right) h^{0j}\,\dot{\pi}^j \bigg\},
 \end{aligned}
 \end{align}}
-where $\pi^0$ is given by
+where $\pi^0$ is given by\todotag{Need to add $\dot{\pi}^0=..+E(x)$ from here on}
 {\small
 \begin{align}
 \begin{aligned}
     \dot{\pi}^0
     =&\tfrac{1}{y^2F_{yy}}\bigg[(yF_y-byF_{by}) (\partial_j\pi^j)-\bigg(\tfrac{1}{a^4}\!\!\int d\tau(\partial_j \pi^j)\tfrac{d}{d\tau}(a^4yF_y)\bigg)\bigg]\\
-    &-\tfrac12 \tfrac{1}{y^2F_{yy}}\Big[\big({y}F_y - byF_{by}\big) h^{ii}+ y^2 F_{yy}\, h^{00}\Big],
+    &-\tfrac12 \tfrac{1}{y^2F_{yy}}\Big[\big({y}F_y - byF_{by}\big) h^{ii}+ y^2 F_{yy}\, h^{00}\Big] \textcolor{red}{+\tfrac{a^{-4}}{y^2F_{yy}}E(x^i)}
 \end{aligned}
 \end{align}}
-so that the ultimate contribution of the entropy field $\pi^0$ to the action is
+\textcolor{red}{for a function $E(x^i)$ of space only to be related to entropy fluctuations.}
+The ultimate contribution of the entropy field $\pi^0$ to the action is
 {\small
 \begin{align}
 \begin{aligned}
     -\tfrac12 a^4y^2F_{yy}\big(\dot{\pi}^0\big)^2
     &=-\tfrac{1}{2}\tfrac{a^4}{y^2F_{yy}}\bigg[(yF_y-byF_{by}) (\partial_j\pi^j)-\bigg(\tfrac{1}{a^4}\!\!\int\! d\tau\,(\partial_j \pi^j)\tfrac{d}{d\tau}(a^4yF_y)\bigg)\bigg]^2\\
     &\quad+\tfrac12 \tfrac{a^4}{y^2F_{yy}}\Big[\big({y}F_y - byF_{by}\big) h^{ii}+ y^2 F_{yy}\, h^{00}\Big]\\
-    &\quad\qquad\cdot \bigg[(yF_y-byF_{by}) (\partial_j\pi^j)-\bigg(\tfrac{1}{a^4}\!\!\int\! d\tau\,(\partial_j \pi^j)\tfrac{d}{d\tau}(a^4yF_y)\bigg)\bigg]\,.
+    &\quad\qquad\cdot \bigg[(yF_y-byF_{by}) (\partial_j\pi^j)-\bigg(\tfrac{1}{a^4}\!\!\int\! d\tau\,(\partial_j \pi^j)\tfrac{d}{d\tau}(a^4yF_y)\bigg)\bigg]\,
+    \\
+    &\textcolor{red}{+E...}
 \end{aligned}
 \end{align}}
 %
@@ -243,7 +246,8 @@ for
     -\tfrac{y^2F_{yy}}{yF_y-bF_b}\big(\dot{\pi}^0\big)^2
     &=-\tfrac{1}{y^2F_{yy}(yF_y-bF_b)}\bigg[(yF_y-byF_{by}) (\partial_j\pi^j)-\bigg(\tfrac{1}{a^4}\!\!\int\! d\tau\,(\partial_j \pi^j)\tfrac{d}{d\tau}(a^4yF_y)\bigg)\bigg]^2\\
     &\quad+\tfrac{1}{y^2F_{yy}(yF_y-bF_b)}\Big[\big({y}F_y - byF_{by}\big) h^{ii}+ y^2 F_{yy}\, h^{00}\Big]\\
-    &\quad\qquad\cdot \bigg[(yF_y-byF_{by}) (\partial_j\pi^j)-\bigg(\tfrac{1}{a^4}\!\!\int\! d\tau\,(\partial_j \pi^j)\tfrac{d}{d\tau}(a^4yF_y)\bigg)\bigg]\,.
+    &\quad\qquad\cdot \bigg[(yF_y-byF_{by}) (\partial_j\pi^j)-\bigg(\tfrac{1}{a^4}\!\!\int\! d\tau\,(\partial_j \pi^j)\tfrac{d}{d\tau}(a^4yF_y)\bigg)\bigg]\\
+    &\textcolor{red}{+E...}
 \end{aligned}
 \end{align}}
 Several cancellations and simplifications arise and the speed of sound pops up $c_a^2$ showing $h^{ii}$ is a modulation of $\nabla\pi$.
