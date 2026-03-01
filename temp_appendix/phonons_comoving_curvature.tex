@@ -11,32 +11,15 @@ From \eqref{eq:peculiar_velocity_fluid_vs_phonons} we identify the comoving curv
     \mathcal{R} \overset{\text{Newt.}}{=} \phi -\mathcal{H}v = \phi + \mathcal{H}\,\dot{\pi}_L\,.
 \end{equation}
 %
-In Newtonian gauge \eqref{eq:newtonian_gauge_metric}, the quadratic lagrangian becomes 
+In Newtonian gauge \eqref{eq:newtonian_gauge_metric} off-diagonal terms vanish and the quadratic lagrangian \eqref{eq:quadrati_action_final_integrated_out_entropy_field} reads 
 {\small
 \begin{align}
 \begin{aligned}
-    S^{(2)}=
-    &\int d^4x\,\, a^4\,\bigg\{
-    \tfrac12 (yF_y-bF_b) (\dot{\pi}^i)^2+ \tfrac12 b^2 F_{bb} (\partial_j \pi^j)^2\bigg\} -\tfrac12 a^4 y^2F_{yy} (\dot{\pi}^0)^2\\
-    &\quad + a^4\,\,\bigg\{3\phi(\partial_j \pi^j)\bar{b}^2 F_{bb}\,
-    +\psi(\partial_j \pi^j)\!\left(\bar{b}F_b - \bar{b}\bar{y}F_{by}\right) \bigg\}\,,
+   S^{(2)}&=\int\! d^4x\, a^4\frac{\rho+p}{2}\bigg\{
+    (\dot{\pi}^j\graycancel{+h^{0j}})^2 -c_s^2(\partial_j \pi^j+3\phi)^2  + \mathcal{A}\mathcal{E}^2 E(\mathbf{x})^2\bigg\}.
 \end{aligned}
 \end{align}}
-where
-{\small
-\begin{align}
-\begin{aligned}
-     -\tfrac12 a^4y^2F_{yy}\big(\dot{\pi}^0\big)^2
-    &=-\tfrac{1}{2}\tfrac{a^4}{y^2F_{yy}}\bigg[(yF_y-byF_{by}) (\partial_j\pi^j)-\bigg(\tfrac{1}{a^4}\!\!\int\! d\tau\,(\partial_j \pi^j)\tfrac{d}{d\tau}(a^4yF_y)\bigg)\bigg]^2\\
-    &\quad-\tfrac{a^4}{y^2F_{yy}}\Big[\big({y}F_y - byF_{by}\big) 3\phi+ y^2 F_{yy}\, \psi\Big]\\
-    &\quad\qquad\cdot \bigg[(yF_y-byF_{by}) (\partial_j\pi^j)-\bigg(\tfrac{1}{a^4}\!\!\int\! d\tau\,(\partial_j \pi^j)\tfrac{d}{d\tau}(a^4yF_y)\bigg)\bigg]\,.
-\end{aligned}
-\end{align}}
-Taking $\psi=\phi$ at \emph{late times} and in the large scale limit, and simplifying terms we get\todotag{write}
-\begin{align}
-    ...
-\end{align}
-The equation of motion for phonons will be something like
+Taking $\psi=\phi$ at \emph{late times} and in the large scale limit, and simplifying terms the equation of motion for phonons will be something like
 \begin{align}
     \ddot{\pi}_L=-\underbrace{c_s^2 k^2\pi_L}_{\to0}+\text{friction}
 \end{align}
