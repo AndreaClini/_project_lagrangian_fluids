@@ -1,0 +1,39 @@
+%=======================================================================
+\subsection{Phonon hamiltonian \& fluid equations \textcolor{red}{(IN PROGRESS)}}
+%======================================================================
+%
+Having computed the quadratic action for phonons, we now derive the corresponding hamiltonian formulation and show the Hamilton equations for the field $\pi^\alpha$ are nothing else than the perturbed continuity and Euler equations in familar Boltzmann formulation.
+
+For convenience we temporarily report the final form of the action \eqref{eq:quadrati_action_final_with_entropy_field}
+{\small\begin{align}
+\begin{aligned}
+     S^{(2)}&=\int\! d^4x\, a^4\frac{\rho+p}{2}\bigg\{
+    (\dot{\pi}^j+h^{0j})^2 -\mathcal{C}(\partial_j \pi^j-\tfrac12 h^{ii})^2 \\[2.5pt]
+    &\qquad\qquad\qquad \qquad + \mathcal{A} (\dot{\pi}^0/\dot{\bar{\varphi}}^0+\tfrac12 h^{00})^2 - 2\mathcal{M}(\dot{\pi}^0/\dot{\bar{\varphi}}^0+\tfrac12 h^{00}) (\partial_j \pi^j-\tfrac12 h^{ii}) \bigg\},
+\end{aligned}
+\end{align}}
+The conjugate fields are then 
+{\small\begin{align}\label{eq:conjugate_field_pi_with_entropy}
+\begin{aligned}
+    \beta^0&:=\frac{\delta L}{\delta \dot{\pi}^0}=a^4(\rho+p)/\dot{\bar{\varphi}}^0\bigg\{\mathcal{A}\big(\dot{\pi}^0/\dot{\bar{\varphi}}^0+\tfrac12 h^{00}\big) - \mathcal{M}\big(\partial_j \pi^j-\tfrac12 h^{ii}\big)\bigg\} 
+    = \underbrace{\Big(\frac{yb a^4}{\dot{\bar{\varphi}}^0}\Big)}_{=\text{const}}\, \delta\sigma,
+    \\[2.5pt]
+    \beta^\ell&:=\frac{\delta L}{\delta \dot{\pi}^\ell}=a^4(\rho+p)\bigg\{\dot{\pi}^\ell+h^{0\ell}\bigg\} \overset{!}{=}-a^4(\rho+p)v^\ell\,.
+\end{aligned}
+\end{align}}
+Using \eqref{eq:rho_p_fluctuations_via_b_y}-\eqref{eq:rho_p_sigma_fluctuations_vs_phonon_entropy_field} and \eqref{eq:peculiar_velocity_fluid_vs_phonons}, we immediately identify the conjugate fields with entropy perturbation and peculiar velocity respectively as indicated in the second equality.
+Notably the proportionality coefficient $\beta^0\propto  \delta\sigma$ is constant since $b\propto a^{-3}$ from \eqref{eq:conservation_noether_current_background_eft_number} and $y\propto a^{-1}\dot{\bar{\varphi}}^0$ from \eqref{eq:evolution_y_background_from_definition} at the background level.
+
+
+
+
+
+
+
+
+
+
+
+
+
+

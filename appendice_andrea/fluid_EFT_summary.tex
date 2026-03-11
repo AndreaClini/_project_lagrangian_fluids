@@ -197,7 +197,7 @@ In fact this notion of entropy density has even wrong dimension $[F_y]=E^4$ and 
 In turn, the proportionality of $y$ versus the scale factor $a$ is in general different from the one of the Boltzmann temperature as discussed after \eqref{eq:bkg_scaling_y_coordinate}.
 
 
-%=============================================================================
+%=============================================================================()
 \subsection{Background evolution in the fluid EFT\textcolor{red}{(IN PROGRESS)}}\label{sec:bkg_evolution_fluid_EFT}
 %==============================================================================
 %
@@ -354,10 +354,12 @@ We also introduce the phonon potential to rewrite longitudinal (scalar) phonons
 \begin{align}\label{eq:phonon_potential}
     \pi_L=\nabla^{-2}\partial_\ell\pi^\ell, \quad \pi^\ell_{\text{||}}=\partial_\ell \pi_L,\quad  [\pi_L]=E^{-2}.
 \end{align}
-Matching the velocity expansion \eqref{eq:expansion_u_4_velocity} in the fluid EFT to the general expression \eqref{eq:velocity_decomposition} in pertrubed FLRW spacetime $au^\mu =(1+.., v^\ell)$, we identify the peculiar velocity and the velocity potential/divergence in terms of phonons as
+Matching the velocity expansion \eqref{eq:expansion_u_4_velocity} in the fluid EFT to the general expression \eqref{eq:velocity_decomposition} in pertrubed FLRW spacetime $au^\mu =(1\tfrac12 h^{00},h^{0\ell}+ v^\ell)$ and recalling \eqref{eq:general_perturbations_vs_SVT_decomposition}, we identify the peculiar velocity and the velocity potential/divergence in terms of phonons as
+{\small
 \begin{align}\label{eq:peculiar_velocity_fluid_vs_phonons}
-    v^\ell = \frac{1}{2}\epsilon_{i j k}\,\epsilon^{\ell \alpha j k}\,\partial_\alpha\pi^i = -\dot{\pi}^\ell\quad \Rightarrow \quad \theta=-\partial_\ell\dot{\pi}^\ell= -\nabla^2\dot{\pi}_L,\,\, \,\,v = -\dot{\pi}_L\,.
-\end{align}
+    h^{0\ell}+v^\ell = \frac{1}{2}\epsilon_{i j k}\,\epsilon^{\ell \alpha j k}\,\partial_\alpha\pi^i = -\dot{\pi}^\ell\quad \Rightarrow \quad \begin{array}{c} v^\ell=-(\dot{\pi}^\ell+h^{0\ell}),\quad v = -\dot{\pi}_L+B\,,\\[2.5pt]
+        \theta=\partial_\ell v^\ell=-\partial_\ell\big(\dot{\pi}^\ell+h^{0\ell}\big)= -\nabla^2\big(\dot{\pi}_L-B\big)\,.\end{array}
+\end{align}}
 
 Finally we recast the fluctuations in density $\rho=-F+yF_y$, pressure $p=F-bF_b$ and comoving entropy $\sigma=\tfrac{F_y}{b}$ as
 \begin{align}\label{eq:rho_p_fluctuations_via_b_y}
@@ -417,6 +419,12 @@ For simplicity we start in Newtonian gauge \eqref{eq:newtonian_gauge_metric} and
 %==========================================================================
 %
 \input{appendice_andrea/quadratic_action.tex}
+
+%==========================================================================
+%\subsection{Phonon Hamiltonian \& conservation equations}
+%==========================================================================
+%
+\input{appendice_andrea/hamiltonian_phonons.tex}
 
 
 \newpage

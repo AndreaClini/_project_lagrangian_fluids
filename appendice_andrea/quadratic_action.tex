@@ -135,14 +135,6 @@ since at the background level $F_y\propto a^{-3}$ from the conservation of entro
 Note we could also integrate by parts in space only, and then directly integrate out the non-dynamical entropy field $\pi^0$.
 Both procedures ultimately yield the same expression after resolving the constraint for $\pi^0$, but the former makes more evident the background effect of $\bar{\varphi}^0$ and the flat-spacetime limit.
 
-Also note that only \emph{longitudinal} modes $\pi^j_{||}\propto\, \partial_j\pi^j$ are dynamical.
-Transverse modes $\pi^j_{\perp}$ simply mix with vector metric perturbations $h^{0j}$ with resulting equation of motion
-{\small\begin{align}\label{eq:eom_transverse_phonons}
-    a^4\,\big(\bar{\rho}+\bar{p}\big)\,\big(\dot{\pi}_\perp^j + h^{0j}\,\big)=\text{const}\,.
-\end{align}}
-This is expected, since vorticity in the fluid sources vector modes in the metric and viceversa.
-In the following we thus restrict to longitudinal modes $\pi_{||}^j$.
-
 We now gather together the effective combined perturbations of $\pi^i$ and $h_{\mu\nu}$, dropping terms $O(h^2)$, and collect an overall factor $\rho+p$ to highlight the effect of ghosts.
 The final form of the action is 
 {\small\begin{align}\label{eq:quadrati_action_final_with_entropy_field}
@@ -161,7 +153,7 @@ The constraint equation for the non-dynamical field $\pi^0$ now reads
 \end{aligned}
 \end{align}}
 for a function of space only $E(\mathbf{x})$ directly proportional to entropy fluctuations as shown in \eqref{eq:rho_p_sigma_fluctuations_vs_phonon_entropy_field}.
-Resolving the constraint and plugging it back into the action, we get the final action for phonons
+Resolving the constraint and plugging it back into the action, we get the final action for both longitudinal and transverse modes $\pi^j=\pi^j_{||}+\pi^j_{\perp}$ is
 {\small\begin{align}\label{eq:quadrati_action_final_integrated_out_entropy_field}
 \begin{aligned}
      S^{(2)}&=\int\! d^4x\, a^4\frac{\rho+p}{2}\bigg\{
@@ -170,7 +162,12 @@ Resolving the constraint and plugging it back into the action, we get the final 
 \end{align}}
 The entropy contribution to the gradient coefficient $c_s^2$ and to the total action is always positive in \emph{physical} situations as discussed in \eqref{eq:entropy_contribution_always_positive}, and the gradient coefficient always matches the thermodynamical definition of \emph{adiabatic} sound speed $c_a^2\equiv c_s^2$ as in \eqref{eq:cs_equiv_ca_flat_spacetime}.
 
-
+Finally note that only \emph{longitudinal} modes $\pi^j_{||}\propto\, \partial_j\pi^j$ are dynamical.
+Transverse modes $\pi^j_{\perp}$ simply mix with vector metric perturbations $h^{0j}$ with resulting equation of motion
+{\small\begin{align}\label{eq:eom_transverse_phonons}
+    a^4\,\big(\bar{\rho}+\bar{p}\big)\,\big(\dot{\pi}_\perp^j + h^{0j}\,\big)=\text{const}\,.
+\end{align}}
+This is expected, since vorticity in the fluid sources vector modes in the metric and viceversa.
 
 
 
