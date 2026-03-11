@@ -84,14 +84,14 @@ Inserting the expansions \eqref{eq:expansions_b_y} for $b$ and $y$, the quadrati
 \begin{aligned}
     S^{(2)}&=\int d^4x\,\, a^4 \bigg\{
         (\bar{b}F_b) \tfrac12(h^{ii}-h^{00}) \Big[(\partial_j \pi^j) - \tfrac12 h^{ii}\Big]
-        + (\bar{y}F_y) \tfrac12 (h^{ii}-h^{00}) \Big[\tfrac12 h^{00}+ \dot{\pi}^0\Big]\\
+        + (\bar{y}F_y) \tfrac12 (h^{ii}-h^{00}) \Big[\dot{\pi}^0/\dot{\bar{\varphi}}^0+\tfrac12 h^{00}\Big]\\
     &\quad + (\bar{b}F_b) \Big[ - h^{0 i} \dot{\pi}^i - \tfrac12  h^{ii} (\partial_j \pi^j) - \tfrac12 (\dot{\pi}^i)^2 + \tfrac12 (\partial_j \pi^j)^2 -\tfrac12 \partial_i\pi^j\partial_j\pi^i\Big]
     \\
-    &\quad + (\bar{y}F_y) \Big[ \tfrac12 h^{00}\dot{\pi}^0+ h^{0 i} \dot{\pi}^i + \tfrac12 (\dot{\pi}^i)^2 -\partial_j\pi^0\dot{\pi}^j\Big]
+    &\quad + (\bar{y}F_y) \Big[ \tfrac12 h^{00}\dot{\pi}^0/\dot{\bar{\varphi}}^0+ h^{0 i} \dot{\pi}^i + \tfrac12 (\dot{\pi}^i)^2 -\dot{\pi}^j\,\partial_j\pi^0/\dot{\bar{\varphi}}^0\Big]
     + \tfrac12 (\bar{b}^2 F_{bb})\Big[ (\partial_j \pi^j) - \tfrac12 h^{ii}\Big]^2
     \\
-    &\quad + \tfrac12 (\bar{y}^2 F_{yy})\Big[\tfrac12 h^{00}+ \dot{\pi}^0\Big]^2
-    + (\bar{b}\bar{y} F_{by}) \Big[(\partial_j \pi^j) - \tfrac12 h^{ii}\Big]\Big[\tfrac12 h^{00}+ \dot{\pi}^0\Big]
+    &\quad + \tfrac12 (\bar{y}^2 F_{yy})\Big[\dot{\pi}^0/\dot{\bar{\varphi}}^0+\tfrac12 h^{00}\Big]^2
+    + (\bar{b}\bar{y} F_{by}) \Big[(\partial_j \pi^j) - \tfrac12 h^{ii}\Big]\Big[\dot{\pi}^0/\dot{\bar{\varphi}}^0+\tfrac12 h^{00}\Big]
         \bigg\}.
 \end{aligned}
 \end{align}}
@@ -101,55 +101,55 @@ Dropping further second orders in metric perturbations, highlighting cancellatio
     S^{(2)}=
     \int d^4x\,\, a^4 \bigg\{&
         (\bar{b}F_b) \big[\redcancel{\tfrac12h^{ii}(\partial_j \pi^j)}-\tfrac12 h^{00}(\partial_j \pi^j)\big]
-        + (\bar{y}F_y) \big[\tfrac12 h^{ii} \dot{\pi}^0\greencancel{-\tfrac12 h^{00}\dot{\pi}^0} \big]\\
+        + (\bar{y}F_y) \big[\tfrac12 h^{ii} \dot{\pi}^0/\dot{\bar{\varphi}}^0\greencancel{-\tfrac12 h^{00}\dot{\pi}^0/\dot{\bar{\varphi}}^0} \big]\\
     &\quad + (\bar{b}F_b) \Big[ - h^{0 i} \dot{\pi}^i \redcancel{-\tfrac12  h^{ii}(\partial_j \pi^j)} - \tfrac12 (\dot{\pi}^i)^2 + \bluecancel{\tfrac12 (\partial_j \pi^j)^2} -\bluecancel{\tfrac12 \partial_i\pi^j\partial_j\pi^i}\Big]
     \\
-    &\quad + (\bar{y}F_y) \Big[ \greencancel{\tfrac12 h^{00}\dot{\pi}^0}+ h^{0 i} \dot{\pi}^i + \tfrac12 (\dot{\pi}^i)^2 -\partial_j\pi^0\dot{\pi}^j\Big]
+    &\quad + (\bar{y}F_y) \Big[ \greencancel{\tfrac12 h^{00}\dot{\pi}^0/\dot{\bar{\varphi}}^0}+ h^{0 i} \dot{\pi}^i + \tfrac12 (\dot{\pi}^i)^2 -\dot{\pi}^j\,\partial_j\pi^0/\dot{\bar{\varphi}}^0\Big]
     \\
     &\quad + \tfrac12 (\bar{b}^2 F_{bb})\Big[ (\partial_j \pi^j)^2 - h^{ii}(\partial_j \pi^j)\Big]
-    + \tfrac12 (\bar{y}^2 F_{yy})\Big[h^{00} \dot{\pi}^0+ (\dot{\pi}^0)^2\Big]\\
-    &\quad+ (\bar{b}\bar{y} F_{by}) \Big[ \dot{\pi}^0(\partial_j \pi^j) - \tfrac12 h^{ii}\dot{\pi}^0 + \tfrac12 h^{00} (\partial_j\pi^j)\Big]
+    + \tfrac12 (\bar{y}^2 F_{yy})\Big[h^{00} \dot{\pi}^0/\dot{\bar{\varphi}}^0+ (\dot{\pi}^0/\dot{\bar{\varphi}}^0)^2\Big]\\
+    &\quad+ (\bar{b}\bar{y} F_{by}) \Big[ \dot{\pi}^0/\dot{\bar{\varphi}}^0(\partial_j \pi^j) - \tfrac12 h^{ii}\dot{\pi}^0/\dot{\bar{\varphi}}^0 + \tfrac12 h^{00} (\partial_j\pi^j)\Big]
         \bigg\}.
 \end{aligned}
 \end{align}}
 Collecting terms $\pi^\alpha\pi^\beta$ and $\pi^\alpha h_{\mu\nu}$, and integrating by parts in space\footnotemark[\getrefnumber{fn:integrating_parts_space_backround}] and in time the term $\partial_j \pi^0\dot{\pi}^j$ we eventually get
 {\small\begin{align}\label{eq:integrating_part_time_quadratic_action}
 \begin{aligned}
-    S^{(2)}&=\int d^4x\, -(\partial_j \pi^j\, \pi^{0})\graycancel{\tfrac{d}{d\tau}(a^4yF_y)}\\
+    S^{(2)}&=\int d^4x\, -(\partial_j \pi^j\, \pi^{0})\graycancel{\tfrac{d}{d\tau}(a^4yF_y/\dot{\bar{\varphi}}^0)}\\
     &+a^4\,\bigg\{
-    \tfrac12 (yF_y-bF_b) (\dot{\pi}^i)^2+ \tfrac12 b^2 F_{bb} (\partial_j \pi^j)^2 +\tfrac12 y^2 F_{yy} (\dot{\pi}^0)^2+(b y F_{by}-yF_y) (\dot{\pi}^0 \partial_j \pi^j)\bigg\}\\
+    \tfrac12 (yF_y-bF_b) (\dot{\pi}^i)^2+ \tfrac12 b^2 F_{bb} (\partial_j \pi^j)^2 +\tfrac12 y^2 F_{yy} (\dot{\pi}^0/\dot{\bar{\varphi}}^0)^2+(b y F_{by}-yF_y) (\dot{\pi}^0/\dot{\bar{\varphi}}^0 \partial_j \pi^j)\bigg\}\\
     &+ a^4\,\,\bigg\{
     -\tfrac12 b^2 F_{bb} h^{ii}(\partial_j \pi^j)
     + \tfrac12\!\left(-\bar{b}F_b + \bar{b}\bar{y}F_{by}\right) h^{00}(\partial_j \pi^j)+\left(\bar{y}F_y - \bar{b}F_b\right) h^{0 j}\,\dot{\pi}^j\\
-    &\qquad\qquad +\tfrac12\!\left(\bar{y}F_y - \bar{b}\bar{y}F_{by}\right) h^{ii}\dot{\pi}^0
-    + \tfrac12 y^2 F_{yy} h^{00}\dot{\pi}^0
+    &\qquad\qquad +\tfrac12\!\left(\bar{y}F_y - \bar{b}\bar{y}F_{by}\right) h^{ii}\dot{\pi}^0/\dot{\bar{\varphi}}^0
+    + \tfrac12 y^2 F_{yy} h^{00}\dot{\pi}^0/\dot{\bar{\varphi}}^0
     \bigg\}.
 \end{aligned}
 \end{align}}
 Crucially, even in a general curved spacetime we pick up no extra term
 {\small\begin{align}\label{eq:nontrivial_integ_by_part_time_curved}
-    \tfrac{d}{d\tau}(a^4yF_y)=\tfrac{d}{d\tau}\Big[\underbrace{(ay)}_{=\text{const}}\cdot \underbrace{(a^3F_y)}_{=\text{const}}\Big]=0
+    \tfrac{d}{d\tau}(a^4yF_y)=\tfrac{d}{d\tau}\Big[\underbrace{(ay\dot{\bar{\varphi}}^0)}_{=\text{const}}\cdot \underbrace{(a^3F_y)}_{=\text{const}}\Big]=0
 \end{align}}
-since at the background level $F_y\propto a^{-3}$ from the conservation of entropy current \eqref{eq:conservation_noether_current_background_eft_entropy} and $y\propto a^{-1}$ from \eqref{eq:evolution_y_background_from_definition} if $\bar{\varphi}^0=\tau$.
+since at the background level $F_y\propto a^{-3}$ from the conservation of entropy current \eqref{eq:conservation_noether_current_background_eft_entropy} and $y\propto a^{-1}\dot{\bar{\varphi}}^0$ from \eqref{eq:evolution_y_background_from_definition}.
 
-Note we could also integrate by parts in space only, and then integrated out directly the non-dynamical entropy field $\pi^0$.
-Both procedures ultimately yield the same expression after resolving the constraint for $\pi^0$, but the former makes more evident the background-evolution effect and the flat-spacetime limit.
+Note we could also integrate by parts in space only, and then directly integrate out the non-dynamical entropy field $\pi^0$.
+Both procedures ultimately yield the same expression after resolving the constraint for $\pi^0$, but the former makes more evident the background effect of $\bar{\varphi}^0$ and the flat-spacetime limit.
 
 Also note that only \emph{longitudinal} modes $\pi^j_{||}\propto\, \partial_j\pi^j$ are dynamical.
 Transverse modes $\pi^j_{\perp}$ simply mix with vector metric perturbations $h^{0j}$ with resulting equation of motion
 {\small\begin{align}\label{eq:eom_transverse_phonons}
     a^4\,\big(\bar{\rho}+\bar{p}\big)\,\big(\dot{\pi}_\perp^j + h^{0j}\,\big)=\text{const}\,.
 \end{align}}
-This is expected since vorticity in the fluid sources vector modes in the metric and viceversa.
+This is expected, since vorticity in the fluid sources vector modes in the metric and viceversa.
 In the following we thus restrict to longitudinal modes $\pi_{||}^j$.
 
-Now we gather together the effective combined perturbations of $\pi^i$ and $h_{\mu\nu}$, dropping terms $O(h^2)$, and collect an overall factor $\rho+p$ to highlight the effect of ghosts.
+We now gather together the effective combined perturbations of $\pi^i$ and $h_{\mu\nu}$, dropping terms $O(h^2)$, and collect an overall factor $\rho+p$ to highlight the effect of ghosts.
 The final form of the action is 
 {\small\begin{align}\label{eq:quadrati_action_final_with_entropy_field}
 \begin{aligned}
      S^{(2)}&=\int\! d^4x\, a^4\frac{\rho+p}{2}\bigg\{
     (\dot{\pi}^j+h^{0j})^2 -\mathcal{C}(\partial_j \pi^j-\tfrac12 h^{ii})^2 \\[2.5pt]
-    &\qquad\qquad\qquad \qquad + \mathcal{A} (\dot{\pi}^0+\tfrac12 h^{00})^2 - 2\mathcal{M}(\dot{\pi}^0+\tfrac12 h^{00}) (\partial_j \pi^j-\tfrac12 h^{ii}) \bigg\},
+    &\qquad\qquad\qquad \qquad + \mathcal{A} (\dot{\pi}^0/\dot{\bar{\varphi}}^0+\tfrac12 h^{00})^2 - 2\mathcal{M}(\dot{\pi}^0/\dot{\bar{\varphi}}^0+\tfrac12 h^{00}) (\partial_j \pi^j-\tfrac12 h^{ii}) \bigg\},
 \end{aligned}
 \end{align}}
 where the mixing coefficients $\mathcal{C},\mathcal{A},\mathcal{M}$ are defined as in \eqref{eq:mixing_coefficients_entropy_phonons}.
@@ -157,7 +157,7 @@ where the mixing coefficients $\mathcal{C},\mathcal{A},\mathcal{M}$ are defined 
 The constraint equation for the non-dynamical field $\pi^0$ now reads
 {\small\begin{align}\label{eq:integrate_out_entropy_curved_spactime}
 \begin{aligned}
-     (\dot{\pi}^0+\tfrac12 h^{00}) = \frac{\mathcal{M}}{\mathcal{A}}(\partial_j \pi^j-\tfrac12 h^{ii}) + \mathcal{E}\,{E(\mathbf{x})},\quad \mathcal{E}:=\frac{1}{a^4(\rho+p)\mathcal{A}} = \frac{1}{a^4 y^2 F_{yy}}\,,
+     (\dot{\pi}^0/\dot{\bar{\varphi}}^0+\tfrac12 h^{00}) = \frac{\mathcal{M}}{\mathcal{A}}(\partial_j \pi^j-\tfrac12 h^{ii}) + \mathcal{E}\,{E(\mathbf{x})},\quad \mathcal{E}:=\frac{1}{a^4(\rho+p)\mathcal{A}} = \frac{1}{a^4 y^2 F_{yy}}\,,
 \end{aligned}
 \end{align}}
 for a function of space only $E(\mathbf{x})$ directly proportional to entropy fluctuations as shown in \eqref{eq:rho_p_sigma_fluctuations_vs_phonon_entropy_field}.
