@@ -11,21 +11,24 @@ The metric has signature $-+++$.
 The conformal time is denoted by $\tau$ and differentiation with respect to it is denoted by $\dot{f}$.
 The proper time of a comoving observer is denoted by $t$, related to conformal time by $dt=a \,d\tau$, and differentiation with respect to it is denoted by $f'$.
 
-We parametrize the general perturbation to a homogeneous isotropic FLRW metric as
-{\small\begin{equation} \label{eq:metric_general_form_svt}
--\mathrm{d} s^{2}:=g_{\mu\nu}dx^\mu dx^\nu=a^{2}(\tau)\left[-(1+2 A) \,\mathrm{d} \tau^{2}+2 B_{i} \mathrm{~d} x^{i} \mathrm{~d} \tau+\left((1+2C)\delta_{ij}+2E_{ij}\right) \mathrm{d} x^{i} \,\mathrm{~d} x^{j}\right],
-\end{equation}}
-with SVT decomposition
-{\small\begin{equation*}
-\underbrace{A,\, C}_{\text {scalar }}, \quad
-B_{i}=\underbrace{\partial_{i} {B}}_{\text {scalar }}+\underbrace{\hat{B}_{i}}_{\text {vector }},\quad E_{i j}=\underbrace{\partial_{\langle i} \partial_{j\rangle} {E}}_{\text {scalar }}+\underbrace{\partial_{(i} \hat{E}_{j)}}_{\text {vector }}+\underbrace{\tilde{E}_{i j}}_{\text {tensor }},
-\end{equation*}}
+The SVT decomposition of a general perturbated FLRW metric is written as 
+{\small\begin{align} \label{eq:metric_general_form_svt}\begin{aligned}
+g_{\mu\nu}dx^\mu& dx^\nu=a^{2}(\tau)\left[-(1+2 A) \,\mathrm{d} \tau^{2}+2 B_{i} \mathrm{~d} x^{i} \mathrm{~d} \tau+\left((1+2C)\delta_{ij}+2E_{ij}\right) \mathrm{d} x^{i} \,\mathrm{~d} x^{j}\right],\\[3pt]
+&\underbrace{A,\, C}_{\text {scalar }}, \qquad
+B_{i}=\underbrace{\partial_{i} {B}}_{\text {scalar }}+\underbrace{\hat{B}_{i}}_{\text {vector }},\qquad E_{i j}=\underbrace{\partial_{\langle i} \partial_{j\rangle} {E}}_{\text {scalar }}+\underbrace{\partial_{(i} \hat{E}_{j)}}_{\text {vector }}+\underbrace{\tilde{E}_{i j}}_{\text {tensor }},
+\end{aligned}\end{align}}
 where we use the shorthand
 {\small\begin{align}\label{eq:convention_svt_decomposition}
 \partial_{\langle i} \partial_{j\rangle} {E} \equiv\left(\partial_{i} \partial_{j}-\frac{1}{3} \delta_{i j} \nabla^{2}\right) \tilde{E},\qquad
 \partial_{(i} \hat{E}_{j)}\equiv \frac{1}{2}\left(\partial_{i} \hat{E}_{j}+\partial_{j} \hat{E}_{i}\right).
 \end{align}}
-%
+For reference, in terms of a general perturbation we have
+{\small\begin{align}\label{eq:general_perturbations_vs_SVT_decomposition}
+\begin{aligned}
+    &g_{\mu\nu}=a^2(\eta_{\mu\nu}+h_{\mu\nu}), \quad g^{\mu\nu}=\tfrac{1}{a^2}(\eta^{\mu\nu}-h^{\mu\nu}), \quad h^{\mu\nu}=\eta^{\mu\alpha}\eta^{\nu\beta}h_{\alpha\beta}, \\[3pt]
+    &h_{00}=-2A, \quad h_{0i}=B_i, \quad h_{ij}=2C\delta_{ij}+2E_{ij}.
+\end{aligned}\end{align}}
+
 The energy-momentum tensor of a perturbed perfect fluid is
 \begin{align}\label{eq:em_tensor_fluid_perturbed}
     T^\mu_\nu= u^\mu u_\nu (\rho+p) + p \delta^\mu_\nu + \Sigma^\mu_\nu

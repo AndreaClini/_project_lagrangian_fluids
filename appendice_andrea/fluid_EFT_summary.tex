@@ -17,16 +17,14 @@ The mapping from the spacetime manifold $\mathcal{M}^{(4)}$ to the internal flui
     \varphi^{\alpha}:(\mathcal{M},g)\to \mathbb{R}\times \mathcal{F},\quad \alpha=0,1,2,3.
 \end{align}}
 Note we are free to choose the coordinates in the 3-dimensional internal space and the time coordinate $\varphi^0$ without using any gauge freedom of the spacetime manifold itself.
-In particular, we might choose $\varphi^i(x)=x^i$ for $i=1,2,3$ and at some fixed initial time $x^0=\tau_{in}$.
-We might also choose $\varphi^0(x)=\Xi(x^0)$ for some arbitrary function $\Xi$ at the background level, to be specified by demading suitable conservations, and then allow for perturbations $\pi^0(x^\mu)$ around it as in \eqref{eq:perturbed_fluid_coordinates}.
-Most likely it will be convenient to choose $\Xi(x^0)=x^0$ so that the background value of $\varphi^0$ coincides with the time coordinate, but keep it general for now.\todotag{Fix when all settled}
+In partcular, at some fixed initial time $x^0=\tau_{i}$, we can choose $\varphi^i(x)=x^i$ for $i=1,2,3$ and $\varphi^0(x)=\bar{\varphi}^0(x^0)$ for some function $\bar{\varphi}^0$ of time only, whose form will be enforced by consistency with the other backrgound equations cf.\eqref{eq:evolution_y_background_from_definition}, and then allow for perturbations $\pi^\alpha(x^\mu)$ around them as in \eqref{eq:perturbed_fluid_coordinates}.
 
 The 4-velocity of the fluid is identified by requiring the spatial coordinates of the fluid be indeed comoving with it, that is $\partial_\mu \varphi^i=0$ for $i=1,2,3$.
-After normalizing the 4-velocity we get
+After normalizing the 4-velocity we get, where $b$ is defined below,
 \begin{align}\label{eq:definition_4_velocity}
     u^\mu=& \frac{1}{\sqrt{-g}\, 3!\,b} \epsilon^{\mu \alpha \beta \gamma} \epsilon_{ijk} \, \partial_\alpha \varphi^i \partial_\beta \varphi^j \partial_\gamma \varphi^k\, \propto\,\,  \star(d\varphi^1\wedge d\varphi^2\wedge d \varphi^3), \quad u_\mu u^\mu=-1\,.
 \end{align}
-We can identify 2 adimensional quantities
+We identify 2 adimensional quantities $b$ and $y$ as
 \begin{align}\label{eq:definition_b_y}
     b=\sqrt{\det B}\quad \text{for}\quad
     B^{ij}= g^{\mu\nu} \partial_\mu \varphi^i \partial_\nu \varphi^j,\quad y= u^\mu \partial_\mu \varphi^0, \qquad [b]=[y]=[u^\mu]=E^0,
@@ -42,10 +40,11 @@ The lagrangian is a generic function of the invariants
 \begin{align}\label{eq:eft_action_exact}
     S=\int d^4x \sqrt{-g} F(b,y)\,.
 \end{align}
-The conserved Noether currents are the number density current (from volume-preserving diffeo invariance in the $\varphi^i$) and the entropy current\footnote{\label{fn:thermodynamic_interpretation}See next subsection for the jutification of the thermodynamic interpretation.} (from shift symmetry in $\varphi^0$)
+The symmetries of the system imply conservation of a number density current (from volume-preserving diffeo invariance in the $\varphi^i$) and an entropy current\footnote{\label{fn:thermodynamic_interpretation}See next subsection for the jutification of the thermodynamic interpretation.} (from shift symmetry in $\varphi^0$)
 \begin{align}\label{eq:noether_currents_nonbaro}
     \nabla_\mu J^\mu=0\quad\text{for}\qquad J_n^\mu = b\, u^\mu\,,\qquad J_s^\mu = F_y \,u^\mu\,.
 \end{align}
+The first conservation is a `Bianchi identity' i.e. a purely geometrical constraint, while the latter is a genuine Noether current conservation that holds only on-shell.
 Notably, combining the two equations above we see that the comoving entropy is conserved along the flow\footnote{Just use $\nabla_\mu(Qu^\mu)=\partial_\mu Q u^\mu+Q\nabla_\mu u^\mu$.}
 \begin{align}\label{eq:comoving_entropy_conserved_along_flow}
     u^\mu \,\partial_\mu \sigma=0\qquad\text{for}\qquad \sigma:=\frac{s}{b}=\frac{F_y}{b}.
@@ -79,7 +78,7 @@ It is convenient to have an expression for the relative varitions of $y$ versus 
     0&=d\rho=yF_{yy}dy+(yF_{yb}-F_b)db\quad \Rightarrow\quad \frac{dy}{db}_{|\rho}=\frac{F_b-yF_{yb}}{yF_{yy}}.
 \end{align}
 Beware \eqref{eq:comoving_entropy_conserved_along_flow} implies that $\sigma$ will be constant only at the background level or in a specific gauge.
-Adiabatic sound speed $c_a^2$ and non-adiabatic pressure coefficient $\Gamma$ are then obtained plugging \eqref{eq:variation_y_vs_b_fixed_entropy_energy_density} into the definitions,\notetag{Write exp that makes manifest the limit $F_y=0$}
+Adiabatic sound speed $c_a^2$ and non-adiabatic pressure coefficient $\Gamma$ are then obtained plugging \eqref{eq:variation_y_vs_b_fixed_entropy_energy_density} into the definitions,\notetag{Maybe worth writing expr that makes limit $F_y=0$ manifest?}
 {\small\begin{align}\label{eq:adiabatic_cs_nonadiabatic_pressure}
 \begin{aligned}
     &c_a^2=\frac{\partial p}{\partial \rho}_{|\sigma}=\frac{-y^2F_{yy}b^2F_{bb}+(yF_y-byF_{by})^2}{y^2F_{yy}(yF_y-bF_b)}, \\
@@ -111,16 +110,9 @@ In the general case, this procedure has no fixed relation with derivatives with 
 
 On the other hand, in the barotropic case $p=p(\rho)$ the expression $dp/d\rho$ is unambiguous since variations of $p$ and $\rho$ are proportional with the same coefficient $\tfrac{dp}{d\rho}$ for any direction  thermodynamic plane,
 \begin{align}\label{eq:barotropic_speed_of_sound}
-    \frac{dp}{d\rho}=\frac{\tfrac{dp}{d\hat{x}}}{\tfrac{d\rho}{d\hat{x}}}=\frac{\tfrac{dp}{d\hat{z}}\cancel{\tfrac{d\hat{z}}{d\hat{x}}}}{\tfrac{d\rho}{d\hat{z}}\cancel{\tfrac{d\hat{z}}{d\hat{x}}}}=\frac{\tfrac{dp}{d\hat{z}}}{\tfrac{d\rho}{d\hat{z}}} = \frac{\dot{p}}{\dot{\rho}}=w-\frac{\dot{w}\bar{\rho}}{\dot{\bar{\rho}}}\quad \forall  \text{ directions } \hat{x},\hat{z}, \quad \text{and}\qquad c_a^2=c_s^2=c_g^2.
+    \frac{dp}{d\rho}=\frac{\tfrac{dp}{d\hat{x}}}{\tfrac{d\rho}{d\hat{x}}}=\frac{\tfrac{dp}{dt}\cancel{\tfrac{d\hat{x}}{dt}}}{\tfrac{d\rho}{dt}\cancel{\tfrac{d\hat{x}}{dt}}}= \frac{\dot{p}}{\dot{\rho}}=w-\frac{\dot{w}\bar{\rho}}{\dot{\bar{\rho}}}\quad \forall  \text{ directions } \hat{x}, \quad \text{and}\qquad c_a^2=c_s^2=c_g^2.
 \end{align}
 In particular, in the barotropic case adiabatic sound speed, gradient coefficient and ratio of time variations of pressure to density all coincide.
-
-Moreover, if the relative variation of the EoS parameter is small compated to the Hubble rate
-\begin{align}
-    \frac{\tfrac{\dot{w}}{w}}{\tfrac{\dot{\bar{\rho}}}{\bar{\rho}}}\simeq \frac{\tfrac{\dot{w}}{w}}{-3\mathcal{H}(1+w)}\ll 1 \quad \Rightarrow \quad c_s^2\simeq w,
-\end{align}
-the EoS parameter and the gradient coefficient esentially coincide, so that accelerated expansion $w<-1/3$ unavoidably leads to gradient instabilities $c_s^2<0$.
-That is, a barotropic fluid cannot support long-lasting accelerated expansion without instabilities!
 
 For the record, comparing our formalism to Wayne Hu's \cite[equation (3)]{Hu:1998kj} we find
 \begin{align}
@@ -134,6 +126,12 @@ Recalling that entropy perturbations and velocity divergence are proportional $\
 \end{align}
 which is precisely the expression given in Hu's \cite[equation (3)]{Hu:1998kj} in the rest frame of the fluid where $\theta=0$.
 
+Crucially, if the relative variation of the EoS parameter is small compared to the Hubble rate
+\begin{align}
+    \frac{\dot{w}/w}{\dot{\bar{\rho}}/\bar{\rho}}\simeq \frac{\tfrac{\dot{w}}{w}}{-3\mathcal{H}(1+w)}\ll 1 \quad \Rightarrow \quad c_s^2\simeq w,
+\end{align}
+the EoS parameter and the gradient coefficient esentially coincide, so that accelerated expansion $w<-1/3$ unavoidably leads to gradient instabilities $c_s^2<0$.
+That is, a barotropic fluid cannot support long-lasting accelerated expansion without instabilities!
 
 Finally we remark that a fluid is \emph{barotropic} if $p=p(\rho)$ only.
 The case $F=F(b)$ is thus a special case of barotropic fluid, but not the most general one!
@@ -146,7 +144,7 @@ When $F=F(b)$, we can still define $y=\partial_\mu\varphi^0u^\mu$, but since $F$
     &\rho=-F,\quad p=F-bF_b,\quad w=\frac{bF_b-F}{F},\quad n=b,\quad \mu=F_b,\\[3pt]
     & \frac{d p}{d \rho}=c_a^2=\frac{b^2F_{bb}}{bF_b}= w+w_b \frac{\rho}{\rho_b},\qquad T=y,\quad s=\sigma=0,\quad \Gamma=\frac{\partial p}{\partial \sigma}_{|\rho}=0.
 \end{aligned}\end{align}}
-As discussed above for the general barotropic case, there is now only one independent thermodynamic variable, which can be any of $b$, $\rho$ etc, and 
+As discussed above for the general barotropic case, there is now only one independent thermodynamic variable, which can be any of $b$, $\rho$ etc. 
 There is no ambiguity in the variables to keep fixed when computing $dp/d\rho$ and \eqref{eq:barotropic_speed_of_sound} holds, which now further reduces to
 \begin{align}
     c_s^2\overset{\substack{\text{shown}\\ \text{in general}}}{=}
@@ -177,7 +175,7 @@ Finally we simply impose the first law of thermodynamics
     T s+ \mu n = \rho+p \overset{!}{=} yF_y-bF_b.
 \end{align}
 Since we have already shown $n=b$, we are lead to identify $\mu=-F_b$, and $s=F_y$ and $y=T$.
-This is consistent with all the thermodynamical relations, for example imposing the variation of the entropy density vanish we find back $\mu$ from its thermodynamic definition
+This is consistent with all the thermodynamical relations. For example, imposing the variation of the entropy density vanish, we find back $\mu$ from its thermodynamic definition
 \begin{align}\label{eq:chemical_potential_and_entropy_consistency}
     \begin{array}{c}
      0\overset{!}{=}ds = F_{yb} db + F_{yy}dy\\[3pt]
@@ -195,7 +193,7 @@ Indeed taking $n=b$ and $y=s$ predicts wrong conjugate variables and fails the 1
     &\,\,\Rightarrow\,\, \mu n +T s= -bF_b+byF_{by}+y^2F_{yy}\neq yF_y-bF_b=\rho+p.
 \end{aligned}\end{align}
 Finally we stress the identification $y=T$ is not with the familiar temperature `in the Boltzmann sense', but rather with the a `generalized temperature' to be interpreted as the variable conjugate to the generalized entropy density $s=F_y$.
-In fact even this notion of entropy density has wrong dimension $[F_y]=E^4$ and should be rescaled in order to identify it familiar one.
+In fact this notion of entropy density has even wrong dimension $[F_y]=E^4$ and should be rescaled in order to identify it with the familiar one.
 In turn, the proportionality of $y$ versus the scale factor $a$ is in general different from the one of the Boltzmann temperature as discussed after \eqref{eq:bkg_scaling_y_coordinate}.
 
 
@@ -203,7 +201,7 @@ In turn, the proportionality of $y$ versus the scale factor $a$ is in general di
 \subsection{Background evolution in the fluid EFT\textcolor{red}{(IN PROGRESS)}}\label{sec:bkg_evolution_fluid_EFT}
 %==============================================================================
 %
-We consider first the conservation of the Noether currents.
+We consider first the conservation of the number density and entropy currents.
 Since $u^\mu=a^{-1}\delta^\mu_0$ and $\sqrt{g}=a^{4}$ at the background level, we have
 \begin{subequations}\label{eq:conservation_noether_current_background_eft}
 \begin{align}
@@ -217,11 +215,11 @@ Using \eqref{eq:conservation_noether_current_background_eft_number}, the second 
 \end{align}
 The second equality follows from \eqref{eq:variation_y_vs_b_fixed_entropy_energy_density} and implies that the evolution of $y$ is adiabatic at the background level.
 This is no surprise since \eqref{eq:comoving_entropy_conserved_along_flow} alredy showed that $\dot{\bar{\sigma}}=0$ at the background level.
-Finally, from the very definition of $y=u^\mu\partial_\mu\varphi^0$ we have the background evolution
+Finally, from the very definition of $y=u^\mu\partial_\mu\varphi^0$ and $\bar{u}^\mu\overset{\text{bkg}}{=}a^{-1}\delta^\mu_0$ we have the background evolution
 \begin{align}\label{eq:evolution_y_background_from_definition}
-    \bar{y}=\partial_\mu\bar{\varphi}^0 \bar{u}^\mu = \frac{1}{a}\mathcal{H}\frac{d\Xi}{d\log\!a},
+    \bar{y}=\partial_\mu\bar{\varphi}^0 \bar{u}^\mu = \tfrac{1}{a}\tfrac{d\bar{\varphi}^0}{d\tau}.
 \end{align}
-with $y\propto a^{-1}$ in the natural case where $\Xi(\tau)=\tau$.
+We will then choose $\bar{\varphi}^0(\tau)$ to be consistent with the other background equations.
 
 
 {\color{gray}
@@ -311,21 +309,21 @@ The general perturbed FLRW metric is written wrt conformal time $x^0=\tau$ as
     &\quad \sqrt{|g|}= a^4\big(1+\tfrac12 h^{\mu\nu}\eta_{\mu\nu} +O(h^2)\big)\ = a^4\Big[1+\tfrac12 (h^{ii}-h^{00}) +O(h^2)\Big]\,.
 \end{aligned}
 \end{align}}
-The fluid variables are written for simplicity with rescaling factors $\gamma$ and $\lambda$ that will be used to reabsorb units of measures,
+The fluid variables are written as perturbations around background values\footnote{We could also insert dimensionless rescaling factors $\varphi^0\mapsto \gamma \varphi^0$ and $\varphi^j\mapsto \lambda \varphi^j$ as in \cite{Dubovsky:2005xd} to reabsorb measure units, but avoid it to keep the notation cleaner.} as discussed after equation \eqref{eq:internal_coord_fluid}, 
 {\small\begin{align}\label{eq:perturbed_fluid_coordinates}
-    \varphi^0=\gamma\Big(\tau+\pi^0\Big), \quad \varphi^i=\lambda\Big(x^i+\pi^i\Big)\,, \quad [\varphi^\alpha]=[x^\alpha]=[\pi^\alpha]=E^{-1},\quad [\gamma]=[\lambda]=E^0\,.
+    \varphi^0=\bar{\varphi}^0(x^0)+\pi^0(x^\mu), \quad \varphi^i=x^i+\pi^i(x^\mu)\,, \quad [\varphi^\alpha]=[x^\alpha]=[\pi^\alpha]=E^{-1}.
 \end{align}}
 Since internal fluid coordinates are independent of spacetime coordinates, under a gauge transformation $x^\mu \mapsto x^\mu +\delta x^\mu$ with $\delta x^\mu=(T,\,\partial^i L+\hat{L}^i)$, the fluid perturbations must tranform as
 {\small\begin{align}\label{eq:gauge_transformation_fluid_perturbations}
 \begin{aligned}
-    &\pi^0 \mapsto \pi^0 - T,\qquad \pi^i \mapsto \pi^i - \partial^i L - \hat{L}^i.
+    &\pi^0 \mapsto \pi^0 - \dot{\bar{\varphi}}^0\,T,\qquad \pi^i \mapsto \pi^i - \partial^i L - \hat{L}^i.
 \end{aligned}\end{align}}
 Using the gauge transformation of the metric \eqref{eq:gauge_transformation_metric}, the relevant combinations change as
 {\small
 \begin{align}\label{eq:gauge_transformation_fluid_and_metric_combinations}
 \begin{aligned}
-    &\dot{\pi}^0+\tfrac12 h^{00} \mapsto \dot{\pi}^0+\tfrac12 h^{00} +\mathcal{H} T, \\
-    &\partial_j\pi^j -\tfrac12 h^{ii} \mapsto \partial_j\pi^j -\tfrac12 h^{ii} -3\mathcal{H} T, \\
+    &\dot{\pi}^0/\dot{\bar{\varphi}}^0+\tfrac12 h^{00} \mapsto \dot{\pi}^0/\dot{\bar{\varphi}}^0+\tfrac12 h^{00} +\big(\mathcal{H}-\ddot{\bar{\varphi}}^0/\dot{\bar{\varphi}}^0\big) T, \\
+    &\partial_j\pi^j -\tfrac12 h^{ii} \mapsto \partial_j\pi^j -\tfrac12 h^{ii} +3\mathcal{H} T, \\
     &\dot{\pi}^j+h^{0j} \mapsto \dot{\pi}^j+h^{0j} -\partial^j T,
 \end{aligned}\end{align}}
 and we can combine these two together or with $\mathcal{H}\frac{\delta \rho}{\dot{\rho}}$ from \eqref{eq:gauge_transformation_em_tensor} to get gauge invariant combinations.\todotag{Write 'em \& make compare to Bardeen ones}
@@ -333,12 +331,12 @@ and we can combine these two together or with $\mathcal{H}\frac{\delta \rho}{\do
 The invariants $b$ and $y$ are expanded as follows
 {\small\begin{align}\label{eq:expansions_b_y}
 \begin{aligned}
-    &b= \bar{b}(1+\delta b),\quad \bar{b}= \frac{\lambda^3}{a^3},\quad
-    \delta b^{(1)} = -\tfrac12 h^{ii} +(\partial_j \pi^j),\\[3pt]
+    &b= \bar{b}(1+\delta b),\quad \bar{b}= a^{-3},\quad
+    \delta b^{(1)} = (\partial_j \pi^j)-\tfrac12 h^{ii},\\[3pt]
     &\delta b^{(2)} = - h^{0 i} \dot{\pi}^i - \tfrac12  h^{ii} (\partial_j \pi^j) - \tfrac12 (\dot{\pi}^i)^2 + \tfrac12 (\partial_j \pi^j)^2 -\tfrac12 \partial_i\pi^j\partial_j\pi^i\,,
     \\[3pt]
-    &y= \bar{y}(1+\delta y),\quad \bar{y}= \frac{\gamma}{a},\quad \delta y^{(1)} = \tfrac12 h^{00}+ \dot{\pi}^0,\\[3pt]
-    &\delta y^{(2)} = \tfrac12 h^{00}\dot{\pi}^0+ h^{0 i} \dot{\pi}^i  + \tfrac12 (\dot{\pi}^i)^2 -\partial_j\pi^0\dot{\pi}^j\,.
+    &y= \bar{y}(1+\delta y),\quad \bar{y}= a^{-1}\dot{\bar{\varphi}}^0,\quad \delta y^{(1)} =\dot{\pi}^0/\dot{\bar{\varphi}}^0  +\tfrac12 h^{00},\\[3pt]
+    &\delta y^{(2)} = \tfrac12 h^{00}\dot{\pi}^0/\dot{\bar{\varphi}}^0+ h^{0 i} \dot{\pi}^i  + \tfrac12 (\dot{\pi}^i)^2 -\dot{\pi}^j\,\partial_j\pi^0/\dot{\bar{\varphi}}^0\,.
 \end{aligned}\end{align}}
 The 4-velocity $u^\mu$ is also expanded, highlighting both the covariant form and the explicit splitting in temporal and spatial part,
 {\small\begin{align}\label{eq:expansion_u_4_velocity}
@@ -366,19 +364,19 @@ Finally we recast the fluctuations in density $\rho=-F+yF_y$, pressure $p=F-bF_b
 \begin{aligned}
     \delta\rho &= y^2F_{yy}\delta y + (-bF_b+byF_{by})\delta b
     \\
-    &= (y^2F_{yy})\left(\tfrac12 h^{00}+ \dot{\pi}^0\right) + (-bF_b+byF_{by})\left(-\tfrac12 h^{ii} +(\partial_j \pi^j)\right) + O(2)\,,
+    &= (y^2F_{yy})\left(\dot{\pi}^0/\dot{\bar{\varphi}}^0  +\tfrac12 h^{00}\right) + (-bF_b+byF_{by})\left((\partial_j \pi^j)-\tfrac12 h^{ii} \right) + O(2)\,,
     \\[3pt]
     \delta p &= (yF_y-byF_{by})\delta y - (b^2 F_{bb})\delta b
     \\
-    &= (yF_y-byF_{by})\left(\tfrac12 h^{00}+ \dot{\pi}^0\right) - (b^2 F_{bb})\left(-\tfrac12 h^{ii} +(\partial_j \pi^j)\right)+ O(2)\,,
+    &= (yF_y-byF_{by})\left(\dot{\pi}^0/\dot{\bar{\varphi}}^0  +\tfrac12 h^{00}\right) - (b^2 F_{bb})\left((\partial_j \pi^j)-\tfrac12 h^{ii}\right)+ O(2)\,,
     \\[3pt]
     \delta\sigma &= \tfrac{yF_{yy}}{b}\delta y + \tfrac{bF_{yb}-F_y}{b} \delta b
     \\
-    &= \tfrac{y^2F_{yy}}{yb}\left(\tfrac12 h^{00}+ \dot{\pi}^0\right) +\tfrac{ybF_{yb}-yF_y}{yb}\left(-\tfrac12 h^{ii} +(\partial_j \pi^j)\right)+ O(2)\,.
+    &= \tfrac{y^2F_{yy}}{yb}\left(\dot{\pi}^0/\dot{\bar{\varphi}}^0  +\tfrac12 h^{00}\right) +\tfrac{ybF_{yb}-yF_y}{yb}\left((\partial_j \pi^j-\tfrac12 h^{ii} )\right)+ O(2)\,.
 \end{aligned}
 \end{align}
 We now express pressure fluctuations in terms of energy density and entropy ones.
-Using the flat \eqref{eq:integrate_out_entropy_flat_spacetime} or curved spacetime expression \eqref{eq:integrate_out_entropy_curved_spactime} to integrate out the combination $\left(\tfrac12 h^{00}+ \dot{\pi}^0\right)$ of entropy field and metric perturbations, and recalling the expressions \eqref{eq:adiabatic_cs_nonadiabatic_pressure} for $c_a^2$ and $\Gamma$, after some math we find
+Using the flat \eqref{eq:integrate_out_entropy_flat_spacetime} or curved \eqref{eq:integrate_out_entropy_curved_spactime} spacetime expression to integrate out the combination $\left(\dot{\pi}^0/\dot{\bar{\varphi}}^0  +\tfrac12 h^{00}\right)$ of entropy field and metric perturbations, and recalling the expressions \eqref{eq:adiabatic_cs_nonadiabatic_pressure} for $c_a^2$ and $\Gamma$, after some math we find
 \begin{align}\label{eq:rho_p_sigma_fluctuations_vs_phonon_entropy_field}
 \begin{aligned}
     \delta\rho &= (yF_y-bF_b)(\partial_j\pi^j-\tfrac12 h^{ii})+a^{-4}E(\mathbf{x}) = (\bar{\rho}+\bar{p})(\partial_j\pi^j)\,+by\,\delta\sigma \,,\\[2.5pt]
@@ -386,13 +384,14 @@ Using the flat \eqref{eq:integrate_out_entropy_flat_spacetime} or curved spaceti
     \delta p &= c_a^2\, \delta\rho + \Gamma \, \delta\sigma\,.
 \end{aligned}
 \end{align}
-As expected, phonons $\partial_j\pi^j$ only source density fluctuations, while the entropy field $\pi^0$ sources both density and entropy fluctuations \todoAC{This is for flat spacetime, write general form in curved spacetime}
+As expected, phonons $\partial_j\pi^j$ only source density fluctuations, while the entropy field $\pi^0$ sources both density and entropy fluctuations \todoAC{This is for flat spacetime, write general form in curved spacetime and $\bar{\varphi}^0$}
+{\color{red}
 \begin{align}\label{eq:entropy_field_vs_density_entropy_fluctuations}
 \begin{aligned}
     \dot{\pi}^0&= \frac{1}{yF_y-byF_{by}}\bigg[\delta\rho \Big(c_a^2+\tfrac{b^2F_{bb}}{yF_y-bF_b}\Big)+\delta\sigma\,\Big(\Gamma-\tfrac{b^2F_{bb}}{\tfrac{1}{by}(yF_y-bF_b)}\Big)\bigg]\\[2.5pt]
     &=\tfrac{1}{y\partial_yp}\bigg[\delta\rho \Big(c_a^2-\tfrac{b\partial_bp}{\rho+p}\Big)+\delta\sigma\,\Big(\Gamma+by\tfrac{b\partial_bp}{\rho+p}\Big)\bigg]\,.
 \end{aligned}
-\end{align}
+\end{align}}
 
 
 
