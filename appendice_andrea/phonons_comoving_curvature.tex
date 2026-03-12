@@ -8,24 +8,56 @@ We would like to show this explicitly from the EoM of phonons.
 
 From \eqref{eq:peculiar_velocity_fluid_vs_phonons} we identify the comoving curvature perturbations \eqref{eq:comoving_curvature_perturbations_gauge_inv_and_newtonian} in terms of metric newtonian potentials and phonon potential \eqref{eq:phonon_potential} as
 \begin{equation}
-    \mathcal{R} \overset{\text{Newt.}}{=} \phi -\mathcal{H}v = \phi + \mathcal{H}\,\dot{\pi}_L\,.
+    \mathcal{R} \overset{\text{Newt.}}{=} \phi -\mathcal{H}v = \phi + \mathcal{H}\,\dot{\pi}_L= \phi -(\mathcal{H}/k^2)(\partial_j\dot{\pi}^j)\,.
 \end{equation}
 %
-In Newtonian gauge \eqref{eq:newtonian_gauge_metric} off-diagonal terms vanish and the quadratic lagrangian \eqref{eq:quadrati_action_final_integrated_out_entropy_field} reads 
-{\small
-\begin{align}
+In Newtonian gauge \eqref{eq:newtonian_gauge_metric} off-diagonal terms vanish and the quadratic lagrangian \eqref{eq:quadrati_action_final_with_entropy_field} reads 
+{\small\begin{align}\label{eq:quadrati_action_final_with_entropy_field}
 \begin{aligned}
-   S^{(2)}&=\int\! d^4x\, a^4\frac{\rho+p}{2}\bigg\{
-    (\dot{\pi}^j\graycancel{+h^{0j}})^2 -c_s^2(\partial_j \pi^j+3\phi)^2  + \mathcal{A}\mathcal{E}^2 E(\mathbf{x})^2\bigg\}.
+     S^{(2)}&=\int\! d^4x\, a^4\frac{\rho+p}{2}\bigg\{
+    (\dot{\pi}^j)^2 -\mathcal{C}(\partial_j \pi^j+3\phi)^2 -2\psi (\partial_j\pi^j)\\[2.5pt]
+    &\qquad\qquad\qquad \qquad + \mathcal{A} (\dot{\pi}^0/\dot{\bar{\varphi}}^0-\psi)^2 - 2\mathcal{M}(\dot{\pi}^0/\dot{\bar{\varphi}}^0-\psi) (\partial_j \pi^j+3\phi) \bigg\}.
 \end{aligned}
 \end{align}}
-Taking $\psi=\phi$ at \emph{late times} and in the large scale limit, and simplifying terms the equation of motion for phonons will be something like
+The constraint equation \eqref{eq:integrate_out_entropy_curved_spactime} for the non-dynamical field $\pi^0$ now reads
+{\small\begin{align}
+\begin{aligned}
+     (\dot{\pi}^0/\dot{\bar{\varphi}}^0-\psi) = \frac{\mathcal{M}}{\mathcal{A}}(\partial_j \pi^j+3\phi) + \mathcal{E}\,{E(\mathbf{x})},\quad \mathcal{E}:=\frac{1}{a^4(\rho+p)\mathcal{A}} = \frac{1}{a^4 y^2 F_{yy}}\,.
+\end{aligned}
+\end{align}}
+Resolving the constraint and plugging it back into the action, the final form \eqref{eq:quadrati_action_final_integrated_out_entropy_field} becomes
+{\small\begin{align}
+\begin{aligned}
+   S^{(2)}&=\int\! d^4x\, a^4\frac{\rho+p}{2}\bigg\{
+    (\dot{\pi}^j)^2 -c_s^2(\partial_j \pi^j+3\phi)^2 -2\psi (\partial_j\pi^j) + \mathcal{A}\mathcal{E}^2 E(\mathbf{x})^2\bigg\}.
+\end{aligned}
+\end{align}}
+The equation of motion is
+{\small\begin{align}
+\begin{aligned}
+    \ddot{\pi}^\ell +\mathcal{H}\dot{\pi}^\ell -3\mathcal{H}\tfrac{\dot{p}}{\dot{\rho}}\dot{\pi}^\ell
+    = c_s^2 \vec{\partial}_\ell(\partial_j \pi^j+3\phi) +\vec{\partial}_\ell\psi 
+\end{aligned}\end{align}}
+Using $\pi^\ell_{||}=\partial_\ell \pi_L$ this is rewritten
+{\small\begin{align}
+\begin{aligned}
+    \ddot{\pi}_L +\mathcal{H}\dot{\pi}_L -3\mathcal{H}\tfrac{\dot{p}}{\dot{\rho}}\dot{\pi}_L
+    = -k^2 c_s^2\pi_L+3c_s^2\phi +\psi 
+\end{aligned}\end{align}}
+This equation is essentially
 \begin{align}
-    \ddot{\pi}_L=-\underbrace{c_s^2 k^2\pi_L}_{\to0}+\text{friction}
+    \ddot{\pi}_L=-\underbrace{c_s^2 k^2\pi_L}_{\to0}+\text{friction} +\text{metric terms}
 \end{align}
-giving that $\ddot{\pi}_L\to 0$ as $k\to0$.
-For the comoving curvature then
+and we should be able to derive the conservation of comoving curvature perturbations from this.
+
+For the comoving curvature we have
 \begin{align}
-    \dot{\mathcal{R}}=\dot{\phi}+\dot{\mathcal{H}}\,\dot{\pi}_L+\mathcal{H}\,\ddot{\pi}_L
+    \frac{d\mathcal{R}}{d\log a}=\frac{\dot{\mathcal{R}}}{\mathcal{H}}=\frac{\dot{\phi}}{\mathcal{H}}+\frac{\dot{\mathcal{H}}}{\mathcal{H}}\,\dot{\pi}_L+\ddot{\pi}_L,
 \end{align}
-and, upon using the 0i Einstein equation for $\dot{\phi}+\mathcal{H}\phi=...$, the vanishing of $\ddot{\pi}$ from the EoM of phonons might be the fastest way to predict that $\mathcal{R}$ is conserved on superhorizon scales.\todotag{Finish this argument}
+and the equation becomes
+{\small\begin{align}
+\begin{aligned}
+    \frac{d\mathcal{R}}{d\log a}=\frac{\dot{\phi}}{\mathcal{H}}+\frac{1}{\mathcal{H}}\,\Big(\dot{\mathcal{H}}-\mathcal{H^2} +3\mathcal{H}\tfrac{\dot{p}}{\dot{\rho}}\Big)\dot{\pi}_L -k^2 c_s^2\pi_L+3c_s^2\phi +\psi. 
+\end{aligned}\end{align}}
+
+Taking $\psi=\phi$ at \emph{late times} and in the large scale limit $k/\mathcal{H}\to0$, using the 1st and 2nd Friedman equation and the 0i Einstein equation for $\dot{\phi}+\mathcal{H}\phi=...$, we should be able to conclude that in the absence of $\delta P_{\text{nad}}$ the curvature $\mathcal{R}$ is conserved superhorizon...\todotag{Finish!!}
