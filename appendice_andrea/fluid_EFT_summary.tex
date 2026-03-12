@@ -221,14 +221,38 @@ Finally, from the very definition of $y=u^\mu\partial_\mu\varphi^0$ and $\bar{u}
 \end{align}
 We will then choose $\bar{\varphi}^0(\tau)$ to be consistent with the other background equations.
 
+The continuity equation for the background is automatically implied by the conservation of Noether currents, and yields no further constraint or information.
+Indeed, using expressions \eqref{eq:thermo_rho_p_nonbaro} for $\rho$ and $p$, the continuity equation \eqref{eq:background_continuity} reads
+\begin{align}\label{eq:backgroud_continuity_eft}
+    \frac{d}{d\tau}(-F+yF_y)+3\mathcal{H}(yF_y-bF_b)=0.
+\end{align}
+Expanding $\dot{F}=F_b\dot{b}+F_y\dot{y}$ and $\dot{F}_y=F_{yb}\dot{b}+F_{yy}\dot{y}$, one verifies the above is indeed implied by \eqref{eq:conservation_noether_current_background_eft}.
+In the barotropic case \eqref{eq:thermo_variables_barotropic} it reduces to the familiar $a^{-3}$ dilution of the number density $b$.
+For the record, we remark there is no advantage in plugging the explicit solution \eqref{eq:constant_eos_w_solution_pde} or \eqref{eq:eos_pde_solution_w_depending_b} into the background continuity equation.
+It just gives a fairly messy expression, whose information is already contained and conveniently split in the conservation of the two Noether currents.
 
-{\color{gray}
-----------------------------------------------------------------------------------------\todotag{Ignore for the moment}
+The equation of state is then enforced by solving the associated pde
+\begin{align}\label{eq:equation_of_state_eos_pde}
+    \frac{F-F_b}{yF_y-F}=w(b,y)\quad\Rightarrow\quad (1+w)F=w\, yF_y+bF_b.
+\end{align}
+This is a simple transport equation that is solved by characteristics for arbitrary $w=w(y,b)$ and will constrain the form of $F$.
+The solution is temporarily reported in Section \ref{sec:fluids_arbitrary_eos} and will be moved here.\todoAC{Polish and do it}
 
-Crucially \eqref{eq:eolvution_y_background} is equivalent to the characteristic ODE \eqref{eq:characteristics_eos_pde_w_depending_b}-\eqref{eq:characteristics_eos_pde_solution_w_depending_b} of the equation of state with $w=w(b)$.
-Evolution in time thus coincides with evolution along characteristics of the equation of state \eqref{eq:eos_pde_w_depending_b}.
+Having enforced the desired EoS parameter $w(b,y)$ by writing $F$ as \eqref{eq:eos_pde_solution_w_depending_b}, and having demanded the conservation of Noether currents in \eqref{eq:conservation_noether_current_background_eft} and thus the continuity equation, we finally impose the last background equation (1st Friedmann).
+\begin{align}
+    &\mathcal{H}^2 = \frac{8\pi G}{3} a^2 \rho = =\frac{8\pi G}{3} a^2 (-F+yF_y)\,.
+\end{align}
+In the following we first discuss the case $w=w(b)$ and then the general case $w=w(y,b)$ which might be needed for the matching to quintessence.
+
+
+%=============================================================================()
+\subsubsection{Background for $w=w(b)$\textcolor{red}{(IN PROGRESS)}}\label{sec:bkg_evolution_eft_wb}
+%==============================================================================
+%
+Crucially, when $w=w(b)$, equation \eqref{eq:eolvution_y_background} is equivalent to the characteristic ODE \eqref{eq:characteristics_eos_pde_w_depending_b}-\eqref{eq:characteristics_eos_pde_solution_w_depending_b} of the equation of state.
+Evolution in time thus coincides with evolution along characteristics \eqref{eq:eos_pde_w_depending_b} in this case.
 This was expected since $a\propto\, b^{-1/3}$ from \eqref{eq:conservation_noether_current_background_eft_number} implies we can use either variable to parametrize time.
-Indeed, from the general solution \eqref{eq:eos_pde_solution_w_depending_b} of the EoS we compute
+Indeed, from the general solution \eqref{eq:eos_pde_solution_w_depending_b} of the EoS with  $w=w(b)$ we compute
 \begin{align}
     F(y,b)=f\Big(y\, e^{-\int_{b_0}^bd\log b\, w(b)}\Big)\, e^{\int_{b_0}^bd\log b\, \big(1+w(b)\big)} \quad \Rightarrow\quad  \frac{F_y-bF_{by}}{bF_{yy}} \equiv w(b)\frac{y}{b}.
 \end{align}
@@ -243,39 +267,25 @@ The solution is of course the same as \eqref{eq:characteristics_eos_pde_solution
 \begin{aligned}
     y
     &=y_0\,\,\exp\Big(\!\!-\!\!3\!\!\int^a_{a_0}\!\!\!\!\!d\!\log(a)\,\, w(a)\Big)\\[2.5pt]
-    &=y_0\,\exp\Big(\!\!-\!\!\!\int_{b_0}^b\!\!\!\!\!d\!\log\big(\tfrac{b}{b_0}\big)\,w(b)\Big)
+    &=y_0\,\exp\Big(\!\int_{b_0}^b\!\!\!\!\!d\!\log\big(\tfrac{b}{b_0}\big)\,w(b)\Big)
     =y_0\,\underbrace{\left(\tfrac{b}{b_0}\right)^{w(a)}}_{=a^{-3w(a)}}\,\exp\Big(\!\!-\!\!\!\int_{a_0}^a\!\!\!\!\!da\, \tfrac{dw}{da}\, \underbrace{\log\big(\tfrac{b}{b_0}\big)}_{=-3\log a}\Big).
 \end{aligned}
 \end{align}}
-We can now specify the background value $\varphi^0(x^\mu)=\Xi(x^0)+\pi^0(x^\mu)$ for the time component of the fluid internal coordinates \eqref{eq:perturbed_fluid_coordinates}.
+We can now specify the background value $\varphi^0(x^\mu)=\bar{\varphi}^0(x^0)+\pi^0(x^\mu)$ for the time component of the fluid internal coordinates \eqref{eq:perturbed_fluid_coordinates}.
 Enforcing it be consistent with \eqref{eq:evolution_y_background_solution} we find
 \begin{align}\label{eq:bkg_scaling_y_coordinate}
 \begin{aligned}
-    &y=u^\mu\partial_\mu\varphi^0 \overset{\text{bkg}}{=}\tfrac{1}{a}\mathcal{H}\frac{d\Xi}{d\log\!a}\propto\, \exp\Big(\!\!-\!\!3\!\!\int^a_{a_0}\!\!\!\!\!d\!\log(a)\,\, w(a)\Big)\\[2.5pt]
-    &\quad\Rightarrow\quad \Xi(a)=\int^a_{a_0}\!\!\!d\log\!a\, \frac{a}{\mathcal{H}}e^{-3\int^a_{a_0}\!d\!\log(a)\,\, w(a)}\,,
+    &y=u^\mu\partial_\mu\varphi^0 \overset{\text{bkg}}{=}\tfrac{1}{a}\mathcal{H}\frac{d\bar{\varphi}^0}{d\log\!a}\propto\, \exp\Big(\!\!-\!\!3\!\!\int^a_{a_0}\!\!\!\!\!d\!\log(a)\,\, w(a)\Big)\\[2.5pt]
+    &\quad\Rightarrow\quad \bar{\varphi}^0(a)=\int^a_{a_0}\!\!\!d\log\!a\, \frac{a}{\mathcal{H}}e^{-3\int^a_{a_0}\!d\!\log(a)\,\, w(a)}\,,
 \end{aligned}\end{align}
-up to a nonphysical constant shift in time $\Xi\mapsto \Xi +C$.
+up to a nonphysical constant shift in time $\bar{\varphi}^0\mapsto \bar{\varphi}^0 +C$.
 
 This clarifies the identification $y=T$ is not with the familiar temperature `in the Boltzmann sense', but rather with the a `generalized temperature' to be interpreted as the variable conjugate to the generalized entropy density $s=F_y$.
 In fact even this notion of entropy density has wrong dimension $[F_y]=E^4$ and should be rescaled in order to identify it familiar one.
 In turn, beware the proportionality of $y$ versus the scale factor $a$ is generally different from the one of the Boltzmann temperature.
 It accidentally coincides for radiation $w=\tfrac13,\, y\propto \tfrac{1}{a}$ and cold matter $w=0,\,y\propto\, a^0$, but is different for any species in between, e.g. the familiar scaling for non-relativistic matter $y\propto\, a^{-2}$ would require superluminal speed of sound $w=\tfrac23$.
--------------------------------------------------------------------------------
-}
 
-The continuity equation for the background is automatically implied by the conservation of Noether currents, and yields no further constraint or information.
-Indeed, using expressions \eqref{eq:thermo_rho_p_nonbaro} for $\rho$ and $p$, the continuity equation \eqref{eq:background_continuity} reads
-\begin{align}\label{eq:backgroud_continuity_eft}
-    \frac{d}{d\tau}(-F+yF_y)+3\mathcal{H}(yF_y-bF_b)=0.
-\end{align}
-Expanding $\dot{F}=F_b\dot{b}+F_y\dot{y}$ and $\dot{F}_y=F_{yb}\dot{b}+F_{yy}\dot{y}$, one verifies the above is indeed implied by \eqref{eq:conservation_noether_current_background_eft}.
-In the barotropic case \eqref{eq:thermo_variables_barotropic} it reduces to the familiar $a^{-3}$ dilution of the number density $b$.
-For the record, we remark there is no advantage in plugging the explicit solution \eqref{eq:constant_eos_w_solution_pde} or \eqref{eq:eos_pde_solution_w_depending_b} into the background continuity equation.
-It just gives a fairly messy expression, whose information is already contained and conveniently split in the conservation of the two Noether currents.
-
-{\color{gray}-------------------------------------------------------\todotag{Ignore for the moment}
-
-Having enforced the desired EoS parameter $w(a)$ by writing $F$ as \eqref{eq:eos_pde_solution_w_depending_b}, and having demanded the conservation of Noether currents in \eqref{eq:conservation_noether_current_background_eft} and thus the continuity equation, we finally impose the last background equation (1st Friedmann).
+Having enforced the desired EoS parameter $w(b)$ by writing $F$ as \eqref{eq:eos_pde_solution_w_depending_b}, and having demanded the conservation of Noether currents in \eqref{eq:conservation_noether_current_background_eft} and thus the continuity equation, we finally impose the last background equation (1st Friedmann).
 Inserting the expression \eqref{eq:eos_pde_solution_w_depending_b} into $\rho=-F+yF_y$ and then plugging the time evolution \eqref{eq:evolution_y_background_solution} of $y$ and \eqref{eq:conservation_noether_current_background_eft_number} of $b$, we get
 \begin{align}
 \begin{aligned}
@@ -283,15 +293,40 @@ Inserting the expression \eqref{eq:eos_pde_solution_w_depending_b} into $\rho=-F
     &= e^{-\int_{b_0}^bd\log\!b\, \big(1+w(b)\big)}\underbrace{\Big[y_0f^\prime(y_0)-f(y_0)\Big]}_{=\rho_0=\text{const}} = \rho_0 \, a^{-3}\, e^{-3\int_{a_0}^a\!\!d\log\!a\, w(a)}.
 \end{aligned}
 \end{align}
-The energy density is expressed as a function of the scale factor $a$, also through the form of $w(a)$, and the initial condition $\rho_0=y_0f^\prime(y_0)-f(y_0)$.
+The energy density is expressed as a function of the scale factor $a$, depending on the form of $w(a)$, and the initial condition $\rho_0=y_0f^\prime(y_0)-f(y_0)$.
 
 The First Friedmann equation then reads
 \begin{align}
     &\mathcal{H}^2 = \frac{8\pi G}{3} a^2 \rho = \frac{8\pi G}{3} a^2 \rho_0 \, a^{-3}\, e^{-3\int_{a_0}^a\!\!d\log\!a\, w(a)}.
 \end{align}
-For a given functional form $w(a)$ we can now solve the above to get the time evolution of the scale factor $a(\tau)$.
+For any given functional form $w(a)$, this fixes the time evolution of the scale factor $a(\tau)$.
 The case of familiar species is obtained for constant $w=-1,0,1/3$.
----------------------------------------------------------------------}
+
+
+%=============================================================================()
+\subsubsection{Background for $w=w(b,y)$\textcolor{red}{(IN PROGRESS)}}\label{sec:bkg_evolution_eft_wb}
+%==============================================================================
+%
+The above analysis already shows that it won't be enough to take $w=w(b)$ to match quintessence.
+Let's do some naive power counting.
+The first current conservation \eqref{eq:conservation_noether_current_background_eft_number} fix the scaling $b\propto a^{-3}$.
+The second \eqref{eq:conservation_noether_current_background_eft_entropy} is recast in the form \eqref{eq:eolvution_y_background} to fix the scaling of $y$, but we still have complete freedom in the choice of $\bar{\varphi}^0$ to fulfil this last condition.
+The continuity equation is auotomatically satisfied.
+We showed above that an EoS with $w=w(b)=w(a)$ constrains the form of $F$ and in turn does fix $\bar{\varphi}^0$.
+The function $F$ is now fully specified up two constant initial value and the free function $w(a)$.
+The 1st Friedmann equation fixes the scaling $\tau \mapsto a(\tau)$ for arbitrary $w=w(a)$.
+The only freedom left is thus in the choice of $a\mapsto w(a)$.
+If we now want to match a given EoS parameter $w=w(a)$ e.g. the quintessence one, we completely fix the form of $w(a)$ and there is no freedom left.
+It would seem that we have no freedom left to match an arbitrary $c_a^2$, e.g. the quintessence one $c_a^2=1$, since this value should automatically follows from the above constrains. 
+
+If we instead consider $w=w(y,b)$ we might be able to preserve the independence of $w$ and $c_a^2$...\todotag{Finish}
+
+
+
+
+
+
+
 
 
 
@@ -412,7 +447,7 @@ For simplicity we start in Newtonian gauge \eqref{eq:newtonian_gauge_metric} and
     ...
 \end{align}
 
-
+It is worth jumping directly to Section B5 where the equations are easily derived from the hamiltonian formalism.\answerAC{Polish above \& refer to B5}
 
 %==========================================================================
 %\subsection{Quadratic action for phonons}
