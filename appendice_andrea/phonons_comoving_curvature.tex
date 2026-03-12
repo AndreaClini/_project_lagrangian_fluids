@@ -54,9 +54,15 @@ For the comoving curvature we have
 \begin{align}
     \frac{d\mathcal{R}}{d\log a}=\frac{\dot{\mathcal{R}}}{\mathcal{H}}=\frac{\dot{\phi}}{\mathcal{H}}+\frac{\dot{\mathcal{H}}}{\mathcal{H}}\,\dot{\pi}_L+\ddot{\pi}_L,
 \end{align}
-and the equation becomes
+and the equation becomes\todoAC{Finish il conto sotto}
 {\small\begin{align}
 \begin{aligned}
-    \frac{d\mathcal{R}}{d\log a}=\frac{\dot{\phi}}{\mathcal{H}}+\frac{1}{\mathcal{H}}\,\Big(\dot{\mathcal{H}}-\mathcal{H}^2 +3\mathcal{H}\tfrac{\dot{p}}{\dot{\rho}}\Big)\dot{\pi}_L -k^2 c_s^2\pi_L+3c_s^2\phi +\psi. 
+    \frac{d\mathcal{R}}{d\log a}&=\frac{\dot{\phi}}{\mathcal{H}}+\frac{1}{\mathcal{H}}\,\Big(\dot{\mathcal{H}}-\mathcal{H}^2 +3\mathcal{H}^2\tfrac{\dot{p}}{\dot{\rho}}\Big)\dot{\pi}_L -k^2 c_s^2\pi_L+3c_s^2\phi +\psi\\[2.5pt]
+    &=3\tfrac{\dot{p}}{\dot{\rho}}\big(\mathcal{H}\dot{\pi}_L+\phi\big) + 3\big(c_s^2-\tfrac{\dot{p}}{\dot{\rho}}\big)\phi
+    +\frac{\dot{\phi}}{\mathcal{H}}+\frac{\dot{\mathcal{H}}-\mathcal{H}^2}{\mathcal{H}^2}\mathcal{H}\dot{\pi}_L -k^2 c_s^2\pi_L +\psi
 \end{aligned}\end{align}}
-Taking $\psi=\phi$ at \emph{late times} and in the large scale limit $k/\mathcal{H}\to0$, using the 1st and 2nd Friedman equation and the 0i Einstein equation for $\dot{\phi}+\mathcal{H}\phi=...$, we should be able to conclude that in the absence of $\delta P_{\text{nad}}$ the curvature $\mathcal{R}$ is conserved superhorizon...\todotag{Finish!!}
+Taking $\psi=\phi$ at \emph{late times} and in the large scale limit $k/\mathcal{H}\to0$, using the Einstein equations \eqref{eq:EE_00_poisson}-\eqref{eq:EE_ij_off_diagonal}, we conclude that in the absence of nonadiabatic pressure perturbations, i.e. if
+\begin{align}
+    \delta P-\frac{\dot{p}}{\dot{\rho}}\delta\rho= \big(c_a^2-\frac{\dot{p}}{\dot{\rho}}) + \Gamma \delta\sigma\overset{!}{=}0
+\end{align}
+then we have $\frac{d\log\mathcal{R}}{d\log a}\sim (k/\mathcal{H})^2$.
