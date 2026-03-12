@@ -2,57 +2,61 @@
 \subsection{Phonon hamiltonian \& fluid equations \textcolor{red}{(IN PROGRESS)}}
 %======================================================================
 %
-Having computed the quadratic action for phonons, we now derive the corresponding hamiltonian formulation and show the Hamilton equations for the field $\pi^\alpha$ are nothing else than the perturbed continuity and Euler equations in familar Boltzmann formulation.
-
+Having computed the quadratic action for phonons, we now derive the corresponding hamiltonian formulation and show the Hamilton equations for the fields $\pi^\alpha$ are nothing else than the perturbed continuity and Euler equations in familar Boltzmann formulation.
 For convenience we temporarily report the final form of the action \eqref{eq:quadrati_action_final_with_entropy_field}
 {\small\begin{align}
 \begin{aligned}
      S^{(2)}&=\int\! d^4x\, a^4\frac{\rho+p}{2}\bigg\{
-    (\dot{\pi}^j+h^{0j})^2 -\mathcal{C}(\partial_j \pi^j-\tfrac12 h^{ii})^2 \\[2.5pt]
+    (\dot{\pi}^j+h^{0j})^2 -\mathcal{C}(\partial_j \pi^j-\tfrac12 h^{ii})^2 + h^{00} (\partial_j\pi^j) \\[2.5pt]
     &\qquad\qquad\qquad \qquad + \mathcal{A} (\dot{\pi}^0/\dot{\bar{\varphi}}^0+\tfrac12 h^{00})^2 - 2\mathcal{M}(\dot{\pi}^0/\dot{\bar{\varphi}}^0+\tfrac12 h^{00}) (\partial_j \pi^j-\tfrac12 h^{ii}) \bigg\},
 \end{aligned}
 \end{align}}
-The conjugate fields are then 
+Using \eqref{eq:rho_p_fluctuations_via_b_y} and \eqref{eq:peculiar_velocity_fluid_vs_phonons}, we immediately identify the conjugate fields with entropy perturbation and peculiar velocity respectively 
 {\small\begin{subequations}\label{eq:conjugate_field_pi_with_entropy}
 \begin{align}
     \beta^0&:=\frac{\delta L}{\delta \dot{\pi}^0}=a^4(\rho+p)/\dot{\bar{\varphi}}^0\bigg\{\mathcal{A}\big(\dot{\pi}^0/\dot{\bar{\varphi}}^0+\tfrac12 h^{00}\big) - \mathcal{M}\big(\partial_j \pi^j-\tfrac12 h^{ii}\big)\bigg\} 
-    = \underbrace{\Big(\frac{yb a^4}{\dot{\bar{\varphi}}^0}\Big)}_{=\text{const}}\, \delta\sigma, \label{eq:conjugate_field_pi_with_entropy_beta_0}
+    \overset{!}{=} \underbrace{\Big(\frac{yb a^4}{\dot{\bar{\varphi}}^0}\Big)}_{=\text{const}}\, \delta\sigma, \label{eq:conjugate_field_pi_with_entropy_beta_0}
     \\[2.5pt]
     \beta^\ell&:=\frac{\delta L}{\delta \dot{\pi}^\ell}=a^4(\rho+p)\bigg\{\dot{\pi}^\ell+h^{0\ell}\bigg\} \overset{!}{=}-a^4(\rho+p)v^\ell\,. \label{eq:conjugate_field_pi_with_entropy_beta_j}
 \end{align}
 \end{subequations}}
-Using \eqref{eq:rho_p_fluctuations_via_b_y}-\eqref{eq:rho_p_sigma_fluctuations_vs_phonon_entropy_field} and \eqref{eq:peculiar_velocity_fluid_vs_phonons}, we immediately identify the conjugate fields with entropy perturbation and peculiar velocity respectively as indicated in the second equality.
-Notably the proportionality coefficient $\beta^0\propto  \delta\sigma$ is constant since $b\propto a^{-3}$ from \eqref{eq:conservation_noether_current_background_eft_number} and $y\propto a^{-1}\dot{\bar{\varphi}}^0$ from \eqref{eq:evolution_y_background_from_definition} at the background level.
+Note the proportionality coefficient $\beta^0\propto  \delta\sigma$ is constant since $b\propto a^{-3}$ from \eqref{eq:conservation_noether_current_background_eft_number} and $y\propto a^{-1}\dot{\bar{\varphi}}^0$ from \eqref{eq:evolution_y_background_from_definition} at the background level.
 
-For convenience we report the inverted conjugate fields, i.e. the first Hamilton equations,
-{\small\begin{align}\label{eq:inverted_conjugate_fields}
-\begin{aligned}
-    &\dot{\pi}^0/\dot{\bar{\varphi}}^0=\frac{1}{\dot{\bar{\varphi}}^0}\{\pi^0, H\}=\frac{\dot{\bar{\varphi}}^0}{a^4(\rho+p)\mathcal{A}}\beta^0 + \frac{\mathcal{M}}{\mathcal{A}}\big(\partial_j \pi^j-\tfrac12 h^{ii}\big)-\tfrac12 h^{00},\\[2.5pt]
-    &\dot{\pi}^\ell=\{\pi^\ell, H\}=\frac{\beta^\ell}{a^4(\rho+p)}-h^{0\ell}\,.
-\end{aligned}
-\end{align}}
+The inverse formulas for the conjugate fields corresponds to the first Hamilton equations,
+{\small\begin{subequations}\label{eq:inverted_conjugate_fields}
+\begin{align}
+    &\dot{\pi}^0/\dot{\bar{\varphi}}^0=\frac{1}{\dot{\bar{\varphi}}^0}\{\pi^0, H\}=\frac{\dot{\bar{\varphi}}^0}{a^4(\rho+p)\mathcal{A}}\beta^0 + \frac{\mathcal{M}}{\mathcal{A}}\big(\partial_j \pi^j-\tfrac12 h^{ii}\big)-\tfrac12 h^{00}, \label{eq:inverted_conjugate_fields_entropy}\\[2.5pt]
+    &\dot{\pi}^\ell=\{\pi^\ell, H\}=\frac{\beta^\ell}{a^4(\rho+p)}-h^{0\ell}\,. \label{eq:inverted_conjugate_fields_velocity}
+\end{align}
+\end{subequations}}
 The Hamiltonian density reads
 {\small\begin{align}\label{eq:hamiltonian_phonons}
 \begin{aligned}
     \mathcal{H}&= a^4\frac{\rho+p}{2}\bigg\{
-    (\dot{\pi}^j)^2 +\mathcal{C}(\partial_j \pi^j-\tfrac12 h^{ii})^2 
+    (\dot{\pi}^j)^2 +\mathcal{C}(\partial_j \pi^j-\tfrac12 h^{ii})^2 -h^{00} (\partial_j\pi^j)
      + \mathcal{A} (\dot{\pi}^0/\dot{\bar{\varphi}}^0)^2 +\mathcal{M}h^{00} (\partial_j \pi^j-\tfrac12 h^{ii}) \bigg\}\\[3pt]
-     &= \tfrac12 \tfrac{1}{a^4(\rho+p)}\big(\beta^j-a^4(\rho+p)h^{0j}\big)^2 +\tfrac{a^4(\rho+p)}{2}\big(\underbrace{\mathcal{C}+\tfrac{\mathcal{M}^2}{\mathcal{A}}}_{=c_a^2}\big)\big(\partial_j\pi^j-\tfrac12 h^{ii}\big)^2\\[2pt]
-     &\qquad+\tfrac12 \tfrac{1}{a^4(\rho+p)}\Big(\dot{\bar{\varphi}}^0\beta^0-\tfrac12 a^4(\rho+p)\mathcal{A}h^{00}\Big)^2 + \tfrac{\mathcal{M}}{\mathcal{A}} (\dot{\bar{\varphi}}^0\beta^0)\big(\partial_j\pi^j-\tfrac12 h^{ii}\big).
+     &= \tfrac12 \tfrac{1}{a^4(\rho+p)}\big(\beta^j-a^4(\rho+p)h^{0j}\big)^2 +\tfrac{a^4(\rho+p)}{2}\big(\underbrace{\mathcal{C}+\tfrac{\mathcal{M}^2}{\mathcal{A}}}_{=c_a^2}\big)\big(\partial_j\pi^j-\tfrac12 h^{ii}\big)^2 - \tfrac{a^4(\rho+p)}{2} h^{00} (\partial_j\pi^j)\\[1pt]
+     &\qquad+\tfrac12 \tfrac{1}{a^4(\rho+p)\mathcal{A}}\Big(\dot{\bar{\varphi}}^0\beta^0-\tfrac12 a^4(\rho+p)\mathcal{A}h^{00}\Big)^2 + \tfrac{\mathcal{M}}{\mathcal{A}} (\dot{\bar{\varphi}}^0\beta^0)\big(\partial_j\pi^j-\tfrac12 h^{ii}\big).
 \end{aligned}\end{align}}
 The Hamilton equations are then
-{\small\begin{align}\label{eq:hamiltonian_equations}
-\begin{aligned}
-    &\dot{\beta}^0= \{\beta^\ell, H\} = 0\,,\\[2.5pt]
-    &\dot{\beta}^\ell = \{\beta^\ell, H\} = a^4(\rho+p) c_s^2\,\vec{\partial}_\ell\big(\partial_j\pi^j-\tfrac12 h^{ii}\big) + \tfrac{\mathcal{M}}{\mathcal{A}} \dot{\bar{\varphi}}^0\, \vec{\partial}_\ell\beta^0\,.
-\end{aligned}\end{align}}
+{\small\begin{subequations}\label{eq:hamiltonian_equations}
+\begin{align}
+    &\dot{\beta}^0= \{\beta^\ell, H\} = 0\,, \label{eq:hamilton_eq_entropy}\\[2.5pt]
+    &\dot{\beta}^\ell = \{\beta^\ell, H\} = a^4(\rho+p) c_a^2\,\vec{\partial}_\ell\big(\partial_j\pi^j-\tfrac12 h^{ii}\big) - a^4(\rho+p)\tfrac12 \vec{\partial}_\ell h^{00}+ \tfrac{\mathcal{M}}{\mathcal{A}} \dot{\bar{\varphi}}^0\, \vec{\partial}_\ell\beta^0\,.\label{eq:hamilton_eq_euler_velocity}
+\end{align}\end{subequations}}
 Since the Hamiltonian is independent of $\pi^0$ and $\beta^0 = \text{const}\cdot  \delta\sigma$ as discussed after \eqref{eq:conjugate_field_pi_with_entropy_beta_0}, the first equation confirms that entropy perturbations are conserved at linear order for a single fluid, as already obtained in \eqref{eq:entropy_conservation_perturbative} from the conservation of  Noether currents.
-Recalling also \eqref{eq:conjugate_field_pi_with_entropy_beta_j}, the second equation is simply the Euler equation for the fluid and is rewritten in familiar form as\todoAC{Finish formula}
-{\color{red}
+
+From \eqref{eq:conjugate_field_pi_with_entropy_beta_j} we see the second equation \eqref{eq:hamilton_eq_euler_velocity} is simply the Euler equation for the fluid.
+Using \eqref{eq:rho_p_sigma_fluctuations_vs_phonon_entropy_field} and \eqref{eq:adiabatic_cs_nonadiabatic_pressure} this is rewritten in familiar form as\todoAC{Finish formula}
 {\small\begin{align}\label{eq:euler_equation_from_hamiltonian}
 \begin{aligned}
-    (\rho+p)\dot{v}^\ell +v^\ell a^{-4}\frac{d}{d\tau}\big(a^4(\rho+p)\Big) =-c_s^2 \vec{\partial}_\ell\delta\rho +\Big(c_s^2-\tfrac{\mathcal{M}}{\mathcal{A}}\Big) yb\, \vec{\partial}_\ell\delta\sigma\,,.
+    (\rho+p)\dot{v}^\ell +v^\ell a^{-4}\frac{d}{d\tau}\big(a^4(\rho+p)\big) =-c_a^2 \,\vec{\partial}_\ell\delta\rho -\Gamma\, \vec{\partial}_\ell\delta\sigma\,+ (\rho+p) \tfrac12 \vec{\partial}_\ell h^{00}.
 \end{aligned}\end{align}}
-This is made even more explicit inserting the expressions for $\delta\rho$ and $\delta\sigma$ from \eqref{eq:rho_p_fluctuations_via_b_y} and \eqref{eq:rho_p_sigma_fluctuations_vs_phonon_entropy_field}.
+Inserting the background continuity equation this takes precisely the familar form \eqref{eq:euler_vector_form} of the Euler equation
+{\small\begin{align}
+\begin{aligned}
+    \dot{v}_\ell+ \mathcal{H}v_\ell -3\mathcal{H}\frac{\dot{\bar{p}}}{\dot{\bar{\rho}}}v_\ell=-c_a^2 \,\tfrac{1}{\rho+p}\vec{\partial}_\ell\delta\rho -\Gamma\, \tfrac{1}{\rho+p}\vec{\partial}_\ell\delta\sigma\,+ \tfrac12 \vec{\partial}_\ell h^{00}.
+\end{aligned}\end{align}}
+{\color{red}
+Finally the perturbed continuity equation is obtained from a combination of the Hamilton equations \eqref{eq:inverted_conjugate_fields} for $\pi^0$ and $\pi^j$ recalling the expression \eqref{eq:rho_p_fluctuations_via_b_y}.}\todotag{FInish}
 
-Finally the perturbed continuity equation is obtained from a combination of the Hamilton equations \eqref{eq:inverted_conjugate_fields} for $\pi^0$ and $\pi^j$ recalling the expression \eqref{eq:rho_p_fluctuations_via_b_y}.}

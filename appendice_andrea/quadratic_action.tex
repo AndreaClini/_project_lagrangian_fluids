@@ -140,7 +140,7 @@ The final form of the action is
 {\small\begin{align}\label{eq:quadrati_action_final_with_entropy_field}
 \begin{aligned}
      S^{(2)}&=\int\! d^4x\, a^4\frac{\rho+p}{2}\bigg\{
-    (\dot{\pi}^j+h^{0j})^2 -\mathcal{C}(\partial_j \pi^j-\tfrac12 h^{ii})^2 \\[2.5pt]
+    (\dot{\pi}^j+h^{0j})^2 -\mathcal{C}(\partial_j \pi^j-\tfrac12 h^{ii})^2 + h^{00} (\partial_j\pi^j)\\[2.5pt]
     &\qquad\qquad\qquad \qquad + \mathcal{A} (\dot{\pi}^0/\dot{\bar{\varphi}}^0+\tfrac12 h^{00})^2 - 2\mathcal{M}(\dot{\pi}^0/\dot{\bar{\varphi}}^0+\tfrac12 h^{00}) (\partial_j \pi^j-\tfrac12 h^{ii}) \bigg\},
 \end{aligned}
 \end{align}}
@@ -156,8 +156,8 @@ for a function of space only $E(\mathbf{x})$ directly proportional to entropy fl
 Resolving the constraint and plugging it back into the action, we get the final action for both longitudinal and transverse modes $\pi^j=\pi^j_{||}+\pi^j_{\perp}$ is
 {\small\begin{align}\label{eq:quadrati_action_final_integrated_out_entropy_field}
 \begin{aligned}
-     S^{(2)}&=\int\! d^4x\, a^4\frac{\rho+p}{2}\bigg\{
-    (\dot{\pi}^j+h^{0j})^2 -\big(\underbrace{\mathcal{C}+\tfrac{\mathcal{M}^2}{\mathcal{A}}}_{=:c_s^2}\big)(\partial_j \pi^j-\tfrac12 h^{ii})^2  + \mathcal{A}\mathcal{E}^2 E(\mathbf{x})^2\bigg\}.
+     S^{(2)}&\!=\!\int\!\! d^4\!x\, a^4\frac{\rho+p}{2}\bigg\{
+    (\dot{\pi}^j+h^{0j})^2\!-\!\big(\underbrace{\mathcal{C}+\tfrac{\mathcal{M}^2}{\mathcal{A}}}_{=:c_s^2}\big)(\partial_j \pi^j-\tfrac12 h^{ii})^2 \!+ h^{00} (\partial_j\pi^j) + \mathcal{A}\mathcal{E}^2 E(\mathbf{x})^2\bigg\}.
 \end{aligned}
 \end{align}}
 The entropy contribution to the gradient coefficient $c_s^2$ and to the total action is always positive in \emph{physical} situations as discussed in \eqref{eq:entropy_contribution_always_positive}, and the gradient coefficient always matches the thermodynamical definition of \emph{adiabatic} sound speed $c_a^2\equiv c_s^2$ as in \eqref{eq:cs_equiv_ca_flat_spacetime}.

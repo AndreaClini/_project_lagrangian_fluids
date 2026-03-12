@@ -174,11 +174,11 @@ A linear combination of the 00 and 0i Einstein equations gives the gauge-invaria
 where $\Phi$ is the gauge-invariant Bardeen potential, equal to $\phi$ in Newtonian gauge, and $\Delta$ is the gauge-invariant density contrast, where again we used $B=0$ in Newtonian gauge. 
 % 
 The continuity and Euler equations $\nabla_\mu T^\mu_\nu=0$ for a \emph{separately conserved} species are\footnote{For now we keep {\color{blue}scalar anisotropic stress} and highlight in blue.}
-{\small\begin{align}
+{\small\begin{subequations}\label{eq:continuity_euler_bkg_perturbed}\begin{align}
     &\dot{\bar{\rho}} +3\mathcal{H}(\bar{\rho}+\bar{p})=0\,, \label{eq:background_continuity}\\[3pt]
     &\dot{\delta\rho}= -3\mathcal{H}(\delta\rho+\delta P) + (\bar{\rho}+\bar{P})\big(3\dot{\phi}-\partial_j v^j \big)\,,\label{eq:perturbed_continuity_drho}\\[3pt]
     &\dot{v}_j+ \mathcal{H}v_j-3\mathcal{H}\frac{\dot{\bar{p}}}{\dot{\bar{\rho}}}v_j+\frac{\partial_j\delta p}{(\bar{\rho}+\bar{p})}+\partial_j\psi{\color{blue}+\frac{\partial_\ell \Sigma^{\ell}_{j}}{(\bar{\rho}+\bar{p})}}=0\,,\label{eq:euler_vector_form}
-\end{align}}
+\end{align}\end{subequations}}
 Introducing the density contrast $\delta=\delta\rho/\bar{\rho}$, the velocity divergence \eqref{eq:velocity_decomposition} and the scalar anisotropic stress \eqref{eq:anisotropic_stress_decomposition}, and taking the divergence of the Euler equation, we get
 \begin{align}
     &\dot{\delta}= 3\mathcal{H}\left(\frac{\bar{p}}{\bar{\rho}}-\frac{\delta p}{\delta\rho}\right)\delta + \left(1+\frac{\bar{p}}{\bar{\rho}}\right)3\dot{\phi} - \left(1+\frac{\bar{p}}{\bar{\rho}}\right)\theta\, \label{eq:continuity_overdensity_form}\\
