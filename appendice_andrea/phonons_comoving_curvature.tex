@@ -5,11 +5,6 @@
 %---------------------------------------------------------------------------
 A distinctive feature of \emph{adiabatic} perturbations is that they are conserved in the superhorizon limit.
 We would like to show this explicitly from the EoM of phonons.
-
-From \eqref{eq:peculiar_velocity_fluid_vs_phonons} we identify the comoving curvature perturbations \eqref{eq:comoving_curvature_perturbations_gauge_inv_and_newtonian} in terms of metric newtonian potentials and phonon potential \eqref{eq:phonon_potential} as
-\begin{equation}
-    \mathcal{R} \overset{\text{Newt.}}{=} \phi -\mathcal{H}v = \phi + \mathcal{H}\,\dot{\pi}_L= \phi -(\mathcal{H}/k^2)(\partial_j\dot{\pi}^j)\,.
-\end{equation}
 %
 In Newtonian gauge \eqref{eq:newtonian_gauge_metric} off-diagonal terms vanish and the quadratic lagrangian \eqref{eq:quadrati_action_final_with_entropy_field} reads 
 {\small\begin{align}\label{eq:quadrati_action_final_with_entropy_field}
@@ -44,80 +39,60 @@ Using $\pi^\ell_{||}=\partial_\ell \pi_L$ this is rewritten
     \ddot{\pi}_L +\mathcal{H}\dot{\pi}_L -3\mathcal{H}\tfrac{\dot{p}}{\dot{\rho}}\dot{\pi}_L
     = -k^2 c_s^2\pi_L+3c_s^2\phi +\psi 
 \end{aligned}\end{align}}
-This equation is essentially
-\begin{align}
-    \ddot{\pi}_L=-\underbrace{c_s^2 k^2\pi_L}_{\to0}+\text{friction} +\text{metric terms}
-\end{align}
-and we should be able to derive the conservation of comoving curvature perturbations from this.
 
-For the comoving curvature we have
-\begin{align}
-    \frac{d\mathcal{R}}{d\log a}=\frac{\dot{\mathcal{R}}}{\mathcal{H}}=\frac{\dot{\phi}}{\mathcal{H}}+\frac{\dot{\mathcal{H}}}{\mathcal{H}}\,\dot{\pi}_L+\ddot{\pi}_L,
-\end{align}
-and the equation becomes\todoAC{Finish il conto sotto}
+Passing to variable $x=\log a$ we get
 {\small\begin{align}
 \begin{aligned}
-    \frac{d\mathcal{R}}{d\log a}&=\frac{\dot{\phi}}{\mathcal{H}}+\frac{1}{\mathcal{H}}\,\Big(\dot{\mathcal{H}}-\mathcal{H}^2 +3\mathcal{H}^2\tfrac{\dot{p}}{\dot{\rho}}\Big)\dot{\pi}_L -k^2 c_s^2\pi_L+3c_s^2\phi +\psi\\[2.5pt]
-    &=3\tfrac{\dot{p}}{\dot{\rho}}\big(\mathcal{H}\dot{\pi}_L+\phi\big) + 3\big(c_s^2-\tfrac{\dot{p}}{\dot{\rho}}\big)\phi
-    +\frac{\dot{\phi}}{\mathcal{H}}+\frac{\dot{\mathcal{H}}-\mathcal{H}^2}{\mathcal{H}^2}\mathcal{H}\dot{\pi}_L -k^2 c_s^2\pi_L +\psi
+    \pi_L''+\Big(\frac{\dot{\mathcal{H}}}{\mathcal{H}^2}+1-3\tfrac{\dot{p}}{\dot{\rho}}\Big)\pi_L'= -\frac{k^2}{\mathcal{H}^2}c_s^2\pi_L+3c_s^2\phi/\mathcal{H}^2 +\psi/\mathcal{H}^2. 
 \end{aligned}\end{align}}
-Taking $\psi=\phi$ at \emph{late times} and in the large scale limit $k/\mathcal{H}\to0$, using the Einstein equations \eqref{eq:EE_00_poisson}-\eqref{eq:EE_ij_off_diagonal}, we conclude that in the absence of nonadiabatic pressure perturbations, i.e. if
-\begin{align}
-    \delta P-\frac{\dot{p}}{\dot{\rho}}\delta\rho= \big(c_a^2-\frac{\dot{p}}{\dot{\rho}}) + \Gamma \delta\sigma\overset{!}{=}0
-\end{align}
-then we have $\frac{d\log\mathcal{R}}{d\log a}\sim (k/\mathcal{H})^2$.
-
-On the other hand, the curvature perturbation on uniform density hypersurfaces, defined as \textcolor{blue}{(watch out sign conventions!)}
-\begin{align}\label{eq: zeta def}
-    \zeta \equiv \phi - \frac{\delta \rho}{3 (\rho + p)}\, ,
-\end{align}
-the conservation on super-horizon scales is straightforward when the fluid posses constant entropy per particle.
-Substituting the energy density perturbation in terms of the phonons we immediately find that there is no metric contribution
+Dropping superhorizon suppressed terms and identifying $\phi\simeq \phi$ we get
 {\small\begin{align}
-    \begin{aligned}
-    \zeta &= \phi - \frac{1}{3 (\rho + p)}\Bigg[ (\rho + p) (\nabla^2\pi_L + 3 \phi) + \frac{E(\bf{x})}{a^4} \Bigg] = \\[2.5pt]
-    & = -\frac{\nabla^2 \pi_L}{3} - \frac{E(\bf{x})}{3 a^4 (\rho + p)}\, .
-    \end{aligned}
-\end{align}}
-Deriving w.r.t. the conformal time and exploiting the conservation of energy on the background we have
-{\small\begin{align}\label{eq: zeta prime}
-    \begin{aligned}
-    \dot{\zeta} &= -\frac{\nabla^2 \dot{\pi}_L}{3} + \frac{\mathcal{H}E(\bf{x})}{3 a^4 (\rho + p)} \left( 1 - 3 \frac{\dot{p}}{\dot{\rho}} \right) \\[2.5pt]
-    &=-\frac{\nabla^2 \dot{\pi}_L}{3} + \frac{\mathcal{H} E(\bf{x})}{3 a^4 (\rho + p)} \left( 1 - 3 w + \frac{3 \Gamma}{by} \right)\, ,
-    \end{aligned}
-\end{align}}
-where the last line is obtained noting that $\dot{p}/\dot{\rho} \equiv c_{\rm baro}^{2} = w - \Gamma/(by)$ assuming $b\propto a^{-3}$ and $\dot{y} = -\frac{\dot{b}}{b F_{yy}}(b F_{by} - F_y)$. This way we can avoid using the misunderstood adiabatic speed of sound.
-If the fluid is barotropic than it has no entropy fluctuations and $E(\bf{x}) \propto \delta \sigma = 0$ and, neglecting the gradient of the longitudinal modes for large wavelength, the conservation of $\zeta$ is thus recovered.
+\begin{aligned}
+    \pi_L''+\Big(\frac{\dot{\mathcal{H}}}{\mathcal{H}^2}+1-3\tfrac{\dot{p}}{\dot{\rho}}\Big)\pi_L'= \graycancel{-\frac{k^2}{\mathcal{H}^2}c_s^2\pi_L}+(3c_s^2+1)\phi/\mathcal{H}^2 . 
+\end{aligned}\end{align}}
+Next we use the gauge invariant Poisson equation \eqref{eq:poisson_gauge_invariant}, and the expressions \eqref{eq:rho_p_sigma_fluctuations_vs_phonon_entropy_field} neglecting entropy perturbations $E(\mathbf{x})$, to write
+{\small\begin{align}
+\begin{aligned}
+    0\simeq \tfrac23 \tfrac{k^2}{\mathcal{H}^2} \phi&=\frac{1}{\rho}\Big[\delta\rho+3(\mathcal{H}/k^2)(1+w)\theta\Big]\\
+    &=(1+w)\big[(3\phi-k^2\pi_L)+\textcolor{red}{E(x)}+3\mathcal{H}\dot{\pi}_L\big]
+\end{aligned}\end{align}}
+Passing to variable $\log a$ and dropping superhorizon suppressed term we solve for $\phi$ to get
+\begin{align}
+    \phi=\frac{k^2\pi_L}{3}-\mathcal{H}^2\pi_L'+\textcolor{red}{\tfrac13 E(x)}.
+\end{align}
+Substituting it back into the EoM for phonons we get
+{\small\begin{align}
+\begin{aligned}
+    \pi_L''+\Big(\frac{\dot{\mathcal{H}}}{\mathcal{H}^2}+1-3\tfrac{\dot{p}}{\dot{\rho}}\Big)\pi_L'= (3c_s^2+1)\bigg[\graycancel{\tfrac13\tfrac{k^2}{\mathcal{H}^2}\pi_L}-\pi_L'+\textcolor{red}{\tfrac13 E(x)}\bigg]
+\end{aligned}\end{align}}
+That is to say
+{\small\begin{align}
+\begin{aligned}
+    \pi_L''=-\Big[\frac{\dot{\mathcal{H}}}{\mathcal{H}^2}+2+3\big(c_s^2-\tfrac{\dot{p}}{\dot{\rho}}\big)\Big]\pi_L' + \textcolor{red}{(c_s^2+\tfrac13) E(x)}.
+\end{aligned}\end{align}}
+There are two solutions of this ODE.
+If entropy perturbations $\delta\sigma\sim E$ there is no source for $\pi_L'$.
+Hence one is $\pi_L\equiv\text{conts}$ and the other will be growing or decaying depending on the sign of the coefficient.
+Note that a dependence $\pi_L'\propto\, a^{c}$ is unchanged upon integrating the $\log a$ variation, that is also $\pi_L\, \propto\, a^{c}$ will be growing (resp. decaying).
+The equation is then
+{\small\begin{align}
+\begin{aligned}
+    \frac{d\log \pi_L'}{d\log a}=-\Big[\frac{\dot{\mathcal{H}}}{\mathcal{H}^2}+2+3\big(c_s^2-\tfrac{\dot{p}}{\dot{\rho}}\big)\Big]= -\tfrac32(1-w)-\big(c_s^2-\tfrac{\dot{p}}{\dot{\rho}}\big).
+\end{aligned}\end{align}}
+which confirm the second solution is decayng for $w<1$ and adiabatic perturbations $\big(c_s^2-\tfrac{\dot{p}}{\dot{\rho}}\big)=0$. 
 
-Coming back to the comoving curvature perturbation we can infer its equality with $\zeta$ on super-horizon scales exploiting a combination of Einstein's equations. Even in the case where anisotropies are non negligible we can always combine Poisson and momentum equations to obtain a constraint equation
-\begin{align}
-    \nabla^2 \phi = -\frac{3 \mathcal{H}^2}{2 \rho} \Big[ \delta \rho + 3 \mathcal{H} (\rho + p) \dot{\pi}_L \Big]\, ,
-\end{align}
-where we used the equivalence of the velocity perturbation $\nabla^2 v = \theta = - \nabla^2 \dot{\pi}_L$.
-This time, instead of substituting the phonons density perturbation, we use the definition of $\zeta$ \eqref{eq: zeta def}.
-Putting the gravitational potential on the l.h.s. we get the following equation
-\begin{align}
-    \begin{aligned}
-    \left( \nabla^2 + \frac{9\mathcal{H}^2}{2}(1+w) \right)\phi = \frac{9\mathcal{H}^2}{2}(1+w)(\zeta-\mathcal{H} \dot{\pi}_L)\, .
-    \end{aligned}
-\end{align}
-Taking the Laplacian on both sides and trading the longitudinal mode for the time derivative of $\zeta$ from \eqref{eq: zeta prime}, we can write
-{\small\begin{align}\label{eq: Poisson large scales}
-    \left( \nabla^2 + \frac{9\mathcal{H}^2}{2}(1+w) \right)\nabla^2\phi &= \frac{9\mathcal{H}^2}{2}(1+w) \left( \nabla^2 \zeta - 3 \mathcal{H} (\tilde{E}- \dot{\zeta}) 
-    \right)\\[2.5pt]
-    \nabla^2 \phi &\rightarrow \nabla^2 \zeta +3 (\dot{\zeta} -\tilde{E}) \, ,
-\end{align}}
-where for simplicity we defined
-\begin{align}
-    \tilde{E} =\frac{\mathcal{H} E(\bf{x})}{3 a^4 (\rho + p)} \left( 1 - 3 w + \frac{3 \Gamma}{by} \right)
-\end{align}
-In this regime we can then take the Laplacian of the comoving curvature perturbation, trading once again the time derivative of the longitudinal mode for the one of $\zeta$ and making use of \eqref{eq: Poisson large scales}, we get
-{\small\begin{align}\label{eq: equivalence curvature pert}
-    \begin{aligned}
-    \nabla^2 \mathcal{R} &= \nabla^2 \phi + \mathcal{H} \nabla^2 \dot{\pi}_L \\[2.5pt]
-    &= \nabla^2 \phi + 3\mathcal{H} (\tilde{E} - \dot{\zeta})\\[2.5pt]
-    &=\nabla^2 \phi + 3\mathcal{H}\tilde{E} - \nabla^2\phi - 3 \mathcal{H} \tilde{E} + \nabla^2 \zeta\\[2.5pt]
-    &=\nabla^2 \zeta \, ,
-    \end{aligned}
-\end{align}}
-from which we conclude $\mathcal{R} \approx \zeta$ on large scales.
+From \eqref{eq:peculiar_velocity_fluid_vs_phonons} we identify the comoving curvature perturbations \eqref{eq:comoving_curvature_perturbations_gauge_inv_and_newtonian} in terms of metric newtonian potentials and phonon potential \eqref{eq:phonon_potential} as
+\begin{equation}
+    \zeta \overset{\text{Newt.}}{=} \phi -\frac{\delta\rho}{3(\rho+p)} = \phi + \frac{1}{3(\rho+p)}\bigg[(\rho+p)(\partial_j\pi^j+3\phi)+\frac{E(x)}{a^4}\bigg]=\tfrac13 k^2\pi_L-\frac{E(x)}{a^4(\rho+p)}.
+\end{equation}
+Now if we ignore entropy perturbations $\delta\sigma\sim E$ the above analysis of $\pi_L$ confirms $\zeta$ is constant (or decaying) superhorizon.
+
+
+
+
+
+
+
+
+
+
