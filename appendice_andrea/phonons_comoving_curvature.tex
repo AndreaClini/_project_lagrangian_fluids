@@ -66,3 +66,58 @@ Taking $\psi=\phi$ at \emph{late times} and in the large scale limit $k/\mathcal
     \delta P-\frac{\dot{p}}{\dot{\rho}}\delta\rho= \big(c_a^2-\frac{\dot{p}}{\dot{\rho}}) + \Gamma \delta\sigma\overset{!}{=}0
 \end{align}
 then we have $\frac{d\log\mathcal{R}}{d\log a}\sim (k/\mathcal{H})^2$.
+
+On the other hand, the curvature perturbation on uniform density hypersurfaces, defined as \textcolor{blue}{(watch out sign conventions!)}
+\begin{align}\label{eq: zeta def}
+    \zeta \equiv \phi - \frac{\delta \rho}{3 (\rho + p)}\, ,
+\end{align}
+the conservation on super-horizon scales is straightforward when the fluid posses constant entropy per particle.
+Substituting the energy density perturbation in terms of the phonons we immediately find that there is no metric contribution
+{\small\begin{align}
+    \begin{aligned}
+    \zeta &= \phi - \frac{1}{3 (\rho + p)}\Bigg[ (\rho + p) (\nabla^2\pi_L + 3 \phi) + \frac{E(\bf{x})}{a^4} \Bigg] = \\[2.5pt]
+    & = -\frac{\nabla^2 \pi_L}{3} - \frac{E(\bf{x})}{3 a^4 (\rho + p)}\, .
+    \end{aligned}
+\end{align}}
+Deriving w.r.t. the conformal time and exploiting the conservation of energy on the background we have
+{\small\begin{align}\label{eq: zeta prime}
+    \begin{aligned}
+    \dot{\zeta} &= -\frac{\nabla^2 \dot{\pi}_L}{3} + \frac{\mathcal{H}E(\bf{x})}{3 a^4 (\rho + p)} \left( 1 - 3 \frac{\dot{p}}{\dot{\rho}} \right) \\[2.5pt]
+    &=-\frac{\nabla^2 \dot{\pi}_L}{3} + \frac{\mathcal{H} E(\bf{x})}{3 a^4 (\rho + p)} \left( 1 - 3 w + \frac{3 \Gamma}{by} \right)\, ,
+    \end{aligned}
+\end{align}}
+where the last line is obtained noting that $\dot{p}/\dot{\rho} \equiv c_{\rm baro}^{2} = w - \Gamma/(by)$ assuming $b\propto a^{-3}$ and $\dot{y} = -\frac{\dot{b}}{b F_{yy}}(b F_{by} - F_y)$. This way we can avoid using the misunderstood adiabatic speed of sound.
+If the fluid is barotropic than it has no entropy fluctuations and $E(\bf{x}) \propto \delta \sigma = 0$ and, neglecting the gradient of the longitudinal modes for large wavelength, the conservation of $\zeta$ is thus recovered.
+
+Coming back to the comoving curvature perturbation we can infer its equality with $\zeta$ on super-horizon scales exploiting a combination of Einstein's equations. Even in the case where anisotropies are non negligible we can always combine Poisson and momentum equations to obtain a constraint equation
+\begin{align}
+    \nabla^2 \phi = -\frac{3 \mathcal{H}^2}{2 \rho} \Big[ \delta \rho + 3 \mathcal{H} (\rho + p) \dot{\pi}_L \Big]\, ,
+\end{align}
+where we used the equivalence of the velocity perturbation $\nabla^2 v = \theta = - \nabla^2 \dot{\pi}_L$.
+This time, instead of substituting the phonons density perturbation, we use the definition of $\zeta$ \eqref{eq: zeta def}.
+Putting the gravitational potential on the l.h.s. we get the following equation
+\begin{align}
+    \begin{aligned}
+    \left( \nabla^2 + \frac{9\mathcal{H}^2}{2}(1+w) \right)\phi = \frac{9\mathcal{H}^2}{2}(1+w)(\zeta-\mathcal{H} \dot{\pi}_L)\, .
+    \end{aligned}
+\end{align}
+Taking the Laplacian on both sides and trading the longitudinal mode for the time derivative of $\zeta$ from \eqref{eq: zeta prime}, we can write
+{\small\begin{align}\label{eq: Poisson large scales}
+    \left( \nabla^2 + \frac{9\mathcal{H}^2}{2}(1+w) \right)\nabla^2\phi &= \frac{9\mathcal{H}^2}{2}(1+w) \left( \nabla^2 \zeta - 3 \mathcal{H} (\tilde{E}- \dot{\zeta}) 
+    \right)\\[2.5pt]
+    \nabla^2 \phi &\rightarrow \nabla^2 \zeta +3 (\dot{\zeta} -\tilde{E}) \, ,
+\end{align}}
+where for simplicity we defined
+\begin{align}
+    \tilde{E} =\frac{\mathcal{H} E(\bf{x})}{3 a^4 (\rho + p)} \left( 1 - 3 w + \frac{3 \Gamma}{by} \right)
+\end{align}
+In this regime we can then take the Laplacian of the comoving curvature perturbation, trading once again the time derivative of the longitudinal mode for the one of $\zeta$ and making use of \eqref{eq: Poisson large scales}, we get
+{\small\begin{align}\label{eq: equivalence curvature pert}
+    \begin{aligned}
+    \nabla^2 \mathcal{R} &= \nabla^2 \phi + \mathcal{H} \nabla^2 \dot{\pi}_L \\[2.5pt]
+    &= \nabla^2 \phi + 3\mathcal{H} (\tilde{E} - \dot{\zeta})\\[2.5pt]
+    &=\nabla^2 \phi + 3\mathcal{H}\tilde{E} - \nabla^2\phi - 3 \mathcal{H} \tilde{E} + \nabla^2 \zeta\\[2.5pt]
+    &=\nabla^2 \zeta \, ,
+    \end{aligned}
+\end{align}}
+from which we conclude $\mathcal{R} \approx \zeta$ on large scales.
