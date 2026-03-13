@@ -1,10 +1,10 @@
 %-------------------------------------------------------------------------
 %======================================================================
-\section{Superhorizon conservation of curvature perturbations from phonon EoM {\color{red}(in progress)}}
+\section{Superhorizon conservation of curvature perturbations from phonon EoM}
 %======================================================================
 %---------------------------------------------------------------------------
 A distinctive feature of \emph{adiabatic} perturbations is that they are conserved in the superhorizon limit.
-We would like to show this explicitly from the EoM of phonons.
+We would like to show this explicitly from the EoM of phonons.\questionAC{Polish a bit}
 %
 In Newtonian gauge \eqref{eq:newtonian_gauge_metric} off-diagonal terms vanish and the quadratic lagrangian \eqref{eq:quadrati_action_final_with_entropy_field} reads 
 {\small\begin{align}\label{eq:quadrati_action_final_with_entropy_field}
@@ -27,65 +27,54 @@ Resolving the constraint and plugging it back into the action, the final form \e
     (\dot{\pi}^j)^2 -c_s^2(\partial_j \pi^j+3\phi)^2 -2\psi (\partial_j\pi^j) + \mathcal{A}\mathcal{E}^2 E(\mathbf{x})^2\bigg\}.
 \end{aligned}
 \end{align}}
-The equation of motion is
+The equation of motion for phonons is then
 {\small\begin{align}
 \begin{aligned}
     \ddot{\pi}^\ell +\mathcal{H}\dot{\pi}^\ell -3\mathcal{H}\tfrac{\dot{p}}{\dot{\rho}}\dot{\pi}^\ell
     = c_s^2 \vec{\partial}_\ell(\partial_j \pi^j+3\phi) +\vec{\partial}_\ell\psi 
 \end{aligned}\end{align}}
-Using $\pi^\ell_{||}=\partial_\ell \pi_L$ this is rewritten
-{\small\begin{align}
-\begin{aligned}
-    \ddot{\pi}_L +\mathcal{H}\dot{\pi}_L -3\mathcal{H}\tfrac{\dot{p}}{\dot{\rho}}\dot{\pi}_L
-    = -k^2 c_s^2\pi_L+3c_s^2\phi +\psi 
-\end{aligned}\end{align}}
-
-Passing to variable $x=\log a$ we get
-{\small\begin{align}
+Using $\pi^\ell_{||}=\partial_\ell \pi_L$ and passing to variable $x=\log a$ we get
+{\small\begin{align}\label{eq:eom_phonon_potential_log_a}
 \begin{aligned}
     \pi_L''+\Big(\frac{\dot{\mathcal{H}}}{\mathcal{H}^2}+1-3\tfrac{\dot{p}}{\dot{\rho}}\Big)\pi_L'= -\frac{k^2}{\mathcal{H}^2}c_s^2\pi_L+3c_s^2\phi/\mathcal{H}^2 +\psi/\mathcal{H}^2. 
 \end{aligned}\end{align}}
-Dropping superhorizon suppressed terms and identifying $\phi\simeq \phi$ we get
-{\small\begin{align}
-\begin{aligned}
-    \pi_L''+\Big(\frac{\dot{\mathcal{H}}}{\mathcal{H}^2}+1-3\tfrac{\dot{p}}{\dot{\rho}}\Big)\pi_L'= \graycancel{-\frac{k^2}{\mathcal{H}^2}c_s^2\pi_L}+(3c_s^2+1)\phi/\mathcal{H}^2 . 
-\end{aligned}\end{align}}
-Next we use the gauge invariant Poisson equation \eqref{eq:poisson_gauge_invariant}, and the expressions \eqref{eq:rho_p_sigma_fluctuations_vs_phonon_entropy_field} neglecting entropy perturbations $E(\mathbf{x})$, to write
+
+Now we insert the formulas for density \eqref{eq:rho_p_sigma_fluctuations_vs_phonon_entropy_field} and velocity \eqref{eq:peculiar_velocity_fluid_vs_phonons} perturbations into the gauge invariant Poisson equation \eqref{eq:poisson_gauge_invariant} to write
 {\small\begin{align}
 \begin{aligned}
     0\simeq \tfrac23 \tfrac{k^2}{\mathcal{H}^2} \phi&=\frac{1}{\rho}\Big[\delta\rho+3(\mathcal{H}/k^2)(1+w)\theta\Big]\\
-    &=(1+w)\big[(3\phi-k^2\pi_L)+\textcolor{red}{E(x)}+3\mathcal{H}\dot{\pi}_L\big]
+    &=(1+w)\big[(3\phi-k^2\pi_L)+E(x)+3\mathcal{H}\dot{\pi}_L\big]
 \end{aligned}\end{align}}
 Passing to variable $\log a$ and dropping superhorizon suppressed term we solve for $\phi$ to get
-\begin{align}
-    \phi=\frac{k^2\pi_L}{3}-\mathcal{H}^2\pi_L'+\textcolor{red}{\tfrac13 E(x)}.
+\begin{align}\label{eq:inverted_gauge_invariant_poisson}
+    \phi=\frac{k^2\pi_L}{3}-\mathcal{H}^2\pi_L'+\tfrac13 E(x).
 \end{align}
-Substituting it back into the EoM for phonons we get
+We now go back to the EoM for phonons \eqref{eq:eom_phonon_potential_log_a}.
+In the superhorizon limit, we identify $\psi\simeq \phi$, use \eqref{eq:inverted_gauge_invariant_poisson} to eliminate $\phi$ and drop suppressed terms to get
 {\small\begin{align}
 \begin{aligned}
-    \pi_L''+\Big(\frac{\dot{\mathcal{H}}}{\mathcal{H}^2}+1-3\tfrac{\dot{p}}{\dot{\rho}}\Big)\pi_L'= (3c_s^2+1)\bigg[\graycancel{\tfrac13\tfrac{k^2}{\mathcal{H}^2}\pi_L}-\pi_L'+\textcolor{red}{\tfrac13 E(x)}\bigg]
+    \pi_L''+\Big(\frac{\dot{\mathcal{H}}}{\mathcal{H}^2}+1-3\tfrac{\dot{p}}{\dot{\rho}}\Big)\pi_L'= \graycancel{-\frac{k^2}{\mathcal{H}^2}c_s^2\pi_L}+(3c_s^2+1)\bigg[\graycancel{\tfrac13\tfrac{k^2}{\mathcal{H}^2}\pi_L}-\pi_L'+\tfrac13 E(x)\bigg]
 \end{aligned}\end{align}}
-That is to say
-{\small\begin{align}
+The final equation for the phonon potential in the superhorizon limit is then
+{\small\begin{align}\label{eq:superhorizon_phonon_potential}
 \begin{aligned}
-    \pi_L''=-\Big[\frac{\dot{\mathcal{H}}}{\mathcal{H}^2}+2+3\big(c_s^2-\tfrac{\dot{p}}{\dot{\rho}}\big)\Big]\pi_L' + \textcolor{red}{(c_s^2+\tfrac13) E(x)}.
+    \pi_L''=-\Big[\frac{\dot{\mathcal{H}}}{\mathcal{H}^2}+2+3\big(c_s^2-\tfrac{\dot{p}}{\dot{\rho}}\big)\Big]\pi_L' + (c_s^2+\tfrac13) E(x).
 \end{aligned}\end{align}}
 There are two solutions of this ODE.
-If entropy perturbations $\delta\sigma\sim E$ there is no source for $\pi_L'$.
-Hence one is $\pi_L\equiv\text{conts}$ and the other will be growing or decaying depending on the sign of the coefficient.
-Note that a dependence $\pi_L'\propto\, a^{c}$ is unchanged upon integrating the $\log a$ variation, that is also $\pi_L\, \propto\, a^{c}$ will be growing (resp. decaying).
-The equation is then
+Notably, if we neglect entropy perturbations $\delta\sigma\sim E$ there is no source for $\pi_L'$.
+In this case a solution is $\pi_L\equiv\text{conts}$ and the other is growing or decaying depending on the sign of the coefficient.\footnote{Note that a dependence $\pi_L'\propto\, a^{c}$ is unchanged upon integrating the $\log a$ variation, that is also $\pi_L\, \propto\, a^{c}$ will be growing (resp. decaying).}
+It is convenient to write the equation as 
 {\small\begin{align}
 \begin{aligned}
-    \frac{d\log \pi_L'}{d\log a}=-\Big[\frac{\dot{\mathcal{H}}}{\mathcal{H}^2}+2+3\big(c_s^2-\tfrac{\dot{p}}{\dot{\rho}}\big)\Big]= -\tfrac32(1-w)-\big(c_s^2-\tfrac{\dot{p}}{\dot{\rho}}\big).
+    \frac{d\log \pi_L'}{d\log a}=-\Big[\frac{\dot{\mathcal{H}}}{\mathcal{H}^2}+2+3\big(c_s^2-\tfrac{\dot{p}}{\dot{\rho}}\big)\Big]= -\tfrac32(1-w)-\big(c_s^2-\tfrac{\dot{p}}{\dot{\rho}}\big),
 \end{aligned}\end{align}}
-which confirm the second solution is decayng for $w<1$ and adiabatic perturbations $\big(c_s^2-\tfrac{\dot{p}}{\dot{\rho}}\big)=0$. 
+which confirms the second solution is decayng for $w<1$ and adiabatic perturbations $\big(c_s^2-\tfrac{\dot{p}}{\dot{\rho}}\big)=0$.
 
-From \eqref{eq:peculiar_velocity_fluid_vs_phonons} we identify the comoving curvature perturbations \eqref{eq:comoving_curvature_perturbations_gauge_inv_and_newtonian} in terms of metric newtonian potentials and phonon potential \eqref{eq:phonon_potential} as
+Finally, from \eqref{eq:peculiar_velocity_fluid_vs_phonons} we identify the comoving curvature perturbations \eqref{eq:comoving_curvature_perturbations_gauge_inv_and_newtonian} in terms of metric newtonian potentials and phonon potential \eqref{eq:phonon_potential} as
 \begin{equation}
     \zeta \overset{\text{Newt.}}{=} \phi -\frac{\delta\rho}{3(\rho+p)} = \phi + \frac{1}{3(\rho+p)}\bigg[(\rho+p)(\partial_j\pi^j+3\phi)+\frac{E(x)}{a^4}\bigg]=\tfrac13 k^2\pi_L-\frac{E(x)}{a^4(\rho+p)}.
 \end{equation}
-Now if we ignore entropy perturbations $\delta\sigma\sim E$ the above analysis of $\pi_L$ confirms $\zeta$ is constant (or decaying) superhorizon.
+If we ignore entropy perturbations $\delta\sigma\sim E$, the above analysis of $\pi_L$ confirms $\zeta$ is indeed constant (or decaying) in the superhorizon limit.
 
 
 
