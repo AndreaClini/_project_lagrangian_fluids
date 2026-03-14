@@ -416,20 +416,12 @@ We now express pressure fluctuations in terms of energy density and entropy ones
 Using the flat \eqref{eq:integrate_out_entropy_flat_spacetime} or curved \eqref{eq:integrate_out_entropy_curved_spactime} spacetime expression to integrate out the combination $\left(\dot{\pi}^0/\dot{\bar{\varphi}}^0  +\tfrac12 h^{00}\right)$ of entropy field and metric perturbations, and recalling the expressions \eqref{eq:adiabatic_cs_nonadiabatic_pressure} for $c_a^2$ and $\Gamma$, after some math we find
 \begin{align}\label{eq:rho_p_sigma_fluctuations_vs_phonon_entropy_field}
 \begin{aligned}
-    \delta\rho &= (yF_y-bF_b)(\partial_j\pi^j-\tfrac12 h^{ii})+a^{-4}E(\mathbf{x}) = (\bar{\rho}+\bar{p})(\partial_j\pi^j)\,+by\,\delta\sigma \,,\\[2.5pt]
-    \delta\sigma &= \frac{a^{-4}}{by}E(\mathbf{x})\,,\\[2.5pt]
+    \delta\rho &= (yF_y-bF_b)(\partial_j\pi^j-\tfrac12 h^{ii})+\tfrac{\dot{\bar{\varphi}}^0}{a^4}E(\mathbf{x}) = (\bar{\rho}+\bar{p})(\partial_j\pi^j)\,+by\,\delta\sigma \,,\\[2.5pt]
+    \delta\sigma &= \frac{\dot{\bar{\varphi}}^0}{a^4by}E(\mathbf{x})\,,\\[2.5pt]
     \delta p &= c_a^2\, \delta\rho + \Gamma \, \delta\sigma\,.
 \end{aligned}
 \end{align}
-As expected, phonons $\partial_j\pi^j$ only source density fluctuations, while the entropy field $\pi^0$ sources both density and entropy fluctuations \todoAC{This is for flat spacetime, write general form in curved spacetime and $\bar{\varphi}^0$}
-{\color{red}
-\begin{align}\label{eq:entropy_field_vs_density_entropy_fluctuations}
-\begin{aligned}
-    \dot{\pi}^0&= \frac{1}{yF_y-byF_{by}}\bigg[\delta\rho \Big(c_a^2+\tfrac{b^2F_{bb}}{yF_y-bF_b}\Big)+\delta\sigma\,\Big(\Gamma-\tfrac{b^2F_{bb}}{\tfrac{1}{by}(yF_y-bF_b)}\Big)\bigg]\\[2.5pt]
-    &=\tfrac{1}{y\partial_yp}\bigg[\delta\rho \Big(c_a^2-\tfrac{b\partial_bp}{\rho+p}\Big)+\delta\sigma\,\Big(\Gamma+by\tfrac{b\partial_bp}{\rho+p}\Big)\bigg]\,.
-\end{aligned}
-\end{align}}
-
+As expected, phonons $\partial_j\pi^j$ only source density fluctuations, while the entropy field $\pi^0$ sources both density and entropy fluctuations. 
 
 
 

@@ -134,7 +134,7 @@ More generally, we can solve by characteristics the EoS for arbitrary parameters
 \begin{align}
     \frac{F-F_b}{yF_y-F}=w(b,y)\quad\Rightarrow\quad (1+w)F=w\, yF_y+bF_b.
 \end{align}
-This is just a linear transport equation.
+This is just a linear transport equation, whose solution can be written for arbitrary $w$.
 Choosing variables $\gamma:=\log (y/y_0)$ and $\beta:=\log (b/b_0)$, the characteristics are
 {\small
 \begin{align}\begin{aligned}
@@ -142,15 +142,48 @@ Choosing variables $\gamma:=\log (y/y_0)$ and $\beta:=\log (b/b_0)$, the charact
     \dot{\gamma}&=w(\gamma,\beta),\\
     \dot{z}&=(1+w)z\,.
 \end{aligned}\end{align}}
-The solution can be written in general, but it is not needed it for the moment.
-It also gets quite simpler when variables split $w=w_1(y)w_2(b)$.  
-
 It is worth noticing that for $w=w(b)$ or $w=w(y)$ we could draw some further conclusions (e.g. on $c_a^2$ or $\Gamma$) from the sole equation of state, while for completely general $w(y,b)$ we cannot say anything more.
 To proceed further we would need to couple the EoS with the background equations as in Section \ref{sec:bkg_evolution_fluid_EFT}.
 
+For the moment we consider the case $w=u(b)v(y)$.
+The characteristic for $\beta=\log b$ is trivial and is chosen as variable to parametrize the flow, while the solution for the $\gamma=\log y$ characteristic isspatially
+{\small
+\begin{align}\begin{aligned}
+    G(\gamma)-G(\gamma_0)=\int_{\beta_0}^\beta d\beta' u(\beta'), \quad \text{for}\quad G(\gamma):=\int^\gamma_* d\gamma' \frac{1}{v(\gamma')} + C\,.
+\end{aligned}\end{align}}
+The general solution is given for an arbitrary function of one variable $f=f(z)$ by
+{\small
+\begin{align}\begin{aligned}
+    F(\beta,\gamma)=f\big(\tilde{\gamma}(\gamma,\beta,\beta_0)\big) \exp\left(\int_{\beta_0}^\beta d\beta' 1 + u(\beta')+v\big(\tilde{\gamma}(\gamma,\beta,\beta')\big)\right), 
+\end{aligned}\end{align}}
+where the \emph{inverse} characteristics is defined by 
+{\small
+\begin{align}\begin{aligned}
+    \tilde{\gamma}(\gamma,\beta,\beta'):=G^{-1}\left(G(\gamma)-\int^\beta_{\beta'}d\beta''\, u(\beta'')\right).
+\end{aligned}\end{align}}
+It is tedious but straightforward to check\footnote{I did painfully check.} this is indeed a solution, using
+{\small
+\begin{align}\begin{aligned}
+    u(\beta')\,\,\frac{d}{d\beta}\tilde{\gamma}(\gamma,\beta,\beta')= -u(\beta)\,\,\frac{d}{d\beta'}\tilde{\gamma}(\gamma,\beta,\beta')
+\end{aligned}\end{align}}
+The following relations are also useful for the thermodynamic computations
+{\small
+\begin{align}\begin{aligned}
+    &F_\beta=F\left[1-u(\beta)v\big(\tilde{\gamma}(\gamma,\beta,\beta_0)\big)\left(\frac{f'\big(\tilde{\gamma}(\gamma,\beta,\beta_0)\big)}{f\big(\tilde{\gamma}(\gamma,\beta,\beta_0)\big)}-1\right)\right]\,,\\
+    &F_\gamma = F\left[1+\frac{v\big(\tilde{\gamma}(\gamma,\beta,\beta_0)\big)}{v(\gamma)}\left(\frac{f'\big(\tilde{\gamma}(\gamma,\beta,\beta_0)\big)}{f\big(\tilde{\gamma}(\gamma,\beta,\beta_0)\big)}-1\right)\right]\,.
+\end{aligned}\end{align}}
+In particular
+{\small
+\begin{align}\begin{aligned}
+    &p=F-F_\beta= F_\beta=F\left[u(\beta)v\big(\tilde{\gamma}_0\big)\left(\frac{f'\big(\tilde{\gamma}_0\big)}{f\big(\tilde{\gamma}_0\big)}-1\right)\right]\,,\\
+    &\rho=F_\gamma-F = F\left[\frac{v\big(\tilde{\gamma}_0\big)}{v(\gamma)}\left(\frac{f'\big(\tilde{\gamma}_0\big)}{f\big(\tilde{\gamma}_0\big)}-1\right)\right]\,.
+\end{aligned}\end{align}}
+
+
+
 
 %-------------------------------------------------------------------------
-\subsubsection{The relevant case $w=w(b)$}
+\subsubsection{The cases $w=w(b)$ and $w=w(y)$}
 %---------------------------------------------------------------------
 %
 The most relevant case is $w=w(b)$ since the conservation of the Nother current \eqref{eq:conservation_noether_current_background_eft_number} gives $b\propto a^3$ at the backgrund level, so that  $w=w(b)$ ultimately corresponds to $w=(a)$ up to perturbations.
