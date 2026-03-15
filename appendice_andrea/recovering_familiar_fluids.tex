@@ -187,6 +187,7 @@ In turn we integrate the ODE with known source for $P=F-bF_b$ to get, for an arb
 {\small\begin{align}\begin{aligned}
 F(\beta,\gamma)&= D(\gamma)e^{\beta-\beta_0} \!- \!\int_{\beta_0}^\beta\!\!\!\!\!d\beta'\, e^{\beta-\beta'} C(\beta') \,e^{w(\beta',\gamma)}\exp\!\left( \!\int^{\gamma}_{\gamma_0} \!\!\!\!\!d\gamma'\frac{\left(\tfrac{w_\gamma(\beta',\gamma')}{w(\beta',\gamma')}\right)^2}{(1+w)\left(\frac{c_a^2}{w}-1\right)-\left(\tfrac{w_\beta}{w}+\tfrac{w_\gamma}{w}\right)}\!\right).
 \end{aligned}\end{align}}
+This expression automatically enforces equation of state with arbitrary $w$ and arbitrary speed of sound $c_a^2$.
 For the record, in the case $c_a^2=1$ the expression becomes simpler 
 {\small\begin{align}\begin{aligned}
 F(\beta,\gamma)&= D(\gamma)e^{\beta-\beta_0} \!- \!\int_{\beta_0}^\beta\!\!\!\!\!d\beta'\, e^{\beta-\beta'} C(\beta') \,e^{w(\beta',\gamma)}\exp\!\left( \!\int^{\gamma}_{\gamma_0} \!\!\!\!\!d\gamma'\frac{\left(\tfrac{w_\gamma(\beta',\gamma')}{w(\beta',\gamma')}\right)^2}{\tfrac{1-w^2}{w}-\left(\tfrac{w_\beta}{w}+\tfrac{w_\gamma}{w}\right)}\!\right).
@@ -274,6 +275,7 @@ The final expression for $F$ is then, for an arbitrary function $C=C(\beta)$ and
     \exp\!\left(\!\int^{\gamma''}_{\gamma_0} \!\!\!\!\!\!\!d\gamma' \tfrac{\left(\tfrac{v_\gamma(\gamma')}{v(\gamma')}\right)^2}{(1\!+\!u(\beta)v(\gamma'))\left(\frac{c_a^2}{u(\beta)v(\gamma')}-1\right)-\left(\tfrac{u_\beta(\beta)}{u(\beta)}+\tfrac{v_\gamma(\gamma')}{v(\gamma')}\right)}\!\right)\,\\[3pt]
     &\quad\text{where}\quad\tilde{\gamma}_0:\tilde{\gamma}(\gamma,\beta,\beta_0)=G^{-1}\left(G(\gamma)-\int^\beta_{\beta_0}d\beta'\, u(\beta')\right), \quad G(\gamma):=\int^\gamma_{\gamma_0} d\gamma'\frac{1}{v(\gamma')}\,.
 \end{aligned}\end{align}}
+This expression automatically enforces equation of state with arbitrary $w=u(b)v(y)$ and arbitrary speed of sound $c_a^2$.
 In the case $c_a^2=1$ this simplifies to give
 {\small\begin{align}
 \begin{aligned}
