@@ -83,9 +83,9 @@ Indeed from the equation of state we get a first-order PDE which can be solved b
 Choosing convenitn variables $\gamma:=\log y$ and $\beta:=\log b$, the characteristics are
 {\small
 \begin{align}\begin{aligned}
-    \dot{\beta}&=1\,,\\
-    \dot{\gamma}&=w \quad \Rightarrow\quad y = y_0\, (b/b_0)^w, \\
-    \dot{z}&=(1+w)z\,.
+    \dot{\beta}&=1\,,\quad
+    \dot{\gamma}=w \quad \Rightarrow\quad y = y_0\, (b/b_0)^w, \quad
+    \dot{z}=(1+w)z\,.
 \end{aligned}\end{align}}
 The general solution is, for an arbitrary function $f=f(z)$ on one variable,
 \begin{align}\label{eq:constant_eos_w_solution_pde}
@@ -97,7 +97,7 @@ an EFT with $F=F(y,b)$ but $w=\text{const}.$ is can be reduced to $F=F(b)$.
 The implications of $w=\mathrm{const}$ on $c_a^2$ and $\Gamma$ defined in \eqref{eq:adiabatic_cs_nonadiabatic_pressure} are obvious, since $p=w\rho$ with $w$ constant implies the fluid is barotropic $p=p(\rho)$.
 Explicitly, differentiating the relation \eqref{eq:constant_eos_w} with respect to $y$ and $b$ respectively we get
 \begin{align}
-    y^2F_{yy}=t\frac{1}{w}\big(yF_y-byF_{by}\big), \qquad b^2 F_{bb}=w\big(bF_b-ybF_{yb}\big),
+    y^2F_{yy}=\tfrac{1}{w}\big(yF_y-byF_{by}\big), \qquad b^2 F_{bb}=w\big(bF_b-ybF_{yb}\big),
 \end{align}
 and plugging this into \eqref{eq:adiabatic_cs_nonadiabatic_pressure} we verify
 {\small\begin{align}
@@ -123,15 +123,15 @@ We might still try the solution above, and then use the residual freedom in the 
 
 It turns out it is more convenient to first solve for the evolution of the background variables $b(\tau),y(\tau)$ from the conservation of the Noether number-density and entropy currents \eqref{eq:conservation_noether_current_background_eft}.
 The former \eqref{eq:conservation_noether_current_background_eft_number} implies that $b\propto a^3$ at the background level, so that $w=w(a)$ can be equivalently written as $w=w(b)$ and we are naturally lead to solving an equation of state with $w=w(b)$.
-We refer to Section \ref{sec:bkg_evolution_fluid_EFT} for the treatment.
+We refer to Section \ref{sec:bkg_evolution_eft_wb} for the treatment.
 
 
 %=======================================================================
 \subsection{Fluids with arbitrary EoS parameter $w(b,y)$}\label{sec:fluids_arbitrary_eos}
 %==========================================================================
 
-More generally, we can solve by characteristics the EoS for arbitrary parameters $w=w(b,\gamma)$
-\begin{align}
+More generally, we can solve by characteristics the EoS for arbitrary parameters $w=w(b,y)$
+\begin{align}\label{eq:eos_general_case}
     \frac{F-F_b}{yF_y-F}=w(b,y)\quad\Rightarrow\quad (1+w)F=w\, yF_y+bF_b.
 \end{align}
 This is just a linear transport equation, whose solution can be written for arbitrary $w$.
@@ -150,13 +150,13 @@ Indeed, differentiating the equation and simplifying we get
 {\small
 \begin{align}\begin{aligned}
     &b^2F_{bb}= w \Big[(yF_y-byF_{by})-\left(1+w+\tfrac{bw_b}{w}\right)\tfrac{1}{w}(F-bF_b)\Big],\\
-    &y^2F_{yy}=\tfrac{1}{w}\Big[(yF_y-byF_{by})-\tfrac{yw_y}{w}(F-bF_b)\Big],\\
+    &y^2F_{yy}=\tfrac{1}{w}\Big[(yF_y-byF_{by})-\tfrac{yw_y}{w}(F-bF_b)\Big].
 \end{aligned}\end{align}}
-We use these relations and the EoS $F-bF_b=w(yF_y-F)$ to simplify numerator and denominator of the expression for $c_a^2$
+We use these relations and the equation of state $F-bF_b=w(yF_y-F)$ to simplify numerator and denominator of the expression for the adiabatic speed of sound $c_a^2$
 {\small
 \begin{align}\begin{aligned}
     &-b^2F_{bb}y^2F_{yy}+(yF_y-byF_{by})^2\\
-    &\quad=\tfrac{1}{w}(F-bF_b)\Big[(yF_y-byF_{by})\left(1+w+\tfrac{bw_b}{w}+\tfrac{yw_y}{w}\right)-\tfrac{yw_y}{w}\left(1+w+\tfrac{bw_b}{w}\right)(F-bF_b)\Big]\\
+    &\quad=\tfrac{1}{w}(F-bF_b)\Big[(yF_y-byF_{by})\left(1+w+\tfrac{bw_b}{w}+\tfrac{yw_y}{w}\right)-\tfrac{yw_y}{w}\left(1+w+\tfrac{bw_b}{w}\right)(F-bF_b)\Big],\\
     &y^2F_{yy}(yF_y-bF_b)\\
     &\quad=y^2F_{yy}\tfrac{1+w}{w}(F-bF_b)=
     \tfrac{1}{w}\Big[(yF_y-byF_{by})-\tfrac{yw_y}{w}(F-bF_b)\Big] \tfrac{1+w}{w}(F-bF_b).
@@ -165,63 +165,51 @@ The expression for the speed of sound becomes
 {\small
 \begin{align}\begin{aligned}
     c_a^2:&=\frac{-b^2F_{bb}y^2F_{yy}+(yF_y-byF_{by})^2}{y^2F_{yy}(yF_y-bF_b)}\\
-    &=\frac{\cancel{\tfrac{1}{w}(F-bF_b)}\Big[(yF_y-byF_{by})\left(1+w+\tfrac{bw_b}{w}+\tfrac{yw_y}{w}\right)-\tfrac{yw_y}{w}\left(1+w+\tfrac{bw_b}{w}\right)(F-bF_b)\Big]}{\cancel{\tfrac{1}{w}(F-bF_b)}\tfrac{1+w}{w}\Big[(yF_y-byF_{by})-\tfrac{yw_y}{w}(F-bF_b)\Big] }
+    &=\frac{\cancel{\tfrac{1}{w}(F-bF_b)}\Big[(yF_y-byF_{by})\left(1+w+\tfrac{bw_b}{w}+\tfrac{yw_y}{w}\right)-\tfrac{yw_y}{w}\left(1+w+\tfrac{bw_b}{w}\right)(F-bF_b)\Big]}{\cancel{\tfrac{1}{w}(F-bF_b)}\tfrac{1+w}{w}\Big[(yF_y-byF_{by})-\tfrac{yw_y}{w}(F-bF_b)\Big] }.
 \end{aligned}\end{align}}
 Rearranging and doing some further simplifications
 {\small
 \begin{align}\begin{aligned}
     (1+w)\left(\frac{c_a^2}{w}-1\right)
     &=\frac{\Big[(yF_y-byF_{by})\left(\tfrac{bw_b}{w}+\tfrac{yw_y}{w}\right)-\tfrac{yw_y}{w}\tfrac{bw_b}{w}(F-bF_b)\Big]}{\Big[(yF_y-byF_{by})-\tfrac{yw_y}{w}(F-bF_b)\Big]}\\[3pt]
-    &=\left(\tfrac{bw_b}{w}+\tfrac{yw_y}{w}\right)+\left(\tfrac{yw_y}{w}\right)^2 \frac{(F-bF_b)}{(yF_y-byF_{by})-\tfrac{yw_y}{w}(F-bF_b)}
+    &=\left(\tfrac{bw_b}{w}+\tfrac{yw_y}{w}\right)+\left(\tfrac{yw_y}{w}\right)^2 \frac{(F-bF_b)}{(yF_y-byF_{by})-\tfrac{yw_y}{w}(F-bF_b)}.
 \end{aligned}\end{align}}
 Finally, using logarithmic variables $\beta=\log b$ and $\gamma=\log y$ this becomes
 {\small\begin{align}\label{eq:equation_cs2_manipulated_with_eos}
 \begin{aligned}
-\frac{d\log P}{d\log y}&= \frac{yF_y-byF_{by}}{F-bF_b}= \tfrac{w_\gamma}{w} + \frac{\left(\tfrac{w_\gamma}{w}\right)^2}{(1+w)\left(\frac{c_a^2}{w}-1\right)-\left(\tfrac{w_\beta}{w}+\tfrac{w_\gamma}{w}\right)}\\[3pt]
-&= \frac{\left(\tfrac{w_\gamma}{w}\right)\Big[(1+w)\left(\frac{c_a^2}{w}-1\right)-\tfrac{w_\beta}{w}\Big]}{(1+w)\left(\frac{c_a^2}{w}-1\right)-\left(\tfrac{w_\beta}{w}+\tfrac{w_\gamma}{w}\right)}
+\frac{d\log P}{d\log y}&= \frac{yF_y-byF_{by}}{F-bF_b}= \underbrace{\tfrac{w_\gamma}{w}}_{=\tfrac{d\log w}{d\gamma}}+ \frac{\left(\tfrac{w_\gamma}{w}\right)^2}{(1+w)\left(\frac{c_a^2}{w}-1\right)-\left(\tfrac{w_\beta}{w}+\tfrac{w_\gamma}{w}\right)}.
 \end{aligned}\end{align}}
-Note the RHS is completely specified by $w$, we can thus integrate to get for a function $C=C(\beta)$ only
+Since the RHS is completely specified by $w$, we can integrate and then exponentiate to get, for an arbitrary function $C=C(\beta)$,
 {\small\begin{align}\begin{aligned}
-\log P&= C(\beta)+\int d\gamma\frac{\left(\tfrac{w_\gamma}{w}\right)\Big[(1+w)\left(\frac{c_a^2}{w}-1\right)-\tfrac{w_\beta}{w}\Big]}{(1+w)\left(\frac{c_a^2}{w}-1\right)-\left(\tfrac{w_\beta}{w}+\tfrac{w_\gamma}{w}\right)}
+P=F-F_\beta&= C(\beta) \,e^{w(\beta,\gamma)}\,\exp\left( \int^{\gamma}_{\gamma_0}\!\!\!\!d\gamma'\frac{\left(\tfrac{w_\gamma(\beta,\gamma')}{w(\beta,\gamma')}\right)^2}{(1+w)\left(\frac{c_a^2}{w}-1\right)-\left(\tfrac{w_\beta}{w}+\tfrac{w_\gamma}{w}\right)}\right).
 \end{aligned}\end{align}}
-In turn we integrate $P=F-bF_b$ the ODE with known source given by $w$
+In turn we integrate the ODE with known source for $P=F-bF_b$ to get, for an arbitrary function $D=D(\gamma)$,
 {\small\begin{align}\begin{aligned}
-F_\beta= F- e^{C(\beta)}\exp\left(\int d\gamma\frac{\left(\tfrac{w_\gamma}{w}\right)\Big[(1+w)\left(\frac{c_a^2}{w}-1\right)-\tfrac{w_\beta}{w}\Big]}{(1+w)\left(\frac{c_a^2}{w}-1\right)-\left(\tfrac{w_\beta}{w}+\tfrac{w_\gamma}{w}\right)}\right)
+F(\beta,\gamma)&= D(\gamma)e^{\beta-\beta_0} \!- \!\int_{\beta_0}^\beta\!\!\!\!\!d\beta'\, e^{\beta-\beta'} C(\beta') \,e^{w(\beta',\gamma)}\exp\!\left( \!\int^{\gamma}_{\gamma_0} \!\!\!\!\!d\gamma'\frac{\left(\tfrac{w_\gamma(\beta',\gamma')}{w(\beta',\gamma')}\right)^2}{(1+w)\left(\frac{c_a^2}{w}-1\right)-\left(\tfrac{w_\beta}{w}+\tfrac{w_\gamma}{w}\right)}\!\right).
 \end{aligned}\end{align}}
+For the record, in the case $c_a^2=1$ the expression becomes simpler 
+{\small\begin{align}\begin{aligned}
+F(\beta,\gamma)&= D(\gamma)e^{\beta-\beta_0} \!- \!\int_{\beta_0}^\beta\!\!\!\!\!d\beta'\, e^{\beta-\beta'} C(\beta') \,e^{w(\beta',\gamma)}\exp\!\left( \!\int^{\gamma}_{\gamma_0} \!\!\!\!\!d\gamma'\frac{\left(\tfrac{w_\gamma(\beta',\gamma')}{w(\beta',\gamma')}\right)^2}{\tfrac{1-w^2}{w}-\left(\tfrac{w_\beta}{w}+\tfrac{w_\gamma}{w}\right)}\!\right).
+\end{aligned}\end{align}}
+It will also simplify further in the case $w=u(b)v(y)$ discussed below.
 
-In the case $c_a^2=1$ the expression becomes simpler 
-{\small\begin{align}\begin{aligned}
-\frac{d\log P}{d\log y}
-&= \frac{\left(\tfrac{w_\gamma}{w}\right)\Big[\frac{1-w^2}{w}-\tfrac{w_\beta}{w}\Big]}{\frac{1-w^2}{w}-\left(\tfrac{w_\beta}{w}+\tfrac{w_\gamma}{w}\right)}= \left(\tfrac{w_\gamma}{w}\right)
-\frac{\Big(1-w^2-w_\beta\Big)}{1-w^2-w_\beta-w_\gamma}
-=  \left(\tfrac{w_\gamma}{w}\right) + 
-\frac{\left(\tfrac{w_\gamma}{w}\right)^2}{\tfrac{1-w^2}{w}-\tfrac{w_\beta}{w}-\tfrac{w_\gamma}{w}}.
-\end{aligned}\end{align}}
-It also simplifies further in the case $w=u(b)v(y)$ discussed below.
-
-In the case of separable variables $w=u(\beta)v(\gamma)$ and $c_a^2=1$ if further simpliy to
-{\small\begin{align}\begin{aligned}
-\frac{d\log P}{d\log y}
-&=  \left(\tfrac{v_\gamma}{v}\right) + 
-\frac{\left(\tfrac{v_\gamma}{v}\right)^2}{\tfrac{1-u^2v^2}{uv}-\tfrac{u_\beta}{u}-\tfrac{v_\gamma}{v}}.
-\end{aligned}\end{align}}
 
 %-------------------------------------------------------------------------
 \subsubsection{The cases $w=u(b)v(y)$}
 %---------------------------------------------------------------------
 %
-For the moment we consider the case $w=u(b)v(y)$.
+We now specialize to the case $w=u(b)v(y)$.
 The characteristic for $\beta$ is trivial and is chosen as variable to parametrize the flow, while the solution for the $\gamma$ characteristic is
 {\small
 \begin{align}\begin{aligned}
-    G(\gamma)-G(\gamma_0)=\int_{\beta_0}^\beta d\beta' u(\beta'), \quad \text{for}\quad G(\gamma):=\int^\gamma_* d\gamma' \frac{1}{v(\gamma')} + C\,.
+    G(\gamma)-G(\gamma_0)=\int_{\beta_0}^\beta d\beta' u(\beta'), \quad \text{for}\quad G(\gamma):=\int^\gamma_{\gamma_0} \!\!d\gamma' \frac{1}{v(\gamma')} + C\,.
 \end{aligned}\end{align}}
 The \emph{inverse} characteristics is defined by 
 {\small\begin{align}\label{eq:inverse_characteristic_y_separable}
 \begin{aligned}
     \tilde{\gamma}(\gamma,\beta,\beta'):=G^{-1}\left(G(\gamma)-\int^\beta_{\beta'}d\beta''\, u(\beta'')\right),
 \end{aligned}\end{align}}
-and it obeys the useful the relations
+and it obeys the useful relations
 {\small\begin{align}\label{eq:formulas_characteristic_y}
     \begin{aligned}
     &-\frac{1}{u(\beta)}\,\frac{d}{d\beta}\tilde{\gamma}(\gamma,\beta,\beta')= \frac{1}{u(\beta')}\,\frac{d}{d\beta'}\tilde{\gamma}(\gamma,\beta,\beta')= v(\gamma) \frac{d}{d\gamma}\tilde{\gamma}(\gamma,\beta,\beta')=v(\tilde{\gamma}(\gamma,\beta,\beta')).
@@ -229,27 +217,26 @@ and it obeys the useful the relations
 In particular it follows that 
 {\small
 \begin{align}\begin{aligned}
-    & \int_{\beta_0}^\beta \left[u(\beta')\,v\big(\tilde{\gamma}(\gamma,\beta,\beta')\big)\right]d\beta'= \int_{\beta_0}^\beta \frac{d}{d\beta'}\tilde{\gamma}(\gamma,\beta,\beta')= \int_{\tilde{\gamma}_0}^\gamma d\gamma = \gamma-\tilde{\gamma}(\gamma,\beta,\beta_0)
+    & \int_{\beta_0}^\beta \left[u(\beta')\,v\big(\tilde{\gamma}(\gamma,\beta,\beta')\big)\right]d\beta'= \int_{\beta_0}^\beta \frac{d}{d\beta'}\tilde{\gamma}(\gamma,\beta,\beta')= \int_{\tilde{\gamma}_0}^\gamma d\gamma = \gamma-\tilde{\gamma}(\gamma,\beta,\beta_0).
 \end{aligned}\end{align}}
-The general solution is then given for an arbitrary function of one variable $f=f(z)$ by
+The general solution of the EoS \eqref{eq:eos_general_case} is given, for an arbitrary function of one variable $f=f(z)$, by
 {\small
 \begin{align}\begin{aligned}
     F(\beta,\gamma)&=f\big(\tilde{\gamma}(\gamma,\beta,\beta_0)\big) \exp\Big(\int_{\beta_0}^\beta d\beta' 1 + u(\beta')\,v\big(\tilde{\gamma}(\gamma,\beta,\beta')\big)\Big)\\[3pt]
-    &=f\big(\tilde{\gamma}_0\big)\, e^{\beta-\beta_0}\, e^{\gamma-\tilde{\gamma}_0}\,, \quad \text{for}\quad \tilde{\gamma}_0=\tilde{\gamma}(\gamma,\beta,\beta_0).
+    &=f\big(\tilde{\gamma}_0\big)\, e^{\beta-\beta_0}\, e^{\gamma-\tilde{\gamma}_0}\,, \qquad \text{for the inverse characteristic}\,\,\, \tilde{\gamma}_0=\tilde{\gamma}(\gamma,\beta,\beta_0).
 \end{aligned}\end{align}}
-It is tedious but straightforward to check\footnote{I did painfully check.} this is indeed a solution using the relations \eqref{eq:formulas_characteristic_y}.
-
-The following relations are also useful for the thermodynamic computations
+It is tedious but straightforward to check this is indeed a solution using the relations \eqref{eq:formulas_characteristic_y}.
+From the general form of $F$ we derive the following useful relations
 {\small\begin{align}
 \begin{aligned}
-    &F_\beta=F\left[1-u(\beta)v\big(\tilde{\gamma}_0\big)\left(\frac{f'\big(\tilde{\gamma}_0\big)}{f\big(\tilde{\gamma}_0\big)}-1\right)\right]\,,\\
-    &F_\gamma = F\left[1+\frac{v\big(\tilde{\gamma}_0\big)}{v(\gamma)}\left(\frac{f'\big(\tilde{\gamma}_0\big)}{f\big(\tilde{\gamma}_0\big)}-1\right)\right]\,,\\
-    &p=F-F_\beta= F_\beta=F\left[u(\beta)v\big(\tilde{\gamma}_0\big)\left(\frac{f'\big(\tilde{\gamma}_0\big)}{f\big(\tilde{\gamma}_0\big)}-1\right)\right]=
-    e^{\beta-\beta_0}\, e^{\gamma-\tilde{\gamma}_0}\,u(\beta)v\big(\tilde{\gamma}_0\big)\Big[f'\big(\tilde{\gamma}_0\big)-f\big(\tilde{\gamma}_0\big)\Big]
+    &F_\gamma = F\left[1+\frac{v\big(\tilde{\gamma}_0\big)}{v(\gamma)}\left(\frac{f'\big(\tilde{\gamma}_0\big)}{f\big(\tilde{\gamma}_0\big)}-1\right)\right]\,,\qquad
+    F_\beta=F\left[1-u(\beta)v\big(\tilde{\gamma}_0\big)\left(\frac{f'\big(\tilde{\gamma}_0\big)}{f\big(\tilde{\gamma}_0\big)}-1\right)\right]\,,\\
     \\
-    &\rho=F_\gamma-F = F\left[\tfrac{v(\tilde{\gamma}_0)}{v(\gamma)}\left(\frac{f'\big(\tilde{\gamma}_0\big)}{f\big(\tilde{\gamma}_0\big)}-1\right)\right]=e^{\beta-\beta_0}\, e^{\gamma-\tilde{\gamma}_0}\,\tfrac{v(\tilde{\gamma}_0)}{v(\gamma)}\Big[f'\big(\tilde{\gamma}_0\big)-f\big(\tilde{\gamma}_0\big)\Big]
+    &\rho=F_\gamma-F = F\left[\tfrac{v(\tilde{\gamma}_0)}{v(\gamma)}\left(\frac{f'\big(\tilde{\gamma}_0\big)}{f\big(\tilde{\gamma}_0\big)}-1\right)\right]=e^{\beta-\beta_0}\, e^{\gamma-\tilde{\gamma}_0}\,\tfrac{v(\tilde{\gamma}_0)}{v(\gamma)}\Big[f'\big(\tilde{\gamma}_0\big)-f\big(\tilde{\gamma}_0\big)\Big],\\
+    &p=F-F_\beta= F_\beta=F\left[u(\beta)v\big(\tilde{\gamma}_0\big)\left(\frac{f'\big(\tilde{\gamma}_0\big)}{f\big(\tilde{\gamma}_0\big)}-1\right)\right]=
+    e^{\beta-\beta_0}\, e^{\gamma-\tilde{\gamma}_0}\,u(\beta)v\big(\tilde{\gamma}_0\big)\Big[f'\big(\tilde{\gamma}_0\big)-f\big(\tilde{\gamma}_0\big)\Big].
 \end{aligned}\end{align}}
-In particular
+In particular we have the following expression to use in the equation for the adiabatic sound speed
 {\small\begin{align}
 \begin{aligned}
     \log p=\big(\beta-\beta_0\big)+\big(\gamma-\tilde{\gamma}_0\big)+\log u(\beta)+\log v(\tilde{\gamma}_0)+\log\Big(f'\big(\tilde{\gamma}_0\big)-f\big(\tilde{\gamma}_0\big)\Big).
@@ -257,48 +244,46 @@ In particular
 In the case of $w=u(\beta)v(\gamma)$ the equation \eqref{eq:equation_cs2_manipulated_with_eos} for $c_a^2$ becomes 
 {\small\begin{align}
 \begin{aligned}
-\frac{d\log P}{d\gamma}&=  \frac{\left(\tfrac{v_\gamma(\gamma)}{v(\gamma)}\right)\Big[(1+u(\beta)v(\gamma))\left(\frac{c_a^2}{u(\beta)v(\gamma)}-1\right)-\tfrac{u_\beta(\beta)}{u(\beta)}\Big]}{(1+u(\beta)v(\gamma))\left(\frac{c_a^2}{u(\beta)v(\gamma)}-1\right)-\tfrac{u_\beta(\beta)}{u(\beta)}-\tfrac{v_\gamma(\gamma)}{v(\gamma)}}
+\frac{d\log P}{d\gamma}&= \frac{d\log v(\gamma)}{d\gamma} + \frac{\left(\tfrac{v_\gamma(\gamma)}{v(\gamma)}\right)^2}{(1+u(\beta)v(\gamma))\left(\frac{c_a^2}{u(\beta)v(\gamma)}-1\right)-\left(\tfrac{u_\beta(\beta)}{u(\beta)}+\tfrac{v_\gamma(\gamma)}{v(\gamma)}\right)}
 \end{aligned}\end{align}}
-Inserting the above expression for $p$ and isolating the free function $f$ in favor of the known EoS parameter $w$ we get
+Inserting the above expression for $p$ and isolating the free function $f$ in favor of the known EoS parameter $w$, we get
 {\small\begin{align}
 \begin{aligned}
-\frac{d}{d\gamma}\log\big(f'(\tilde{\gamma}_0\big)-f\big(\tilde{\gamma}_0)\big)&=  \frac{\left(\tfrac{v_\gamma(\gamma)}{v(\gamma)}\right)\Big[(1+u(\beta)v(\gamma))\left(\frac{c_a^2}{u(\beta)v(\gamma)}-1\right)-\tfrac{u_\beta(\beta)}{u(\beta)}\Big]}{(1+u(\beta)v(\gamma))\left(\frac{c_a^2}{u(\beta)v(\gamma)}-1\right)-\tfrac{u_\beta(\beta)}{u(\beta)}-\tfrac{v_\gamma(\gamma)}{v(\gamma)}}\\
+\frac{d}{d\gamma}\log\big(f'(\tilde{\gamma}_0\big)-f\big(\tilde{\gamma}_0)\big)&=  \frac{d\log v(\gamma)}{d\gamma} + \frac{\left(\tfrac{v_\gamma(\gamma)}{v(\gamma)}\right)^2}{(1+u(\beta)v(\gamma))\left(\frac{c_a^2}{u(\beta)v(\gamma)}-1\right)-\left(\tfrac{u_\beta(\beta)}{u(\beta)}+\tfrac{v_\gamma(\gamma)}{v(\gamma)}\right)}\\
 &\quad -\frac{d}{d\gamma}\big(\gamma-\tilde{\gamma}_0\big)-\frac{d}{d\gamma}\log v(\tilde{\gamma}_0)
-\end{aligned}\end{align}}
-Next we further simplify taking $c_a^2=1$ to get
-{\small\begin{align}
-\begin{aligned}
-\frac{d}{d\gamma}\log\big(f'(\tilde{\gamma}_0\big)-f\big(\tilde{\gamma}_0)\big)&=  \frac{\left(\tfrac{v_\gamma(\gamma)}{v(\gamma)}\right)\Big[\frac{1-u^2v(\gamma)^2}{uv(\gamma)}-\tfrac{u_\beta}{u}\Big]}{\frac{1-u^2v(\gamma)^2}{uv(\gamma)}-\tfrac{u_\beta}{u}-\tfrac{v_\gamma(\gamma)}{v(\gamma)}} -\frac{d}{d\gamma}\big(\gamma-\tilde{\gamma}_0\big)-\frac{d}{d\gamma}\log v(\tilde{\gamma}_0)
 \end{aligned}\end{align}}
 This integrates to
 {\small\begin{align}
 \begin{aligned}
-    f'(\tilde{\gamma}_0)-f(\tilde{\gamma}_0)&= C(\beta) \frac{e^{\tilde{\gamma}_0-\gamma}}{v(\tilde{\gamma}_0)}\exp\left(\int^\gamma_{*} d\gamma' \frac{\left(\tfrac{v_\gamma(\gamma')}{v(\gamma')}\right)\Big[\frac{1-u^2v(\gamma')^2}{uv(\gamma')}-\tfrac{u_\beta}{u}\Big]}{\frac{1-u^2v(\gamma')^2}{uv(\gamma')}-\tfrac{u_\beta}{u}-\tfrac{v_\gamma(\gamma')}{v(\gamma')}}\right) 
+    f'(\tilde{\gamma}_0)-f(\tilde{\gamma}_0)&= C(\beta) e^{\tilde{\gamma}_0-\gamma}\frac{v(\gamma)}{v(\tilde{\gamma}_0)}\exp\left(\int^\gamma_{\gamma_0} \!\!\!\!d\gamma' \frac{\left(\tfrac{v_\gamma(\gamma')}{v(\gamma')}\right)^2}{(1\!+\!u(\beta)v(\gamma'))\left(\frac{c_a^2}{u(\beta)v(\gamma')}\!-\!1\right)-\left(\tfrac{u_\beta(\beta)}{u(\beta)}\!+\!\tfrac{v_\gamma(\gamma')}{v(\gamma')}\right)}\right).
 \end{aligned}\end{align}}
 Now it is convenient to invert the relation \eqref{eq:inverse_characteristic_y_separable} between $\gamma$ and $\tilde{\gamma}_0=\tilde{\gamma}(\gamma,\beta,\beta_0)$.
 We thus let $\tilde{\gamma}_0$ be the independent variable and $\gamma=\gamma(\beta,\beta_0,\tilde{\gamma}_0)$ and integrate the above ODE with known source to find $f$
 {\small\begin{align}
 \begin{aligned}
-    f(\tilde{\gamma}_0)= f_0 e^{\tilde{\gamma}_0}+ \int^{\tilde{\gamma}_0}_* \!\!\!d\tilde{\gamma}' e^{\tilde{\gamma}_0-\gamma(\tilde{\gamma}',\beta,\beta_0)} \frac{C(\beta)}{v(\tilde{\gamma}')}\exp\left(\int^{\gamma(\tilde{\gamma}',\beta,\beta_0)}_{*} \!\!\!\!\!d\gamma' \frac{\left(\tfrac{v_\gamma(\gamma')}{v(\gamma')}\right)\Big[\frac{1-u^2v(\gamma')^2}{uv(\gamma')}-\tfrac{u_\beta}{u}\Big]}{\frac{1-u^2v(\gamma')^2}{uv(\gamma')}-\tfrac{u_\beta}{u}-\tfrac{v_\gamma(\gamma')}{v(\gamma')}}\right).
+    f(\tilde{\gamma}_0)&= f_0 e^{\tilde{\gamma}_0-\gamma_0}+ \int^{\tilde{\gamma}_0}_{\gamma_0} \!\!\!d\tilde{\gamma}' e^{\tilde{\gamma}_0-\gamma(\tilde{\gamma}',\beta,\beta_0)} C(\beta) \underbrace{\tfrac{v(\gamma(\tilde{\gamma}',\beta,\beta_0))}{v(\tilde{\gamma}')}}_{=\tfrac{d\gamma(\tilde{\gamma}')}{d\tilde{\gamma}'}}\\
+    &\qquad\qquad\qquad\cdot\exp\left(\int^{\gamma(\tilde{\gamma}',\beta,\beta_0)}_{\gamma_0} \!\!\!\!\!d\gamma' \tfrac{\left(\tfrac{v_\gamma(\gamma')}{v(\gamma')}\right)^2}{(1\!+\!u(\beta)v(\gamma'))\left(\frac{c_a^2}{u(\beta)v(\gamma')}-1\right)-\left(\tfrac{u_\beta(\beta)}{u(\beta)}+\tfrac{v_\gamma(\gamma')}{v(\gamma')}\right)}\right)\\
+    &=f_0 e^{\tilde{\gamma}_0-\gamma_0} + \int^{\tilde{\gamma}_0}_{\gamma_0}\!\! \!\!\!d\gamma'' e^{\tilde{\gamma}_0-\gamma''} C(\beta) 
+    \exp\!\left(\!\int^{\gamma''}_{\gamma_0} \!\!\!\!\!\!\!d\gamma' \tfrac{\left(\tfrac{v_\gamma(\gamma')}{v(\gamma')}\right)^2}{(1\!+\!u(\beta)v(\gamma'))\left(\frac{c_a^2}{u(\beta)v(\gamma')}-1\right)-\left(\tfrac{u_\beta(\beta)}{u(\beta)}+\tfrac{v_\gamma(\gamma')}{v(\gamma')}\right)}\!\right)
 \end{aligned}\end{align}}
-Finally using $\frac{d\tilde{\gamma}}{d\gamma}=\frac{v(\tilde{\gamma})}{v(\gamma)}$ from \eqref{eq:formulas_characteristic_y} we can again change variable in the first integral
+The final expression for $F$ is then, for an arbitrary function $C=C(\beta)$ and a constant $f_0$,
 {\small\begin{align}
 \begin{aligned}
-    f(\tilde{\gamma}_0)= f_0 e^{\tilde{\gamma}_0-\gamma_0}+ \int^{\tilde{\gamma}_0}_* \!\!\!d\gamma'' e^{\tilde{\gamma}_0-\gamma''} \frac{C(\beta)}{v(\gamma'')}\exp\left(\int^{\gamma''}_{*} \!\!\!\!\!d\gamma' \frac{\left(\tfrac{v_\gamma(\gamma')}{v(\gamma')}\right)\Big[\frac{1-u^2v(\gamma')^2}{uv(\gamma')}-\tfrac{u_\beta}{u}\Big]}{\frac{1-u^2v(\gamma')^2}{uv(\gamma')}-\tfrac{u_\beta}{u}-\tfrac{v_\gamma(\gamma')}{v(\gamma')}}\right).
+    &F(\gamma,\beta)= f_0 \underbrace{e^{\beta-\beta_0} e^{\gamma-\gamma_0}}_{=(b/b_0)(y/y_0)}
+    + \int^{\tilde{\gamma}_0}_{\gamma_0}\!\! \!\!\!d\gamma'' e^{\gamma-\gamma''} C(\beta) 
+    \exp\!\left(\!\int^{\gamma''}_{\gamma_0} \!\!\!\!\!\!\!d\gamma' \tfrac{\left(\tfrac{v_\gamma(\gamma')}{v(\gamma')}\right)^2}{(1\!+\!u(\beta)v(\gamma'))\left(\frac{c_a^2}{u(\beta)v(\gamma')}-1\right)-\left(\tfrac{u_\beta(\beta)}{u(\beta)}+\tfrac{v_\gamma(\gamma')}{v(\gamma')}\right)}\!\right)\,\\[3pt]
+    &\quad\text{where}\quad\tilde{\gamma}_0:\tilde{\gamma}(\gamma,\beta,\beta_0)=G^{-1}\left(G(\gamma)-\int^\beta_{\beta_0}d\beta'\, u(\beta')\right), \quad G(\gamma):=\int^\gamma_{\gamma_0} d\gamma'\frac{1}{v(\gamma')}\,.
 \end{aligned}\end{align}}
-The final expression for $F$ is then, for an arbitrary function $C=C(\beta)$,
+In the case $c_a^2=1$ this simplifies to give
 {\small\begin{align}
 \begin{aligned}
-    F(\gamma,\beta)= f_0 e^{\beta-\beta_0} e^{\gamma-\gamma_0}
-    +\int^{\tilde{\gamma}_0(\gamma,\beta,\beta_0)}_{\gamma_0} \!\!\!\!\!\!d\gamma'' e^{\gamma-\gamma''} \frac{C(\beta)}{v(\gamma'')}\exp\left(\int^{\gamma''}_{\gamma_0} \!\!\!\!\!d\gamma' \frac{\left(\tfrac{v_\gamma(\gamma')}{v(\gamma')}\right)\Big[\frac{1-u^2v(\gamma')^2}{uv(\gamma')}-\tfrac{u_\beta}{u}\Big]}{\frac{1-u^2v(\gamma')^2}{uv(\gamma')}-\tfrac{u_\beta}{u}-\tfrac{v_\gamma(\gamma')}{v(\gamma')}}\right).
+    F(\gamma,\beta)= f_0 \underbrace{e^{\beta-\beta_0} e^{\gamma-\gamma_0}}_{=(b/b_0)(y/y_0)}
+    + \int^{\tilde{\gamma}_0}_{\gamma_0}\!\! \!\!\!d\gamma'' e^{\gamma-\gamma''} C(\beta) 
+    \exp\!\left(\!\int^{\gamma''}_{\gamma_0} \!\!\!\!\!\!\!d\gamma' \tfrac{\left(\tfrac{v_\gamma(\gamma')}{v(\gamma')}\right)^2}{\tfrac{1-u(\beta)^2v(\gamma')^2}{u(\beta)v(\gamma')}-\left(\tfrac{u_\beta(\beta)}{u(\beta)}+\tfrac{v_\gamma(\gamma')}{v(\gamma')}\right)}\!\right)\,.
 \end{aligned}\end{align}}
-Finally again
-{\small\begin{align}
-\begin{aligned}
-    &F(\gamma,\beta)= f_0 e^{\beta-\beta_0} e^{\gamma-\gamma_0}
-    +\int^{\tilde{\gamma}_0(\gamma,\beta,\beta_0)}_{\gamma_0} \!\!\!\!\!\!d\gamma'' e^{\gamma-\gamma''} C(\beta)\exp\left(\int^{\gamma''}_{\gamma_0} \!\!\!\!\!d\gamma' \frac{\left(\tfrac{v_\gamma(\gamma')}{v(\gamma')}\right)^2}{\frac{1-u^2v(\gamma')^2}{uv(\gamma')}-\tfrac{u_\beta}{u}-\tfrac{v_\gamma(\gamma')}{v(\gamma')}}\right)\\
-    &\quad\text{where}\quad\tilde{\gamma}(\gamma,\beta,\beta_0)=G^{-1}\left(G(\gamma)-\int^\beta_{\beta_0}d\beta'\, u(\beta')\right), \quad G(\gamma):=\int^\gamma_{\gamma_0} d\gamma'\frac{1}{v(\gamma')}\,.
-\end{aligned}\end{align}}
+
+
+
 
 %-------------------------------------------------------------------------
 \subsubsection{The cases $w=w(b)$ and $w=w(y)$}
