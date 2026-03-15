@@ -175,7 +175,8 @@ Rearranging and doing some further simplifications
     &=\left(\tfrac{bw_b}{w}+\tfrac{yw_y}{w}\right)+\left(\tfrac{yw_y}{w}\right)^2 \frac{(F-bF_b)}{(yF_y-byF_{by})-\tfrac{yw_y}{w}(F-bF_b)}
 \end{aligned}\end{align}}
 Finally, using logarithmic variables $\beta=\log b$ and $\gamma=\log y$ this becomes
-{\small\begin{align}\begin{aligned}
+{\small\begin{align}\label{eq:equation_cs2_manipulated_with_eos}
+\begin{aligned}
 \frac{d\log P}{d\log y}&= \frac{yF_y-byF_{by}}{F-bF_b}= \tfrac{w_\gamma}{w} + \frac{\left(\tfrac{w_\gamma}{w}\right)^2}{(1+w)\left(\frac{c_a^2}{w}-1\right)-\left(\tfrac{w_\beta}{w}+\tfrac{w_\gamma}{w}\right)}\\[3pt]
 &= \frac{\left(\tfrac{w_\gamma}{w}\right)\Big[(1+w)\left(\frac{c_a^2}{w}-1\right)-\tfrac{w_\beta}{w}\Big]}{(1+w)\left(\frac{c_a^2}{w}-1\right)-\left(\tfrac{w_\beta}{w}+\tfrac{w_\gamma}{w}\right)}
 \end{aligned}\end{align}}
@@ -188,7 +189,6 @@ In turn we integrate $P=F-bF_b$ the ODE with known source given by $w$
 F_\beta= F- e^{C(\beta)}\exp\left(\int d\gamma\frac{\left(\tfrac{w_\gamma}{w}\right)\Big[(1+w)\left(\frac{c_a^2}{w}-1\right)-\tfrac{w_\beta}{w}\Big]}{(1+w)\left(\frac{c_a^2}{w}-1\right)-\left(\tfrac{w_\beta}{w}+\tfrac{w_\gamma}{w}\right)}\right)
 \end{aligned}\end{align}}
 
-----------------------------------------------
 In the case $c_a^2=1$ the expression becomes simpler 
 {\small\begin{align}\begin{aligned}
 \frac{d\log P}{d\log y}
@@ -197,6 +197,7 @@ In the case $c_a^2=1$ the expression becomes simpler
 =  \left(\tfrac{w_\gamma}{w}\right) + 
 \frac{\left(\tfrac{w_\gamma}{w}\right)^2}{\tfrac{1-w^2}{w}-\tfrac{w_\beta}{w}-\tfrac{w_\gamma}{w}}.
 \end{aligned}\end{align}}
+It also simplifies further in the case $w=u(b)v(y)$ discussed below.
 
 In the case of separable variables $w=u(\beta)v(\gamma)$ and $c_a^2=1$ if further simpliy to
 {\small\begin{align}\begin{aligned}
@@ -215,37 +216,89 @@ The characteristic for $\beta$ is trivial and is chosen as variable to parametri
 \begin{align}\begin{aligned}
     G(\gamma)-G(\gamma_0)=\int_{\beta_0}^\beta d\beta' u(\beta'), \quad \text{for}\quad G(\gamma):=\int^\gamma_* d\gamma' \frac{1}{v(\gamma')} + C\,.
 \end{aligned}\end{align}}
-The general solution is given for an arbitrary function of one variable $f=f(z)$ by
+The \emph{inverse} characteristics is defined by 
+{\small\begin{align}\label{eq:inverse_characteristic_y_separable}
+\begin{aligned}
+    \tilde{\gamma}(\gamma,\beta,\beta'):=G^{-1}\left(G(\gamma)-\int^\beta_{\beta'}d\beta''\, u(\beta'')\right),
+\end{aligned}\end{align}}
+and it obeys the useful the relations
+{\small\begin{align}\label{eq:formulas_characteristic_y}
+    \begin{aligned}
+    &-\frac{1}{u(\beta)}\,\frac{d}{d\beta}\tilde{\gamma}(\gamma,\beta,\beta')= \frac{1}{u(\beta')}\,\frac{d}{d\beta'}\tilde{\gamma}(\gamma,\beta,\beta')= v(\gamma) \frac{d}{d\gamma}\tilde{\gamma}(\gamma,\beta,\beta')=v(\tilde{\gamma}(\gamma,\beta,\beta')).
+\end{aligned}\end{align}}
+In particular it follows that 
 {\small
 \begin{align}\begin{aligned}
-    F(\beta,\gamma)=f\big(\tilde{\gamma}(\gamma,\beta,\beta_0)\big) \exp\left(\int_{\beta_0}^\beta d\beta' 1 + u(\beta')\,v\big(\tilde{\gamma}(\gamma,\beta,\beta')\big)\right), 
+    & \int_{\beta_0}^\beta \left[u(\beta')\,v\big(\tilde{\gamma}(\gamma,\beta,\beta')\big)\right]d\beta'= \int_{\beta_0}^\beta \frac{d}{d\beta'}\tilde{\gamma}(\gamma,\beta,\beta')= \int_{\tilde{\gamma}_0}^\gamma d\gamma = \gamma-\tilde{\gamma}(\gamma,\beta,\beta_0)
 \end{aligned}\end{align}}
-where the \emph{inverse} characteristics is defined by 
+The general solution is then given for an arbitrary function of one variable $f=f(z)$ by
 {\small
 \begin{align}\begin{aligned}
-    \tilde{\gamma}(\gamma,\beta,\beta'):=G^{-1}\left(G(\gamma)-\int^\beta_{\beta'}d\beta''\, u(\beta'')\right).
+    F(\beta,\gamma)&=f\big(\tilde{\gamma}(\gamma,\beta,\beta_0)\big) \exp\Big(\int_{\beta_0}^\beta d\beta' 1 + u(\beta')\,v\big(\tilde{\gamma}(\gamma,\beta,\beta')\big)\Big)\\[3pt]
+    &=f\big(\tilde{\gamma}_0\big)\, e^{\beta-\beta_0}\, e^{\gamma-\tilde{\gamma}_0}\,, \quad \text{for}\quad \tilde{\gamma}_0=\tilde{\gamma}(\gamma,\beta,\beta_0).
 \end{aligned}\end{align}}
-It is tedious but straightforward to check\footnote{I did painfully check.} this is indeed a solution using the relation
-{\small
-\begin{align}\begin{aligned}
-    &-\frac{1}{u(\beta)}\,\frac{d}{d\beta}\tilde{\gamma}(\gamma,\beta,\beta')= \frac{1}{u(\beta')}\,\frac{d}{d\beta'}\tilde{\gamma}(\gamma,\beta,\beta')= v(\gamma) \frac{d}{d\gamma}\tilde{\gamma}(\gamma,\beta,\beta')=v(\tilde{\gamma}(\gamma,\beta,\beta'))\\[3pt]
-    &\frac{d}{d\beta}\int_{\beta_0}^\beta \left[ 1 + u(\beta')\,v\big(\tilde{\gamma}(\gamma,\beta,\beta')\big)\right]d\beta'= 1+u(\beta)\,v(\tilde{\gamma}(\gamma,\beta,\beta_0))
-\end{aligned}\end{align}}
+It is tedious but straightforward to check\footnote{I did painfully check.} this is indeed a solution using the relations \eqref{eq:formulas_characteristic_y}.
+
 The following relations are also useful for the thermodynamic computations
-{\small
-\begin{align}\begin{aligned}
-    &F_\beta=F\left[1-u(\beta)v\big(\tilde{\gamma}(\gamma,\beta,\beta_0)\big)\left(\frac{f'\big(\tilde{\gamma}(\gamma,\beta,\beta_0)\big)}{f\big(\tilde{\gamma}(\gamma,\beta,\beta_0)\big)}-1\right)\right]\,,\\
-    &F_\gamma = F\left[1+\frac{v\big(\tilde{\gamma}(\gamma,\beta,\beta_0)\big)}{v(\gamma)}\left(\frac{f'\big(\tilde{\gamma}(\gamma,\beta,\beta_0)\big)}{f\big(\tilde{\gamma}(\gamma,\beta,\beta_0)\big)}-1\right)\right]\,.
+{\small\begin{align}
+\begin{aligned}
+    &F_\beta=F\left[1-u(\beta)v\big(\tilde{\gamma}_0\big)\left(\frac{f'\big(\tilde{\gamma}_0\big)}{f\big(\tilde{\gamma}_0\big)}-1\right)\right]\,,\\
+    &F_\gamma = F\left[1+\frac{v\big(\tilde{\gamma}_0\big)}{v(\gamma)}\left(\frac{f'\big(\tilde{\gamma}_0\big)}{f\big(\tilde{\gamma}_0\big)}-1\right)\right]\,,\\
+    &p=F-F_\beta= F_\beta=F\left[u(\beta)v\big(\tilde{\gamma}_0\big)\left(\frac{f'\big(\tilde{\gamma}_0\big)}{f\big(\tilde{\gamma}_0\big)}-1\right)\right]=
+    e^{\beta-\beta_0}\, e^{\gamma-\tilde{\gamma}_0}\,u(\beta)v\big(\tilde{\gamma}_0\big)\Big[f'\big(\tilde{\gamma}_0\big)-f\big(\tilde{\gamma}_0\big)\Big]
+    \\
+    &\rho=F_\gamma-F = F\left[\tfrac{v(\tilde{\gamma}_0)}{v(\gamma)}\left(\frac{f'\big(\tilde{\gamma}_0\big)}{f\big(\tilde{\gamma}_0\big)}-1\right)\right]=e^{\beta-\beta_0}\, e^{\gamma-\tilde{\gamma}_0}\,\tfrac{v(\tilde{\gamma}_0)}{v(\gamma)}\Big[f'\big(\tilde{\gamma}_0\big)-f\big(\tilde{\gamma}_0\big)\Big]
 \end{aligned}\end{align}}
 In particular
-{\small
-\begin{align}\begin{aligned}
-    &p=F-F_\beta= F_\beta=F\left[u(\beta)v\big(\tilde{\gamma}_0\big)\left(\frac{f'\big(\tilde{\gamma}_0\big)}{f\big(\tilde{\gamma}_0\big)}-1\right)\right]\,,\\
-    &\rho=F_\gamma-F = F\left[\frac{v\big(\tilde{\gamma}_0\big)}{v(\gamma)}\left(\frac{f'\big(\tilde{\gamma}_0\big)}{f\big(\tilde{\gamma}_0\big)}-1\right)\right]\,.
+{\small\begin{align}
+\begin{aligned}
+    \log p=\big(\beta-\beta_0\big)+\big(\gamma-\tilde{\gamma}_0\big)+\log u(\beta)+\log v(\tilde{\gamma}_0)+\log\Big(f'\big(\tilde{\gamma}_0\big)-f\big(\tilde{\gamma}_0\big)\Big).
 \end{aligned}\end{align}}
-
-\textcolor{red}{Finally we compute $F_\beta\gamma$ and we plug the epxression in the simplified form of $c_a^2=1$ obtained above.}\todotag{finish}
-
+In the case of $w=u(\beta)v(\gamma)$ the equation \eqref{eq:equation_cs2_manipulated_with_eos} for $c_a^2$ becomes 
+{\small\begin{align}
+\begin{aligned}
+\frac{d\log P}{d\gamma}&=  \frac{\left(\tfrac{v_\gamma(\gamma)}{v(\gamma)}\right)\Big[(1+u(\beta)v(\gamma))\left(\frac{c_a^2}{u(\beta)v(\gamma)}-1\right)-\tfrac{u_\beta(\beta)}{u(\beta)}\Big]}{(1+u(\beta)v(\gamma))\left(\frac{c_a^2}{u(\beta)v(\gamma)}-1\right)-\tfrac{u_\beta(\beta)}{u(\beta)}-\tfrac{v_\gamma(\gamma)}{v(\gamma)}}
+\end{aligned}\end{align}}
+Inserting the above expression for $p$ and isolating the free function $f$ in favor of the known EoS parameter $w$ we get
+{\small\begin{align}
+\begin{aligned}
+\frac{d}{d\gamma}\log\big(f'(\tilde{\gamma}_0\big)-f\big(\tilde{\gamma}_0)\big)&=  \frac{\left(\tfrac{v_\gamma(\gamma)}{v(\gamma)}\right)\Big[(1+u(\beta)v(\gamma))\left(\frac{c_a^2}{u(\beta)v(\gamma)}-1\right)-\tfrac{u_\beta(\beta)}{u(\beta)}\Big]}{(1+u(\beta)v(\gamma))\left(\frac{c_a^2}{u(\beta)v(\gamma)}-1\right)-\tfrac{u_\beta(\beta)}{u(\beta)}-\tfrac{v_\gamma(\gamma)}{v(\gamma)}}\\
+&\quad -\frac{d}{d\gamma}\big(\gamma-\tilde{\gamma}_0\big)-\frac{d}{d\gamma}\log v(\tilde{\gamma}_0)
+\end{aligned}\end{align}}
+Next we further simplify taking $c_a^2=1$ to get
+{\small\begin{align}
+\begin{aligned}
+\frac{d}{d\gamma}\log\big(f'(\tilde{\gamma}_0\big)-f\big(\tilde{\gamma}_0)\big)&=  \frac{\left(\tfrac{v_\gamma(\gamma)}{v(\gamma)}\right)\Big[\frac{1-u^2v(\gamma)^2}{uv(\gamma)}-\tfrac{u_\beta}{u}\Big]}{\frac{1-u^2v(\gamma)^2}{uv(\gamma)}-\tfrac{u_\beta}{u}-\tfrac{v_\gamma(\gamma)}{v(\gamma)}} -\frac{d}{d\gamma}\big(\gamma-\tilde{\gamma}_0\big)-\frac{d}{d\gamma}\log v(\tilde{\gamma}_0)
+\end{aligned}\end{align}}
+This integrates to
+{\small\begin{align}
+\begin{aligned}
+    f'(\tilde{\gamma}_0)-f(\tilde{\gamma}_0)&= C(\beta) \frac{e^{\tilde{\gamma}_0-\gamma}}{v(\tilde{\gamma}_0)}\exp\left(\int^\gamma_{*} d\gamma' \frac{\left(\tfrac{v_\gamma(\gamma')}{v(\gamma')}\right)\Big[\frac{1-u^2v(\gamma')^2}{uv(\gamma')}-\tfrac{u_\beta}{u}\Big]}{\frac{1-u^2v(\gamma')^2}{uv(\gamma')}-\tfrac{u_\beta}{u}-\tfrac{v_\gamma(\gamma')}{v(\gamma')}}\right) 
+\end{aligned}\end{align}}
+Now it is convenient to invert the relation \eqref{eq:inverse_characteristic_y_separable} between $\gamma$ and $\tilde{\gamma}_0=\tilde{\gamma}(\gamma,\beta,\beta_0)$.
+We thus let $\tilde{\gamma}_0$ be the independent variable and $\gamma=\gamma(\beta,\beta_0,\tilde{\gamma}_0)$ and integrate the above ODE with known source to find $f$
+{\small\begin{align}
+\begin{aligned}
+    f(\tilde{\gamma}_0)= f_0 e^{\tilde{\gamma}_0}+ \int^{\tilde{\gamma}_0}_* \!\!\!d\tilde{\gamma}' e^{\tilde{\gamma}_0-\gamma(\tilde{\gamma}',\beta,\beta_0)} \frac{C(\beta)}{v(\tilde{\gamma}')}\exp\left(\int^{\gamma(\tilde{\gamma}',\beta,\beta_0)}_{*} \!\!\!\!\!d\gamma' \frac{\left(\tfrac{v_\gamma(\gamma')}{v(\gamma')}\right)\Big[\frac{1-u^2v(\gamma')^2}{uv(\gamma')}-\tfrac{u_\beta}{u}\Big]}{\frac{1-u^2v(\gamma')^2}{uv(\gamma')}-\tfrac{u_\beta}{u}-\tfrac{v_\gamma(\gamma')}{v(\gamma')}}\right).
+\end{aligned}\end{align}}
+Finally using $\frac{d\tilde{\gamma}}{d\gamma}=\frac{v(\tilde{\gamma})}{v(\gamma)}$ from \eqref{eq:formulas_characteristic_y} we can again change variable in the first integral
+{\small\begin{align}
+\begin{aligned}
+    f(\tilde{\gamma}_0)= f_0 e^{\tilde{\gamma}_0-\gamma_0}+ \int^{\tilde{\gamma}_0}_* \!\!\!d\gamma'' e^{\tilde{\gamma}_0-\gamma''} \frac{C(\beta)}{v(\gamma'')}\exp\left(\int^{\gamma''}_{*} \!\!\!\!\!d\gamma' \frac{\left(\tfrac{v_\gamma(\gamma')}{v(\gamma')}\right)\Big[\frac{1-u^2v(\gamma')^2}{uv(\gamma')}-\tfrac{u_\beta}{u}\Big]}{\frac{1-u^2v(\gamma')^2}{uv(\gamma')}-\tfrac{u_\beta}{u}-\tfrac{v_\gamma(\gamma')}{v(\gamma')}}\right).
+\end{aligned}\end{align}}
+The final expression for $F$ is then, for an arbitrary function $C=C(\beta)$,
+{\small\begin{align}
+\begin{aligned}
+    F(\gamma,\beta)= f_0 e^{\beta-\beta_0} e^{\gamma-\gamma_0}
+    +\int^{\tilde{\gamma}_0(\gamma,\beta,\beta_0)}_{\gamma_0} \!\!\!\!\!\!d\gamma'' e^{\gamma-\gamma''} \frac{C(\beta)}{v(\gamma'')}\exp\left(\int^{\gamma''}_{\gamma_0} \!\!\!\!\!d\gamma' \frac{\left(\tfrac{v_\gamma(\gamma')}{v(\gamma')}\right)\Big[\frac{1-u^2v(\gamma')^2}{uv(\gamma')}-\tfrac{u_\beta}{u}\Big]}{\frac{1-u^2v(\gamma')^2}{uv(\gamma')}-\tfrac{u_\beta}{u}-\tfrac{v_\gamma(\gamma')}{v(\gamma')}}\right).
+\end{aligned}\end{align}}
+Finally again
+{\small\begin{align}
+\begin{aligned}
+    &F(\gamma,\beta)= f_0 e^{\beta-\beta_0} e^{\gamma-\gamma_0}
+    +\int^{\tilde{\gamma}_0(\gamma,\beta,\beta_0)}_{\gamma_0} \!\!\!\!\!\!d\gamma'' e^{\gamma-\gamma''} C(\beta)\exp\left(\int^{\gamma''}_{\gamma_0} \!\!\!\!\!d\gamma' \frac{\left(\tfrac{v_\gamma(\gamma')}{v(\gamma')}\right)^2}{\frac{1-u^2v(\gamma')^2}{uv(\gamma')}-\tfrac{u_\beta}{u}-\tfrac{v_\gamma(\gamma')}{v(\gamma')}}\right)\\
+    &\quad\text{where}\quad\tilde{\gamma}(\gamma,\beta,\beta_0)=G^{-1}\left(G(\gamma)-\int^\beta_{\beta_0}d\beta'\, u(\beta')\right), \quad G(\gamma):=\int^\gamma_{\gamma_0} d\gamma'\frac{1}{v(\gamma')}\,.
+\end{aligned}\end{align}}
 
 %-------------------------------------------------------------------------
 \subsubsection{The cases $w=w(b)$ and $w=w(y)$}
