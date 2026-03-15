@@ -42,24 +42,27 @@ Using the above expansions and \eqref{eq:general_perturbed_FLRW_metric} the quad
     &\qquad\qquad\qquad- a^2 V_\xi(\bar{\xi})(h^{ii}-h^{00})(\delta\xi/\dot{\bar{\xi}}^2) - a^2 V_{\xi\xi}(\bar{\xi})(\delta\xi/\dot{\bar{\xi}})^2\bigg].
 \end{aligned}\end{align}}
 The fluid variables are also expanded.
-Using $X^{-1/2}= (a/\dot{\bar{\xi}})\big[1-\big(\tfrac12 h^{00}+(\dot{\delta\xi}/\dot{\bar{\xi}})\big)\big]$ the 4-velocity is 
-\begin{align}
-    au^\mu &= -a g^{\mu\nu}\partial_\nu\xi X^{-1/2}= \big(1+\tfrac12 h^{00},\, -(\partial_j\delta\xi/\dot{\bar{\xi}}) + h^{0j}\big).
+Using $X^{-1/2}= (a/\dot{\bar{\xi}})\big[1-\big(\tfrac12 h^{00}+(\dot{\delta\xi}/\dot{\bar{\xi}})\big)\big]$ and the general formula \eqref{eq:velocity_decomposition}, the 4-velocity and the peculiar velocity is 
+\begin{align}\label{eq:velocity_theta_quintessence}
+    au^\mu &= -a g^{\mu\nu}\partial_\nu\xi X^{-1/2}= \big(1+\tfrac12 h^{00},\, -(\partial_j\delta\xi/\dot{\bar{\xi}}) + h^{0j}\big) \quad \Rightarrow\quad
+    \begin{array}{c} 
+    v_j=-\partial_j\delta\xi/\dot{\bar{\xi}}\,,\\[2.5pt]
+    \theta=k^2\delta\xi/\dot{\bar{\xi}}\,.
+    \end{array} 
 \end{align}
 The fluctuations of energy density and pressure are then
 {\small\begin{align}
 \begin{aligned}
-    &\rho = \tfrac12 X + V = \tfrac{\dot{\bar{\xi}}^2}{2a^2}+ V(\bar{\xi}) + \underbrace{\tfrac{\dot{\bar{\xi}}^2}{a^2}}_{=\bar{\rho}+\bar{p}}\bigg[(\dot{\delta\xi}/\dot{\bar{\xi}})+\tfrac12 h^{00} + a^2V_\xi(\bar{\xi})(\delta\xi/\dot{\bar{\xi}}^2) \bigg],
+    &\rho = \tfrac12 X + V = \underbrace{\tfrac{\dot{\bar{\xi}}^2}{2a^2}+ V(\bar{\xi})}_{=\bar{\rho}} + \underbrace{\tfrac{\dot{\bar{\xi}}^2}{a^2}}_{=\bar{\rho}+\bar{p}}\bigg[(\dot{\delta\xi}/\dot{\bar{\xi}})+\tfrac12 h^{00} + a^2V_\xi(\bar{\xi})(\delta\xi/\dot{\bar{\xi}}^2) \bigg],
     \\[3pt]
-    &p= \tfrac12 X - V = \tfrac{\dot{\bar{\xi}}^2}{2a^2}- V(\bar{\xi}) + \tfrac{\dot{\bar{\xi}}^2}{a^2}\bigg[(\dot{\delta\xi}/\dot{\bar{\xi}})+\tfrac12 h^{00} - a^2V_\xi(\bar{\xi})(\delta\xi/\dot{\bar{\xi}}^2) \bigg].
+    &p= \tfrac12 X - V = \underbrace{\tfrac{\dot{\bar{\xi}}^2}{2a^2}- V(\bar{\xi})}_{=\bar{p}} + \tfrac{\dot{\bar{\xi}}^2}{a^2}\bigg[(\dot{\delta\xi}/\dot{\bar{\xi}})+\tfrac12 h^{00} - a^2V_\xi(\bar{\xi})(\delta\xi/\dot{\bar{\xi}}^2) \bigg].
 \end{aligned}
 \end{align}}
-Notably, since $p=\rho-2V$ we immediately find
-{\small\begin{align}
+Notably, since $p=\rho-2V$ we immediately find, suing \eqref{eq:velocity_theta_quintessence} for the second equality,
+{\small\begin{align}\label{eq:pressure_perturbations_quintessence}
 \begin{aligned}
-    \delta p =\delta \rho -2V_\xi(\bar{\xi})\delta\xi.
-\end{aligned}
-\end{align}}
+    \delta p =\delta \rho -2V_\xi(\bar{\xi})\delta\xi = \delta \rho -2 V_\xi (k^2/\dot{\bar{\xi}})\,\theta
+\end{aligned}\end{align}}
 
 
 %============================================================================
@@ -74,56 +77,17 @@ In the 5-essence case we can express kinetic energy and potential in terms of en
     \end{array}
 \end{align}
 The function $F$ is yet unknown.
-Imposing further constraints from the matching, we expect to get a set of PDEs which will single out a whole family of suitable candidates $F$.
-Indeed, since we also have expressions for the fluid perturbations in the quintessence case, we can match them to those in the fluid EFT.
-In particular, ww should identify the corresponding coefficients 
+Possibly imposing further constraints , we expect to get a set of PDEs which will single out a whole family of suitable candidates $F$.
+Indeed, we should also equate the expressions for fluid perturbations in the quintessence case to those in the fluid EFT.
+In particular, we should identify the corresponding coefficients 
 \begin{align}
-    w=p/\rho,\quad \quad c_s^2:=\frac{\partial p}{\partial \rho}_{|\sigma},\quad \Gamma:=\frac{\partial p}{\partial \sigma}_{|\rho}.
+    w=p/\rho,\qquad c_s^2:=\frac{\partial p}{\partial \rho}_{|\sigma},\qquad \Gamma:=\frac{\partial p}{\partial \sigma}_{|\rho}.
 \end{align}
-In the scalar field case we have no notion of entropy or temperature whatsoever, as expected since it should be at temperature zero, and the whole fluid identification is somewhat accidental.
-However, the expressions $c_a^2$ and $\Gamma$ are still defined and enter e.g. in the Euler equation and the second order equation for the scalar field perturbations, so that we should be able to relate them to the fluid EFT formulas and get further constraints on the form of $F$.
+Beware in the scalar field case we have no notion of entropy or temperature whatsoever, as expected since it should be at temperature zero, and the whole fluid identification is somewhat accidental.
+However, the expressions $c_a^2$ and $\Gamma$ are still defined and enter e.g. the Euler equation and the wave equation for scalar field perturbations.
+Hence we should be able to relate them to the EFT formulas and get further constraints on the form of $F$.
+The imposition of such constraints on $F$ is carried out in Section \ref{sec:fluids_arbitrary_eos}.
 
 
-In the scalar field case we have no notion of entropy or temperature whatsoever, as expected since it should be at temperature zero.
-On the other hand, we have a well-defined notion of velocity $\vec{v}_\varphi$, with potential $v_\varphi$ or divergence $\theta_\varphi=\nabla^2v_\varphi=\vec{\nabla}\cdot\vec{v}_\varphi$, derived from the perturbations of the energy-momentum tensor
-\begin{align}
-    T^{\mu}_{\nu}=u^\mu u_\nu X+\delta^{\mu}_{\nu}(\tfrac12 X-V), \quad X=-\partial_\mu\varphi g^{\mu\nu}\partial_\nu\varphi, \,\, u_\mu=X^{-1/2}\partial_\mu\varphi.
-\end{align}
-Namely expanding $\varphi=\bar{\varphi}+\delta\varphi$ we have\todotag{check conto, guessato}
-\begin{align}
-    (\rho+p)\,\vec{v}_\phi\approx a^{-2}\dot{\bar{\varphi}}\vec{\nabla} \delta\varphi.
-\end{align}
-From \eqref{eq:peculiar_velocity_fluid_vs_phonons} we then identify
-\begin{align}\label{eq:identifying_scalar_field_velocity_vs_phonon}
-    v_\varphi = -\dot{\pi}_L\, \quad\text{that is}\quad \theta_\varphi=-\partial_j\dot{\pi}^j=k^2\dot{\pi}_L
-\end{align}
 
-On the other hand, we have a well-defined notion of temperature $y\equiv T$ and entropy density $s=F_y$ and comoving entropy $\sigma=F_y/b$ in the fluid EFT.
-Recalling the expansions \eqref{eq:expansions_b_y} we have
-{\small
-\begin{align}\label{eq:expansions_b_y}
-\begin{aligned}
-    &\delta b^{(1)} = -\tfrac12 h^{ii}-k^2\pi_L,\\[3pt]
-    &\delta y^{(1)} = \tfrac12 h^{00}+ \dot{\pi}^0 \approx \tfrac12 h^{00} +{\color{red}(\text{bkg coefficients)}} k^2 \pi_L +{\color{red}\text{(other metric terms)}}
-\end{aligned}
-\end{align}}
-we find
-\begin{align}\label{eq:identifying_entropy_vs_scala_field}
-    \delta \sigma = \frac{bF_{yb}-F_y}{b} \delta b + \frac{yF_{yy}}{b}\delta y \propto \, {\color{red}(\text{bkg coefficients)}}\,k^2\pi_L+\text{(metric stuff)}
-\end{align}
-So that we identify $\dot{\delta\sigma}\approx \theta_\varphi$.
 
-Let's take stock.
-We have an expression for $\theta_\varphi$ in terms of the fluid EFT, and it is also immediate to identify $\delta\rho_\varphi$ and $\delta p_\varphi$ with the corresponsing fluid EFt quantities $\delta\rho$ and $\delta p$.
-We should now be able to match the scalar field respecting the constraints on
-\begin{align}
-    w=p/\rho,\quad c_s^2:=\frac{\partial p}{\partial \rho}_{|\sigma}, \Gamma:=\frac{\partial p}{\partial \sigma}_{|\rho}
-\end{align}
-Indeed $\Gamma$ enter the Euler equation for the scalar field, so that, regardless of not having a notion of entropy we should be able to find an explicit expression for $\Gamma$.
-
-Alternatively, we could simply define $c_s^2$ as the effective coefficients for fluctuations in $\ddot{\delta\varphi}=k^2c_s^2\delta\varphi+...$ and then simply subtract it off
-\begin{align}
-    \Gamma\delta\sigma:=\delta p-c_s^2\delta\rho
-\end{align}
-to get an expression for $\Gamma \delta\sigma$ in terms of 5-essence variables.
-If I am not retarded, we should hopefully recover the above relation for $\dot{\delta\sigma}$ in terms of $v_\phi+\text{(metric)}$ confirming the two ways are indeed equivalent.
