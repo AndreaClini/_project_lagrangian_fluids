@@ -8,6 +8,10 @@ The action for the scalar field $\xi$ with potential $V(\xi)$ is
 \begin{equation}
     S_\xi = \int d^4x \sqrt{-g} \left[-\tfrac{1}{2} g^{\mu\nu}\partial_\mu\xi \partial_\nu\xi - V(\xi)\right]\,, \quad X:= -g^{\mu\nu}\partial_\mu\xi \partial_\nu\xi\,.
 \end{equation}
+The equation of motion for the background is
+\begin{equation}\label{eq:quintessence_bkg_eom}
+    \ddot{\bar{\xi}} + 2\mathcal{H}\dot{\bar{\xi}} + a^2 V_\xi(\bar{\xi})=0\,.
+\end{equation}
 The energy-momentum tensor and related fluid quantities are\footnote{Note the minus sign $u_\mu = -\partial_\mu\xi/\sqrt{X}$ so that $au^0=1+..$ matrching the fluid EFT convention.}
 {\small
 \begin{align}
@@ -88,13 +92,43 @@ However, the expressions $c_a^2$ and $\Gamma$ are still defined and enter e.g. t
 Hence we should be able to relate them to the EFT formulas and get further constraints on the form of $F$.
 The imposition of such constraints on $F$ is carried out in Section \ref{sec:fluids_arbitrary_eos}.
 
-We now equate fluid perturbations in the quintessence case to the EFT expressions \eqref{eq:peculiar_velocity_fluid_vs_phonons}-\eqref{eq:rho_p_sigma_fluctuations_vs_phonon_entropy_field},
+We now equate fluid perturbations in the quintessence case to the EFT expressions \eqref{eq:peculiar_velocity_fluid_vs_phonons}-\eqref{eq:rho_p_sigma_fluctuations_vs_phonon_entropy_field},\todoAC{Check conti \& finish}
 {\small\begin{subequations}\label{eq:perturbations_5essence_vs_eft}
 \begin{align}
-    v_j & \overset{\text{5-ess}}{=} -\partial_j\delta\xi/\dot{\bar{\xi}} + h^{0j} \overset{\text{eft}}{=} -\dot{\pi}^j + h^{0j}\,,\\[2.5pt]
-    \delta\rho &\overset{\text{5-ess}}{=}(\bar{\rho}+\bar{p})\Big[(\dot{\delta\xi}/\dot{\bar{\xi}})+\tfrac12 h^{00} + a^2V_\xi(\bar{\xi})(\delta\xi/\dot{\bar{\xi}}^2) \Big]\overset{\text{eft}}{=} (\bar{\rho}+\bar{p})(\partial_j\pi^j-\tfrac12h^{ii})\,+by\,\delta\sigma\,,\\[2.5pt]
-    \delta p &\overset{\text{5-ess}}{=} \delta \rho -2V_\xi(\bar{\xi})\delta\xi = \delta \rho -2 V_\xi (k^2/\dot{\bar{\xi}})\,\theta
-    \overset{\text{eft}}{=}\underbrace{c_s^2}_{=1} \delta \rho + \Gamma \delta\sigma\,, \qquad \delta\sigma \overset{\text{eft}}{=} \tfrac{\dot{\bar{\varphi}}^0}{a^4by}E(\mathbf{x})\,.
+    v_j & \overset{\text{5-ess}}{=} -\partial_j\delta\xi/\dot{\bar{\xi}} \overset{\text{eft}}{=} -\dot{\pi}^j - h^{0j} = -\partial_j\dot{\pi}_L +\partial_j B\,,\\[2.5pt]
+    \delta p &\overset{\text{5-ess}}{=} \delta \rho -2V_\xi(\bar{\xi})\delta\xi 
+    \overset{\text{eft}}{=}\underbrace{c_s^2}_{=1} \delta \rho + \Gamma \delta\sigma\,, \qquad \delta\sigma \overset{\text{eft}}{=} \tfrac{\dot{\bar{\varphi}}^0}{a^4by}E(\mathbf{x})\,\\[2.5pt]
+    \delta\rho &\overset{\text{5-ess}}{=}(\bar{\rho}+\bar{p})\Big[(\dot{\delta\xi}/\dot{\bar{\xi}})+\tfrac12 h^{00} + a^2V_\xi(\bar{\xi})(\delta\xi/\dot{\bar{\xi}}^2) \Big]\overset{\text{eft}}{=} (\bar{\rho}+\bar{p})(\underbrace{\partial_j\pi^j}_{=-k^2\pi_L}-\tfrac12h^{ii})\,+by\,\delta\sigma\,.
 \end{align}\end{subequations}}
-
-
+Temporarily ignoring metric perturbations to get some intuition and using the background equation of motion \eqref{eq:quintessence_bkg_eom} we get by each line
+{\small\begin{subequations}\label{eq:variables_5essence_vs_eft}
+\begin{align}
+    &\delta\xi/\dot{\bar{\xi}} \simeq \dot{\pi}_L \quad \Rightarrow\quad \dot{\delta\xi}/\dot{\bar{\xi}}=\ddot{\pi}_L+(\delta\xi/\dot{\bar{\xi}})(\ddot{\bar{\xi}}/\dot{\bar{\xi}})= \ddot{\pi}_L+\dot{\pi}_L(\ddot{\bar{\xi}}/\dot{\bar{\xi}})= \ddot{\pi}_L - \big(2\mathcal{H}+a^2(V_\xi/\dot{\bar{\xi}})\big)\dot{\pi}_L\,,\\[2.5pt]
+    &V_\xi(\bar{\xi})\delta\xi \simeq  -\tfrac12 \Gamma \delta\sigma\,\quad\Rightarrow\quad V_\xi\dot{\bar{\xi}}\dot{\pi}_L=-\tfrac12 \Gamma \delta\sigma \label{eq:pressure_quintessence_vs_eft_identification}\\[2.5pt]
+    &(\bar{\rho}+\bar{p})(\dot{\delta\xi}/\dot{\bar{\xi}})+ V_\xi(\bar{\xi})\delta\xi= (\bar{\rho}+\bar{p})(-k^2\pi_L)+by\,\delta\sigma\,\,\,\Rightarrow\,\, (\dot{\delta\xi}/\dot{\bar{\xi}}) = -k^2\pi_L + \frac{by+\tfrac12 \Gamma}{\bar{\rho}+\bar{p}}\delta\sigma\,.
+\end{align}\end{subequations}}
+Crucially, the identification of quintessence in the fluid EFT should be possible only on shell.
+Indeed the above equations enforce the second order equation of motion for $\pi_L$ 
+{\small \begin{align}
+    \ddot{\pi}_L - \big(2\mathcal{H}+a^2(V_\xi/\dot{\bar{\xi}})\big)\dot{\pi}_L = -k^2\pi_L + \frac{by+\tfrac12 \Gamma}{\bar{\rho}+\bar{p}}\delta\sigma\,.
+\end{align}}
+This should match the equation of motion for the phonon $\pi_L$ in the fluid EFT \eqref{eq:euler_pi_L} which we report here for convenience already with $c_a^2=1$ 
+{\small\begin{align}
+\begin{aligned}
+    \ddot{\pi}_L+ \mathcal{H}\dot{\pi}_L -3\mathcal{H}\frac{\dot{\bar{p}}}{\dot{\bar{\rho}}}\dot{\pi}_L= -k^2\pi_L +\tfrac{by+\Gamma}{\rho+p}\delta\sigma\,.
+\end{aligned}\end{align}}
+This is possible only if the following equation is obeyed\todotag{Find the error \& impose slow roll}
+{\small\begin{align}
+\begin{aligned}
+     \big(\mathcal{H}-3\mathcal{H}\frac{\dot{\bar{p}}}{\dot{\bar{\rho}}}\big)\dot{\pi}_L &= -\big(2\mathcal{H}+a^2(V_\xi/\dot{\bar{\xi}})\big)\dot{\pi}_L+\tfrac{\tfrac12\Gamma}{\rho+p}\delta\sigma
+     = -2\mathcal{H}\dot{\pi}_L+\bluecancel{\tfrac{V_\xi \dot{\bar{\xi}}\dot{\pi}_L}{(\dot{\bar{\xi}}/a)^2}}+\bluecancel{\tfrac{\tfrac12\Gamma}{\rho+p}\delta\sigma}\\
+     &\Leftrightarrow\quad 3\mathcal{H}\big(1-\tfrac{\dot{\bar{p}}}{\dot{\bar{\rho}}}\big)=0\quad \textcolor{red}{\text{there must be a sign error somewhere, I would expect $1+\dot{p}/\dot{\rho}$}}
+\end{aligned}\end{align}}
+where the cancellation follows from $\rho+p=(\dot{\bar{\xi}}/a)^2$ and \eqref{eq:pressure_quintessence_vs_eft_identification}. 
+Next we use the background eom of quintessence \eqref{eq:quintessence_bkg_eom} and again $\rho+p=(\dot{\bar{\xi}}/a)^2$ to rewrite the left hand side as
+{\small\begin{align}
+\begin{aligned}
+     &-3\mathcal{H}(\rho+p)(1+\tfrac{\dot{p}}{\dot{\rho}})=\tfrac{d}{d\tau}(\rho+p)= \tfrac{d}{d\tau}\big((\dot{\bar{\xi}}/a)^2\big) = 2(\dot{\bar{\xi}}/a)^2 (\ddot{\bar{\xi}}/\dot{\bar{\xi}} - \mathcal{H}) = -6\mathcal{H}(\rho+p) -2 a^2(V_\xi/\dot{\bar{\xi}})(\rho+p)\\
+     &\Leftrightarrow\quad 3\mathcal{H}(1-\tfrac{\dot{p}}{\dot{\rho}})= -2 a^2(V_\xi/\dot{\bar{\xi}})
+\end{aligned}\end{align}}
+\textcolor{red}{Again there must be a sign error, since this provides the desired condition in the fast roll regime $\dot{\bar{\xi}}\gg V_\xi$ rather than the opposite.}
