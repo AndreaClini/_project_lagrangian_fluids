@@ -57,6 +57,9 @@ Inserting the background continuity equation this takes precisely the familar fo
 \begin{aligned}
     \dot{v}_\ell+ \mathcal{H}v_\ell -3\mathcal{H}\frac{\dot{\bar{p}}}{\dot{\bar{\rho}}}v_\ell=-c_a^2 \,\tfrac{1}{\rho+p}\vec{\partial}_\ell\delta\rho -\Gamma\, \tfrac{1}{\rho+p}\vec{\partial}_\ell\delta\sigma\,+ \tfrac12 \vec{\partial}_\ell h^{00}.
 \end{aligned}\end{align}}
+Crucially, recalling $\delta\rho \sim \partial_j\pi^j$ and $v^j\sim \partial_j\dot{\pi}$ the Euler equation above is already containing the second order equation for the density constrast upon inserting the corresponding expressions.
+We could also get this from the Euler--Lagrange equation of the quadratic lagrangian \eqref{eq:quadrati_action_final_integrated_out_entropy_field}, but we would have to plug back in the expressions \eqref{eq:rho_p_sigma_fluctuations_vs_phonon_entropy_field} to make presence of the entropy contribution $\delta\sigma$ manifest.
+
 {\color{red}
 Ignoring metric perturbations for the moment, using $\pi^\ell=\partial_\ell\pi_L$, $v_\ell = -\dot{\pi}_\ell$ from \eqref{eq:peculiar_velocity_fluid_vs_phonons} and $\delta\rho=(\rho+p)(-k^2\pi_L)+by\delta\sigma$ from \eqref{eq:rho_p_sigma_fluctuations_vs_phonon_entropy_field}, the above equation is rewritten for $\pi_L$ as
 {\small\begin{align}\label{eq:euler_pi_L}
@@ -68,5 +71,12 @@ Ignoring metric perturbations for the moment, using $\pi^\ell=\partial_\ell\pi_L
 --------------------------------------------------------------------
 
 \noindent
-Finally the perturbed continuity equation is obtained from a combination of the Hamilton equations \eqref{eq:inverted_conjugate_fields} for $\pi^0$ and $\pi^j$ recalling the expression \eqref{eq:rho_p_fluctuations_via_b_y}.}\todotag{Finish}
+Finally the perturbed continuity equation \eqref{eq:continuity} is then obtained taking the divergence of \eqref{eq:inverted_conjugate_fields_velocity} and combining \eqref{eq:inverted_conjugate_fields_entropy} and recalling the expression \eqref{eq:rho_p_fluctuations_via_b_y}.
+Alternatively, it directly follows frim taking the time derivative of the expression \eqref{eq:rho_p_sigma_fluctuations_vs_phonon_entropy_field} for $\delta\rho$ and using \eqref{eq:peculiar_velocity_fluid_vs_phonons}
+{\small\begin{align}\label{eq:continuity_eq_hamiltonian}
+\begin{aligned}
+    \dot{\delta\rho} &=-3\mathcal{H}\big(1+\tfrac{\dot{p}}{\dot{\rho}}\big)(\bar{\rho}+\bar{p})(\partial_j\pi^j-\tfrac12h^{ii})+\tfrac{d}{d\tau}(by)\,\delta\sigma +(\bar{\rho}+\bar{p})\underbrace{(\partial_j\dot{\pi}^j-\tfrac12\dot{h}^{ii})}_{=-\partial_jv^j-\partial_j h^{0j}-\tfrac12\dot{h}^{ii}}
+\end{aligned}
+\end{align}
+}}\todotag{Finish}
 
