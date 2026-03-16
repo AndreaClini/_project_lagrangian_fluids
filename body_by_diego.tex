@@ -187,14 +187,340 @@ Now we can write the continuity and Euler equation (see appendix).
 %Now varying with respect to $\Phi$ gives the constraint on $\delta\rho$ and through that one shoud relate $\xi\sim\nabla\pi$. {\bf do this explicitly!} 
 
 
-\subsection{Scalar fluids}
-Here I will match the scalar fluids to the fluid EFTs developed so far. This will allow us to show in which sense the fluid EFT remains more general.
-
-\paragraph{Quintessence} is typically defined as a scalar with a canonical kinetic term $X=-g^{\mu\nu}\partial_\mu\phi\partial_\nu\phi$, so that $\partial_\mu\phi=\sqrt{X}u_\mu$ with $u_\mu u^\mu=-1$, and an arbitrary potential $V(\phi)$
+\subsection{Scalar vs Fluids}
+A canonical scalar field describing quintessence can formally be written as a perfect fluid, since its stress–energy tensor
 \begin{equation}
-S=\int d^4x\sqrt{-g}\left[\tfrac{1}{2}X-V(\phi)\right]
+T_{\mu\nu}=\partial_\mu\phi,\partial_\nu\phi-g_{\mu\nu}!\left[\frac12(\partial\phi)^2+V(\phi)\right]    
 \end{equation}
-I can map this scalar theory into the non-barotropic fluid EFT by identifying...
+can always be expressed in the perfect-fluid form
+\begin{equation}
+T_{\mu\nu}=(\rho+p)u_\mu u_\nu+p g_{\mu\nu}    
+\end{equation}
+with energy density and pressure given by
+\begin{equation}
+\rho=\frac12\dot\phi^2+V(\phi), \qquad
+p=\frac12\dot\phi^2-V(\phi).    
+\end{equation}
+However, this formal identification does not automatically imply that the scalar behaves as a single fluid degree of freedom at the level of perturbations. The reason is that scalar perturbations contain two independent phase-space variables $(\delta\phi,\ \delta\dot\phi)$. Since the scalar satisfies a KG equation of motion
+\begin{equation}
+\Box\phi+V_\phi=0
+\end{equation}
+Correspondingly, the perturbations of the energy density and pressure are
+\begin{align}
+\delta\rho=\dot\phi\delta\dot\phi+V_{\phi}\delta\phi\,,   \\ 
+\delta p=\dot\phi\delta\dot\phi-V_{\phi}\delta\phi\,.
+\end{align}
+Because both variables appear independently, the pressure perturbation cannot generally be written as a function of the density perturbation alone. Therefore the system does not automatically close like a fluid, and an additional propagating degree of freedom is present. \DR{maybe we can relate this to the viscosity in the SK picture}
+
+%In the effective field theory (EFT) description of fluids or dark energy, the fundamental perturbation variable is the **Goldstone field (\pi)** associated with broken time translations. It represents local shifts of the background clock,
+
+In the EFT formulation the only dynamical variables are the phonons which in the absence of vorticity can be rewritten as a single propagating degree of freedom. For this to match the quintessence description, the perturbations must also be reducible to a single variable. This happens only if the background evolution satisfies the slow-roll (or adiabatic-dominance) condition
+\begin{equation}
+\left|\frac{\ddot\phi}{H\dot\phi}\right| \ll 1 .    
+\end{equation}
+Under this condition the background equation
+\begin{equation}
+\ddot\phi+3H\dot\phi+V_{,\phi}=0    
+\end{equation}
+implies
+\begin{equation}
+V_{,\phi}\approx -3H\dot\phi .    
+\end{equation}
+Substituting this relation into the density perturbation gives
+\begin{equation}
+\delta\rho=\dot\phi(\delta\dot\phi-3H\delta\phi).    
+\end{equation}
+Since slow perturbations evolve on the Hubble timescale $\delta\dot\phi \sim H\delta\phi$, the density perturbation becomes proportional to (\delta\phi). The independent phase-space variable (\delta\dot\phi) therefore ceases to represent an additional degree of freedom. The perturbations collapse onto the single adiabatic direction. 
+\begin{equation}
+\pi = \frac{\delta\phi}{\dot\phi}    
+\end{equation}
+In this regime the scalar perturbations can be described by the EFT Goldstone mode, and the dynamics matches that of a single perfect fluid degree of freedom.
+For a general non-barotropic fluid the pressure perturbation can be decomposed as
+\begin{equation}
+\delta p =c_s^2\delta\rho
++\Gamma\delta\sigma    
+\end{equation}
+From this expression it is clear that 
+
+represents the entropy (non-adiabatic) contribution. The variable (\sigma) parameterizes the additional thermodynamic degree of freedom.
+
+For a canonical scalar field
+
+[
+\rho = \frac12\dot\phi^2 + V(\phi),
+\qquad
+p = \frac12\dot\phi^2 - V(\phi).
+]
+
+Perturbations are
+
+[
+\delta\rho
+==========
+
+\dot\phi,\delta\dot\phi
++
+V_{,\phi}\delta\phi ,
+]
+
+[
+\delta p
+========
+
+## \dot\phi,\delta\dot\phi
+
+V_{,\phi}\delta\phi .
+]
+
+The adiabatic sound speed is obtained from the background evolution:
+
+[
+\dot\rho
+========
+
+\dot\phi(\ddot\phi+V_{,\phi}),
+]
+
+[
+\dot p
+======
+
+\dot\phi(\ddot\phi-V_{,\phi}),
+]
+
+so
+
+[
+c_a^2
+=====
+
+# \frac{\dot p}{\dot\rho}
+
+\frac{\ddot\phi-V_{,\phi}}{\ddot\phi+V_{,\phi}}.
+]
+
+The non-adiabatic pressure is therefore
+
+[
+\Gamma
+======
+
+\delta p - c_a^2\delta\rho .
+]
+
+Substituting the perturbations gives
+
+[
+\Gamma
+======
+
+## \dot\phi,\delta\dot\phi(1-c_a^2)
+
+V_{,\phi}\delta\phi(1+c_a^2).
+]
+
+Using the background equation
+
+[
+\ddot\phi + 3H\dot\phi + V_{,\phi}=0
+]
+
+this simplifies to
+
+[
+\Gamma
+======
+
+-,\frac{2V_{,\phi}}{\ddot\phi+V_{,\phi}}
+\left(
+\dot\phi,\delta\dot\phi
+-----------------------
+
+\ddot\phi,\delta\phi
+\right).
+]
+
+The combination appearing in parentheses defines the **entropy perturbation variable**
+
+[
+\delta\sigma
+============
+
+## \dot\phi,\delta\dot\phi
+
+\ddot\phi,\delta\phi .
+]
+
+Thus for a canonical scalar field
+
+[
+\Gamma
+======
+
+-,\frac{2V_{,\phi}}{\ddot\phi+V_{,\phi}},
+\delta\sigma .
+]
+
+The variable (\delta\sigma) measures deviations of perturbations away from the direction of the background trajectory in phase space ((\phi,\dot\phi)). Pure adiabatic perturbations correspond to fluctuations generated by a time shift
+
+[
+\delta\phi = \dot\phi,\pi,
+]
+
+which implies
+
+[
+\delta\dot\phi = \ddot\phi,\pi .
+]
+
+For such perturbations
+
+[
+\delta\sigma
+============
+
+## \dot\phi(\ddot\phi,\pi)
+
+\ddot\phi(\dot\phi,\pi)
+=0.
+]
+
+Therefore **adiabatic perturbations correspond to vanishing entropy variable**.
+
+---
+
+### Role of the Slow-Roll Condition
+
+The slow-roll condition
+
+[
+\left|\frac{\ddot\phi}{H\dot\phi}\right| \ll 1
+]
+
+ensures that perturbations remain close to the adiabatic direction generated by time shifts. In this regime
+
+[
+V_{,\phi} \simeq -3H\dot\phi,
+]
+
+and the coefficient relating (\Gamma) and (\delta\sigma) becomes approximately constant. Most importantly, the dynamics strongly suppresses the evolution of the entropy variable
+
+[
+\delta\sigma = \dot\phi,\delta\dot\phi - \ddot\phi,\delta\phi ,
+]
+
+because the background trajectory changes only slowly.
+
+Consequently the perturbations align with the adiabatic direction
+
+[
+\delta\phi = \dot\phi,\pi,
+]
+
+and the entropy component becomes negligible,
+
+[
+\Gamma \approx 0 .
+]
+
+In this limit the scalar behaves effectively as a **single-degree-of-freedom fluid**, allowing the perturbations to be described by the Goldstone mode (\pi) of the fluid EFT.
+
+
+
+
+### 2. Importance of Slow Roll from the Generalized Witten–Hui Argument
+
+The Witten–Hui argument provides a complementary physical explanation of why a scalar field can behave as a fluid only under appropriate conditions. The idea is to separate the scalar field into slow background motion and fast oscillatory fluctuations and to average over the latter.
+
+Consider the decomposition
+
+[
+\phi(t,x)=\phi_s(t)+\phi_f(t,x),
+]
+
+where ( \phi_s ) evolves on cosmological timescales and ( \phi_f ) represents fast fluctuations. Expanding the potential around the slow background,
+
+[
+V(\phi_s+\phi_f)
+================
+
+V(\phi_s)+V_{,\phi}(\phi_s)\phi_f+\frac12 V_{,\phi\phi}(\phi_s)\phi_f^2+\dots ,
+]
+
+the fast component satisfies approximately
+
+[
+\ddot\phi_f + 3H\dot\phi_f -\frac{\nabla^2}{a^2}\phi_f
+
+* V_{,\phi\phi}(\phi_s)\phi_f \approx 0 .
+  ]
+
+The characteristic frequency of these fluctuations is
+
+[
+\omega^2 = \frac{k^2}{a^2}+V_{,\phi\phi}(\phi_s).
+]
+
+If this frequency is large compared with the Hubble scale,
+
+[
+\omega \gg H,
+]
+
+the fluctuations oscillate many times during one Hubble time. One can then average physical quantities over an intermediate time interval satisfying
+
+[
+\omega^{-1} \ll \Delta t \ll H^{-1}.
+]
+
+Under this averaging procedure the fast oscillatory contributions satisfy
+
+[
+\langle \phi_f \rangle =0, \qquad
+\langle \dot\phi_f \rangle =0,
+]
+
+and mixed terms between slow and fast components vanish. The coarse-grained stress tensor therefore reduces to one depending only on the slow component:
+
+[
+\langle \rho \rangle
+====================
+
+\frac12\dot\phi_s^2 + V(\phi_s) + \rho_f,
+]
+
+where ( \rho_f ) represents the averaged energy stored in the fast oscillations.
+
+Most importantly, the averaged momentum density becomes
+
+[
+\langle T^0_{\ i}\rangle = \dot\phi_s,\partial_i \delta\phi_s,
+]
+
+which has the form expected for a perfect fluid,
+
+[
+T^0_{\ i} = (\rho+p)\partial_i\theta,
+]
+
+with
+
+[
+\theta = \frac{\delta\phi_s}{\dot\phi_s}.
+]
+
+Thus the averaged dynamics of the slow component is characterized by a single velocity potential and behaves exactly like a fluid degree of freedom.
+
+However, this coarse-grained description is valid only if the slow background evolution does not significantly excite the fast modes. This requires the background trajectory to vary slowly compared with the oscillation frequency, which translates into the condition
+
+[
+\left|\frac{\ddot\phi_s}{H\dot\phi_s}\right| \ll 1 .
+]
+
+This is precisely the slow-roll or adiabaticity condition. When it holds, the background evolution changes only gradually, ensuring that the fast oscillations average out consistently and leaving a single effective dynamical variable describing motion along the background trajectory.
+
+In this way the generalized Witten–Hui argument shows that the scalar behaves as a fluid only after **integrating out the fast oscillatory phase-space direction**, and the slow-roll condition guarantees that this averaging procedure is well-defined.
+
 
 
 %======================================================================
